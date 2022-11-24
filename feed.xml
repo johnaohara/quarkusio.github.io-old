@@ -5,76 +5,19 @@
         <title>Quarkus</title>
         <link>https://quarkus.io</link>
         <description>Quarkus: Supersonic Subatomic Java</description>
-        <lastBuildDate>Thu, 24 Nov 2022 03:13:55 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 24 Nov 2022 17:50:37 +0000</lastBuildDate>
         
         <item>
-            <title>Quarkus Newsletter #21 - June</title>
+            <title>Quarkus Tools for IntelliJ 1.14.0 released!</title>
             <link>
-                https://quarkus.io/blog/quarkus-newsletter-21/
+                https://quarkus.io/blog/intellij-quarkus-tools-1.14.0/
             </link>
             <description>
-                The June newsletter has some great new Quarkus articles. Learn how Banco do Brazil used Quarkus to create a new system to integrate with other financial institutions that participate in the Brazilian Open Banking environment. Get technical on how to configure Podman for Quarkus Dev Services and Testcontainers on Linux...
+                We are very pleased to announce the 1.14.0 release of Quarkus Tools for IntelliJ. This release adds support for CodeActions and Quick Fixes. CodeActions / Quick Fixes When an error is detected on one of your Quarkus project files, it is highlighted in the source editor (for instance when you...
             </description>
-            <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+            <pubDate>Wed, 23 Nov 2022 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-newsletter-21/
-            </guid>
-            
-            
-            
-            <author>James Cobb (https://twitter.com/insectengine)</author>
-            
-        </item>
-        
-        <item>
-            <title>Banco do Brasil extracts Open Banking investment data with Quarkus and Kafka</title>
-            <link>
-                https://quarkus.io/blog/banco-do-brasil-open-banking-user-story/
-            </link>
-            <description>
-                Banco do Brasil S.A. is a Brazilian financial services company headquartered in Brasília, Brazil. The oldest bank in Brazil, and among the oldest banks in continuous operation in the world, it was founded by John VI, King of Portugal, in 1808. It is the second largest banking institution in Brazil,...
-            </description>
-            <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://quarkus.io/blog/banco-do-brasil-open-banking-user-story/
-            </guid>
-            
-            
-            
-            <author>Felipe Henrique Gross Windmoller (https://twitter.com/felipewind83)</author>
-            
-        </item>
-        
-        <item>
-            <title>Quarkus 2.9.2.Final released - Maintenance release</title>
-            <link>
-                https://quarkus.io/blog/quarkus-2-9-2-final-released/
-            </link>
-            <description>
-                Today, we released Quarkus 2.9.2.Final, our second maintenance release for 2.9. It comes with a bunch of fixes and documentation improvements. It is a safe upgrade for anyone already using 2.9 and is highly recommended. If you are not using 2.9 already, please refer to the 2.9 migration guide. Full...
-            </description>
-            <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://quarkus.io/blog/quarkus-2-9-2-final-released/
-            </guid>
-            
-            
-            
-            <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
-            
-        </item>
-        
-        <item>
-            <title>Quarkus Tools for IntelliJ 1.11.0 released!</title>
-            <link>
-                https://quarkus.io/blog/intellij-quarkus-tools-1.11.0/
-            </link>
-            <description>
-                We are very pleased to announce the 1.11.0 release of Quarkus Tools for IntelliJ. This release adds support for Qute templates but also align with LSP4MP 0.4.0 and quarkus-ls 0.11.1. Qute templates When a Quarkus project has Qute in the classpath, editing a Qute template (HTML / JSON / YAML...
-            </description>
-            <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://quarkus.io/blog/intellij-quarkus-tools-1.11.0/
+                https://quarkus.io/blog/intellij-quarkus-tools-1.14.0/
             </guid>
             
             
@@ -84,35 +27,35 @@
         </item>
         
         <item>
-            <title>Quinoa - A Quarkus extension to create Modern UI with no hassle</title>
+            <title>Redis Job Queue - Reloaded</title>
             <link>
-                https://quarkus.io/blog/quinoa-modern-ui-with-no-hassle/
+                https://quarkus.io/blog/redis-job-queue-reloaded/
             </link>
             <description>
-                Quinoa&#8230;&#8203; To be honest I wasn&#8217;t really a fan at first, but then my wife made them in a bowl like a salad with avocado and raw salmon. Now I really enjoy it with a touch of soy sauce. Let&#8217;s not digress too much, I am not here to talk...
+                In How to implement a job queue with Redis, we explained how to implement a job queue mechanism with Redis and the new Redis API from Quarkus. The approach explored in that blog post had a significant flaw: if the execution of a job failed, the request was lost and...
             </description>
-            <pubDate>Thu, 19 May 2022 00:00:00 +0000</pubDate>
+            <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quinoa-modern-ui-with-no-hassle/
+                https://quarkus.io/blog/redis-job-queue-reloaded/
             </guid>
             
             
             
-            <author>Andy Damevin (https://twitter.com/ia3andy)</author>
+            <author>Clement Escoffier (https://twitter.com/clementplop)</author>
             
         </item>
         
         <item>
-            <title>Quarkus 2.9.1.Final released - Maintenance release</title>
+            <title>Quarkus 3.0.0.Alpha1 released - First iteration of our Jakarta EE 10 stream</title>
             <link>
-                https://quarkus.io/blog/quarkus-2-9-1-final-released/
+                https://quarkus.io/blog/quarkus-3-0-0-alpha1-released/
             </link>
             <description>
-                It is my pleasure to announce the availability of Quarkus 2.9.1.Final, the first maintenance release of our 2.9 release. It is a safe upgrade for anyone already using 2.9. If you are not using 2.9 already, please refer to the 2.9 migration guide. Full changelog You can get the full...
+                Last week, Max Andersen explained our plans for Quarkus 3 and Jakarta EE 10. I published yesterday a more detailed blog post explaining how we are building the Quarkus 3 stream. It is now time to announce Quarkus 3.0.0.Alpha1 which is the first iteration of our Quarkus 3 stream. A...
             </description>
-            <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+            <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-2-9-1-final-released/
+                https://quarkus.io/blog/quarkus-3-0-0-alpha1-released/
             </guid>
             
             
@@ -122,16 +65,16 @@
         </item>
         
         <item>
-            <title>Quarkus Newsletter #20 - May</title>
+            <title>Quarkus Newsletter #26 - November</title>
             <link>
-                https://quarkus.io/blog/quarkus-newsletter-20/
+                https://quarkus.io/blog/quarkus-newsletter-26/
             </link>
             <description>
-                The May newsletter is out! Read the great article "Native Java in the Real World" describing how Microservices on Kubernetes are the business case sweet spot for native Java because they have the most significant framework and Java runtime overhead. As well as How to use Camel extensions for Quarkus...
+                Yep, you guessed it, it&#8217;s time for the November Quarkus newsletter! Learn about the 2024 Observability roadmap with Roberto Cortez&#8217;s article. Read about making web applications more resilient against certain types of fraud with Erik Costlow&#8217;s "Quarkus Defends REST APIs against Attack" article. Watch a cool video to see how...
             </description>
-            <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+            <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-newsletter-20/
+                https://quarkus.io/blog/quarkus-newsletter-26/
             </guid>
             
             
@@ -141,16 +84,16 @@
         </item>
         
         <item>
-            <title>Quarkus 2.9.0.Final released - WebAuthn extension, Compression support for Reactive Routes and RESTEasy Reactive and much more...</title>
+            <title>Our (bumpy) road to Jakarta EE 10</title>
             <link>
-                https://quarkus.io/blog/quarkus-2-9-0-final-released/
+                https://quarkus.io/blog/our-bumpy-road-to-jakarta-ee-10/
             </link>
             <description>
-                We just released Quarkus 2.9, which comes packed with new features: WebAuthn extension Compression support for Reactive Routes and RESTEasy Reactive Support for Confluent Schema Registry Support for Back channel logout Kotlin and Scala upgrade And much more&#8230;&#8203; Migration Guide To migrate from 2.8, please refer to our migration guide....
+                Quarkus has been relatively silent on the Jakarta EE front until a few weeks ago, compared to some other frameworks who announced early clear plans with timelines. That doesn&#8217;t mean we were not actively preparing the transition and we have been incredibly busy making it a reality. Most of you...
             </description>
-            <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
+            <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-2-9-0-final-released/
+                https://quarkus.io/blog/our-bumpy-road-to-jakarta-ee-10/
             </guid>
             
             
@@ -160,16 +103,16 @@
         </item>
         
         <item>
-            <title>Quarkus 2.8.3.Final released - Maintenance release</title>
+            <title>Quarkus 2.14.1.Final released - Maintenance release</title>
             <link>
-                https://quarkus.io/blog/quarkus-2-8-3-final-released/
+                https://quarkus.io/blog/quarkus-2-14-1-final-released/
             </link>
             <description>
-                We just released Quarkus 2.8.3.Final which is the third and probably last maintenance release for our 2.8 release train. 2.9.0.Final will be released next week. It is a safe upgrade for anyone already using 2.8. If you are not using 2.8 already, please refer to the 2.8 migration guide. Full...
+                Today, we released Quarkus 2.14.1.Final with some bugfixes and documentation improvements on top of our 2.14.0.Final release. It is a recommended upgrade for anyone already using 2.14. If you are not already using 2.14, please refer to our migration guide. GraalVM/Mandrel upgrade We don&#8217;t usually upgrade GraalVM/Mandrel in a micro...
             </description>
-            <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+            <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-2-8-3-final-released/
+                https://quarkus.io/blog/quarkus-2-14-1-final-released/
             </guid>
             
             
@@ -179,21 +122,78 @@
         </item>
         
         <item>
-            <title>Monitoring Quarkus JVM Mode With Cryostat</title>
+            <title>Starting Quarkus 3</title>
             <link>
-                https://quarkus.io/blog/monitoring-quarkus-jvm-mode-with-cryostat/
+                https://quarkus.io/blog/road-to-quarkus-3/
             </link>
             <description>
-                Cryostat is a profiling and monitoring tool that leverages the JDK Flight Recorder (JFR) framework already present in your Java applications running on the HotSpot JVM. Cryostat provides an in-cluster collection hub for easy and secure access to your JDK Flight Recorder data from outside the cluster. Cryostat is a...
+                Quarkus 3 will continue the tradition of propelling Java development forward by moving fast and keep bringing a cutting-edge user experience with the latest technologies. We are happy to make a first Quarkus 3 Alpha available for users to try out and extension writers to integrate with so that we...
             </description>
-            <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+            <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/monitoring-quarkus-jvm-mode-with-cryostat/
+                https://quarkus.io/blog/road-to-quarkus-3/
             </guid>
             
             
             
-            <author>Andrew Azores</author>
+            <author>Max Rydahl Andersen (https://twitter.com/maxandersen)</author>
+            
+        </item>
+        
+        <item>
+            <title>Quarkus 2.14.0.Final released - Jandex 3, new Redis commands, caching annotations for Infinispan</title>
+            <link>
+                https://quarkus.io/blog/quarkus-2-14-0-final-released/
+            </link>
+            <description>
+                Today, we released Quarkus 2.14.0.Final with a lot of new features and small improvements all over the place: Upgrade to Jandex 3 Include quarkus-opentelemetry-exporter-otlp into quarkus-opentelemetry Additional Redis commands RESTEasy Reactive: multipart form improvements Support for caching annotations for Infinispan Improved Kotlin support for Hibernate Reactive with Panache Support embedding...
+            </description>
+            <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://quarkus.io/blog/quarkus-2-14-0-final-released/
+            </guid>
+            
+            
+            
+            <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
+            
+        </item>
+        
+        <item>
+            <title>Quarkus Observability Roadmap 2023</title>
+            <link>
+                https://quarkus.io/blog/quarkus-observability-roadmap-2023/
+            </link>
+            <description>
+                Quarkus has come a long way in the observability space. Initial support for Tracing and Metrics came from MicroProfile and their respective implementations, SmallRye OpenTracing and SmallRye Metrics. Because the observability space evolved, these implementations expanded beyond the original specifications, and the Quarkus extensions providing Tracing and Metrics have been...
+            </description>
+            <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://quarkus.io/blog/quarkus-observability-roadmap-2023/
+            </guid>
+            
+            
+            
+            <author>Roberto Cortez (https://twitter.com/radcortez)</author>
+            
+        </item>
+        
+        <item>
+            <title>Quarkus 2.13.4.Final released - Maintenance release</title>
+            <link>
+                https://quarkus.io/blog/quarkus-2-13-4-final-released/
+            </link>
+            <description>
+                Today, we released Quarkus 2.13.4.Final with a new round of bugfixes and documentation improvements. It is a recommended upgrade for anyone already using 2.13. If you are not already using 2.13, please refer to our migration guide. GraalVM/Mandrel upgrade We don&#8217;t usually upgrade GraalVM/Mandrel in a micro release but GraalVM/Mandrel...
+            </description>
+            <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://quarkus.io/blog/quarkus-2-13-4-final-released/
+            </guid>
+            
+            
+            
+            <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
             
         </item>
         

@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Qute Reference Guide - main</title>
+  <title>Qute Reference Guide - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/qute-reference" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/qute-reference" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/qute-reference" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/qute-reference" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/qute-reference" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/qute-reference">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/qute-reference">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/qute-reference">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -477,14 +451,16 @@ A section may also declare nested section blocks: <code>{#if item.valid} Valid. 
 <dd>
 <p>It is used to mark the content that should be rendered but <em>not parsed</em>.
 It starts with the sequence <code>{|</code>  and ends with the sequence <code>|}</code>: <code>{| &lt;script&gt;if(true){alert('Qute is cute!')};&lt;/script&gt; |}</code>, and could be multi-line.</p>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Previously, unparsed character data had to start with <code>{[</code> and end with <code>]}</code>. This syntax is still supported, but we encourage users to switch to the new syntax to avoid some common collisions with constructs from other languages.
+<div class="paragraph">
+<p>Previously, unparsed character data could start with <code>{[</code> and end with <code>]}</code>. This syntax is now removed due to common collisions with constructs from other languages.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1164,6 +1140,18 @@ If a part of an expression resolves to a <code>CompletionStage</code>, the resol
 For example, if there is an expression <code>{foo.size}</code> and <code>foo</code> resolves to <code>CompletionStage&lt;List&lt;String&gt;&gt;</code> then <code>size</code> is resolved against the completed result, i.e. <code>List&lt;String&gt;</code>.
 If a part of an expression resolves to a <code>Uni</code>, a <code>CompletionStage</code> is first created from <code>Uni</code> using <code>Uni#subscribeAsCompletionStage()</code> and then evaluated as described above.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Note that each <code>Uni#subscribeAsCompletionStage()</code> results in a new subscription. You might need to configure memoization of the <code>Uni</code> item or failure before it&#8217;s used as template data, i.e. <code>myUni.memoize().indefinitely()</code>.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>It can happen that a <code>CompletionStage</code> never completes or a <code>Uni</code> emits no item/failure.
 In this case, the rendering methods (such as <code>TemplateInstance#render()</code> and <code>TemplateInstance#createUni()</code>) fail after a specific timeout.
@@ -1264,60 +1252,53 @@ Similar errors are detected at build time if <a href="#typesafe_expressions">Typ
 <div class="sect2">
 <h3 id="sections"><a class="anchor" href="#sections"></a>3.5. Sections</h3>
 <div class="paragraph">
-<p>A section:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>has a start tag</p>
-<div class="ulist">
-<ul>
-<li>
-<p>starts with <code>#</code>, followed by the name of the section such as <code>{#if}</code> and <code>{#each}</code>,</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>may be empty</p>
-<div class="ulist">
-<ul>
-<li>
-<p>tag ends with <code>/</code>, ie. <code>{#emptySection /}</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>may contain other expression, sections, etc.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>the end tag starts with <code>/</code> and contains the name of the section (optional): <code>{#if foo}Foo!{/if}</code> or <code>{#if foo}Foo!{/}</code>,</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>A section has a start tag that starts with <code>#</code>, followed by the name of the section such as <code>{#if}</code> and <code>{#each}</code>.
+It may be empty, i.e. the start tag ends with <code>/</code>: <code>{#myEmptySection /}</code>.
+Sections usually contain nested expressions and other sections.
+The end tag starts with <code>/</code> and contains the name of the section (optional): <code>{#if foo}Foo!{/if}</code> or <code>{#if foo}Foo!{/}</code>.</p>
 </div>
 <div class="paragraph">
-<p>The start tag can also define parameters.
-The parameters have optional names.
-A section may contain several content <strong>blocks</strong>.
+<p>A start tag can define parameters with optional names, e.g. <code>{#if item.isActive}</code> and <code>{#let foo=1 bar=false}</code>.
+Parameters are separated by one or more spaces.
+Names are separated from the values by the equals sign.
+Names and values can be prefixed and suffixed with any number of spaces, e.g. <code>{#let id='Foo'}</code> and <code>{#let id  = 'Foo'}</code> are equivalents where the name of the parameter is <code>id</code> and the value is <code>Foo</code>.
+Values can be grouped using parentheses, e.g. <code>{#let id=(item.id ?: 42)}</code> where the name is <code>id</code> and the value is <code>item.id ?: 42</code>.
+Sections can interpret parameter values in any way, e.g. take the value as is.
+However, in most cases the parameter value is registered as an <a href="#expressions">expression</a> and evaluated before use.</p>
+</div>
+<div class="paragraph">
+<p>A section may contain several content <strong>blocks</strong>.
 The "main" block is always present.
 Additional/nested blocks also start with <code>#</code> and can have parameters too - <code>{#else if item.isActive}</code>.
 A section helper that defines the logic of a section can "execute" any of the blocks and evaluate the parameters.</p>
 </div>
 <div class="listingblock">
+<div class="title"><code>#if</code> Section Example</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">{#if item.name is 'sword'}
-  It's a sword!
+  It's a sword! <i class="conum" data-value="1"></i><b>(1)</b>
 {#else if item.name is 'shield'}
-  It's a shield!
+  It's a shield! <i class="conum" data-value="2"></i><b>(2)</b>
 {#else}
-  Item is neither a sword nor a shield.
+  Item is neither a sword nor a shield. <i class="conum" data-value="3"></i><b>(3)</b>
 {/if}</code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This is the main block.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Additional block.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Additional block.</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="loop_section"><a class="anchor" href="#loop_section"></a>3.5.1. Loop Section</h4>
@@ -1383,13 +1364,13 @@ The first one is using the name <code>each</code> and <code>it</code> is an impl
 <p><code>isFirst</code> - <code>true</code> if <code>count == 1</code></p>
 </li>
 <li>
-<p><code>odd</code> - <code>true</code> if the zero-based index is odd</p>
+<p><code>odd</code> - <code>true</code> if the element&#8217;s count is odd</p>
 </li>
 <li>
-<p><code>even</code> - <code>true</code> if the zero-based index is even</p>
+<p><code>even</code> - <code>true</code> if the element&#8217;s count is even</p>
 </li>
 <li>
-<p><code>indexParity</code> - outputs <code>odd</code> or <code>even</code> based on the zero-based index value</p>
+<p><code>indexParity</code> - outputs <code>odd</code> or <code>even</code> based on the count value</p>
 </li>
 </ul>
 </div>
@@ -1477,7 +1458,7 @@ For example, the <code>hasNext</code> key must be prefixed with <code>it_</code>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">{#for i in total}
-  {i}:
+  {i}: ({i_count} {i_indexParity} {i_even})&lt;br&gt;
 {/for}</code></pre>
 </div>
 </div>
@@ -1486,7 +1467,9 @@ For example, the <code>hasNext</code> key must be prefixed with <code>it_</code>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">1:2:3:</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">1: (1 odd false)
+2: (2 even true)
+3: (3 odd false)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1783,21 +1766,25 @@ An enum constant is validated if the tested value has a type information availab
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">{#let myParent=order.item.parent isActive=false age=10} <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">{#let myParent=order.item.parent isActive=false age=10 price=(order.price + 10)} <i class="conum" data-value="1"></i><b>(1)</b><i class="conum" data-value="2"></i><b>(2)</b>
   &lt;h1&gt;{myParent.name}&lt;/h1&gt;
   Is active: {isActive}
   Age: {age}
-{/let} <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+{/let} <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The local variable is initialized with an expression that can also represent a <a href="#literals">literal</a>.</td>
+<td>The local variable is initialized with an expression that can also represent a <a href="#literals">literal</a>, i.e. <code>isActive=false</code> and <code>age=10</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The infix notation is only supported if parentheses are used for grouping, e.g. <code>price=(order.price + 10)</code> is equivalent to <code>price=order.price.plus(10)</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>Keep in mind that the variable is not available outside the <code>let</code> section that defines it.</td>
 </tr>
 </table>
@@ -2107,7 +2094,7 @@ In this case, just add <code>_isolated</code> or <code>_isolated=true</code> arg
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;p&gt;
   {#myTag}
-    {title}my custom title{/title} <i class="conum" data-value="1"></i><b>(1)</b>
+    {#title}my custom title{/title} <i class="conum" data-value="1"></i><b>(1)</b>
   {/myTag}
 &lt;/p&gt;</code></pre>
 </div>
@@ -2122,7 +2109,211 @@ In this case, just add <code>_isolated</code> or <code>_isolated=true</code> arg
 </div>
 </div>
 <div class="sect3">
-<h4 id="eval-section"><a class="anchor" href="#eval-section"></a>3.5.8. Eval Section</h4>
+<h4 id="fragments"><a class="anchor" href="#fragments"></a>3.5.8. Fragments</h4>
+<div class="paragraph">
+<p>A fragment represents a part of the template that can be treated as a separate template, i.e. rendered separately.
+One of the main motivations to introduce this feature was to support use cases like <a href="https://htmx.org/essays/template-fragments/">htmx fragments</a>.</p>
+</div>
+<div class="paragraph">
+<p>Fragments can be defined with the <code>{#fragment}</code> section.
+Each fragment has an identifier that can only consist of alphanumeric characters and underscores.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that a fragment identifier must be unique in a template.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Fragment Definition in <code>item.html</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">{@org.acme.Item item}
+{@java.util.List&lt;String&gt; aliases}
+
+&lt;h1&gt;Item - {item.name}&lt;/h1&gt;
+
+&lt;p&gt;This document contains a detailed info about an item.&lt;/p&gt;
+
+{#fragment id=item_aliases} <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;h2&gt;Aliases&lt;/h2&gt;
+&lt;ol&gt;
+    {#for alias in aliases}
+    &lt;li&gt;{alias}&lt;/li&gt;
+    {/for}
+&lt;/ol&gt;
+{/fragment}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Defines a fragment with identifier <code>item_aliases</code>. Note that only alphanumeric characters and underscores can be used in the identifier.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can obtain a fragment programatically via the <code>io.quarkus.qute.Template.getFragment(String)</code> method.</p>
+</div>
+<div class="listingblock">
+<div class="title">Obtaining a Fragment</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Inject
+Template item;
+
+String useTheFragment() {
+   return item.getFragment("item_aliases") <i class="conum" data-value="1"></i><b>(1)</b>
+            .data("aliases", List.of("Foo","Bar")) <i class="conum" data-value="2"></i><b>(2)</b>
+            .render();
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Obtains the template fragment with identifier <code>item_aliases</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Make sure the data are set correctly.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The snippet above should render something like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;h2&gt;Aliases&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;Foo&lt;/li&gt;
+    &lt;li&gt;Bar&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+In Quarkus, it is also possible to define a <a href="#type_safe_fragments">type-safe fragment</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can also include a fragment with an <code>{#include}</code> section inside another template or the template that defines the fragment.</p>
+</div>
+<div class="listingblock">
+<div class="title">Including a Fragment in <code>user.html</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;h1&gt;User - {user.name}&lt;/h1&gt;
+
+&lt;p&gt;This document contains a detailed info about a user.&lt;/p&gt;
+
+{#include item$item_aliases aliases=user.aliases /} <i class="conum" data-value="1"></i><b>(1)</b><i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A template identifier that contains a dollar sign <code>$</code> denotes a fragment. The <code>item$item_aliases</code> value is translated as: <em>Use the fragment <code>item_aliases</code> from the template <code>item</code>.</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>aliases</code> parameter is used to pass the relevant data. We need to make sure that the data are set correctly. In this particular case the fragment will use the expression <code>user.aliases</code> as the value of <code>aliases</code> in the <code>{#for alias in aliases}</code> section.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you want to reference a fragment from the same template you can skip the part before <code>$</code>, i.e. something like <code>{#include $item_aliases /}</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can specify <code>{#include item$item_aliases _ignoreFragments=true /}</code> in order to disable this feature, i.e. a dollar sign <code>$</code> in the template identifier does not result in a fragment lookup.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="hidden-fragments"><a class="anchor" href="#hidden-fragments"></a>3.5.8.1. Hidden Fragments</h5>
+<div class="paragraph">
+<p>By default, a fragment is normally rendered as a part of the original template.
+However, sometimes it might be useful to mark a fragment as <em>hidden</em> with <code>rendered=false</code>.
+An interesting use case would be a fragment that can be used multiple-times inside the template that defines it.</p>
+</div>
+<div class="listingblock">
+<div class="title">Fragment Definition in <code>item.html</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">{#fragment id=strong rendered=false} <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;strong&gt;{val}&lt;/strong&gt;
+{/fragment}
+
+&lt;h1&gt;My page&lt;/h1&gt;
+&lt;p&gt;This document
+{#include [strong] val='contains' /} <i class="conum" data-value="2"></i><b>(2)</b>
+a lot of
+{#include [strong] val='information' /} <i class="conum" data-value="3"></i><b>(3)</b>
+!&lt;/p&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Defines a hidden fragment with identifier <code>strong</code>. In this particular case, we use the <code>false</code> boolean literal as the value of the <code>rendered</code> parameter. However, it&#8217;s possible to use any expression there.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Include the fragment <code>strong</code> and pass the value. Note the syntax <code>[strong]</code> which is translated to include the fragment <code>strong</code> from the current template.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Include the fragment <code>strong</code> and pass the value.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The snippet above renders something like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;h1&gt;My page&lt;/h1&gt;
+&lt;p&gt;This document
+&lt;strong&gt;contains&lt;/strong&gt;
+a lot of
+&lt;strong&gt;information&lt;/strong&gt;
+!&lt;/p&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="eval-section"><a class="anchor" href="#eval-section"></a>3.5.9. Eval Section</h4>
 <div class="paragraph">
 <p>This section can be used to parse and evaluate a template dynamically.
 The behavior is very similar to the <a href="#include_helper">Include Section</a> but:</p>
@@ -2693,7 +2884,7 @@ On the other hand, if the value is set (e.g. via <code>TemplateInstance.data("fo
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The default value is actually an <a href="#expressions">expression</a>. So the default value does not have to be a literal (such as <code>42</code> or <code>true</code>). For example, you can leverage the <code>@TemplateEnum</code> and specify an enum constant as a default value of a parameter declaration: <code>{@org.acme.MyEnum myEnum=MyEnum:FOO}</code>. However, the infix notation is not supported in default values.
+The default value is actually an <a href="#expressions">expression</a>. So the default value does not have to be a literal (such as <code>42</code> or <code>true</code>). For example, you can leverage the <code>@TemplateEnum</code> and specify an enum constant as a default value of a parameter declaration: <code>{@org.acme.MyEnum myEnum=MyEnum:FOO}</code>. However, the infix notation is not supported in default values unless the parentheses are used for grouping, e.g. <code>{@org.acme.Foo foo=(foo1 ?: foo2)}`</code>.
 </td>
 </tr>
 </table>
@@ -2829,6 +3020,8 @@ By default, the templates defined in a class annotated with <code>@CheckedTempla
 </tr>
 </table>
 </div>
+<div class="sect3">
+<h4 id="top-level-type-safe-templates"><a class="anchor" href="#top-level-type-safe-templates"></a>4.5.1. Top-level Type-safe Templates</h4>
 <div class="paragraph">
 <p>You can also declare a top-level Java class annotated with <code>@CheckedTemplate</code>:</p>
 </div>
@@ -2882,6 +3075,130 @@ public class HelloResource {
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="customized-template-path"><a class="anchor" href="#customized-template-path"></a>4.5.2. Customized Template Path</h4>
+<div class="paragraph">
+<p>The template path of a <code>@CheckedTemplate</code> method consists of the <em>base path</em> and a <em>defaulted name</em>.
+The <em>base path</em> is supplied by the <code>@CheckedTemplate#basePath()</code>.
+By default, the simple name of the declaring class for a nested static class or an empty string for a top level class is used.
+The <em>defaulted name</em> is derived by the strategy specified in <code>@CheckedTemplate#defaultName()</code>.
+By default, the name of the <code>@CheckedTemplate</code> method is used as is.</p>
+</div>
+<div class="listingblock">
+<div class="title">Customized Template Path Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.quarkus.sample;
+
+import javax.ws.rs.Path;
+
+import io.quarkus.qute.TemplateInstance;
+import io.quarkus.qute.CheckedTemplate;
+
+@Path("item")
+public class ItemResource {
+
+    @CheckedTemplate(basePath = "items", defaultName = CheckedTemplate.HYPHENATED_ELEMENT_NAME)
+    static class Templates {
+        static native TemplateInstance itemAndOrder(Item item); <i class="conum" data-value="1"></i><b>(1)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The template path for this method will be <code>items/item-and-order</code>.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="type_safe_fragments"><a class="anchor" href="#type_safe_fragments"></a>4.5.3. Type-safe Fragments</h4>
+<div class="paragraph">
+<p>You can also define a type-safe <a href="#fragments">fragment</a> in your Java code.
+A <em>native static</em> method with the name that contains a dollar sign <code>$</code> denotes a method that represents a fragment of a type-safe template.
+The name of the fragment is derived from the annotated method name.
+The part before the last occurence of a dollar sign <code>$</code> is the method name of the related type-safe template.
+The part after the last occurence of a dollar sign is the fragment identifier.
+The strategy defined by the relevant <code>CheckedTemplate#defaultName()</code> is honored when constructing the defaulted names.</p>
+</div>
+<div class="listingblock">
+<div class="title">Type-safe Fragment Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.qute.CheckedTemplate;
+import org.acme.Item;
+
+@CheckedTemplate
+class Templates {
+
+  // defines a type-safe template
+  static native TemplateInstance items(List&lt;Item&gt; items);
+
+  // defines a fragment of Templates#items() with identifier "item"
+  static native TemplateInstance items$item(Item item); <i class="conum" data-value="1"></i><b>(1)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Quarkus validates at build time that each template that corresponds to the <code>Templates#items()</code> contains a fragment with identifier <code>item</code>. Moreover, the parameters of the fragment method are validated too. In general, all type-safe expressions that are found in the fragment and that reference some data from the original/outer template require a specific parameter to be present.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Fragment Definition in <code>items.html</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;h1&gt;Items&lt;/h1&gt;
+&lt;ol&gt;
+    {#for item in items}
+    {#fragment id=item}   <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;li&gt;{item.name}&lt;/li&gt;  <i class="conum" data-value="2"></i><b>(2)</b>
+    {/fragment}
+    {/for}
+&lt;/ol&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Defines a fragment with identifier <code>item</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>{item.name}</code> expression implies that the <code>Templates#items$item()</code> method must declare a parameter of name <code>item</code> and type <code>org.acme.Item</code>.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Type-safe Fragment Call Site Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">class ItemService {
+
+  String renderItem(Item item) {
+     // this would return something like "&lt;li&gt;Foo&lt;/li&gt;"
+     return Templates.items$item(item).render();
+  }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can specify <code>@CheckedTemplate#ignoreFragments=true</code> in order to disable this feature, i.e. a dollar sign <code>$</code> in the method name will not result in a checked fragment method.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="template_extension_methods"><a class="anchor" href="#template_extension_methods"></a>4.6. Template Extension Methods</h3>
 <div class="paragraph">
@@ -2913,13 +3230,10 @@ Methods that do not meet the following requirements are ignored.</p>
 <div class="paragraph">
 <p>If there is no namespace defined the class of the first parameter that is not annotated with <code>@TemplateAttribute</code> is used to match the base object. Otherwise, the namespace is used to match an expression.</p>
 </div>
+<div class="sect3">
+<h4 id="matching-by-name"><a class="anchor" href="#matching-by-name"></a>4.6.1. Matching by Name</h4>
 <div class="paragraph">
-<p>The method name is used to match the property name by default.
-However, it is possible to specify the matching name with <code>TemplateExtension#matchName()</code>.
-A special constant - <code>TemplateExtension#ANY</code> - may be used to specify that the extension method matches any name.
-It is also possible to match the name against a regular expression specified in <code>TemplateExtension#matchRegex()</code>.
-In both cases, an additional string method parameter must be used to pass the property name.
-If both <code>matchName()</code> and <code>matchRegex()</code> are set the regular expression is used for matching.</p>
+<p>The method name is used to match the property name by default.</p>
 </div>
 <div class="listingblock">
 <div class="title">Extension Method Example</div>
@@ -2968,8 +3282,91 @@ class MyExtensions {
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>However, it is possible to specify the matching name with <code>matchName()</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>TemplateExtension#matchName()</code> Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@TemplateExtension(matchName = "discounted")
+static BigDecimal discountedPrice(Item item) {
+   // this method matches {item.discounted} if "item" resolves to an object assignable to "Item"
+   return item.getPrice().multiply(new BigDecimal("0.9"));
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A special constant - <code>TemplateExtension#ANY</code>/<code>*</code> - can be used to specify that the extension method matches any name.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>TemplateExtension#ANY</code> Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@TemplateExtension(matchName = "*")
+static String itemProperty(Item item, String name) { <i class="conum" data-value="1"></i><b>(1)</b>
+   // this method matches {item.foo} if "item" resolves to an object assignable to "Item"
+   // the value of the "name" argument is "foo"
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A additional string method parameter is used to pass the actual property name.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also possible to match the name against a regular expression specified in <code>matchRegex()</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>TemplateExtension#matchRegex()</code> Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@TemplateExtension(matchRegex = "foo|bar")
+static String itemProperty(Item item, String name) { <i class="conum" data-value="1"></i><b>(1)</b>
+   // this method matches {item.foo} and {item.bar} if "item" resolves to an object assignable to "Item"
+   // the value of the "name" argument is "foo" or "bar"
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A additional string method parameter is used to pass the actual property name.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Finally, <code>matchNames()</code> can be used to specify a collection of matching names.
+An additional string method parameter is mandatory as well.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>TemplateExtension#matchNames()</code> Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@TemplateExtension(matchNames = {"foo", "bar"})
+static String itemProperty(Item item, String name) {
+   // this method matches {item.foo} and {item.bar} if "item" resolves to an object assignable to "Item"
+   // the value of the "name" argument is "foo" or "bar"
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Superfluous matching conditions are ignored. The conditions sorted by priority in descending order are:
+<code>matchRegex()</code>, <code>matchNames()</code> and <code>matchName()</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
 <div class="sect3">
-<h4 id="method-parameters"><a class="anchor" href="#method-parameters"></a>4.6.1. Method Parameters</h4>
+<h4 id="method-parameters"><a class="anchor" href="#method-parameters"></a>4.6.2. Method Parameters</h4>
 <div class="paragraph">
 <p>An extension method may declare parameters.
 If no namespace is specified then the first parameter that is not annotated with <code>@TemplateAttribute</code> is used to pass the base object, i.e. <code>org.acme.Item</code> in the first example.
@@ -3012,7 +3409,7 @@ class BigDecimalExtensions {
 </div>
 </div>
 <div class="sect3">
-<h4 id="namespace_extension_methods"><a class="anchor" href="#namespace_extension_methods"></a>4.6.2. Namespace Extension Methods</h4>
+<h4 id="namespace_extension_methods"><a class="anchor" href="#namespace_extension_methods"></a>4.6.3. Namespace Extension Methods</h4>
 <div class="paragraph">
 <p>If <code>TemplateExtension#namespace()</code> is specified then the extension method is used to resolve expressions with the given <a href="#expressions">namespace</a>.
 Template extension methods that share the same namespace are grouped in one resolver ordered by <code>TemplateExtension#priority()</code>.
@@ -3057,12 +3454,12 @@ public class StringExtensions {
 </div>
 </div>
 <div class="sect3">
-<h4 id="built-in-template-extension"><a class="anchor" href="#built-in-template-extension"></a>4.6.3. Built-in Template Extensions</h4>
+<h4 id="built-in-template-extension"><a class="anchor" href="#built-in-template-extension"></a>4.6.4. Built-in Template Extensions</h4>
 <div class="paragraph">
 <p>Quarkus provides a set of built-in extension methods.</p>
 </div>
 <div class="sect4">
-<h5 id="maps"><a class="anchor" href="#maps"></a>4.6.3.1. Maps</h5>
+<h5 id="maps"><a class="anchor" href="#maps"></a>4.6.4.1. Maps</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3132,7 +3529,7 @@ A map value can be also accessed directly: <code>{map.myKey}</code>. Use the bra
 </div>
 </div>
 <div class="sect3">
-<h4 id="lists"><a class="anchor" href="#lists"></a>4.6.4. Lists</h4>
+<h4 id="lists"><a class="anchor" href="#lists"></a>4.6.5. Lists</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3210,7 +3607,7 @@ A list element can be accessed directly via an index: <code>{list.10}</code> or 
 </table>
 </div>
 <div class="sect4">
-<h5 id="numbers"><a class="anchor" href="#numbers"></a>4.6.4.1. Numbers</h5>
+<h5 id="integer-numbers"><a class="anchor" href="#integer-numbers"></a>4.6.5.1. Integer Numbers</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3223,15 +3620,47 @@ A list element can be accessed directly via an index: <code>{list.10}</code> or 
 </ul>
 </div>
 </li>
+<li>
+<p><code>plus</code> or <code>+</code>: Addition</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>{counter + 1}</code></p>
+</li>
+<li>
+<p><code>{age plus 10}</code></p>
+</li>
+<li>
+<p><code>{age.plus(10)}</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>minus</code> or <code>-</code>: Subtraction</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>{counter - 1}</code></p>
+</li>
+<li>
+<p><code>{age minus 10}</code></p>
+</li>
+<li>
+<p><code>{age.minus(10)}</code></p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
 <div class="sect4">
-<h5 id="strings"><a class="anchor" href="#strings"></a>4.6.4.2. Strings</h5>
+<h5 id="strings"><a class="anchor" href="#strings"></a>4.6.5.2. Strings</h5>
 <div class="ulist">
 <ul>
 <li>
-<p><code>fmt</code> or <code>format</code>: format the string instance via <code>java.lang.String.format()</code></p>
+<p><code>fmt</code> or <code>format</code>: Formats the string instance via <code>java.lang.String.format()</code></p>
 <div class="ulist">
 <ul>
 <li>
@@ -3244,7 +3673,7 @@ A list element can be accessed directly via an index: <code>{list.10}</code> or 
 </div>
 </li>
 <li>
-<p><code>str:fmt</code> or <code>str:format</code>: format the supplied string value via <code>java.lang.String.format()</code></p>
+<p><code>str:fmt</code> or <code>str:format</code>: Formats the supplied string value via <code>java.lang.String.format()</code></p>
 <div class="ulist">
 <ul>
 <li>
@@ -3260,7 +3689,7 @@ A list element can be accessed directly via an index: <code>{list.10}</code> or 
 </div>
 </div>
 <div class="sect4">
-<h5 id="config"><a class="anchor" href="#config"></a>4.6.4.3. Config</h5>
+<h5 id="config"><a class="anchor" href="#config"></a>4.6.5.3. Config</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3316,7 +3745,7 @@ A list element can be accessed directly via an index: <code>{list.10}</code> or 
 </div>
 </div>
 <div class="sect4">
-<h5 id="time"><a class="anchor" href="#time"></a>4.6.4.4. Time</h5>
+<h5 id="time"><a class="anchor" href="#time"></a>4.6.5.4. Time</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -4334,6 +4763,9 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="paragraph">
 <p>By default, <code>engine.getTemplate("foo")</code> would result in several lookups: <code>foo</code>, <code>foo.html</code>, <code>foo.txt</code>, etc.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18791">QUARKUS_QUTE_SUFFIXES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18791" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -4347,11 +4779,14 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="content">
 <div class="paragraph">
 <p>The list of exclude rules used to intentionally ignore some parts of an expression when performing type-safe validation.
- An element value must have at least two parts separated by dot. The last part is used to match the property/method name. The prepended parts are used to match the class name. The value <code>*</code> can be used to match any name.
- Examples:
+An element value must have at least two parts separated by dot. The last part is used to match the property/method name. The prepended parts are used to match the class name. The value <code>*</code> can be used to match any name.
+Examples:
  - <code>org.acme.Foo.name</code> - exclude the property/method <code>name</code> on the <code>org.acme.Foo</code> class
  - <code>org.acme.Foo.*</code> - exclude any property/method on the <code>org.acme.Foo</code> class
  - <code>*.age</code> - exclude the property/method <code>age</code> on any class</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18792">QUARKUS_QUTE_TYPE_CHECK_EXCLUDES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18792" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -4366,8 +4801,11 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="content">
 <div class="paragraph">
 <p>This regular expression is used to exclude template files from the <code>templates</code> directory. Excluded templates are neither parsed nor validated during build and are not available at runtime.
- The matched input is the file path relative from the <code>templates</code> directory and the <code>/</code> is used as a path separator.
- By default, the hidden files are excluded. The name of a hidden file starts with a dot.</p>
+The matched input is the file path relative from the <code>templates</code> directory and the <code>/</code> is used as a path separator.
+By default, the hidden files are excluded. The name of a hidden file starts with a dot.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18793">QUARKUS_QUTE_TEMPLATE_PATH_EXCLUDE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18793" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -4382,10 +4820,13 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="content">
 <div class="paragraph">
 <p>The prefix is used to access the iteration metadata inside a loop section.
- A valid prefix consists of alphanumeric characters and underscores. Three special constants can be used:
+A valid prefix consists of alphanumeric characters and underscores. Three special constants can be used:
  - <code>&lt;alias_&gt;</code> - the alias of an iterated element suffixed with an underscore is used, e.g. <code>item_hasNext</code> and <code>it_count</code>
  - <code>&lt;alias?&gt;</code> - the alias of an iterated element suffixed with a question mark is used, e.g. <code>item?hasNext</code> and <code>it?count</code>
  - <code>&lt;none&gt;</code> - no prefix is used, e.g. <code>hasNext</code> and <code>count</code>  By default, the <code>&lt;alias_&gt;</code> constant is set.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18794">QUARKUS_QUTE_ITERATION_METADATA_PREFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18794" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -4401,6 +4842,9 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="paragraph">
 <p>The list of content types for which the <code>'</code>, <code>"</code>, <code>&lt;</code>, <code>&gt;</code> and <code>&amp;</code> characters are escaped if a template variant is set.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18795">QUARKUS_QUTE_ESCAPE_CONTENT_TYPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18795" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -4415,6 +4859,9 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="paragraph">
 <p>The default charset of the templates files.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18796">QUARKUS_QUTE_DEFAULT_CHARSET</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18796" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html">Charset</a></p></td>
@@ -4427,9 +4874,12 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The strategy used when a standalone expression evaluates to a "not found" value at runtime and the <code>io.quarkus.qute.strict-rendering</code> config property is set to <code>false</code>
- This strategy is never used when evaluating section parameters, e.g. <code>{#if foo.name}</code>. In such case, it&#8217;s the responsibility of the section to handle this situation appropriately.
- By default, the <code>NOT_FOUND</code> constant is written to the output. However, in the development mode the <code>PropertyNotFoundStrategy#THROW_EXCEPTION</code> is used by default, i.e. when the strategy is not specified.</p>
+<p>The strategy used when a standalone expression evaluates to a "not found" value at runtime and the <code>quarkus.qute.strict-rendering</code> config property is set to <code>false</code>
+This strategy is never used when evaluating section parameters, e.g. <code>{#if foo.name}</code>. In such case, it&#8217;s the responsibility of the section to handle this situation appropriately.
+By default, the <code>NOT_FOUND</code> constant is written to the output. However, in the development mode the <code>PropertyNotFoundStrategy#THROW_EXCEPTION</code> is used by default, i.e. when the strategy is not specified.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18797">QUARKUS_QUTE_PROPERTY_NOT_FOUND_STRATEGY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18797" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -4447,6 +4897,9 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="paragraph">
 <p>Specify whether the parser should remove standalone lines from the output. A standalone line is a line that contains at least one section tag, parameter declaration, or comment but no expression and no non-whitespace character.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18798">QUARKUS_QUTE_REMOVE_STANDALONE_LINES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18798" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -4460,7 +4913,10 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="content">
 <div class="paragraph">
 <p>If set to <code>true</code> then any expression that is evaluated to a <code>Results.NotFound</code> value will always result in a <code>TemplateException</code> and the rendering is aborted.
- Note that the <code>quarkus.qute.property-not-found-strategy</code> config property is completely ignored if strict rendering is enabled.</p>
+Note that the <code>quarkus.qute.property-not-found-strategy</code> config property is completely ignored if strict rendering is enabled.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18799">QUARKUS_QUTE_STRICT_RENDERING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18799" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -4476,6 +4932,9 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="paragraph">
 <p>The global rendering timeout in milliseconds. It is used if no <code>timeout</code> template instance attribute is set.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18800">QUARKUS_QUTE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18800" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
@@ -4490,6 +4949,9 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="paragraph">
 <p>If set to <code>true</code> then the timeout should also be used for asynchronous rendering methods, such as <code>TemplateInstance#createUni()</code> and <code>TemplateInstance#renderAsync()</code>.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18801">QUARKUS_QUTE_USE_ASYNC_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18801" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -4503,6 +4965,9 @@ goodbye=Best regards, {name} <i class="conum" data-value="1"></i><b>(1)</b></cod
 <div class="content">
 <div class="paragraph">
 <p>The additional map of suffixes to content types. This map is used when working with template variants. By default, the <code>java.net.URLConnection#getFileNameMap()</code> is used to determine the content type of a template file.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18802">QUARKUS_QUTE_CONTENT_TYPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18802" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -4659,23 +5124,37 @@ Keep in mind that reflection may not work correctly in some restricted environme
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -4684,15 +5163,29 @@ Keep in mind that reflection may not work correctly in some restricted environme
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -4701,19 +5194,33 @@ Keep in mind that reflection may not work correctly in some restricted environme
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -4722,11 +5229,21 @@ Keep in mind that reflection may not work correctly in some restricted environme
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -4737,21 +5254,21 @@ Keep in mind that reflection may not work correctly in some restricted environme
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

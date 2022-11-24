@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - OpenID Connect (OIDC) and OAuth2 Client and Filters Reference Guide - main</title>
+  <title>OpenID Connect (OIDC) and OAuth2 Client and Filters Reference Guide - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/security-openid-connect-client-reference" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/security-openid-connect-client-reference" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/security-openid-connect-client-reference" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/security-openid-connect-client-reference" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/security-openid-connect-client-reference" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/security-openid-connect-client-reference">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/security-openid-connect-client-reference">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/security-openid-connect-client-reference">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,48 +124,24 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-      
-        
-        
-        
-        
-      
-        
-        
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -174,11 +163,13 @@
 <li><a href="#oidc-client-filter">Use OidcClient in RestClient ClientFilter</a></li>
 <li><a href="#use-custom-restclient-clientfilter">Use Custom RestClient ClientFilter</a></li>
 <li><a href="#refresh-access-tokens">Refreshing Access Tokens</a></li>
+<li><a href="#revoke-access-tokens">Revoking Access Tokens</a></li>
 <li><a href="#oidc-client-authentication">OidcClient Authentication</a></li>
 <li><a href="#integration-testing-oidc-client">Testing</a></li>
 <li><a href="#how-to-check-the-errors-in-the-logs">How to check the errors in the logs</a></li>
 </ul>
 </li>
+<li><a href="#token-propagation-reactive">Token Propagation Reactive</a></li>
 <li><a href="#token-propagation">Token Propagation</a>
 <ul class="sectlevel2">
 <li><a href="#restclient-accesstokenrequestfilter">RestClient AccessTokenRequestFilter</a></li>
@@ -201,7 +192,7 @@
 <p><code>quarkus-oidc-client</code>, <code>quarkus-oidc-client-reactive-filter</code> and <code>quarkus-oidc-client-filter</code> extensions to acquire and refresh access tokens from OpenID Connect and OAuth 2.0 compliant Authorization Servers such as <a href="https://www.keycloak.org">Keycloak</a></p>
 </li>
 <li>
-<p><code>quarkus-oidc-token-propagation</code> and <code>quarkus-oidc-token-propagation-reactive</code> extensions to propagate the current <code>Bearer</code> or <code>Authorization Code Flow</code> access tokens</p>
+<p><code>quarkus-oidc-token-propagation-reactive</code> and <code>quarkus-oidc-token-propagation</code> extensions to propagate the current <code>Bearer</code> or <code>Authorization Code Flow</code> access tokens</p>
 </li>
 </ul>
 </div>
@@ -325,7 +316,7 @@ quarkus.oidc-client.grant-options.password.password=alice</code></pre>
 <div class="sect3">
 <h4 id="other-grants"><a class="anchor" href="#other-grants"></a>Other Grants</h4>
 <div class="paragraph">
-<p><code>OidcClient</code> can also help with acquiring the tokens using the grants which require some extra input parameters which can not be captured in the configuration. These grants are <code>refresh token</code> (with the external refresh token), <code>token exchange</code> and <code>authorization code</code>.</p>
+<p><code>OidcClient</code> can also help with acquiring the tokens using the grants which require some extra input parameters which can not be captured in the configuration. These grants are <code>refresh_token</code> (with the external refresh token), <code>authorization_code</code>, as well as two grants which can be used to exchange the current access token, <code>urn:ietf:params:oauth:grant-type:token-exchange</code> and <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code>.</p>
 </div>
 <div class="paragraph">
 <p>Using the <code>refresh_token</code> grant which uses an out-of-band refresh token to acquire a new set of tokens will be required if the existing refresh token has been posted to the current Quarkus endpoint for it to acquire the access token. In this case <code>OidcClient</code> needs to be configured as follows:</p>
@@ -342,7 +333,7 @@ quarkus.oidc-client.grant.type=refresh</code></pre>
 <p>and then you can use <code>OidcClient.refreshTokens</code> method with a provided refresh token to get the access token.</p>
 </div>
 <div class="paragraph">
-<p>Using the <code>token exchange</code> grant may be required if you are building a complex microservices application and would like to avoid the same <code>Bearer</code> token be propagated to and used by more than one service. Please see <a href="#token-propagation">Token Propagation in MicroProfile RestClient client filter</a> for more details.</p>
+<p>Using the <code>urn:ietf:params:oauth:grant-type:token-exchange</code> or <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code> grants may be required if you are building a complex microservices application and would like to avoid the same <code>Bearer</code> token be propagated to and used by more than one service. Please see <a href="#token-propagation-reactive">Token Propagation in MicroProfile RestClient Reactive filter</a> and <a href="#token-propagation">Token Propagation in MicroProfile RestClient filter</a> for more details.</p>
 </div>
 <div class="paragraph">
 <p>Using <code>OidcClient</code> to support the <code>authorization code</code> grant might be required if for some reasons you can not use the <a href="security-openid-connect-web-authentication">Quarkus OpenID Connect extension</a> to support Authorization Code Flow. If there is a very good reason for you to implement Authorization Code Flow then you can configure <code>OidcClient</code> as follows:</p>
@@ -626,7 +617,30 @@ public class OidcClientRequestCustomFilter implements ClientRequestFilter {
 <p>It works similarly to the way <code>OidcClientRequestFilter</code> does (see <a href="#oidc-client-filter">Use OidcClient in MicroProfile RestClient client filter</a>) - it uses <code>OidcClient</code> to acquire the access token, refresh it if needed, and set it as an HTTP <code>Authorization</code> <code>Bearer</code> scheme value. The difference is that it works with <a href="rest-client-reactive">Reactive RestClient</a> and implements a non-blocking client filter which does not block the current IO thread when acquiring or refreshing the tokens.</p>
 </div>
 <div class="paragraph">
-<p><code>OidcClientRequestReactiveFilter</code> delays an initial token acquisition until it is executed to avoid blocking an IO thread, and it currently can only be registered with <code>org.eclipse.microprofile.rest.client.annotation.RegisterProvider</code> annotation:</p>
+<p><code>OidcClientRequestReactiveFilter</code> delays an initial token acquisition until it is executed to avoid blocking an IO thread.</p>
+</div>
+<div class="paragraph">
+<p>You can selectively register <code>OidcClientRequestReactiveFilter</code> by using either io.quarkus.oidc.client.reactive.filter.OidcClientFilter or org.eclipse.microprofile.rest.client.annotation.RegisterProvider annotations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+import io.quarkus.oidc.client.filter.OidcClientFilter;
+import io.smallrye.mutiny.Uni;
+
+@RegisterRestClient
+@OidcClientFilter
+@Path("/")
+public interface ProtectedResourceService {
+
+    @GET
+    Uni&lt;String&gt; getUserName();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -759,6 +773,18 @@ Additionally, <code>quarkus.oidc-client.refresh-token-time-skew</code> property 
 </div>
 </div>
 <div class="sect2">
+<h3 id="revoke-access-tokens"><a class="anchor" href="#revoke-access-tokens"></a>Revoking Access Tokens</h3>
+<div class="paragraph">
+<p>If your OpenId Connect provider such as Keycloak supports a token revocation endpoint then <code>OidcClient#revokeAccessToken</code> can be used to revoke the current access token. The revocation endpoint URL will be discovered alongside the token request URI or can be configured with <code>quarkus.oidc-client.revoke-path</code>.</p>
+</div>
+<div class="paragraph">
+<p>You may want to have the access token revoked if using this token with a REST client fails with HTTP <code>401</code> or the access token has already been used for a long time and you&#8217;d like to refresh it.</p>
+</div>
+<div class="paragraph">
+<p>This can be achieved by requesting a token refresh using a refresh token. However, if the refresh token is not available then you can refresh it by revoking it first and then request a new access token.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="oidc-client-authentication"><a class="anchor" href="#oidc-client-authentication"></a>OidcClient Authentication</h3>
 <div class="paragraph">
 <p><code>OidcClient</code> has to authenticate to the OpenID Connect Provider for the <code>client_credentials</code> and other grant requests to succeed.
@@ -792,7 +818,7 @@ quarkus.oidc-client.credentials.client-secret.value=mysecret</code></pre>
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.oidc-client.auth-server-url=http://localhost:8180/auth/realms/quarkus/
 quarkus.oidc-client.client-id=quarkus-app
 
-# This is a key which will be used to retrieve a secret from the map of credentails returned from CredentialsProvider
+# This is a key which will be used to retrieve a secret from the map of credentials returned from CredentialsProvider
 quarkus.oidc-client.credentials.client-secret.provider.key=mysecret-key
 # Set it only if more than one CredentialsProvider can be registered
 quarkus.oidc-client.credentials.client-secret.provider.name=oidc-credentials-provider</code></pre>
@@ -1089,6 +1115,90 @@ quarkus.log.category."io.quarkus.oidc.client.runtime.OidcClientRecorder".min-lev
 </div>
 </div>
 <div class="sect1">
+<h2 id="token-propagation-reactive"><a class="anchor" href="#token-propagation-reactive"></a>Token Propagation Reactive</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>quarkus-oidc-token-propagation-reactive</code> extension provides RestEasy Reactive Client <code>io.quarkus.oidc.token.propagation.reactive.AccessTokenRequestReactiveFilter</code> that simplifies the propagation of authentication information by propagating the <a href="security-openid-connect">Bearer</a> token present in the current active request or the token acquired from the <a href="security-openid-connect-web-authentication">Authorization Code Flow</a>, as the HTTP <code>Authorization</code> header&#8217;s <code>Bearer</code> scheme value.</p>
+</div>
+<div class="paragraph">
+<p>You can selectively register <code>AccessTokenRequestReactiveFilter</code> by using either <code>io.quarkus.oidc.token.propagation.AccessToken</code> or <code>org.eclipse.microprofile.rest.client.annotation.RegisterProvider</code> annotation, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+import io.quarkus.oidc.token.propagation.AccessToken;
+
+@RegisterRestClient
+@AccessToken
+@Path("/")
+public interface ProtectedResourceService {
+
+    @GET
+    String getUserName();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+import io.quarkus.oidc.token.propagation.reactive.AccessTokenRequestReactiveFilter;
+
+@RegisterRestClient
+@RegisterProvider(AccessTokenRequestReactiveFilter.class)
+@Path("/")
+public interface ProtectedResourceService {
+
+    @GET
+    String getUserName();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Additionally, <code>AccessTokenRequestReactiveFilter</code> can support a complex application that needs to exchange the tokens before propagating them.</p>
+</div>
+<div class="paragraph">
+<p>If you work with <a href="https://www.keycloak.org/docs/latest/securing_apps/#_token-exchange">Keycloak</a> or other OpenID Connect Providers which support a <a href="https://tools.ietf.org/html/rfc8693">Token Exchange</a> token grant then you can configure <code>AccessTokenRequestReactiveFilter</code> to exchange the token like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.oidc-client.auth-server-url=http://localhost:8180/auth/realms/quarkus
+quarkus.oidc-client.client-id=quarkus-app
+quarkus.oidc-client.credentials.secret=secret
+quarkus.oidc-client.grant.type=exchange
+quarkus.oidc-client.grant-options.exchange.audience=quarkus-app-exchange
+
+quarkus.oidc-token-propagation.exchange-token=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note <code>AccessTokenRequestReactiveFilter</code> will use <code>OidcClient</code> to exchange the current token, and you can use <code>quarkus.oidc-client.grant-options.exchange</code> to set the additional exchange properties expected by your OpenID Connect Provider.</p>
+</div>
+<div class="paragraph">
+<p>If you work with providers such as <code>Azure</code> that <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#example">require using</a> <a href="https://www.rfc-editor.org/rfc/rfc7523#section-2.1">JWT bearer token grant</a> to exhange the current token then you can configure <code>AccessTokenRequestReactiveFilter</code> to exchange the token like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.oidc-client.auth-server-url=${azure.provider.url}
+quarkus.oidc-client.client-id=quarkus-app
+quarkus.oidc-client.credentials.secret=secret
+
+quarkus.oidc-client.grant.type=jwt
+quarkus.oidc-client.grant-options.jwt.requested_token_use=on_behalf_of
+quarkus.oidc-client.scopes=https://graph.microsoft.com/user.read,offline_access
+
+quarkus.oidc-token-propagation-reactive.exchange-token=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>AccessTokenRequestReactiveFilter</code> uses a default <code>OidcClient</code> by default. A named <code>OidcClient</code> can be selected with a <code>quarkus.oidc-token-propagation-reactive.client-name</code> configuration property.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="token-propagation"><a class="anchor" href="#token-propagation"></a>Token Propagation</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1165,6 +1275,22 @@ quarkus.oidc-client.client-id=quarkus-app
 quarkus.oidc-client.credentials.secret=secret
 quarkus.oidc-client.grant.type=exchange
 quarkus.oidc-client.grant-options.exchange.audience=quarkus-app-exchange
+
+quarkus.oidc-token-propagation.exchange-token=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you work with providers such as <code>Azure</code> that <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#example">require using</a> <a href="https://www.rfc-editor.org/rfc/rfc7523#section-2.1">JWT bearer token grant</a> to exhange the current token then you can configure <code>AccessTokenRequestFilter</code> to exchange the token like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.oidc-client.auth-server-url=${azure.provider.url}
+quarkus.oidc-client.client-id=quarkus-app
+quarkus.oidc-client.credentials.secret=secret
+
+quarkus.oidc-client.grant.type=jwt
+quarkus.oidc-client.grant-options.jwt.requested_token_use=on_behalf_of
+quarkus.oidc-client.scopes=https://graph.microsoft.com/user.read,offline_access
 
 quarkus.oidc-token-propagation.exchange-token=true</code></pre>
 </div>
@@ -1320,23 +1446,37 @@ However, these features may be added in the future.</p>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1345,15 +1485,29 @@ However, these features may be added in the future.</p>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1362,19 +1516,33 @@ However, these features may be added in the future.</p>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1383,11 +1551,21 @@ However, these features may be added in the future.</p>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1398,21 +1576,21 @@ However, these features may be added in the future.</p>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Mailer Reference Guide - main</title>
+  <title>Mailer Reference Guide - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/mailer-reference" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/mailer-reference" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/mailer-reference" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/mailer-reference" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/mailer-reference" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/mailer-reference">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/mailer-reference">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/mailer-reference">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,60 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -183,10 +161,17 @@
 <li><a href="#execution-model">Execution model</a></li>
 <li><a href="#testing">Testing email sending</a></li>
 <li><a href="#using-the-underlying-vert-x-mail-client">Using the underlying Vert.x Mail Client</a></li>
-<li><a href="#gmail-specific-configuration">Gmail specific configuration</a></li>
 <li><a href="#using-ssl-with-native-executables">Using SSL with native executables</a></li>
 <li><a href="#configuring-the-smtp-credentials">Configuring the SMTP credentials</a></li>
 <li><a href="#configuring-a-trust-store">Configuring a trust store</a></li>
+<li><a href="#popular">Mailer configuration for popular email services</a>
+<ul class="sectlevel2">
+<li><a href="#gmail-specific-configuration">Gmail specific configuration</a></li>
+<li><a href="#aws-ses-simple-email-service">AWS SES - Simple Email Service</a></li>
+<li><a href="#mailjet">MailJet</a></li>
+<li><a href="#sendgrid">Sendgrid</a></li>
+</ul>
+</li>
 <li><a href="#configuration-reference">Mailer Configuration Reference</a></li>
 </ul></div>
     <div>
@@ -591,74 +576,6 @@ You can also create your own instance, and pass your own configuration.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="gmail-specific-configuration"><a class="anchor" href="#gmail-specific-configuration"></a>Gmail specific configuration</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you want to use the Gmail SMTP server, first create a dedicated password in <code>Google Account &gt; Security &gt; App passwords</code> or go to <a href="https://myaccount.google.com/apppasswords" class="bare">https://myaccount.google.com/apppasswords</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You need to switch on 2-Step Verification at <a href="https://myaccount.google.com/security" class="bare">https://myaccount.google.com/security</a> in order to access the App passwords page.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>When done, you can configure your Quarkus application by adding the following properties to your <code>application.properties</code>:</p>
-</div>
-<div class="paragraph">
-<p>With TLS:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.mailer.auth-methods=DIGEST-MD5 CRAM-SHA256 CRAM-SHA1 CRAM-MD5 PLAIN LOGIN
-quarkus.mailer.from=YOUREMAIL@gmail.com
-quarkus.mailer.host=smtp.gmail.com
-quarkus.mailer.port=587
-quarkus.mailer.start-tls=REQUIRED
-quarkus.mailer.username=YOUREMAIL@gmail.com
-quarkus.mailer.password=YOURGENERATEDAPPLICATIONPASSWORD</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Or with SSL:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.mailer.auth-methods=DIGEST-MD5 CRAM-SHA256 CRAM-SHA1 CRAM-MD5 PLAIN LOGIN
-quarkus.mailer.from=YOUREMAIL@gmail.com
-quarkus.mailer.host=smtp.gmail.com
-quarkus.mailer.port=465
-quarkus.mailer.ssl=true
-quarkus.mailer.username=YOUREMAIL@gmail.com
-quarkus.mailer.password=YOURGENERATEDAPPLICATIONPASSWORD</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The <code>quarkus.mailer.auth-methods</code> configuration option is needed for the Quarkus mailer to support password authentication with Gmail.
-By default, both the mailer and Gmail default to <code>XOAUTH2</code> which requires registering an application, getting tokens, etc.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="using-ssl-with-native-executables"><a class="anchor" href="#using-ssl-with-native-executables"></a>Using SSL with native executables</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -680,6 +597,7 @@ extension can be simply configured as:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">...
 # path within the kv secret engine where is located the application sensitive configuration
+# This uses the https://github.com/quarkiverse/quarkus-vault extension.
 quarkus.vault.secret-config-kv-path=myapps/myapp/myconfig
 
 ...
@@ -689,6 +607,19 @@ quarkus.mailer.password=${mail-password}</code></pre>
 <div class="paragraph">
 <p>Please note that the password value is evaluated only once, at startup time. If <code>mail-password</code> was changed in Vault,
 the only way to get the new value would be to restart the application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Do use Vault, you need the <a href="https://github.com/quarkiverse/quarkus-vault">Quarkus Vault</a> extension.
+More details about this extension and its configuration can be found in the <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-vault/dev/index.html">extension documentation</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -723,10 +654,10 @@ quarkus.mailer.trust-store.type=JKS # the type of trust store if it can't be ded
 <div class="paragraph">
 <p>Quarkus mailer supports JKS, PKCS#12 and PEM trust stores.
 For PEM, you can configure multiple files.
-For JKS and PCKS#12, you can configure the password if any.</p>
+For JKS and PKCS#12, you can configure the password if any.</p>
 </div>
 <div class="paragraph">
-<p><code>quarkus.mailer.trust-store.type</code> is optional and allows configuring the type of trust store (among <code>JKS</code>, <code>PEM</code> and <code>PCKS</code>).
+<p><code>quarkus.mailer.trust-store.type</code> is optional and allows configuring the type of trust store (among <code>JKS</code>, <code>PEM</code> and <code>PKCS</code>).
 When not set, Quarkus tries to deduce the type from the file name.</p>
 </div>
 <div class="admonitionblock note">
@@ -740,6 +671,203 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="popular"><a class="anchor" href="#popular"></a>Mailer configuration for popular email services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides the configurations to use with popular mail services.</p>
+</div>
+<div class="sect2">
+<h3 id="gmail-specific-configuration"><a class="anchor" href="#gmail-specific-configuration"></a>Gmail specific configuration</h3>
+<div class="paragraph">
+<p>If you want to use the Gmail SMTP server, first create a dedicated password in <code>Google Account &gt; Security &gt; App passwords</code> or go to <a href="https://myaccount.google.com/apppasswords" class="bare">https://myaccount.google.com/apppasswords</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You need to switch on 2-Step Verification at <a href="https://myaccount.google.com/security" class="bare">https://myaccount.google.com/security</a> in order to access the App passwords page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When done, you can configure your Quarkus application by adding the following properties to your <code>application.properties</code>:</p>
+</div>
+<div class="paragraph">
+<p>With TLS:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.mailer.auth-methods=DIGEST-MD5 CRAM-SHA256 CRAM-SHA1 CRAM-MD5 PLAIN LOGIN
+quarkus.mailer.from=YOUREMAIL@gmail.com
+quarkus.mailer.host=smtp.gmail.com
+quarkus.mailer.port=587
+quarkus.mailer.start-tls=REQUIRED
+quarkus.mailer.username=YOUREMAIL@gmail.com
+quarkus.mailer.password=YOURGENERATEDAPPLICATIONPASSWORD
+
+quarkus.mailer.mock=false # In dev mode, prevent from using the mock SMTP server</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or with SSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.mailer.auth-methods=DIGEST-MD5 CRAM-SHA256 CRAM-SHA1 CRAM-MD5 PLAIN LOGIN
+quarkus.mailer.from=YOUREMAIL@gmail.com
+quarkus.mailer.host=smtp.gmail.com
+quarkus.mailer.port=465
+quarkus.mailer.ssl=true
+quarkus.mailer.username=YOUREMAIL@gmail.com
+quarkus.mailer.password=YOURGENERATEDAPPLICATIONPASSWORD
+
+quarkus.mailer.mock=false # In dev mode, prevent from using the mock SMTP server</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>quarkus.mailer.auth-methods</code> configuration option is needed for the Quarkus mailer to support password authentication with Gmail.
+By default, both the mailer and Gmail default to <code>XOAUTH2</code> which requires registering an application, getting tokens, etc.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aws-ses-simple-email-service"><a class="anchor" href="#aws-ses-simple-email-service"></a>AWS SES - Simple Email Service</h3>
+<div class="sect3">
+<h4 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>SES Identity Check, follow the process to setup the DKIM verification</p>
+</li>
+<li>
+<p>Retrieve SMTP endpoint from <a href="https://us-east-1.console.aws.amazon.com/ses/home" class="bare">https://us-east-1.console.aws.amazon.com/ses/home</a>, example: <code>email-smtp.us-east-1.amazonaws.com</code></p>
+</li>
+<li>
+<p>Create SMTP credentials if needed</p>
+</li>
+<li>
+<p>If you are in a sandbox, also verify the recipients (using email verification)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">ses.smtp=...
+ses.user=...
+ses.password=...
+ses.from=an email address from the verified domain
+
+quarkus.mailer.host=${ses.smtp}
+quarkus.mailer.port=587
+quarkus.mailer.username=${ses.user}
+quarkus.mailer.password=${ses.password}
+quarkus.mailer.start-tls=REQUIRED
+quarkus.mailer.login=REQUIRED
+quarkus.mailer.from=${ses.from}
+
+quarkus.mailer.mock=false # In dev mode, prevent from using the mock SMTP server</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mailjet"><a class="anchor" href="#mailjet"></a>MailJet</h3>
+<div class="paragraph">
+<p>The mailjet integration is used on an SMTP relay.
+You are going to send the email using this SMTP server.</p>
+</div>
+<div class="sect3">
+<h4 id="prerequisites-2"><a class="anchor" href="#prerequisites-2"></a>Prerequisites</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a mailJet account and the API key / Secret Key</p>
+</li>
+<li>
+<p>The sender address must be verified (SPF + DKIM) and the email explicitly added to the verified list</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuration-2"><a class="anchor" href="#configuration-2"></a>Configuration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">mailjet.smtp-host=in-v3.mailjet.com
+mailjet.api-key=...
+mailjet.secret-key=...
+mailjet.from=the verified sender address
+
+quarkus.mailer.host=${mailjet.smtp-host}
+quarkus.mailer.port=465
+quarkus.mailer.username=${mailjet.api-key}
+quarkus.mailer.password=${mailjet.secret-key}
+quarkus.mailer.start-tls=OPTIONAL
+quarkus.mailer.ssl=true
+quarkus.mailer.login=REQUIRED
+quarkus.mailer.from=${mailjet.from}
+
+quarkus.mailer.mock=false # In dev mode, prevent from using the mock SMTP server</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sendgrid"><a class="anchor" href="#sendgrid"></a>Sendgrid</h3>
+<div class="sect3">
+<h4 id="prerequisites-3"><a class="anchor" href="#prerequisites-3"></a>Prerequisites</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Follow the instruction to verify the sender domain using DKIM</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuration-3"><a class="anchor" href="#configuration-3"></a>Configuration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">sendgrid.smtp-host=smtp.sendgrid.net
+sendgrid.username=apikey
+sendgrid.key=...
+
+quarkus.mailer.host=${sendgrid.smtp-host}
+quarkus.mailer.port=465
+quarkus.mailer.username=${sendgrid.username}
+quarkus.mailer.password=${sendgrid.key}
+quarkus.mailer.start-tls=OPTIONAL
+quarkus.mailer.ssl=true
+quarkus.mailer.login=REQUIRED
+quarkus.mailer.from=...
+
+quarkus.mailer.mock=false # In dev mode, prevent from using the mock SMTP server</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -770,6 +898,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Caches data from attachment&#8217;s Stream to a temporary file. It tries to delete it after sending email.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18476">QUARKUS_MAILER_CACHE_ATTACHMENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18476" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -784,6 +915,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets the default <code>from</code> attribute when not specified in the <code>io.quarkus.mailer.Mail</code> instance. It&#8217;s the sender email address.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18477">QUARKUS_MAILER_FROM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18477" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -797,7 +931,10 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Enables the mock mode. When enabled, mails are not sent, but stored in an in-memory mailbox. The content of the emails is also printed on the console.
- Disabled by default on PROD, enabled by default on DEV and TEST modes.</p>
+Disabled by default on PROD, enabled by default on DEV and TEST modes.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18478">QUARKUS_MAILER_MOCK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18478" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -813,6 +950,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets the default bounce email address. A bounced email, or bounce, is an email message that gets rejected by a mail server.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18479">QUARKUS_MAILER_BOUNCE_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18479" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -826,6 +966,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets the SMTP host name.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18480">QUARKUS_MAILER_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18480" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -841,6 +984,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>The SMTP port. The default value depends on the configuration. The port 25 is used as default when <code>ssl</code> is disabled. This port continues to be used primarily for SMTP relaying. SMTP relaying is the transmission of email from email server to email server. The port 587 is the default port when <code>ssl</code> is enabled. It ensures that email is submitted securely. Note that the port 465 may be used by SMTP servers, however, IANA has reassigned a new service to this port, and it should no longer be used for SMTP communications.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18481">QUARKUS_MAILER_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18481" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -854,6 +1000,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets the username to connect to the SMTP server.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18482">QUARKUS_MAILER_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18482" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -869,6 +1018,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets the password to connect to the SMTP server.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18483">QUARKUS_MAILER_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18483" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -882,6 +1034,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Enables or disables the TLS/SSL.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18484">QUARKUS_MAILER_SSL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18484" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -897,6 +1052,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Set whether all server certificates should be trusted. This option is only used when <code>ssl</code> is enabled.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18485">QUARKUS_MAILER_TRUST_ALL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18485" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -910,6 +1068,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets the max number of open connections to the mail server.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18486">QUARKUS_MAILER_MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18486" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -925,6 +1086,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets the hostname to be used for HELO/EHLO and the Message-ID.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18487">QUARKUS_MAILER_OWN_HOST_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18487" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -938,6 +1102,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets if connection pool is enabled. If the connection pooling is disabled, the max number of sockets is enforced nevertheless.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18488">QUARKUS_MAILER_KEEP_ALIVE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18488" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -953,6 +1120,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Disable ESMTP. The RFC-1869 states that clients should always attempt <code>EHLO</code> as first command to determine if ESMTP is supported, if this returns an error code, <code>HELO</code> is tried to use the <strong>regular</strong> SMTP command.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18489">QUARKUS_MAILER_DISABLE_ESMTP</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18489" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -966,6 +1136,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets the TLS security mode for the connection. Either <code>DISABLED</code>, <code>OPTIONAL</code> or <code>REQUIRED</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18490">QUARKUS_MAILER_START_TLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18490" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -981,6 +1154,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Enables DKIM signing.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18491">QUARKUS_MAILER_DKIM_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18491" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -994,6 +1170,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Configures the PKCS#8 format private key used to sign the email.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18492">QUARKUS_MAILER_DKIM_PRIVATE_KEY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18492" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1009,6 +1188,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Configures the PKCS#8 format private key file path.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18493">QUARKUS_MAILER_DKIM_PRIVATE_KEY_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18493" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1021,7 +1203,10 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Configures the Agent or User Identifier(AUID).</p>
+<p>Configures the Agent or User Identifier (AUID).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18494">QUARKUS_MAILER_DKIM_AUID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18494" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1037,6 +1222,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Configures the selector used to query the public key.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18495">QUARKUS_MAILER_DKIM_SELECTOR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18495" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1049,7 +1237,10 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Configures the Signing Domain Identifier.</p>
+<p>Configures the Signing Domain Identifier (SDID).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18496">QUARKUS_MAILER_DKIM_SDID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18496" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1064,6 +1255,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Configures the canonicalization algorithm for signed headers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18497">QUARKUS_MAILER_DKIM_HEADER_CANON_ALGO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18497" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1081,6 +1275,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Configures the canonicalization algorithm for mail body.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18498">QUARKUS_MAILER_DKIM_BODY_CANON_ALGO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18498" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
@@ -1097,6 +1294,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Configures the body limit to sign. Must be greater than zero.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18499">QUARKUS_MAILER_DKIM_BODY_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18499" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1110,6 +1310,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Configures to enable or disable signature sign timestamp.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18500">QUARKUS_MAILER_DKIM_SIGNATURE_TIMESTAMP</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18500" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1125,6 +1328,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Configures the expire time in seconds when the signature sign will be expired. Must be greater than zero.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18501">QUARKUS_MAILER_DKIM_EXPIRE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18501" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
@@ -1138,6 +1344,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Configures the signed headers in DKIM, separated by commas. The order in the list matters.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18502">QUARKUS_MAILER_DKIM_SIGNED_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18502" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1157,6 +1366,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
  - REQUIRED means that a login will be attempted if the server supports it and the send operation will fail otherwise
  - XOAUTH2 means that a login will be attempted using Google Gmail Oauth2 tokens</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18503">QUARKUS_MAILER_LOGIN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18503" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1170,6 +1382,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets the allowed authentication methods. These methods will be used only if the server supports them. If not set, all supported methods may be used. The list is given as a space separated list, such as <code>DIGEST-MD5 CRAM-SHA256 CRAM-SHA1 CRAM-MD5 PLAIN LOGIN</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18504">QUARKUS_MAILER_AUTH_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18504" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1185,6 +1400,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets the trust store password if any. Note that the password is only used for JKS and PCK#12 trust stores.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18505">QUARKUS_MAILER_TRUSTSTORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18505" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1198,7 +1416,10 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets the location of the trust store files. If you use JKS or PCK#12, only one path is allowed. If you use PEM files, you can specify multiple paths.
- The relative paths are relative to the application working directly.</p>
+The relative paths are relative to the application working directly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18506">QUARKUS_MAILER_TRUSTSTORE_PATHS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18506" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1212,7 +1433,10 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Sets the trust store type. By default, it guesses the type from the file name extension. For instance, <code>truststore.pem</code> will be seen as a PEM file, while <code>truststore.jks</code> will be seen as a JKS file. <code>truststore.p12</code> and <code>truststore.pfx</code> will both be seen as PCK#12 files. Accepted values are: <code>JKS</code>, <code>PEM</code>, <code>PCKS</code>.</p>
+<p>Sets the trust store type. By default, it guesses the type from the file name extension. For instance, <code>truststore.pem</code> will be seen as a PEM file, while <code>truststore.jks</code> will be seen as a JKS file. <code>truststore.p12</code> and <code>truststore.pfx</code> will both be seen as PKCS#12 files. Accepted values are: <code>JKS</code>, <code>PEM</code>, <code>PKCS</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18507">QUARKUS_MAILER_TRUSTSTORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18507" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1226,7 +1450,10 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Whether or not the mail should always been sent as multipart even if they don&#8217;t have attachments. When sets to true, the mail message will be encoded as multipart even for simple mails without attachments.</p>
+<p>Whether the mail should always been sent as multipart even if they don&#8217;t have attachments. When sets to true, the mail message will be encoded as multipart even for simple mails without attachments.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18508">QUARKUS_MAILER_MULTI_PART_ONLY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18508" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1242,6 +1469,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets if sending allows recipients errors. If set to true, the mail will be sent to the recipients that the server accepted, if any.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18509">QUARKUS_MAILER_ALLOW_RCPT_ERRORS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18509" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1255,6 +1485,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Enables or disables the pipelining capability if the SMTP server supports it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18510">QUARKUS_MAILER_PIPELINING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18510" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1270,10 +1503,13 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets the connection pool cleaner period. Zero disables expiration checks and connections will remain in the pool until they are closed.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18511">QUARKUS_MAILER_POOL_CLEANER_PERIOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18511" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-mailer" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>PT1S</code></p></td>
 </tr>
 <tr>
@@ -1285,10 +1521,13 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Set the keep alive timeout for the SMTP connection. This value determines how long a connection remains unused in the pool before being evicted and closed. A timeout of 0 means there is no timeout.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18512">QUARKUS_MAILER_KEEP_ALIVE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18512" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-mailer" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>PT300S</code></p></td>
 </tr>
 <tr>
@@ -1299,6 +1538,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="content">
 <div class="paragraph">
 <p>Sets the workstation used on NTLM authentication.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18513">QUARKUS_MAILER_NTLM_WORKSTATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18513" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1314,6 +1556,9 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 <div class="paragraph">
 <p>Sets the domain used on NTLM authentication.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-18514">QUARKUS_MAILER_NTLM_DOMAIN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18514" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1321,7 +1566,7 @@ You can also configure <code>quarkus.mailer.trust-all=true</code> to bypass the 
 </tr>
 </tbody>
 </table>
-<div id="duration-note-anchor" class="admonitionblock note">
+<div id="duration-note-anchor-quarkus-mailer" class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
@@ -1364,23 +1609,37 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1389,15 +1648,29 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1406,19 +1679,33 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1427,11 +1714,21 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1442,21 +1739,21 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

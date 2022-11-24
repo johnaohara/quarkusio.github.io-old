@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Using Podman with Quarkus - main</title>
+  <title>Using Podman with Quarkus - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/podman" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/podman" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/podman" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/podman" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/podman" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/podman">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/podman">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/podman">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,48 +124,24 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-      
-        
-        
-        
-        
-      
-        
-        
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -162,112 +151,200 @@
   </div>
   <div class="width-12-12">
     <div class="hide-mobile toc"><ul class="sectlevel1">
-<li><a href="#installing-podman-on-linux">Installing Podman on Linux</a>
+<li><a href="#installing-podman">Installing Podman</a>
 <ul class="sectlevel2">
-<li><a href="#after-installation">After installation</a></li>
-<li><a href="#short-names-of-images">Short names of images</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#setting-docker_host-on-linux">Setting DOCKER_HOST on Linux</a></li>
 </ul>
 </li>
-<li><a href="#other-operating-systems">Other operating systems</a></li>
+<li><a href="#after-installation">After installation</a>
+<ul class="sectlevel2">
+<li><a href="#testcontainers-privileges">Testcontainers privileges</a></li>
+</ul>
+</li>
+<li><a href="#short-names-of-images">Short names of images</a></li>
 </ul></div>
     <div>
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://podman.io/">Podman</a> is a daemonless and rootless container engine for developing, managing, and running OCI Containers on your Linux system or other OS.
-Podman can be used the same way as Docker with the <code>podman-docker</code> package.</p>
+If you&#8217;re using Podman with Quarkus, some one-off setup is needed, but once it&#8217;s done, you can take advantage of all the Quarkus features.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installing-podman-on-linux"><a class="anchor" href="#installing-podman-on-linux"></a>Installing Podman on Linux</h2>
+<h2 id="installing-podman"><a class="anchor" href="#installing-podman"></a>Installing Podman</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The Podman package is available in several Linux distributions. To install it for your OS, please refer to the  <a href="https://podman.io/getting-started/installation">Podman installation guide</a>.
-Below is the short installation instruction for popular Linux distributions:</p>
-</div>
-<div class="listingblock">
-<div class="title">Fedora</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo dnf install podman podman-docker docker-compose</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Ubuntu (21.04 and later)</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install podman podman-docker docker-compose</code></pre>
-</div>
-</div>
 <div class="sect2">
-<h3 id="after-installation"><a class="anchor" href="#after-installation"></a>After installation</h3>
+<h3 id="macos"><a class="anchor" href="#macos"></a>macOS</h3>
 <div class="paragraph">
-<p>Podman is a daemonless container engine. Most Quarkus Dev Services and Testcontainers expect a running Docker daemon listening at a Unix socket.
-That&#8217;s why the following steps are required.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Enable the podman socket with Docker REST API
-systemctl --user enable podman.socket --now
-# Set the required envvars
-export DOCKER_HOST=unix:///run/user/${UID}/podman/podman.sock
-export TESTCONTAINERS_RYUK_DISABLED=true</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For a detailed explanation, see this <a href="https://quarkus.io/blog/quarkus-devservices-testcontainers-podman/">blog article</a>.</p>
-</div>
-<div class="paragraph">
-<p>To make changes permanent, add the exported environment variables to the "init" file from your shell. For example, the <code>bash</code> shell uses  the <code>~/.bashrc</code> file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo "export DOCKER_HOST=unix:///run/user/${UID}/podman/podman.sock" &gt;&gt; ~/.bashrc
-echo "export TESTCONTAINERS_RYUK_DISABLED=true" &gt;&gt; ~/.bashrc</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="short-names-of-images"><a class="anchor" href="#short-names-of-images"></a>Short names of images</h3>
-<div class="paragraph">
-<p>Testcontainers and Quarkus Dev Services also expect the container service they make requests against to be non-interactive.
-In case you have multiple registries configured in your Docker or Podman configuration, and when using short image names, Podman responds with a prompt asking which registry should be used to pull images.</p>
-</div>
-<div class="paragraph">
-<p>While we recommend you to avoid short names and always use fully specified names including the registry,
-Testcontainers unfortunately relies on short names internally for the time being.
-If you are using Testcontainers, either directly or through Dev Services,
-you need to disable this prompt by setting the <code>short-name-mode="disabled"</code> configuration property of Podman in <code>/etc/containers/registries.conf</code>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="other-operating-systems"><a class="anchor" href="#other-operating-systems"></a>Other operating systems</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Containers are really Linux. As such, Linux containers cannot run natively on macOS or Windows.
+<p>Containers are really Linux.
+As such, Linux containers cannot run natively on macOS or Windows.
 Therefore, the containers must run in a Linux virtual machine (VM), and a Podman client interacts with that VM.
-So a native hypervisor subsystem and virtualization software is used to run the Linux VM on the OS, and then containers are run within this VM.</p>
+A native hypervisor subsystem and virtualization software is used to run the Linux VM on the OS, and then containers are run within this VM.
+In Podman, this is known as the Podman machine, and it is built into the tool.</p>
 </div>
 <div class="paragraph">
-<div class="title">macOS</div>
-<p>macOS users can install Podman through <a href="https://brew.sh/">Homebrew</a>. Once you have set up <code>brew</code>, you can use the <code>brew install</code> command to install Podman and <code>docker-compose</code>:</p>
+<p>macOS users can install Podman through <a href="https://brew.sh/">Homebrew</a>.
+Once you have set up <code>brew</code>, you can use the <code>brew install</code> command to install Podman and <code>docker-compose</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">brew install podman
 brew install docker-compose
-podman machine init
+podman machine init -v $HOME:$HOME
+PODMAN_VERSION=`podman -v | sed 's/[a-zA-Z ]*//'`
+sudo /opt/homebrew/Cellar/podman/$PODMAN_VERSION/bin/podman-mac-helper install
+podman machine set --rootful
 podman machine start
 alias docker='podman'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For more details, please see the <a href="https://podman.io/getting-started/installation#macos">official Podman documentation</a> and this <a href="https://www.redhat.com/sysadmin/replace-docker-podman-macos">article</a>.</p>
+<p>If you&#8217;re using Podman 4.1 or higher, you don&#8217;t need the <code>-v $HOME:$HOME</code> volume mount.</p>
 </div>
 <div class="paragraph">
-<div class="title">Windows</div>
+<p>If you&#8217;re using Mac M1, an extra step is required to <a href="https://edofic.com/posts/2021-09-12-podman-m1-amd64">make AMD64 images work</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">podman machine ssh
+sudo -i
+rpm-ostree install qemu-user-static
+systemctl reboot</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the virtual machine restarts, you should be good to run dev services.</p>
+</div>
+<div class="paragraph">
+<p>For more details, please see</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <a href="https://podman.io/getting-started/installation#macos">official Podman documentation</a></p>
+</li>
+<li>
+<p>article about <a href="https://www.redhat.com/sysadmin/replace-docker-podman-macos">running Podman on Mac</a></p>
+</li>
+<li>
+<p><a href="https://xphyr.net/post/podman_on_osx/">another article</a>, with good guidance on <code>--rootful</code> and mounting volumes</p>
+</li>
+<li>
+<p>article about <a href="https://edofic.com/posts/2021-09-12-podman-m1-amd64">running AMD64 images with Podman on Mac M1</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="windows"><a class="anchor" href="#windows"></a>Windows</h3>
+<div class="paragraph">
 <p>Please see the <a href="https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md">Podman for Windows guide</a> for setup and usage instructions.</p>
+</div>
+<div class="paragraph">
+<p>Before starting the Podman machine, set it to prefer rootful container execution:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">podman machine set --rootful</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This action only needs to be done once.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="linux"><a class="anchor" href="#linux"></a>Linux</h3>
+<div class="paragraph">
+<p>The Podman package is available in several Linux distributions.
+Podman can be used the same way as Docker with the <code>podman-docker</code> package.
+To install it for your OS, please refer to the  <a href="https://podman.io/getting-started/installation">Podman installation guide</a>.
+Below is the short installation instruction for popular Linux distributions:</p>
+</div>
+<div class="sect3">
+<h4 id="fedora"><a class="anchor" href="#fedora"></a>Fedora</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo dnf install podman podman-docker docker-compose</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ubuntu-21-04-and-later"><a class="anchor" href="#ubuntu-21-04-and-later"></a>Ubuntu (21.04 and later)</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install podman podman-docker docker-compose</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-docker_host-on-linux"><a class="anchor" href="#setting-docker_host-on-linux"></a>Setting DOCKER_HOST on Linux</h3>
+<div class="paragraph">
+<p>Podman supports two modes of operation: rootful, in which case the container runs as root on the host system, and rootless, where the container runs under a standard Unix user account.
+On Linux, the REST API Unix socket is, by default, restricted to only allow the root user to access it.
+This prevents someone from using a container to achieve a privilege escalation on the syetem.
+While these restrictions can be softened to allow a special group instead of just root, the recommended approach is to use rootless Podman on Linux.
+To use rootless Podman, you need to set a DOCKER_HOST environment variable to point to the user-specific socket.
+In both cases, you need to start the REST API by enabling the Podman socket service through systemd.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs"># Enable the podman socket with Docker REST API (only needs to be done once)
+systemctl --user enable podman.socket --now
+# Set the required environment variables (need to be run everytime or added to profile)
+
+export DOCKER_HOST=unix:///run/user/${UID}/podman/podman.sock</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For a detailed explanation, see this <a href="https://quarkus.io/blog/quarkus-devservices-testcontainers-podman/">blog article</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="after-installation"><a class="anchor" href="#after-installation"></a>After installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="testcontainers-privileges"><a class="anchor" href="#testcontainers-privileges"></a>Testcontainers privileges</h3>
+<div class="paragraph">
+<p>Edit <code>~/.testcontainers.properties</code> and add the following line</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ryuk.container.privileged=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can disable ryuk:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">export TESTCONTAINERS_RYUK_DISABLED=true #not recommended - see above!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This has the disadvantage of <a href="https://github.com/containers/podman/discussions/14238">disabling container cleanup</a>, so you may find stale containers hanging around.
+This can be a problem if you&#8217;re running automated tests.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="short-names-of-images"><a class="anchor" href="#short-names-of-images"></a>Short names of images</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Testcontainers and Quarkus Dev Services also expect the container service they make requests against to be non-interactive.
+In case you have multiple registries configured in your Docker or Podman configuration, and when using short image names, Podman responds with a prompt asking which registry should be used to pull images.</p>
+</div>
+<div class="paragraph">
+<p>While we recommend you to avoid short names and always use fully specified names including the registry, Testcontainers unfortunately relies on short names internally for the time being.
+If you are using Testcontainers, either directly or through Dev Services, you need to disable this prompt by setting the <code>short-name-mode="disabled"</code> configuration property of Podman in <code>/etc/containers/registries.conf</code>.</p>
 </div>
 </div>
 </div>
@@ -291,23 +368,37 @@ alias docker='podman'</code></pre>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -316,15 +407,29 @@ alias docker='podman'</code></pre>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -333,19 +438,33 @@ alias docker='podman'</code></pre>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -354,11 +473,21 @@ alias docker='podman'</code></pre>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -369,21 +498,21 @@ alias docker='podman'</code></pre>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

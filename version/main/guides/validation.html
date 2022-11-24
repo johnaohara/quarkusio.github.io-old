@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Validation with Hibernate Validator - main</title>
+  <title>Validation with Hibernate Validator - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/validation" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/validation" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/validation" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/validation" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/validation" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/validation">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/validation">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/validation">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -233,7 +207,7 @@
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.1+</p>
+<p>Apache Maven 3.8.6</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -285,7 +259,7 @@ However, you can go right to the completed example.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus create app org.acme:validation-quickstart \
-    --extension=resteasy-reactive-jackson,hibernate-validator \
+    --extension='resteasy-reactive-jackson,hibernate-validator' \
     --no-code
 cd validation-quickstart</code></pre>
 </div>
@@ -306,7 +280,7 @@ cd validation-quickstart</code></pre>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:999-SNAPSHOT:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=validation-quickstart \
-    -Dextensions="resteasy-reactive-jackson,hibernate-validator" \
+    -Dextensions='resteasy-reactive-jackson,hibernate-validator' \
     -DnoCode
 cd validation-quickstart</code></pre>
 </div>
@@ -332,13 +306,13 @@ to your project by running the following command in your project base directory:
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions="hibernate-validator"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions='hibernate-validator'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
 <div class="title">Gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions="hibernate-validator"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions='hibernate-validator'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -635,7 +609,7 @@ In the <code>src/main/resources/META-INF/resources</code> directory, replace the
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean package</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -659,7 +633,7 @@ In the <code>src/main/resources/META-INF/resources</code> directory, replace the
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -746,6 +720,36 @@ use the <code>@Dependent</code> scope to make sure each annotation context has a
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>If customizing the <code>ValidatorFactory</code> through the available configuration properties and the CDI beans above doesn&#8217;t cover your requirements,
+you can customize it further by registering <code>ValidatorFactoryCustomizer</code> beans.</p>
+</div>
+<div class="paragraph">
+<p>For instance, you could override the built-in validator enforcing the <code>@Email</code> constraint and use <code>MyEmailValidator</code> instead with the following class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@ApplicationScoped
+public class MyEmailValidatorFactoryCustomizer implements ValidatorFactoryCustomizer {
+
+    @Override
+    public void customize(BaseHibernateValidatorConfiguration&lt;?&gt; configuration) {
+        ConstraintMapping constraintMapping = configuration.createConstraintMapping();
+
+        constraintMapping
+                .constraintDefinition(Email.class)
+                .includeExistingValidators(false)
+                .validatedBy(MyEmailValidator.class);
+
+        configuration.addMapping(constraintMapping);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All beans implementing <code>ValidatorFactoryCustomizer</code> are applied, meaning you can have several of them.
+If you need to enforce some ordering, you can use the usual <code>@javax.annotation.Priority</code> annotation - beans with higher priority are applied first.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="constraint-validators-as-beans"><a class="anchor" href="#constraint-validators-as-beans"></a>Constraint validators as beans</h4>
@@ -773,20 +777,30 @@ public class MyConstraintValidator implements ConstraintValidator&lt;MyConstrain
 </div>
 <div class="paragraph">
 <p>When initializing a constraint validator of a given type,
-Quarkus will check if a bean of this type is available and, if so, it will use it instead of instantiating one.</p>
+Quarkus will check if a bean of this type is available and, if so, it will use it instead of instantiating a <code>ConstraintValidator</code>.</p>
 </div>
 <div class="paragraph">
 <p>Thus, as demonstrated in our example, you can fully use injection in your constraint validator beans.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Except in very specific situations, it is recommended to make the said beans <code>@ApplicationScoped</code>.</p>
+<p>The scope you choose for your <code>ConstraintValidator</code> bean is important:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the same instance of the <code>ConstraintValidator</code> bean can be used across the whole application, use the <code>@ApplicationScoped</code> scope.</p>
+</li>
+<li>
+<p>If the <code>ConstraintValidator</code> bean implements the <code>initialize(A constraintAnnotation)</code> method and depends on the state of the constraint annotation, use the <code>@Dependent</code> scope to make sure each annotation context has a separate and properly configured instance of the <code>ConstraintValidator</code> bean.</p>
+</li>
+</ul>
 </div>
 </td>
 </tr>
@@ -809,7 +823,8 @@ quarkus.default-locale=fr-FR</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If you are using RESTEasy Reactive, in the context of a JAX-RS endpoint, Hibernate Validator will automatically resolve the optimal locale to use from the <code>Accept-Language</code> HTTP header,
+<p>If you are using RESTEasy Reactive or RESTEasy Classic, in the context of a JAX-RS endpoint,
+Hibernate Validator will automatically resolve the optimal locale to use from the <code>Accept-Language</code> HTTP header,
 provided the supported locales have been properly specified in the <code>application.properties</code>:</p>
 </div>
 <div class="listingblock">
@@ -817,6 +832,28 @@ provided the supported locales have been properly specified in the <code>applica
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># The list of all the supported locales
 quarkus.locales=en-US,es-ES,fr-FR</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>A similar mechanism exists for GraphQL services based on the <code>quarkus-smallrye-graphql</code> extension.</p>
+</div>
+<div class="paragraph">
+<p>If this default mechanism is not sufficient and you need a custom locale resolution, you can add additional <code>org.hibernate.validator.spi.messageinterpolation.LocaleResolver</code>s:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Any CDI bean implementing <code>org.hibernate.validator.spi.messageinterpolation.LocaleResolver</code> will be taken into account.</p>
+</li>
+<li>
+<p>The <code>LocaleResolver</code>s are consulted in the order of <code>@Priority</code> (higher priority goes first).</p>
+</li>
+<li>
+<p>A <code>LocaleResolver</code> may return null if it cannot resolve the locale, it will then be ignored.</p>
+</li>
+<li>
+<p>The first non-null locale returned by a <code>LocaleResolver</code> is the one resolved.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -942,6 +979,9 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 <div class="paragraph">
 <p>Enable the fail fast mode. When fail fast is enabled the validation will stop on the first constraint violation detected.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-19901">QUARKUS_HIBERNATE_VALIDATOR_FAIL_FAST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-19901" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -960,7 +1000,10 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 <div class="content">
 <div class="paragraph">
 <p>Define whether overriding methods that override constraints should throw a <code>ConstraintDefinitionException</code>. The default value is <code>false</code>, i.e. do not allow.
- See Section 4.5.5 of the JSR 380 specification, specifically "In sub types (be it sub classes/interfaces or interface implementations), no parameter constraints may be declared on overridden or implemented methods, nor may parameters be marked for cascaded validation. This would pose a strengthening of preconditions to be fulfilled by the caller."</p>
+See Section 4.5.5 of the JSR 380 specification, specifically "In sub types (be it sub classes/interfaces or interface implementations), no parameter constraints may be declared on overridden or implemented methods, nor may parameters be marked for cascaded validation. This would pose a strengthening of preconditions to be fulfilled by the caller."</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-19902">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_OVERRIDING_PARAMETER_CONSTRAINTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-19902" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -975,7 +1018,10 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 <div class="content">
 <div class="paragraph">
 <p>Define whether parallel methods that define constraints should throw a <code>ConstraintDefinitionException</code>. The default value is <code>false</code>, i.e. do not allow.
- See Section 4.5.5 of the JSR 380 specification, specifically "If a sub type overrides/implements a method originally defined in several parallel types of the hierarchy (e.g. two interfaces not extending each other, or a class and an interface not implemented by said class), no parameter constraints may be declared for that method at all nor parameters be marked for cascaded validation. This again is to avoid an unexpected strengthening of preconditions to be fulfilled by the caller."</p>
+See Section 4.5.5 of the JSR 380 specification, specifically "If a sub type overrides/implements a method originally defined in several parallel types of the hierarchy (e.g. two interfaces not extending each other, or a class and an interface not implemented by said class), no parameter constraints may be declared for that method at all nor parameters be marked for cascaded validation. This again is to avoid an unexpected strengthening of preconditions to be fulfilled by the caller."</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-19903">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_PARAMETER_CONSTRAINTS_ON_PARALLEL_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-19903" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -990,7 +1036,10 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 <div class="content">
 <div class="paragraph">
 <p>Define whether more than one constraint on a return value may be marked for cascading validation are allowed. The default value is <code>false</code>, i.e. do not allow.
- See Section 4.5.5 of the JSR 380 specification, specifically "One must not mark a method return value for cascaded validation more than once in a line of a class hierarchy. In other words, overriding methods on sub types (be it sub classes/interfaces or interface implementations) cannot mark the return value for cascaded validation if the return value has already been marked on the overridden method of the super type or interface."</p>
+See Section 4.5.5 of the JSR 380 specification, specifically "One must not mark a method return value for cascaded validation more than once in a line of a class hierarchy. In other words, overriding methods on sub types (be it sub classes/interfaces or interface implementations) cannot mark the return value for cascaded validation if the return value has already been marked on the overridden method of the super type or interface."</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-19904">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_MULTIPLE_CASCADED_VALIDATION_ON_RETURN_VALUES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-19904" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1010,8 +1059,11 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 <div class="content">
 <div class="paragraph">
 <p>Configure the Expression Language feature level for constraints, allowing the selection of Expression Language features available for message interpolation.
- This property only affects the EL feature level of "static" constraint violation messages set through the <code>message</code> attribute of constraint annotations.
- In particular, it doesn&#8217;t affect the default EL feature level for custom violations created programmatically in validator implementations. The feature level for those can only be configured directly in the validator implementation.</p>
+This property only affects the EL feature level of "static" constraint violation messages set through the <code>message</code> attribute of constraint annotations.
+In particular, it doesn&#8217;t affect the default EL feature level for custom violations created programmatically in validator implementations. The feature level for those can only be configured directly in the validator implementation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-19905">QUARKUS_HIBERNATE_VALIDATOR_EXPRESSION_LANGUAGE_CONSTRAINT_EXPRESSION_FEATURE_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-19905" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1044,23 +1096,37 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1069,15 +1135,29 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1086,19 +1166,33 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1107,11 +1201,21 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1122,21 +1226,21 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

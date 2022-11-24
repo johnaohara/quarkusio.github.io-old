@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Building applications with Maven</title>
+  <title>Building applications with Maven - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/maven-tooling" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/maven-tooling" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/maven-tooling" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/maven-tooling" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/maven-tooling" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/maven-tooling">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/maven-tooling">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/maven-tooling">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -212,7 +186,7 @@
 </li>
 <li><a href="#project-info">Quarkus project info</a>
 <ul class="sectlevel2">
-<li><a href="#project-info-misaligned">Highlighing misaligned versions</a></li>
+<li><a href="#project-info-misaligned">Highlighting misaligned versions</a></li>
 </ul>
 </li>
 <li><a href="#project-update">Quarkus project update</a>
@@ -246,7 +220,7 @@
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.9.2.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.14.1.Final:create \
     -DprojectGroupId=my-groupId \
     -DprojectArtifactId=my-artifactId</code></pre>
 </div>
@@ -326,12 +300,12 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>quarkusRegistryClient</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether or not Quarkus should use the online registry to resolve extension catalogs. If this is set to false, the extension catalog will be narrowed to the defined (or default) platform BOM.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether Quarkus should use the online registry to resolve extension catalogs. If this is set to false, the extension catalog will be narrowed to the defined (or default) platform BOM.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>By default, the command will target the <code>io.quarkus.platform:quarkus-bom:2.9.2.Final</code> platform release (unless the coordinates of the desired platform release have been specified).</p>
+<p>By default, the command will target the <code>io.quarkus.platform:quarkus-bom:2.14.1.Final</code> platform release (unless the coordinates of the desired platform release have been specified).</p>
 </div>
 <div class="paragraph">
 <p>The project is generated in a directory named after the passed artifactId.
@@ -373,7 +347,7 @@ Instructions to build the image and run the container are written in those Docke
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions="hibernate-validator"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions='hibernate-validator'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -383,7 +357,7 @@ Instructions to build the image and run the container are written in those Docke
 <p>The extension name is the GAV name of the extension: e.g. <code>io.quarkus:quarkus-agroal</code>.
 But you can pass a partial name and Quarkus will do its best to find the right extension.
 For example, <code>agroal</code>, <code>Agroal</code> or <code>agro</code>  will expand to <code>io.quarkus:quarkus-agroal</code>.
-If no extension is found or if more than one extensions match, you will see a red check mark  ❌ in the command result.</p>
+If no extension is found or if more than one extension matches, you will see a red check mark  ❌ in the command result.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -411,7 +385,7 @@ If no extension is found or if more than one extensions match, you will see a re
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions="smallrye-*"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions='smallrye-*'</code></pre>
 </div>
 </div>
 </div>
@@ -540,7 +514,7 @@ may want to leave it out of the properties file and specify it as a system prope
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean package</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -560,7 +534,7 @@ When the application starts you should now see the following line in the logs: <
 <td class="content">
 The remote side does not need to include Maven or any other development tools. The normal <code>fast-jar</code> Dockerfile
 that is generated with a new Quarkus application is all you need. If you are using bare metal launch the Quarkus runner
-jar, do not attempt to run normal devmode.
+jar, do not attempt to run normal dev mode.
 </td>
 </tr>
 </table>
@@ -575,7 +549,7 @@ jar, do not attempt to run normal devmode.
 </div>
 <div class="paragraph">
 <p>Now every time you refresh the browser you should see any changes you have made locally immediately visible in the remote
-app. This is done via a HTTP based long polling transport, that will synchronize your local workspace and the remote
+app. This is done via an HTTP based long polling transport, that will synchronize your local workspace and the remote
 application via HTTP calls.</p>
 </div>
 <div class="paragraph">
@@ -608,7 +582,10 @@ rsync to sync to the remote application.</p>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Whether or not Quarkus should enable its ability to not do a full restart when changes to classes are compatible with JVM instrumentation. If this is set to true, Quarkus will perform class redefinition when possible.</p>
+<p>Whether Quarkus should enable its ability to not do a full restart when changes to classes are compatible with JVM instrumentation. If this is set to true, Quarkus will perform class redefinition when possible.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5361">QUARKUS_LIVE_RELOAD_INSTRUMENTATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5361" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -624,6 +601,9 @@ rsync to sync to the remote application.</p>
 <div class="paragraph">
 <p>The names of additional resource files to watch for changes, triggering a reload on change. Directories are <strong>not</strong> supported.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5362">QUARKUS_LIVE_RELOAD_WATCHED_RESOURCES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5362" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -637,6 +617,9 @@ rsync to sync to the remote application.</p>
 <div class="content">
 <div class="paragraph">
 <p>Password used to use to connect to the remote dev-mode application</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5363">QUARKUS_LIVE_RELOAD_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5363" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -652,6 +635,9 @@ rsync to sync to the remote application.</p>
 <div class="paragraph">
 <p>URL used to use to connect to the remote dev-mode application</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5364">QUARKUS_LIVE_RELOAD_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5364" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -666,10 +652,13 @@ rsync to sync to the remote application.</p>
 <div class="paragraph">
 <p>The amount of time to wait for a remote dev connect or reconnect</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5365">QUARKUS_LIVE_RELOAD_CONNECT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5365" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-live-reload-live-reload-config" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>30S</code></p></td>
 </tr>
 <tr>
@@ -681,10 +670,13 @@ rsync to sync to the remote application.</p>
 <div class="paragraph">
 <p>The amount of time to wait between attempts when connecting to the server side of remote dev</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5366">QUARKUS_LIVE_RELOAD_RETRY_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5366" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-live-reload-live-reload-config" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2S</code></p></td>
 </tr>
 <tr>
@@ -696,6 +688,9 @@ rsync to sync to the remote application.</p>
 <div class="paragraph">
 <p>The maximum number of attempts when connecting to the server side of remote dev</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5367">QUARKUS_LIVE_RELOAD_RETRY_MAX_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5367" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -703,7 +698,7 @@ rsync to sync to the remote application.</p>
 </tr>
 </tbody>
 </table>
-<div id="duration-note-anchor" class="admonitionblock note">
+<div id="duration-note-anchor-quarkus-live-reload-live-reload-config" class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
@@ -881,15 +876,15 @@ The next screen list the found modules; select the generated project and click o
 <p>and enjoy a highly productive environment.</p>
 </div>
 <div class="paragraph">
-<p><strong>IntelliJ</strong></p>
+<p><strong>IntelliJ IDEA</strong></p>
 </div>
 <div class="paragraph">
-<p>In IntelliJ:</p>
+<p>In IntelliJ IDEA:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>From inside IntelliJ select <code>File &#8594; New &#8594; Project From Existing Sources&#8230;&#8203;</code> or, if you are on the welcome dialog, select <code>Import project</code>.</p>
+<p>From inside IntelliJ IDEA select <code>File &#8594; New &#8594; Project From Existing Sources&#8230;&#8203;</code> or, if you are on the welcome dialog, select <code>Import project</code>.</p>
 </li>
 <li>
 <p>Select the project root</p>
@@ -981,11 +976,11 @@ Luckily, the <code>quarkus</code> Maven plugin includes the <code>dependency-tre
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[INFO] --- quarkus-maven-plugin:2.9.2.Final:dependency-tree (default-cli) @ getting-started ---
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[INFO] --- quarkus-maven-plugin:2.14.1.Final:dependency-tree (default-cli) @ getting-started ---
 [INFO] org.acme:getting-started:jar:1.0.0-SNAPSHOT
-[INFO] └─ io.quarkus:quarkus-resteasy-deployment:jar:2.9.2.Final (compile)
-[INFO]    ├─ io.quarkus:quarkus-resteasy-server-common-deployment:jar:2.9.2.Final (compile)
-[INFO]    │  ├─ io.quarkus:quarkus-core-deployment:jar:2.9.2.Final (compile)
+[INFO] └─ io.quarkus:quarkus-resteasy-deployment:jar:2.14.1.Final (compile)
+[INFO]    ├─ io.quarkus:quarkus-resteasy-server-common-deployment:jar:2.14.1.Final (compile)
+[INFO]    │  ├─ io.quarkus:quarkus-core-deployment:jar:2.14.1.Final (compile)
 [INFO]    │  │  ├─ commons-beanutils:commons-beanutils:jar:1.9.3 (compile)
 [INFO]    │  │  │  ├─ commons-logging:commons-logging:jar:1.2 (compile)
 [INFO]    │  │  │  └─ commons-collections:commons-collections:jar:3.2.2 (compile)
@@ -1004,7 +999,7 @@ Luckily, the <code>quarkus</code> Maven plugin includes the <code>dependency-tre
 <p><code>outputFile</code> - specifies the file to persist the dependency tree to;</p>
 </li>
 <li>
-<p><code>appendOutput</code> - the default value is <code>false</code>, indicates whether the output to the command should be appended to the file specified with the <code>outputFile</code> parameter or it should be overriden.</p>
+<p><code>appendOutput</code> - the default value is <code>false</code>, indicates whether the output to the command should be appended to the file specified with the <code>outputFile</code> parameter or it should be overridden.</p>
 </li>
 </ul>
 </div>
@@ -1038,7 +1033,7 @@ extension dependency model, such as the <code>maven-dependency-plugin</code>, <c
 <p>Native executables make Quarkus applications ideal for containers and serverless workloads.</p>
 </div>
 <div class="paragraph">
-<p>Make sure to have <code>GRAALVM_HOME</code> configured and pointing to GraalVM version 22.0 (Make sure to use a Java 11 version of GraalVM).
+<p>Make sure to have <code>GRAALVM_HOME</code> configured and pointing to the latest release of GraalVM version 22.3.
 Verify that your <code>pom.xml</code> has the proper <code>native</code> profile (see <a href="#build-tool-maven">Maven configuration</a>).</p>
 </div>
 <div class="paragraph">
@@ -1053,7 +1048,7 @@ Verify that your <code>pom.xml</code> has the proper <code>native</code> profile
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1108,11 +1103,11 @@ To create an executable that will run in a container, use the following:</p>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative -Dquarkus.native.container-build=true</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative -Dquarkus.native.container-build=true</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The produced executable will be a 64 bit Linux executable, so depending on your operating system it may no longer be runnable.
+<p>The produced executable will be a 64-bit Linux executable, so depending on your operating system it may no longer be runnable.
 However, it&#8217;s not an issue as we are going to copy it to a Docker container.
 Note that in this case the build itself runs in a Docker container too, so you don&#8217;t need to have GraalVM installed locally.</p>
 </div>
@@ -1124,14 +1119,14 @@ Note that in this case the build itself runs in a Docker container too, so you d
 </td>
 <td class="content">
 <div class="paragraph">
-<p>By default, the native executable will be generated using the <code>quay.io/quarkus/ubi-quarkus-native-image:22.0-java11</code> Docker image.</p>
+<p>By default, the native executable will be generated using the <code>quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17</code> Docker image.</p>
 </div>
 <div class="paragraph">
 <p>If you want to build a native executable with a different Docker image (for instance to use a different GraalVM version),
 use the <code>-Dquarkus.native.builder-image=&lt;image name&gt;</code> build argument.</p>
 </div>
 <div class="paragraph">
-<p>The list of the available Docker images can be found on <a href="https://quay.io/repository/quarkus/ubi-quarkus-native-image?tab=tags">quay.io</a>.
+<p>The list of the available Docker images can be found on <a href="https://quay.io/repository/quarkus/ubi-quarkus-graalvmce-builder-image?tab=tags">quay.io</a>.
 Be aware that a given Quarkus version might not be compatible with all the images available.</p>
 </div>
 </td>
@@ -1152,9 +1147,13 @@ Be aware that a given Quarkus version might not be compatible with all the image
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependencyManagement&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;properties&gt;
+    &lt;skipITs&gt;true&lt;/skipITs&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;/properties&gt;
+
+&lt;dependencyManagement&gt;
     &lt;dependencies&gt;
-        &lt;dependency&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;dependency&gt; <i class="conum" data-value="2"></i><b>(2)</b>
             &lt;groupId&gt;${quarkus.platform.group-id}&lt;/groupId&gt;
             &lt;artifactId&gt;quarkus-bom&lt;/artifactId&gt;
             &lt;version&gt;${quarkus.platform.version}&lt;/version&gt;
@@ -1166,11 +1165,11 @@ Be aware that a given Quarkus version might not be compatible with all the image
 
 &lt;build&gt;
     &lt;plugins&gt;
-        &lt;plugin&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+        &lt;plugin&gt; <i class="conum" data-value="3"></i><b>(3)</b>
             &lt;groupId&gt;${quarkus.platform.group-id}&lt;/groupId&gt;
             &lt;artifactId&gt;quarkus-maven-plugin&lt;/artifactId&gt;
             &lt;version&gt;${quarkus.platform.version}&lt;/version&gt;
-            &lt;extensions&gt;true&lt;/extensions&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+            &lt;extensions&gt;true&lt;/extensions&gt; <i class="conum" data-value="4"></i><b>(4)</b>
             &lt;executions&gt;
                 &lt;execution&gt;
                     &lt;goals&gt;
@@ -1181,7 +1180,7 @@ Be aware that a given Quarkus version might not be compatible with all the image
                 &lt;/execution&gt;
             &lt;/executions&gt;
         &lt;/plugin&gt;
-        &lt;plugin&gt; <i class="conum" data-value="4"></i><b>(4)</b>
+        &lt;plugin&gt; <i class="conum" data-value="5"></i><b>(5)</b>
             &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
             &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
             &lt;version&gt;${surefire-plugin.version}&lt;/version&gt;
@@ -1192,39 +1191,36 @@ Be aware that a given Quarkus version might not be compatible with all the image
                 &lt;/systemPropertyVariables&gt;
             &lt;/configuration&gt;
         &lt;/plugin&gt;
+        &lt;plugin&gt; <i class="conum" data-value="6"></i><b>(6)</b>
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-failsafe-plugin&lt;/artifactId&gt;
+            &lt;version&gt;${surefire-plugin.version}&lt;/version&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;integration-test&lt;/goal&gt;
+                        &lt;goal&gt;verify&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;systemPropertyVariables&gt;
+                            &lt;native.image.path&gt;${project.build.directory}/${project.build.finalName}-runner&lt;/native.image.path&gt;
+                            &lt;java.util.logging.manager&gt;org.jboss.logmanager.LogManager&lt;/java.util.logging.manager&gt;
+                            &lt;maven.home&gt;${maven.home}&lt;/maven.home&gt;
+                        &lt;/systemPropertyVariables&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
     &lt;/plugins&gt;
 &lt;/build&gt;
 
 &lt;profiles&gt;
-    &lt;profile&gt; <i class="conum" data-value="5"></i><b>(5)</b>
+    &lt;profile&gt; <i class="conum" data-value="7"></i><b>(7)</b>
         &lt;id&gt;native&lt;/id&gt;
-        &lt;properties&gt; <i class="conum" data-value="6"></i><b>(6)</b>
+        &lt;properties&gt; <i class="conum" data-value="8"></i><b>(8)</b>
             &lt;quarkus.package.type&gt;native&lt;/quarkus.package.type&gt;
+            &lt;skipITs&gt;false&lt;/skipITs&gt; <i class="conum" data-value="9"></i><b>(9)</b>
         &lt;/properties&gt;
-        &lt;build&gt;
-            &lt;plugins&gt;
-                &lt;plugin&gt; <i class="conum" data-value="7"></i><b>(7)</b>
-                    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-                    &lt;artifactId&gt;maven-failsafe-plugin&lt;/artifactId&gt;
-                    &lt;version&gt;${surefire-plugin.version}&lt;/version&gt;
-                    &lt;executions&gt;
-                        &lt;execution&gt;
-                            &lt;goals&gt;
-                                &lt;goal&gt;integration-test&lt;/goal&gt;
-                                &lt;goal&gt;verify&lt;/goal&gt;
-                            &lt;/goals&gt;
-                            &lt;configuration&gt;
-                                &lt;systemPropertyVariables&gt;
-                                    &lt;native.image.path&gt;${project.build.directory}/${project.build.finalName}-runner&lt;/native.image.path&gt;
-                                    &lt;java.util.logging.manager&gt;org.jboss.logmanager.LogManager&lt;/java.util.logging.manager&gt;
-                                    &lt;maven.home&gt;${maven.home}&lt;/maven.home&gt;
-                                &lt;/systemPropertyVariables&gt;
-                            &lt;/configuration&gt;
-                        &lt;/execution&gt;
-                    &lt;/executions&gt;
-                &lt;/plugin&gt;
-            &lt;/plugins&gt;
-        &lt;/build&gt;
     &lt;/profile&gt;
 &lt;/profiles&gt;</code></pre>
 </div>
@@ -1233,32 +1229,43 @@ Be aware that a given Quarkus version might not be compatible with all the image
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Optionally use a BOM file to omit the version of the different Quarkus dependencies.</td>
+<td>Disable running of integration tests (test names <code>*IT</code> and annotated with <code>@QuarkusIntegrationTest</code>) on all builds. To run these tests all the time, either remove this property, set its value to <code>false</code>, or set <code>-DskipITs=false</code> on the command line when you run the build.<br>
+As mentioned below, this is overridden in the <code>native</code> profile.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Use the Quarkus Maven plugin that will hook into the build process.</td>
+<td>Optionally use a BOM file to omit the version of the different Quarkus dependencies.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Enabling Maven plugin extensions will register a Quarkus <code>MavenLifecycleParticipant</code> which will make sure the Quarkus classloaders used during the build are properly closed. During the <code>generate-code</code> and <code>generate-code-tests</code> goals the Quarkus application bootstrap is initialized and re-used in the <code>build</code> goal (which actually builds and packages a production application). The Quarkus classloaders will be properly closed in the <code>build</code> goal of the <code>quarkus-maven-plugin</code>. However, if the build fails in between the <code>generate-code</code> or <code>generate-code-tests</code> and <code>build</code> then the Quarkus augmentation classloader won&#8217;t be properly closed, which may lead to locking of JAR files that happened to be on the classpath on Windows OS.</td>
+<td>Use the Quarkus Maven plugin that will hook into the build process.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Enabling Maven plugin extensions will register a Quarkus <code>MavenLifecycleParticipant</code> which will make sure the Quarkus classloaders used during the build are properly closed. During the <code>generate-code</code> and <code>generate-code-tests</code> goals the Quarkus application bootstrap is initialized and re-used in the <code>build</code> goal (which actually builds and packages a production application). The Quarkus classloaders will be properly closed in the <code>build</code> goal of the <code>quarkus-maven-plugin</code>. However, if the build fails in between the <code>generate-code</code> or <code>generate-code-tests</code> and <code>build</code> then the Quarkus augmentation classloader won&#8217;t be properly closed, which may lead to locking of JAR files that happened to be on the classpath on Windows OS.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
 <td>Add system properties to <code>maven-surefire-plugin</code>.<br>
 <code>maven.home</code> is only required if you have custom configuration in <code>${maven.home}/conf/settings.xml</code>.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Use a specific <code>native</code> profile for native executable building.</td>
-</tr>
-<tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Enable the <code>native</code> package type. The build will therefore produce a native executable.</td>
+<td>If you want to test the artifact produced by your build with Integration Tests, add the following plugin configuration. Test names <code>*IT</code> and annotated with <code>@QuarkusIntegrationTest</code> will be run against the artifact produced by the build (JAR file, container image, etc). See the <a href="getting-started-testing#quarkus-integration-test">Integration Testing guide</a> for more info.<br>
+<code>maven.home</code> is only required if you have custom configuration in <code>${maven.home}/conf/settings.xml</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>If you want to test your native executable with Integration Tests, add the following plugin configuration. Test names <code>*IT</code> and annotated <code>@NativeImageTest</code> or <code>@QuarkusIntegrationTest</code> will be run against the native executable. See the <a href="building-native-image">Native executable guide</a> for more info.</td>
+<td>Use a specific <code>native</code> profile for native executable building.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Enable the <code>native</code> package type. The build will therefore produce a native executable.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>Always run integration tests when building a native image (test names <code>*IT</code> and annotated with <code>@QuarkusIntegrationTest</code> or <code>@NativeImageTest</code>).<br>
+If you do not wish to run integration tests when building a native image, simply remove this property altogether or set its value to <code>true</code>.</td>
 </tr>
 </table>
 </div>
@@ -1308,7 +1315,7 @@ on the classpath that the legacy jar necessitates, when loading a class or resou
 (or <code>&lt;quarkus.package.type&gt;uber-jar&lt;/quarkus.package.type&gt;</code> in your <code>pom.xml</code>).</p>
 </div>
 <div class="paragraph">
-<p>The original jar will still be present in the <code>target</code> directory but it will be renamed to contain the <code>.original</code> suffix.</p>
+<p>The original jar will still be present in the <code>target</code> directory, but it will be renamed to contain the <code>.original</code> suffix.</p>
 </div>
 <div class="paragraph">
 <p>When building an Uber-Jar you can specify entries that you want to exclude from the generated jar by using the <code>quarkus.package.ignored-entries</code> configuration
@@ -1320,6 +1327,14 @@ option, this takes a comma separated list of entries to ignore.</p>
 <div class="paragraph">
 <p>Uber-Jar&#8217;s final name is configurable via a Maven&#8217;s build settings <code>finalName</code> option.</p>
 </div>
+<div class="sect3">
+<h4 id="uber-jar-file-name-suffix"><a class="anchor" href="#uber-jar-file-name-suffix"></a>Uber-Jar file name suffix</h4>
+<div class="paragraph">
+<p>By default the generated uber JAR file name will have the <code>-runner</code> suffix, unless it was overriden by configuring a custom one with <code>quarkus.package.runner-suffix</code> configuration option.
+If the runner suffix is not desired, it can be disabled by setting <code>quarkus.package.add-runner-suffix</code> configuration option to <code>false</code>, in which case the uber JAR will replace the original JAR
+file generated by <code>maven-jar-plugin</code> for the application module.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="multi-module-maven"><a class="anchor" href="#multi-module-maven"></a>Working with multi-module projects</h3>
@@ -1328,16 +1343,16 @@ option, this takes a comma separated list of entries to ignore.</p>
 </div>
 <div class="paragraph">
 <p>The best way to enable CDI bean discovery for a module in a multi-module project would be to include the <code>jandex-maven-plugin</code>,
-unless it is the main application module already configured with the quarkus-maven-plugin, in which case it will indexed automatically.</p>
+unless it is the main application module already configured with the quarkus-maven-plugin, in which case it will be indexed automatically.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
     &lt;plugin&gt;
-      &lt;groupId&gt;org.jboss.jandex&lt;/groupId&gt;
+      &lt;groupId&gt;io.smallrye&lt;/groupId&gt;
       &lt;artifactId&gt;jandex-maven-plugin&lt;/artifactId&gt;
-      &lt;version&gt;1.2.2&lt;/version&gt;
+      &lt;version&gt;3.0.3&lt;/version&gt;
       &lt;executions&gt;
         &lt;execution&gt;
           &lt;id&gt;make-index&lt;/id&gt;
@@ -1372,11 +1387,11 @@ unless it is the main application module already configured with the quarkus-mav
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean package -Dquarkus.profile=profile-name-here</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dquarkus.profile=profile-name-here</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>However it is also possible to specify the profile directly in the POM file of the project using project properties, the Quarkus Maven plugin configuration properties or system properties set in the Quarkus Maven plugin configuration.</p>
+<p>However, it is also possible to specify the profile directly in the POM file of the project using project properties, the Quarkus Maven plugin configuration properties or system properties set in the Quarkus Maven plugin configuration.</p>
 </div>
 <div class="paragraph">
 <p>In order of precedence (greater precedence first):</p>
@@ -1643,6 +1658,18 @@ With the configuration above, both profile builds will be using the same depende
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you have more than one optional dependency to declare in the <code>quarkus.package.included-optional-dependencies</code> tag, make sure they are separated with <code>,</code> (e.g. <code>org.postgresql:postgresql::jar,com.foo:bar::jar</code>).
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -1679,7 +1706,10 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>The requested output type.
- The default built in types are 'jar' (which will use 'fast-jar'), 'legacy-jar' for the pre-1.12 default jar packaging, 'uber-jar', 'native' and 'native-sources'.</p>
+The default built in types are 'jar' (which will use 'fast-jar'), 'legacy-jar' for the pre-1.12 default jar packaging, 'uber-jar', 'native' and 'native-sources'.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5368">QUARKUS_PACKAGE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5368" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1695,6 +1725,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If the Implementation information should be included in the runner jar&#8217;s MANIFEST.MF.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5369">QUARKUS_PACKAGE_MANIFEST_ADD_IMPLEMENTATION_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5369" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1707,8 +1740,11 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The entry point of the application. This can either be a a fully qualified name of a standard Java class with a main method, or <code>io.quarkus.runtime.QuarkusApplication</code>.
- If your application has main classes annotated with <code>io.quarkus.runtime.annotations.QuarkusMain</code> then this can also reference the name given in the annotation, to avoid the need to specify fully qualified names in the config.</p>
+<p>The entry point of the application. This can either be a fully qualified name of a standard Java class with a main method, or <code>io.quarkus.runtime.QuarkusApplication</code>.
+If your application has main classes annotated with <code>io.quarkus.runtime.annotations.QuarkusMain</code> then this can also reference the name given in the annotation, to avoid the need to specify fully qualified names in the config.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5370">QUARKUS_PACKAGE_MAIN_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5370" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1724,6 +1760,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>Files that should not be copied to the output artifact</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5371">QUARKUS_PACKAGE_USER_CONFIGURED_IGNORED_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5371" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -1737,12 +1776,15 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>List of all the dependencies that have been defined as optional to include into the final package of the application. Each optional dependency needs to be expressed in the following format:
- groupId:artifactId:classifier:type
- With the classifier and type being optional.
- If the type is missing, the artifact is assumed to be of type <code>jar</code>.
- This parameter is optional, if absent, no optional dependencies will be included into the final package of the application.
- For backward compatibility reasons, this parameter is ignored by default and can be enabled by setting the parameter <code>quarkus.package.filter-optional-dependencies</code> to <code>true</code>.
- This parameter is meant to be used in modules where multi-builds have been configured to avoid getting a final package with unused dependencies.</p>
+groupId:artifactId:classifier:type
+With the classifier and type being optional.
+If the type is missing, the artifact is assumed to be of type <code>jar</code>.
+This parameter is optional, if absent, no optional dependencies will be included into the final package of the application.
+For backward compatibility reasons, this parameter is ignored by default and can be enabled by setting the parameter <code>quarkus.package.filter-optional-dependencies</code> to <code>true</code>.
+This parameter is meant to be used in modules where multi-builds have been configured to avoid getting a final package with unused dependencies.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5372">QUARKUS_PACKAGE_INCLUDED_OPTIONAL_DEPENDENCIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5372" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1757,7 +1799,10 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>Flag indicating whether the optional dependencies should be filtered out or not.
- This parameter is meant to be used in modules where multi-builds have been configured to avoid getting a final package with unused dependencies.</p>
+This parameter is meant to be used in modules where multi-builds have been configured to avoid getting a final package with unused dependencies.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5373">QUARKUS_PACKAGE_FILTER_OPTIONAL_DEPENDENCIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5373" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1773,10 +1818,30 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>The suffix that is applied to the runner jar and native images</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5374">QUARKUS_PACKAGE_RUNNER_SUFFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5374" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>-runner</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-package-pkg-package-config_quarkus.package.add-runner-suffix"></a><code><a href="#quarkus-package-pkg-package-config_quarkus.package.add-runner-suffix">quarkus.package.add-runner-suffix</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Indicates whether the generated binary file (uber-jar or native image) should have the runner suffix appended. Turning off the runner suffix in case of the uber-jar package type, the original build system (Maven, Gradle, etc) built JAR will be replaced with the Quarkus built uber JAR.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5375">QUARKUS_PACKAGE_ADD_RUNNER_SUFFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5375" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1786,6 +1851,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>The output folder in which to place the output, this is resolved relative to the build systems target directory.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5376">QUARKUS_PACKAGE_OUTPUT_DIRECTORY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5376" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1801,6 +1869,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>The name of the final artifact</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5377">QUARKUS_PACKAGE_OUTPUT_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5377" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1813,7 +1884,10 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Whether to automate the creation of AppCDS. This has not effect when a native binary is needed and will be ignored in that case. Furthermore, this option only works for Java 11&#43; and is considered experimental for the time being. Finally, care must be taken to use the same exact JVM version when building and running the application.</p>
+<p>Whether to automate the creation of AppCDS. This has no effect when a native binary is needed and will be ignored in that case. Furthermore, this option only works for Java 11&#43; and is considered experimental for the time being. Finally, care must be taken to use the same exact JVM version when building and running the application.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5378">QUARKUS_PACKAGE_CREATE_APPCDS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5378" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1827,7 +1901,10 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>When AppCDS generation is enabled, if this property is set, then the JVM used to generate the AppCDS file will be the JVM present in the container image. The builder image is expected to have have the 'java' binary on its PATH. This flag is useful when the JVM to be used at runtime is not the same exact JVM version as the one used to build the jar. Note that this property is consulted only when <code>quarkus.package.create-appcds=true</code> and it requires having docker available during the build.</p>
+<p>When AppCDS generation is enabled, if this property is set, then the JVM used to generate the AppCDS file will be the JVM present in the container image. The builder image is expected to have the 'java' binary on its PATH. This flag is useful when the JVM to be used at runtime is not the same exact JVM version as the one used to build the jar. Note that this property is consulted only when <code>quarkus.package.create-appcds=true</code> and it requires having docker available during the build.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5379">QUARKUS_PACKAGE_APPCDS_BUILDER_IMAGE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5379" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1842,9 +1919,12 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>Whether creation of the AppCDS archive should run in a container if available.
- Normally, if either a suitable container image to create the AppCDS archive inside of can be determined automatically or if one is explicitly set using the <code>quarkus.package.appcds-builder-image</code> setting, the AppCDS archive is generated by running the JDK contained in the image as a container.
- If this option is set to <code>false</code>, a container will not be used to generate the AppCDS archive. Instead, the JDK used to build the application is also used to create the archive. Note that the exact same JDK version must be used to run the application in this case.
- Ignored if <code>quarkus.package.create-appcds</code> is set to <code>false</code>.</p>
+Normally, if either a suitable container image to create the AppCDS archive inside of can be determined automatically or if one is explicitly set using the <code>quarkus.package.appcds-builder-image</code> setting, the AppCDS archive is generated by running the JDK contained in the image as a container.
+If this option is set to <code>false</code>, a container will not be used to generate the AppCDS archive. Instead, the JDK used to build the application is also used to create the archive. Note that the exact same JDK version must be used to run the application in this case.
+Ignored if <code>quarkus.package.create-appcds</code> is set to <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5380">QUARKUS_PACKAGE_APPCDS_USE_CONTAINER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5380" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1859,8 +1939,11 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>This is an advanced option that only takes effect for the mutable-jar format.
- If this is specified a directory of this name will be created in the jar distribution. Users can place jar files in this directory, and when re-augmentation is performed these will be processed and added to the class-path.
- Note that before reaugmentation has been performed these jars will be ignored, and if they are updated the app should be reaugmented again.</p>
+If this is specified a directory of this name will be created in the jar distribution. Users can place jar files in this directory, and when re-augmentation is performed these will be processed and added to the class-path.
+Note that before reaugmentation has been performed these jars will be ignored, and if they are updated the app should be reaugmented again.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5381">QUARKUS_PACKAGE_USER_PROVIDERS_DIRECTORY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5381" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1876,6 +1959,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>This option only applies when using fast-jar or mutable-jar. If this option is true then a list of all the coordinates of the artifacts that made up this image will be included in the quarkus-app directory. This list can be used by vulnerability scanners to determine if your application has any vulnerable dependencies.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5382">QUARKUS_PACKAGE_INCLUDE_DEPENDENCY_LIST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5382" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1883,12 +1969,15 @@ These are provided in <code>application.properties</code> the same as any other 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-package-pkg-package-config_quarkus.package.fernflower.enabled"></a><code><a href="#quarkus-package-pkg-package-config_quarkus.package.fernflower.enabled">quarkus.package.fernflower.enabled</a></code></p>
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-package-pkg-package-config_quarkus.package.quiltflower.enabled"></a><code><a href="#quarkus-package-pkg-package-config_quarkus.package.quiltflower.enabled">quarkus.package.quiltflower.enabled</a></code></p>
 </div>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
 <p>An advanced option that will decompile generated and transformed bytecode into the 'decompiled' directory. This is only taken into account when fast-jar is used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5383">QUARKUS_PACKAGE_QUILTFLOWER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5383" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1897,26 +1986,32 @@ These are provided in <code>application.properties</code> the same as any other 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-package-pkg-package-config_quarkus.package.fernflower.hash"></a><code><a href="#quarkus-package-pkg-package-config_quarkus.package.fernflower.hash">quarkus.package.fernflower.hash</a></code></p>
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-package-pkg-package-config_quarkus.package.quiltflower.version"></a><code><a href="#quarkus-package-pkg-package-config_quarkus.package.quiltflower.version">quarkus.package.quiltflower.version</a></code></p>
 </div>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The git hash to use to download the fernflower tool from <a href="https://jitpack.io/com/github/fesh0r/fernflower/" class="bare">https://jitpack.io/com/github/fesh0r/fernflower/</a></p>
+<p>The version of Quiltflower to use</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5384">QUARKUS_PACKAGE_QUILTFLOWER_VERSION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5384" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>dbf407a655</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1.8.1</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-package-pkg-package-config_quarkus.package.fernflower.jar-directory"></a><code><a href="#quarkus-package-pkg-package-config_quarkus.package.fernflower.jar-directory">quarkus.package.fernflower.jar-directory</a></code></p>
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-package-pkg-package-config_quarkus.package.quiltflower.jar-directory"></a><code><a href="#quarkus-package-pkg-package-config_quarkus.package.quiltflower.jar-directory">quarkus.package.quiltflower.jar-directory</a></code></p>
 </div>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
 <p>The directory into which to save the fernflower tool if it doesn&#8217;t exist</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5385">QUARKUS_PACKAGE_QUILTFLOWER_JAR_DIRECTORY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5385" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1932,6 +2027,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If set to <code>true</code>, it will result in the Quarkus writing the transformed application bytecode to the build tool&#8217;s output directory. This is useful for post-build tools that need to scan the application bytecode - for example for offline code-coverage tools. For example, if using Maven, enabling this feature will result in the classes in <code>target/classes</code> being updated with the versions that result after Quarkus has applied its transformations. Setting this to <code>true</code> however, should be done with a lot of caution and only if subsequent builds are done in a clean environment (i.e. the build tool&#8217;s output directory has been completely cleaned).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5386">QUARKUS_PACKAGE_WRITE_TRANSFORMED_BYTECODE_TO_BUILD_OUTPUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5386" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1945,6 +2043,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>Custom manifest attributes to be added to the main section of the MANIFEST.MF file. An example of the user defined property: quarkus.package.manifest.attributes."Entry-key1"=Value1 quarkus.package.manifest.attributes."Entry-key2"=Value2</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5387">QUARKUS_PACKAGE_MANIFEST_ATTRIBUTES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5387" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1960,6 +2061,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>Custom manifest sections to be added to the MANIFEST.MF file. An example of the user defined property: quarkus.package.manifest.manifest-sections."Section-Name"."Entry-Key1"=Value1 quarkus.package.manifest.manifest-sections."Section-Name"."Entry-Key2"=Value2</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5388">QUARKUS_PACKAGE_MANIFEST_MANIFEST_SECTIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5388" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,String&gt;&gt;</code></p></td>
@@ -1972,7 +2076,7 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>By default, Quarkus tests in JVM mode are run using the <code>test</code> configuration profile. If you are not familiar with Quarkus
 configuration profiles, everything you need to know is explained in the
-<a href="config#configuration-profiles">Configuration Profiles Documentation</a>.</p>
+<a href="config-reference#profiles">Configuration Profiles Documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>It is however possible to use a custom configuration profile for your tests with the Maven Surefire and Maven Failsafe
@@ -2045,7 +2149,7 @@ your default testing database.</p>
 <p>Quarkus bootstrap includes a Maven resolver implementation that is used to resolve application runtime and build time dependencies. The Quarkus Maven resolver is initialized from the same Maven command line that launched the build, test or dev mode. Typically, there is no need to add any extra configuration for it. However, there could be cases where an extra configuration option may be necessary to properly resolve application dependencies in test or dev modes, or IDEs.</p>
 </div>
 <div class="paragraph">
-<p>Maven test plugins (such as <code>surefire</code> and <code>failsafe</code>), for example, are not propagating build system properties to the running tests by default. Which means some of the system properties set by the Maven CLI aren&#8217;t available for the Quarkus Maven resolver initialized for the tests, which may result in test dependencies being resolved using different settings than the main Maven build.</p>
+<p>Maven test plugins (such as <code>surefire</code> and <code>failsafe</code>), for example, are not propagating build system properties to the running tests by default. Which means some system properties set by the Maven CLI aren&#8217;t available for the Quarkus Maven resolver initialized for the tests, which may result in test dependencies being resolved using different settings than the main Maven build.</p>
 </div>
 <div class="paragraph">
 <p>Here is a list of system properties the Quarkus bootstrap Maven resolver checks during its initialization.</p>
@@ -2071,23 +2175,23 @@ your default testing database.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven.settings</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~/m2/settings.xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~/.m2/settings.xml</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unless the custom settings file has been provided with the <code>-s</code> argument, this property can be used to point the resolver to a custom Maven settings file</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven.repo.local</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~/m2/repository</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~/.m2/repository</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This property could be used to configure a custom local Maven repository directory, if it is different from the default one and the one specified in the <code>settings.xml</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven.top-level-basedir</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This property may be useful to help the Maven resolver identify the top-level Maven project in the workspace. By default, the Maven resolver will be discovering a project&#8217;s workspace by navigating the parent-module POM relationship. However there could be project layouts that are using an aggregator module which isn&#8217;t appearing as the parent for its modules. In this case, this property will help the Quarkus Maven resolver to properly discover the workspace.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This property may be useful to help the Maven resolver identify the top-level Maven project in the workspace. By default, the Maven resolver will be discovering a project&#8217;s workspace by navigating the parent-module POM relationship. However, there could be project layouts that are using an aggregator module which isn&#8217;t appearing as the parent for its modules. In this case, this property will help the Quarkus Maven resolver to properly discover the workspace.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>quarkus.bootstrap.effective-model-builder</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">By default, the Quarkus Maven resolver is reading project&#8217;s POMs directly when discovering the project&#8217;s layout. While in most cases it works well enough and relatively fast, reading raw POMs has its limitation. E.g. if a POM includes modules in a profile, these modules will not be discovered. This system property enables project&#8217;s layout discovery based on the effective POM models, that are properly interpolated, instead of the raw ones. The reason this option is not enabled by default is it may appear to be significantly more time consuming that could increase, e.g. CI testing times. Until there is a better approach found that could be used by default, projects that require it should enable this option.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, the Quarkus Maven resolver is reading project&#8217;s POMs directly when discovering the project&#8217;s layout. While in most cases it works well enough and relatively fast, reading raw POMs has its limitation. E.g. if a POM includes modules in a profile, these modules will not be discovered. This system property enables project&#8217;s layout discovery based on the effective POM models, that are properly interpolated, instead of the raw ones. The reason this option is not enabled by default is it may appear to be significantly more time-consuming that could increase, e.g. CI testing times. Until there is a better approach found that could be used by default, projects that require it should enable this option.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2106,7 +2210,7 @@ your default testing database.</p>
         &lt;version&gt;${surefire-plugin.version}&lt;/version&gt;
         &lt;configuration&gt;
           &lt;systemPropertyVariables&gt;
-            &lt;maven.home&gt;${maven.hom}&lt;/maven.home&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+            &lt;maven.home&gt;${maven.home}&lt;/maven.home&gt; <i class="conum" data-value="1"></i><b>(1)</b>
             &lt;maven.repo.local&gt;${settings.localRepository}&lt;/maven.repo.local&gt; <i class="conum" data-value="2"></i><b>(2)</b>
             &lt;maven.settings&gt;${session.request.userSettingsFile.path}&lt;/maven.settings&gt; <i class="conum" data-value="3"></i><b>(3)</b>
             &lt;maven.top-level-basedir&gt;${session.topLevelProject.basedir.absolutePath}&lt;/maven.top-level-basedir&gt; <i class="conum" data-value="4"></i><b>(4)</b>
@@ -2218,12 +2322,12 @@ The report generated by <code>quarkus:info</code> is not currently including the
 [INFO] Building code-with-quarkus 1.0.0-SNAPSHOT
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- quarkus-maven-plugin:2.9.2.Final:info (default-cli) @ code-with-quarkus ---
+[INFO] --- quarkus-maven-plugin:2.14.1.Final:info (default-cli) @ code-with-quarkus ---
 [WARNING] quarkus:info goal is experimental, its options and output may change in future versions
 [INFO] Quarkus platform BOMs: <i class="conum" data-value="1"></i><b>(1)</b>
-[INFO]   io.quarkus.platform:quarkus-bom:pom:2.9.2.Final
-[INFO]   io.quarkus.platform:quarkus-kogito-bom:pom:2.9.2.Final
-[INFO]   io.quarkus.platform:quarkus-camel-bom:pom:2.9.2.Final
+[INFO]   io.quarkus.platform:quarkus-bom:pom:2.14.1.Final
+[INFO]   io.quarkus.platform:quarkus-kogito-bom:pom:2.14.1.Final
+[INFO]   io.quarkus.platform:quarkus-camel-bom:pom:2.14.1.Final
 [INFO]
 [INFO] Extensions from io.quarkus.platform:quarkus-bom: <i class="conum" data-value="2"></i><b>(2)</b>
 [INFO]   io.quarkus:quarkus-resteasy-reactive
@@ -2275,18 +2379,18 @@ The report generated by <code>quarkus:info</code> is not currently including the
 </table>
 </div>
 <div class="sect2">
-<h3 id="project-info-misaligned"><a class="anchor" href="#project-info-misaligned"></a>Highlighing misaligned versions</h3>
+<h3 id="project-info-misaligned"><a class="anchor" href="#project-info-misaligned"></a>Highlighting misaligned versions</h3>
 <div class="paragraph">
 <p><code>quarkus:info</code> will also highlight basic Quarkus dependency version misalignments, in case they are detected. For example, if we modify the project mentioned above by removing the <code>kogito-quarkus-decisions</code> extension from the dependencies and adding a <code>2.6.3.Final</code> <code>&lt;version&gt;</code> element to the <code>quarkus-resteasy-reactive</code> dependency that is managed by the <code>quarkus-bom</code> and then run <code>quarkus:info</code> again, we&#8217;ll see something like:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[INFO] --- quarkus-maven-plugin:2.9.2.Final:info (default-cli) @ code-with-quarkus ---
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[INFO] --- quarkus-maven-plugin:2.14.1.Final:info (default-cli) @ code-with-quarkus ---
 [WARNING] quarkus:info goal is experimental, its options and output may change in future versions
 [INFO] Quarkus platform BOMs:
-[INFO]   io.quarkus.platform:quarkus-bom:pom:2.9.2.Final
-[INFO]   io.quarkus.platform:quarkus-kogito-bom:pom:2.9.2.Final | unnecessary <i class="conum" data-value="1"></i><b>(1)</b>
-[INFO]   io.quarkus.platform:quarkus-camel-bom:pom:2.9.2.Final
+[INFO]   io.quarkus.platform:quarkus-bom:pom:2.14.1.Final
+[INFO]   io.quarkus.platform:quarkus-kogito-bom:pom:2.14.1.Final | unnecessary <i class="conum" data-value="1"></i><b>(1)</b>
+[INFO]   io.quarkus.platform:quarkus-camel-bom:pom:2.14.1.Final
 [INFO]
 [INFO] Extensions from io.quarkus.platform:quarkus-bom:
 [INFO]   io.quarkus:quarkus-resteasy-reactive:2.6.3.Final | misaligned <i class="conum" data-value="2"></i><b>(2)</b>
@@ -2308,7 +2412,7 @@ The report generated by <code>quarkus:info</code> is not currently including the
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The version <code>2.6.3.Final</code> of the <code>quarkus-resteasy-reactive</code> is now reported as being misaligned with the version managed by the Quarkus platform BOM imported in the project, which is 2.9.2.Final</td>
+<td>The version <code>2.6.3.Final</code> of the <code>quarkus-resteasy-reactive</code> is now reported as being misaligned with the version managed by the Quarkus platform BOM imported in the project, which is 2.14.1.Final</td>
 </tr>
 </table>
 </div>
@@ -2372,13 +2476,13 @@ The Quarkus Maven plugin version isn&#8217;t currently included in the update re
 [INFO] Building code-with-quarkus 1.0.0-SNAPSHOT
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- quarkus-maven-plugin:2.9.2.Final:update (default-cli) @ code-with-quarkus ---
+[INFO] --- quarkus-maven-plugin:2.14.1.Final:update (default-cli) @ code-with-quarkus ---
 [WARNING] quarkus:update goal is experimental, its options and output might change in future versions
 [INFO]
 [INFO] Recommended Quarkus platform BOM updates: <i class="conum" data-value="1"></i><b>(1)</b>
-[INFO] Update: io.quarkus.platform:quarkus-bom:pom:2.7.1.Final -&gt; 2.9.2.Final
-[INFO] Update: io.quarkus.platform:quarkus-kogito-bom:pom:2.7.1.Final -&gt; 2.9.2.Final
-[INFO] Update: io.quarkus.platform:quarkus-camel-bom:pom:2.7.1.Final -&gt; 2.9.2.Final</code></pre>
+[INFO] Update: io.quarkus.platform:quarkus-bom:pom:2.7.1.Final -&gt; 2.14.1.Final
+[INFO] Update: io.quarkus.platform:quarkus-kogito-bom:pom:2.7.1.Final -&gt; 2.14.1.Final
+[INFO] Update: io.quarkus.platform:quarkus-camel-bom:pom:2.7.1.Final -&gt; 2.14.1.Final</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2407,8 +2511,8 @@ Typically, a single project property will be used to manage all the Quarkus plat
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[INFO] Recommended Quarkus platform BOM updates: <i class="conum" data-value="1"></i><b>(1)</b>
-[INFO] Update: io.quarkus.platform:quarkus-bom:pom:2.7.1.Final -&gt; 2.9.2.Final
-[INFO] Update: io.quarkus.platform:quarkus-camel-bom:pom:2.7.1.Final -&gt; 2.9.2.Final
+[INFO] Update: io.quarkus.platform:quarkus-bom:pom:2.7.1.Final -&gt; 2.14.1.Final
+[INFO] Update: io.quarkus.platform:quarkus-camel-bom:pom:2.7.1.Final -&gt; 2.14.1.Final
 [INFO] Remove: io.quarkus.platform:quarkus-kogito-bom:pom:2.7.1.Final <i class="conum" data-value="2"></i><b>(2)</b>
 [INFO]
 [INFO] Extensions from io.quarkus.platform:quarkus-bom:
@@ -2474,23 +2578,37 @@ Typically, a single project property will be used to manage all the Quarkus plat
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -2499,15 +2617,29 @@ Typically, a single project property will be used to manage all the Quarkus plat
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -2516,19 +2648,33 @@ Typically, a single project property will be used to manage all the Quarkus plat
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -2537,11 +2683,21 @@ Typically, a single project property will be used to manage all the Quarkus plat
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2552,21 +2708,21 @@ Typically, a single project property will be used to manage all the Quarkus plat
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

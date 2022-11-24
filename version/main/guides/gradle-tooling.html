@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Building Quarkus apps with Gradle - main</title>
+  <title>Building Quarkus apps with Gradle - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/gradle-tooling" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/gradle-tooling" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/gradle-tooling" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/gradle-tooling" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/gradle-tooling" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/gradle-tooling">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/gradle-tooling">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/gradle-tooling">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -279,7 +253,7 @@ If you prefer using the Kotlin DSL, use <code>gradle-kotlin-dsl</code> instead o
 <p>Quarkus project scaffolding automatically installs the Gradle wrapper (<code>./gradlew</code>) in your project.</p>
 </div>
 <div class="paragraph">
-<p>If you prefer to use a standalone Gradle installation, please use Gradle 7.3.3.</p>
+<p>If you prefer to use a standalone Gradle installation, please use Gradle 7.5.1.</p>
 </div>
 </td>
 </tr>
@@ -392,7 +366,7 @@ database.</p>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
 <div class="title">Gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions="hibernate-validator"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions='hibernate-validator'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -430,7 +404,7 @@ If no extension is found or if more than one extensions match, you will see a re
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
 <div class="title">Gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions="smallrye-*"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions='smallrye-*'</code></pre>
 </div>
 </div>
 </div>
@@ -693,7 +667,10 @@ app.</p>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Whether or not Quarkus should enable its ability to not do a full restart when changes to classes are compatible with JVM instrumentation. If this is set to true, Quarkus will perform class redefinition when possible.</p>
+<p>Whether Quarkus should enable its ability to not do a full restart when changes to classes are compatible with JVM instrumentation. If this is set to true, Quarkus will perform class redefinition when possible.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17780">QUARKUS_LIVE_RELOAD_INSTRUMENTATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17780" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -709,6 +686,9 @@ app.</p>
 <div class="paragraph">
 <p>The names of additional resource files to watch for changes, triggering a reload on change. Directories are <strong>not</strong> supported.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17781">QUARKUS_LIVE_RELOAD_WATCHED_RESOURCES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17781" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -722,6 +702,9 @@ app.</p>
 <div class="content">
 <div class="paragraph">
 <p>Password used to use to connect to the remote dev-mode application</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17782">QUARKUS_LIVE_RELOAD_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17782" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -737,6 +720,9 @@ app.</p>
 <div class="paragraph">
 <p>URL used to use to connect to the remote dev-mode application</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17783">QUARKUS_LIVE_RELOAD_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17783" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -751,10 +737,13 @@ app.</p>
 <div class="paragraph">
 <p>The amount of time to wait for a remote dev connect or reconnect</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17784">QUARKUS_LIVE_RELOAD_CONNECT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17784" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-live-reload-live-reload-config" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>30S</code></p></td>
 </tr>
 <tr>
@@ -766,10 +755,13 @@ app.</p>
 <div class="paragraph">
 <p>The amount of time to wait between attempts when connecting to the server side of remote dev</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17785">QUARKUS_LIVE_RELOAD_RETRY_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17785" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-live-reload-live-reload-config" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2S</code></p></td>
 </tr>
 <tr>
@@ -781,6 +773,9 @@ app.</p>
 <div class="paragraph">
 <p>The maximum number of attempts when connecting to the server side of remote dev</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17786">QUARKUS_LIVE_RELOAD_RETRY_MAX_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17786" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -788,7 +783,7 @@ app.</p>
 </tr>
 </tbody>
 </table>
-<div id="duration-note-anchor" class="admonitionblock note">
+<div id="duration-note-anchor-quarkus-live-reload-live-reload-config" class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
@@ -1032,7 +1027,7 @@ Once executed, you will be able to safely run quarkus task with <code>--offline<
 <p>Native executables make Quarkus applications ideal for containers and serverless workloads.</p>
 </div>
 <div class="paragraph">
-<p>Make sure to have <code>GRAALVM_HOME</code> configured and pointing to GraalVM version 22.0.0 (Make sure to use a Java 11 version of GraalVM).</p>
+<p>Make sure to have <code>GRAALVM_HOME</code> configured and pointing to the latest release of GraalVM version 22.3 (Make sure to use a Java 11 version of GraalVM).</p>
 </div>
 <div class="paragraph">
 <p>Create a native executable using:</p>
@@ -1064,7 +1059,7 @@ Configuring the <code>quarkusBuild</code> task can be done as following:</p>
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">quarkusBuild {
     nativeArgs {
         containerBuild = true <i class="conum" data-value="1"></i><b>(1)</b>
-        builderImage = "quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11" <i class="conum" data-value="2"></i><b>(2)</b>
+        builderImage = "quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17" <i class="conum" data-value="2"></i><b>(2)</b>
     }
 }</code></pre>
 </div>
@@ -1077,7 +1072,7 @@ Configuring the <code>quarkusBuild</code> task can be done as following:</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Set <code>quarkus.native.builder-image</code> property to <code>quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11</code></td>
+<td>Set <code>quarkus.native.builder-image</code> property to <code>quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17</code></td>
 </tr>
 </table>
 </div>
@@ -1091,7 +1086,7 @@ Configuring the <code>quarkusBuild</code> task can be done as following:</p>
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">tasks.quarkusBuild {
     nativeArgs {
         "container-build" to true <i class="conum" data-value="1"></i><b>(1)</b>
-        "builder-image" to "quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11" <i class="conum" data-value="2"></i><b>(2)</b>
+        "builder-image" to "quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17" <i class="conum" data-value="2"></i><b>(2)</b>
     }
 }</code></pre>
 </div>
@@ -1104,7 +1099,7 @@ Configuring the <code>quarkusBuild</code> task can be done as following:</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Set <code>quarkus.native.builder-image</code> property to <code>quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11</code></td>
+<td>Set <code>quarkus.native.builder-image</code> property to <code>quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17</code></td>
 </tr>
 </table>
 </div>
@@ -1158,14 +1153,14 @@ Note that in this case the build itself runs in a Docker container too, so you d
 </td>
 <td class="content">
 <div class="paragraph">
-<p>By default, the native executable will be generated using the <code>quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11</code> Docker image.</p>
+<p>By default, the native executable will be generated using the <code>quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17</code> Docker image.</p>
 </div>
 <div class="paragraph">
 <p>If you want to build a native executable with a different Docker image (for instance to use a different GraalVM version),
 use the <code>-Dquarkus.native.builder-image=&lt;image name&gt;</code> build argument.</p>
 </div>
 <div class="paragraph">
-<p>The list of the available Docker images can be found on <a href="https://quay.io/repository/quarkus/ubi-quarkus-native-image?tab=tags">quay.io</a>.
+<p>The list of the available Docker images can be found on <a href="https://quay.io/repository/quarkus/ubi-quarkus-graalvmce-builder-image?tab=tags">quay.io</a>.
 Be aware that a given Quarkus version might not be compatible with all the images available.</p>
 </div>
 </td>
@@ -1246,7 +1241,7 @@ Those tests can be placed in a <code>src/integrationTest/java</code> directory a
 </div>
 </div>
 <div class="paragraph">
-<p>This task depends on both <code>check</code> and <code>quarkusBuild</code> tasks. The final artifact will be produced before running tests.</p>
+<p>This task depends on both <code>test</code> and <code>quarkusBuild</code> tasks. The final artifact will be produced before running tests.</p>
 </div>
 </div>
 </div>
@@ -1257,7 +1252,7 @@ Those tests can be placed in a <code>src/integrationTest/java</code> directory a
 <p><code>fast-jar</code> is now the default quarkus package type. The result of <code>./gradlew build</code> command is a new directory under <code>build</code> named <code>quarkus-app</code>.</p>
 </div>
 <div class="paragraph">
-<p>You can run the application using: <code>java -jar target/quarkus-app/quarkus-run.jar</code>.</p>
+<p>You can run the application using: <code>java -jar build/quarkus-app/quarkus-run.jar</code>.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1389,23 +1384,37 @@ This validation can be skipped by adding the following configuration in your bui
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1414,15 +1423,29 @@ This validation can be skipped by adding the following configuration in your bui
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1431,19 +1454,33 @@ This validation can be skipped by adding the following configuration in your bui
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1452,11 +1489,21 @@ This validation can be skipped by adding the following configuration in your bui
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1467,21 +1514,21 @@ This validation can be skipped by adding the following configuration in your bui
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

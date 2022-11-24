@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Using OpenID Connect (OIDC) and Keycloak to Centralize Authorization</title>
+  <title>Using OpenID Connect (OIDC) and Keycloak to Centralize Authorization - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/security-keycloak-authorization" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/security-keycloak-authorization" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/security-keycloak-authorization" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/security-keycloak-authorization" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/security-keycloak-authorization" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/security-keycloak-authorization">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/security-keycloak-authorization">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/security-keycloak-authorization">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -209,7 +183,7 @@
 <div class="paragraph">
 <p>The <code>quarkus-keycloak-authorization</code> extension is based on <code>quarkus-oidc</code> and provides a policy enforcer that enforces access to protected resources based on permissions managed by Keycloak and currently can only be used with the Quarkus <a href="security-openid-connect">OIDC service applications</a>.
 It provides a flexible and dynamic authorization capability based on Resource-Based Access Control.
-In other words, instead of explicitly enforcing access based on some specific access control mechanism (e.g.: RBAC), you just check whether or not a request is allowed to access a resource based on its name, identifier or URI.</p>
+In other words, instead of explicitly enforcing access based on some specific access control mechanism (e.g.: RBAC), you just check whether a request is allowed to access a resource based on its name, identifier or URI.</p>
 </div>
 <div class="paragraph">
 <p>By externalizing authorization from your application, you are allowed to protect your applications using different access control mechanisms as well as avoid re-deploying your application every time your security requirements change, where Keycloak will be acting as a centralized authorization service from where your protected resources and their associated permissions are managed.</p>
@@ -241,10 +215,10 @@ Otherwise, you can find more information in the Keycloak <a href="https://www.ke
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.1+</p>
+<p>Apache Maven 3.8.6</p>
 </li>
 <li>
-<p>A working container runtime (Docker or Podman)</p>
+<p>A working container runtime (Docker or <a href="podman">Podman</a>)</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -328,7 +302,7 @@ Create a new project with the following command:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus create app org.acme:security-keycloak-authorization-quickstart \
-    --extension=oidc,keycloak-authorization,resteasy-reactive-jackson \
+    --extension='oidc,keycloak-authorization,resteasy-reactive-jackson' \
     --no-code
 cd security-keycloak-authorization-quickstart</code></pre>
 </div>
@@ -346,10 +320,10 @@ cd security-keycloak-authorization-quickstart</code></pre>
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.9.2.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.14.1.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=security-keycloak-authorization-quickstart \
-    -Dextensions="oidc,keycloak-authorization,resteasy-reactive-jackson" \
+    -Dextensions='oidc,keycloak-authorization,resteasy-reactive-jackson' \
     -DnoCode
 cd security-keycloak-authorization-quickstart</code></pre>
 </div>
@@ -375,13 +349,13 @@ to your project by running the following command in your project base directory:
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions="oidc,keycloak-authorization"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions='oidc,keycloak-authorization'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
 <div class="title">Gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions="oidc,keycloak-authorization"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions='oidc,keycloak-authorization'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -610,7 +584,7 @@ For more details, see the Keycloak documentation about how to <a href="https://w
 <p>Open a <a href="dev-ui">Dev UI</a> available at <a href="http://localhost:8080/q/dev">/q/dev</a> and click on a <code>Provider: Keycloak</code> link in an <code>OpenID Connect</code> <code>Dev UI</code> card.</p>
 </div>
 <div class="paragraph">
-<p>You will be asked to login into a <code>Single Page Application</code> provided by <code>OpenID Connect Dev UI</code>:</p>
+<p>You will be asked to log in into a <code>Single Page Application</code> provided by <code>OpenID Connect Dev UI</code>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -662,7 +636,7 @@ For more details, see the Keycloak documentation about how to <a href="https://w
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean package</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -702,7 +676,7 @@ For more details, see the Keycloak documentation about how to <a href="https://w
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -788,7 +762,7 @@ If you try to access this endpoint with the previously issued access token, you 
 <h2 id="checking-permissions-programmatically"><a class="anchor" href="#checking-permissions-programmatically"></a>Checking Permissions Programmatically</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In some cases, you may want to programmatically check whether or not a request is granted to access a protected resource. By
+<p>In some cases, you may want to programmatically check whether a request is granted to access a protected resource. By
 injecting a <code>SecurityIdentity</code> instance in your beans, you are allowed to check permissions as follows:</p>
 </div>
 <div class="listingblock">
@@ -835,7 +809,7 @@ specific operations like managing resources and obtaining permissions directly f
 </div>
 </div>
 <div class="paragraph">
-<p>Note: If you want to use the <code>AuthzClient</code> directly make sure to to set <code>quarkus.keycloak.policy-enforcer.enable=true</code> otherwise there is no Bean available for injection.</p>
+<p>Note: If you want to use the <code>AuthzClient</code> directly make sure to set <code>quarkus.keycloak.policy-enforcer.enable=true</code> otherwise there is no Bean available for injection.</p>
 </div>
 </div>
 </div>
@@ -888,7 +862,7 @@ quarkus.keycloak.policy-enforcer.paths.1.enforcement-mode=DISABLED</code></pre>
 <p>is no longer required.</p>
 </div>
 <div class="paragraph">
-<p>If you&#8217;d like to block an access to the public resource to anonymous users then you can create an enforcing Keycloak Authorization Policy:</p>
+<p>If you&#8217;d like to block access to the public resource to anonymous users then you can create an enforcing Keycloak Authorization Policy:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -897,7 +871,7 @@ quarkus.keycloak.policy-enforcer.paths.1.enforcement-mode=ENFORCING</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Note only the default tenant configuration applies when controlling an anonymous access to the public resource is required.</p>
+<p>Note only the default tenant configuration applies when controlling anonymous access to the public resource is required.</p>
 </div>
 </div>
 </div>
@@ -982,6 +956,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Adapters will make separate HTTP invocations to the Keycloak server to turn an access code into an access token. This config option defines how many connections to the Keycloak server should be pooled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5860">QUARKUS_KEYCLOAK_CONNECTION_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5860" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -996,9 +973,14 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Specifies how policies are enforced.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5861">QUARKUS_KEYCLOAK_POLICY_ENFORCER_ENFORCEMENT_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5861" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enforcing</code></p></td>
 </tr>
 <tr>
@@ -1009,6 +991,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="content">
 <div class="paragraph">
 <p>Defines the limit of entries that should be kept in the cache</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5862">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATH_CACHE_MAX_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5862" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1024,6 +1009,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Defines the time in milliseconds when the entry should be expired</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5863">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATH_CACHE_LIFESPAN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5863" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
@@ -1038,6 +1026,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Specifies how the adapter should fetch the server for resources associated with paths in your application. If true, the policy enforcer is going to fetch resources on-demand accordingly with the path being requested</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5864">QUARKUS_KEYCLOAK_POLICY_ENFORCER_LAZY_LOAD_PATHS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5864" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1050,7 +1041,10 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Specifies how scopes should be mapped to HTTP methods. If set to true, the policy enforcer will use the HTTP method from the current request to check whether or not access should be granted</p>
+<p>Specifies how scopes should be mapped to HTTP methods. If set to true, the policy enforcer will use the HTTP method from the current request to check whether access should be granted</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5865">QUARKUS_KEYCLOAK_POLICY_ENFORCER_HTTP_METHOD_AS_SCOPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5865" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1066,6 +1060,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>The name of a resource on the server that is to be associated with a given path</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5866">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5866" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1079,6 +1076,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="content">
 <div class="paragraph">
 <p>A URI relative to the application’s context path that should be protected by the policy enforcer</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5867">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5867" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1094,6 +1094,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>The name of the HTTP method</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5868">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__METHODS__METHODS__METHOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5868" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1107,6 +1110,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="content">
 <div class="paragraph">
 <p>An array of strings with the scopes associated with the method</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5869">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__METHODS__METHODS__SCOPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5869" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1122,9 +1128,14 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>A string referencing the enforcement mode for the scopes associated with a method</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5870">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__METHODS__METHODS__SCOPES_ENFORCEMENT_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5870" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>all</code>, <code>any</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>all</code>, <code>any</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>all</code></p></td>
 </tr>
 <tr>
@@ -1136,9 +1147,14 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Specifies how policies are enforced</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5871">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__ENFORCEMENT_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5871" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enforcing</code></p></td>
 </tr>
 <tr>
@@ -1147,7 +1163,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5872">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5872" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,Map&lt;String,String&gt;&gt;&gt;</code></p></td>
@@ -1159,7 +1177,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5873">QUARKUS_KEYCLOAK_POLICY_ENFORCER_PATHS__PATHS__CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5873" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,String&gt;&gt;</code></p></td>
@@ -1171,7 +1191,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5874">QUARKUS_KEYCLOAK_POLICY_ENFORCER_CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5874" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,Map&lt;String,String&gt;&gt;&gt;</code></p></td>
@@ -1183,7 +1205,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5875">QUARKUS_KEYCLOAK_POLICY_ENFORCER_CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5875" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,String&gt;&gt;</code></p></td>
@@ -1203,6 +1227,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Adapters will make separate HTTP invocations to the Keycloak server to turn an access code into an access token. This config option defines how many connections to the Keycloak server should be pooled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5876">QUARKUS_KEYCLOAK__TENANT__CONNECTION_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5876" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1217,9 +1244,14 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Specifies how policies are enforced.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5877">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_ENFORCEMENT_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5877" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enforcing</code></p></td>
 </tr>
 <tr>
@@ -1230,6 +1262,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="content">
 <div class="paragraph">
 <p>The name of a resource on the server that is to be associated with a given path</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5878">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5878" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1245,6 +1280,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>A URI relative to the application’s context path that should be protected by the policy enforcer</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5879">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5879" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1258,6 +1296,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="content">
 <div class="paragraph">
 <p>The name of the HTTP method</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5880">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__METHODS__METHODS__METHOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5880" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1273,6 +1314,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>An array of strings with the scopes associated with the method</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5881">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__METHODS__METHODS__SCOPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5881" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -1287,9 +1331,14 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>A string referencing the enforcement mode for the scopes associated with a method</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5882">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__METHODS__METHODS__SCOPES_ENFORCEMENT_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5882" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>all</code>, <code>any</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>all</code>, <code>any</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>all</code></p></td>
 </tr>
 <tr>
@@ -1301,9 +1350,14 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Specifies how policies are enforced</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5883">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__ENFORCEMENT_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5883" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>permissive</code>, <code>enforcing</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enforcing</code></p></td>
 </tr>
 <tr>
@@ -1312,7 +1366,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5884">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5884" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,Map&lt;String,String&gt;&gt;&gt;</code></p></td>
@@ -1324,7 +1380,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5885">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATHS__PATHS__CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5885" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,String&gt;&gt;</code></p></td>
@@ -1338,6 +1396,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="content">
 <div class="paragraph">
 <p>Defines the limit of entries that should be kept in the cache</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5886">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATH_CACHE_MAX_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5886" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1353,6 +1414,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Defines the time in milliseconds when the entry should be expired</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5887">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_PATH_CACHE_LIFESPAN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5887" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
@@ -1367,6 +1431,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="paragraph">
 <p>Specifies how the adapter should fetch the server for resources associated with paths in your application. If true, the policy enforcer is going to fetch resources on-demand accordingly with the path being requested</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5888">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_LAZY_LOAD_PATHS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5888" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1378,7 +1445,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5889">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5889" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,Map&lt;String,String&gt;&gt;&gt;</code></p></td>
@@ -1390,7 +1459,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 </div>
 <div class="openblock description">
 <div class="content">
-
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5890">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_CLAIM_INFORMATION_POINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5890" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,Map&lt;String,String&gt;&gt;</code></p></td>
@@ -1403,7 +1474,10 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Specifies how scopes should be mapped to HTTP methods. If set to true, the policy enforcer will use the HTTP method from the current request to check whether or not access should be granted</p>
+<p>Specifies how scopes should be mapped to HTTP methods. If set to true, the policy enforcer will use the HTTP method from the current request to check whether access should be granted</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5891">QUARKUS_KEYCLOAK__TENANT__POLICY_ENFORCER_HTTP_METHOD_AS_SCOPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5891" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1434,6 +1508,9 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
 <li>
 <p><a href="security">Quarkus Security</a></p>
 </li>
+<li>
+<p><a href="security-keycloak-admin-client">Quarkus Keycloak Admin Client</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -1458,23 +1535,37 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1483,15 +1574,29 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1500,19 +1605,33 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1521,11 +1640,21 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1536,21 +1665,21 @@ quarkus.keycloak.webapp-tenant.policy-enforcer.paths.1.claim-information-point.c
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

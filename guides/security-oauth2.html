@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Using OAuth2 RBAC</title>
+  <title>Using OAuth2 RBAC - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/security-oauth2" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/security-oauth2" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/security-oauth2" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/security-oauth2" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/security-oauth2" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/security-oauth2">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/security-oauth2">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/security-oauth2">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -223,15 +197,10 @@ OpenID Connect extension has to be used if the Quarkus application needs to auth
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This technology is considered preview.</p>
+<p>This technology is considered {extension-status}.</p>
 </div>
 <div class="paragraph">
-<p>In <em>preview</em>, backward compatibility and presence in the ecosystem is not guaranteed.
-Specific improvements might require changing configuration or APIs, and plans to become <em>stable</em> are under way.
-Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-dev">mailing list</a> or as issues in our <a href="https://github.com/quarkusio/quarkus/issues">GitHub issue tracker</a>.</p>
-</div>
-<div class="paragraph">
-<p>For a full list of possible statuses, check our <a href="https://quarkus.io/faq/#extension-status">FAQ entry</a>.</p>
+<p>For a full list of possible statuses, check our <a href="https://quarkus.io/faq/#what-are-the-extension-statuses">FAQ entry</a>.</p>
 </div>
 </td>
 </tr>
@@ -267,7 +236,7 @@ It contains a very simple UI to use the JAX-RS resources created here, too.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus create app org.acme:security-oauth2-quickstart \
-    --extension=resteasy-reactive-jackson,security-oauth2 \
+    --extension='resteasy-reactive-jackson,security-oauth2' \
     --no-code
 cd security-oauth2-quickstart</code></pre>
 </div>
@@ -285,10 +254,10 @@ cd security-oauth2-quickstart</code></pre>
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.9.2.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.14.1.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=security-oauth2-quickstart \
-    -Dextensions="resteasy-reactive-jackson,security-oauth2" \
+    -Dextensions='resteasy-reactive-jackson,security-oauth2' \
     -DnoCode
 cd security-oauth2-quickstart</code></pre>
 </div>
@@ -395,7 +364,7 @@ public class TokenSecuredResource {
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Here we obtain the current request user/caller <code>Principal</code>. For an unsecured call this will be null, so we build the user name by checking <code>caller</code> against null.</td>
+<td>Here we obtain the current request user/caller <code>Principal</code>. For an unsecured call this will be null, so we build the username by checking <code>caller</code> against null.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -465,7 +434,7 @@ hello + anonymous, isSecure: false, authScheme: null</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>user name is anonymous</p>
+<p>username is anonymous</p>
 </li>
 <li>
 <p><code>isSecure</code> is false as https is not used</p>
@@ -532,7 +501,7 @@ public class TokenSecuredResource {
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>@RolesAllowed</code> indicates that the given endpoint is accessible by a caller if they have either a "Echoer" or "Subscriber" role assigned.</td>
+<td><code>@RolesAllowed</code> indicates that the given endpoint is accessible by a caller if they have either an "Echoer" or a "Subscriber" role assigned.</td>
 </tr>
 </table>
 </div>
@@ -561,7 +530,7 @@ Not authorized</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Excellent, we have not provided any OAuth2 token in the request, so we should not be able to access the endpoint, and we were not. Instead we received an HTTP 401 Unauthorized error. We need to obtain and pass in a valid OAuth2 token to access that endpoint. There are two steps to this, 1) configuring our Elytron Security OAuth2 extension with information on how to validate the token, and 2) generating a matching token with the appropriate claims.</p>
+<p>Excellent, we have not provided any OAuth2 token in the request, so we should not be able to access the endpoint, and we were not. Instead, we received an HTTP 401 Unauthorized error. We need to obtain and pass in a valid OAuth2 token to access that endpoint. There are two steps to this, 1) configuring our Elytron Security OAuth2 extension with information on how to validate the token, and 2) generating a matching token with the appropriate claims.</p>
 </div>
 </div>
 <div class="sect2">
@@ -640,7 +609,7 @@ hello + client_id isSecure: false, authScheme: OAuth2</code></pre>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean package</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -657,7 +626,7 @@ hello + client_id isSecure: false, authScheme: OAuth2</code></pre>
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">[INFO] Scanning for projects...
 ...
 $ java -jar target/quarkus-app/quarkus-run.jar
-2019-03-28 14:27:48,839 INFO  [io.quarkus] (main) Quarkus 2.9.2.Final started in 0.796s. Listening on: http://[::]:8080
+2019-03-28 14:27:48,839 INFO  [io.quarkus] (main) Quarkus 2.14.1.Final started in 0.796s. Listening on: http://[::]:8080
 2019-03-28 14:27:48,841 INFO  [io.quarkus] (main) Installed features: [cdi, resteasy-reactive, resteasy-reactive-jackson, security, security-oauth2]</code></pre>
 </div>
 </div>
@@ -673,7 +642,7 @@ $ java -jar target/quarkus-app/quarkus-run.jar
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -716,7 +685,7 @@ $ ./target/security-oauth2-quickstart-runner
 <a href="security-properties">Properties based security</a> extension for your test, or mock an authorization server using Wiremock.</p>
 </div>
 <div class="paragraph">
-<p>First of all, Wiremock needs to be added as a test dependency. For a Maven project that would happen like so:</p>
+<p>First, Wiremock needs to be added as a test dependency. For a Maven project that would happen like so:</p>
 </div>
 <div class="listingblock primary asciidoc-tabs-target-sync-cli asciidoc-tabs-target-sync-maven">
 <div class="title">pom.xml</div>
@@ -945,6 +914,9 @@ class TokenSecuredResourceTest {
 <div class="paragraph">
 <p>Determine if the OAuth2 extension is enabled. Enabled by default if you include the <code>elytron-security-oauth2</code> dependency, so this would be used to disable it.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5908">QUARKUS_OAUTH2_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5908" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -958,6 +930,9 @@ class TokenSecuredResourceTest {
 <div class="content">
 <div class="paragraph">
 <p>The claim that is used in the introspection endpoint response to load the roles.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5909">QUARKUS_OAUTH2_ROLE_CLAIM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5909" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -973,6 +948,9 @@ class TokenSecuredResourceTest {
 <div class="paragraph">
 <p>The OAuth2 client id used to validate the token. Mandatory if the extension is enabled.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5910">QUARKUS_OAUTH2_CLIENT_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5910" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -986,6 +964,9 @@ class TokenSecuredResourceTest {
 <div class="content">
 <div class="paragraph">
 <p>The OAuth2 client secret used to validate the token. Mandatory if the extension is enabled.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5911">QUARKUS_OAUTH2_CLIENT_SECRET</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5911" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1001,6 +982,9 @@ class TokenSecuredResourceTest {
 <div class="paragraph">
 <p>The OAuth2 introspection endpoint URL used to validate the token and gather the authentication claims. Mandatory if the extension is enabled.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5912">QUARKUS_OAUTH2_INTROSPECTION_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5912" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1014,6 +998,9 @@ class TokenSecuredResourceTest {
 <div class="content">
 <div class="paragraph">
 <p>The OAuth2 server certificate file. <strong>Warning</strong>: this is not supported in native mode where the certificate must be included in the truststore used during the native image generation, see <a href="native-and-ssl.html">Using SSL With Native Executables</a>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5913">QUARKUS_OAUTH2_CA_CERT_FILE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5913" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1044,23 +1031,37 @@ class TokenSecuredResourceTest {
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1069,15 +1070,29 @@ class TokenSecuredResourceTest {
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1086,19 +1101,33 @@ class TokenSecuredResourceTest {
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1107,11 +1136,21 @@ class TokenSecuredResourceTest {
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1122,21 +1161,21 @@ class TokenSecuredResourceTest {
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

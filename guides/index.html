@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Guides - Latest</title>
+  <title>Guides - Latest - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,9 +33,22 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
-<body class="guides-index">
+<body class="documentation">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJWS5L"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -107,124 +120,121 @@
 </div>
 
   <div class="content">
-    <a id="backToTop"><i class="fas fa-chevron-up"></i></a>
+    
 
 
-
-
-
+<a id="backToTop"><i class="fas fa-chevron-up"></i></a>
 <div class="title-band">
   <h1 class="title">Guides - Latest</h1>
   <h3 class="mb-0"></h3>
 </div>
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
+
+  
+  
+
+
+<div class="full-width-version-bg grey guidebar align-self">
+  <div class="guidebarcol search">
     <div class="keywordsearch">
-      <input type="text" id="search-text" placeholder="Find a Guide" />
-      <i class="fas fa-search"></i>
-    </div> 
-  </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-          <label id="guidesindex-version-label">Select Guides Version</label>
-    <select id="guidesindex-version-dropdown">
-      
-        <option value="main" >Main - SNAPSHOT</option>
-      
-        <option value="latest" selected>2.9 - Latest</option>
-      
-        <option value="2.7" >2.7</option>
-      
-        <option value="2.2" >2.2</option>
-      
-        <option value="1.11" >1.11</option>
-      
-    </select>
+      <input type="text" id="search-text" placeholder="Filter by keyword" />
     </div>
+  </div>
+  <div class="guidebarcol version">
+    <label id="guidesindex-version-label" class="guide-dropdown-label">Select Guides Version</label>
+    <select id="guidesindex-version-dropdown" class="guide-dropdown">
+    
+      <option value="main" >Main - SNAPSHOT</option>
+    
+      <option value="latest" selected>2.14 - Latest</option>
+    
+      <option value="2.13" >2.13</option>
+    
+      <option value="2.7" >2.7</option>
+    
+    </select>
   </div>
 </div>
  
-
 <div class="grid-wrapper guides">
 
-<div class="grid__item width-6-12 width-12-12-m guide-categories callout-wrapper">
-  <h3>View Category</h3>
-    <ul>
-    
-      <li>
-        <a href="#getting-started">Getting Started</a>
-      </li>
-    
-      <li>
-        <a href="#core">Core</a>
-      </li>
-    
-      <li>
-        <a href="#web">Web</a>
-      </li>
-    
-      <li>
-        <a href="#data">Data</a>
-      </li>
-    
-      <li>
-        <a href="#messaging">Messaging</a>
-      </li>
-    
-      <li>
-        <a href="#security">Security</a>
-      </li>
-    
-      <li>
-        <a href="#business-automation">Business Automation</a>
-      </li>
-    
-      <li>
-        <a href="#integration">Integration</a>
-      </li>
-    
-      <li>
-        <a href="#command-line">Command Line Applications</a>
-      </li>
-    
-      <li>
-        <a href="#cloud">Cloud</a>
-      </li>
-    
-      <li>
-        <a href="#observability">Observability</a>
-      </li>
-    
-      <li>
-        <a href="#serialization">Serialization</a>
-      </li>
-    
-      <li>
-        <a href="#tooling">Tooling</a>
-      </li>
-    
-      <li>
-        <a href="#compatibility">Compatibility</a>
-      </li>
-    
-      <li>
-        <a href="#miscellaneous">Miscellaneous</a>
-      </li>
-    
-      <li>
-        <a href="#alternative-languages">Alternative Languages</a>
-      </li>
-    
-      <li>
-        <a href="#writing-extensions">Writing Extensions</a>
-      </li>
-    
-      <li>
-        <a href="#architecture">Architecture</a>
-      </li>
-    
-    </ul>
+  <div class="grid__item width-6-12 width-12-12-m guide-categories callout-wrapper">
+    <h3>View Category</h3>
+      <ul>
+      
+        <li>
+          <a href="#getting-started">Getting Started</a>
+        </li>
+      
+        <li>
+          <a href="#core">Core</a>
+        </li>
+      
+        <li>
+          <a href="#web">Web</a>
+        </li>
+      
+        <li>
+          <a href="#data">Data</a>
+        </li>
+      
+        <li>
+          <a href="#messaging">Messaging</a>
+        </li>
+      
+        <li>
+          <a href="#security">Security</a>
+        </li>
+      
+        <li>
+          <a href="#business-automation">Business Automation</a>
+        </li>
+      
+        <li>
+          <a href="#integration">Integration</a>
+        </li>
+      
+        <li>
+          <a href="#command-line">Command Line Applications</a>
+        </li>
+      
+        <li>
+          <a href="#cloud">Cloud</a>
+        </li>
+      
+        <li>
+          <a href="#observability">Observability</a>
+        </li>
+      
+        <li>
+          <a href="#serialization">Serialization</a>
+        </li>
+      
+        <li>
+          <a href="#tooling">Tooling</a>
+        </li>
+      
+        <li>
+          <a href="#compatibility">Compatibility</a>
+        </li>
+      
+        <li>
+          <a href="#miscellaneous">Miscellaneous</a>
+        </li>
+      
+        <li>
+          <a href="#alternative-languages">Alternative Languages</a>
+        </li>
+      
+        <li>
+          <a href="#writing-extensions">Writing Extensions</a>
+        </li>
+      
+        <li>
+          <a href="#architecture">Architecture</a>
+        </li>
+      
+      </ul>
   </div>
 
   <div class="grid__item width-6-12 width-12-12-m callout-wrapper">
@@ -746,6 +756,17 @@
               <a href="/guides/datasource" ></a>
               <p class="title">Configuring your datasources</p>
               <div class="description"><p>With Quarkus, you can easily configure a datasource, or several if need be.</p>
+</div>
+              <div class="keywords"></div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
+              <a href="/guides/databases-dev-services" ></a>
+              <p class="title">Database Dev Services</p>
+              <div class="description"><p>Automatically start database containers with Dev Services.</p>
 </div>
               <div class="keywords"></div>
               
@@ -1303,22 +1324,32 @@ This guide will walk you through all that.</p>
           
           
           <li class="card">
-              <a href="/guides/reactive-messaging-http" ></a>
+              <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-reactive-messaging-http/dev/reactive-messaging-http.html" target="_blank"></a>
               <p class="title">Using HTTP with Reactive Messaging</p>
               <div class="description"><p>This guide demonstrates how your Quarkus application can utilize SmallRye Reactive Messaging to consume and produce HTTP messages.</p>
 </div>
               <div class="keywords"></div>
+              
+              <div class="origin">
+                  <img src="/assets/images/quarkiverse_icon_default.svg" width="25" height="25" />
+                  <span>Quarkiverse Hub</span>
+              </div>
               
           </li>
         
           
           
           <li class="card">
-              <a href="/guides/reactive-messaging-websocket" ></a>
+              <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-reactive-messaging-http/dev/reactive-messaging-websocket.html" target="_blank"></a>
               <p class="title">Using WebSockets with Reactive Messaging</p>
               <div class="description"><p>This guide demonstrates how your Quarkus application can utilize SmallRye Reactive Messaging to consume and produce messages via WebSockets.</p>
 </div>
               <div class="keywords"></div>
+              
+              <div class="origin">
+                  <img src="/assets/images/quarkiverse_icon_default.svg" width="25" height="25" />
+                  <span>Quarkiverse Hub</span>
+              </div>
               
           </li>
         
@@ -1392,6 +1423,17 @@ This guide will walk you through all that.</p>
           
           
           <li class="card">
+              <a href="/guides/security-getting-started" ></a>
+              <p class="title">Security with Basic authentication and JPA</p>
+              <div class="description"><p>This guide demonstrates how to get started with Quarkus security using Basic authentication and a database to store your user identities with Hibernate ORM.</p>
+</div>
+              <div class="keywords"></div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
               <a href="/guides/security-authorization" ></a>
               <p class="title">Authorization of Web Endpoints</p>
               <div class="description"><p>Secure your web endpoints with authorizations.</p>
@@ -1439,17 +1481,6 @@ This guide will walk you through all that.</p>
               <a href="/guides/security-properties" ></a>
               <p class="title">Using Security with .properties File</p>
               <div class="description"><p>This guide demonstrates how your Quarkus application can use a .properties file to store your user identities.</p>
-</div>
-              <div class="keywords">security</div>
-              
-          </li>
-        
-          
-          
-          <li class="card">
-              <a href="/guides/security-jpa" ></a>
-              <p class="title">Using Security with JPA</p>
-              <div class="description"><p>This guide demonstrates how your Quarkus application can use a database to store your user identities with Hibernate ORM.</p>
 </div>
               <div class="keywords">security</div>
               
@@ -1535,6 +1566,17 @@ This guide will walk you through all that.</p>
           
           
           <li class="card">
+              <a href="/guides/security-openid-connect-client-reference" ></a>
+              <p class="title">OpenID Connect (OIDC) and OAuth2 Client and Filters Reference</p>
+              <div class="description"><p>Reference guide for OpenID Connect and OAuth2 Client and Filters.</p>
+</div>
+              <div class="keywords">sso,security</div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
               <a href="/guides/security-openid-connect-providers" ></a>
               <p class="title">Configuring Well-Known OpenID Connect (OIDC) Providers</p>
               <div class="description"><p>This guide explains how to configure Quarkus to authenticate against well-known OpenID Connect providers such as GitHub, Google, Microsoft, Apple…</p>
@@ -1549,6 +1591,17 @@ This guide will walk you through all that.</p>
               <a href="/guides/security-openid-connect-dev-services" ></a>
               <p class="title">OpenID Connect (OIDC) Dev Services</p>
               <div class="description"><p>Start Keycloak or other providers automatically in dev and test modes.</p>
+</div>
+              <div class="keywords">security</div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
+              <a href="/guides/security-keycloak-admin-client" ></a>
+              <p class="title">Keycloak Admin Client</p>
+              <div class="description"><p>Inject a preconfigured Keycloak Admin Client.</p>
 </div>
               <div class="keywords">security</div>
               
@@ -1686,6 +1739,17 @@ This guide will walk you through all that.</p>
               <div class="description"><p>This guide demonstrates how your Quarkus application can use WebAuthn authentication instead of passwords.</p>
 </div>
               <div class="keywords">security,webauthn</div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
+              <a href="/guides/security-csrf-prevention" ></a>
+              <p class="title">Cross Site Request Forgery (CSRF) prevention</p>
+              <div class="description"><p>This guide demonstrates how to add a RESTEasy Reactive filter to help prevent CSRF attacks.</p>
+</div>
+              <div class="keywords">security,csrf</div>
               
           </li>
         
@@ -1831,8 +1895,19 @@ This guide will walk you through all that.</p>
           
           <li class="card">
               <a href="/guides/stork" ></a>
-              <p class="title">Stork</p>
+              <p class="title">Service discovery and load balancing with Stork</p>
               <div class="description"><p>Learn how to use SmallRye Stork for service discovery and load balacing.</p>
+</div>
+              <div class="keywords"></div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
+              <a href="/guides/stork-kubernetes" ></a>
+              <p class="title">Using Stork with Kubernetes</p>
+              <div class="description"><p>Learn how to use SmallRye Stork in a Kubernetes environment.</p>
 </div>
               <div class="keywords"></div>
               
@@ -1855,6 +1930,17 @@ This guide will walk you through all that.</p>
               <a href="/guides/container-image" ></a>
               <p class="title">Build Container Images</p>
               <div class="description"><p>Learn how to build and push container images with Jib, S2I or Docker as part of the Quarkus build.</p>
+</div>
+              <div class="keywords"></div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
+              <a href="/guides/podman" ></a>
+              <p class="title">Using Podman</p>
+              <div class="description"><p>Use Podman instead of Docker for running containers.</p>
 </div>
               <div class="keywords"></div>
               
@@ -2873,6 +2959,17 @@ This guide will walk you through all that.</p>
           
           
           <li class="card">
+              <a href="/guides/extension-metadata" ></a>
+              <p class="title">Extension metadata</p>
+              <div class="description"><p>Learn more about Quarkus extensions metadata</p>
+</div>
+              <div class="keywords"></div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
               <a href="/guides/conditional-extension-dependencies" ></a>
               <p class="title">Conditional Extension Dependencies</p>
               <div class="description"><p>Trigger the inclusion on additional extensions based on certain conditions.</p>
@@ -2935,6 +3032,17 @@ This guide will walk you through all that.</p>
           
           
           <li class="card">
+              <a href="/guides/virtual-threads" ></a>
+              <p class="title">Virtual Threads support</p>
+              <div class="description"><p>Learn how to benefit from Java 19 virtual threads when writing REST services in Quarkus.</p>
+</div>
+              <div class="keywords"></div>
+              
+          </li>
+        
+          
+          
+          <li class="card">
               <a href="/guides/class-loading-reference" ></a>
               <p class="title">Class Loading Reference</p>
               <div class="description"><p>Learn more about Quarkus class loading infrastructure.</p>
@@ -2979,10 +3087,11 @@ This guide will walk you through all that.</p>
         </ul>
       </li>
     
-  </ul>
-  <div class="empty-list">Sorry, no guides matched your search. Please try again.</div>
+    </ul>
+    <div class="empty-list">Sorry, no guides matched your search. Please try again.</div>
   </div>
 </div>
+  
 
   </div>
 
@@ -3000,23 +3109,37 @@ This guide will walk you through all that.</p>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -3025,15 +3148,29 @@ This guide will walk you through all that.</p>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -3042,19 +3179,33 @@ This guide will walk you through all that.</p>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -3063,11 +3214,21 @@ This guide will walk you through all that.</p>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -3078,21 +3239,21 @@ This guide will walk you through all that.</p>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

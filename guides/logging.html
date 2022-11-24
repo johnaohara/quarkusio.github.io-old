@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Configuring Logging</title>
+  <title>Configuring Logging - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/logging" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/logging" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/logging" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/logging" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/logging" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/logging">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/logging">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/logging">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -649,7 +623,7 @@ These can also be overridden by attaching a one or more named handlers to a cate
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>quarkus.log.category."&lt;category-name&gt;".use-parent-handlers</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specify whether or not this logger should send its output to its parent logger.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify whether this logger should send its output to its parent logger.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>quarkus.log.category."&lt;category-name&gt;".handlers=[&lt;handler&gt;]</code></p></td>
@@ -917,7 +891,7 @@ This means that the format string and the color settings (if any) will be ignore
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a id="quarkus-logging-json_configuration"></a><a href="#quarkus-logging-json_configuration">Configuration property</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a id="quarkus-logging-json_quarkus.log.console-json-console-logging"></a><a href="#quarkus-logging-json_quarkus.log.console-json-console-logging">Console logging</a></p></th>
 <th class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></th>
 <th class="tableblock halign-left valign-middle"><p class="tableblock">Default</p></th>
 </tr>
@@ -929,6 +903,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="content">
 <div class="paragraph">
 <p>Determine whether to enable the JSON console formatting extension, which disables "normal" console formatting.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5219">QUARKUS_LOG_CONSOLE_JSON</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5219" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -944,6 +921,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="paragraph">
 <p>Enable "pretty printing" of the JSON record. Note that some JSON parsers will fail to read pretty printed output.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5220">QUARKUS_LOG_CONSOLE_JSON_PRETTY_PRINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5220" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -957,6 +937,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="content">
 <div class="paragraph">
 <p>The date format to use. The special string "default" indicates that the default format should be used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5221">QUARKUS_LOG_CONSOLE_JSON_DATE_FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5221" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -972,6 +955,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="paragraph">
 <p>The special end-of-record delimiter to be used. By default, newline is used as delimiter.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5222">QUARKUS_LOG_CONSOLE_JSON_RECORD_DELIMITER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5222" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -985,6 +971,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="content">
 <div class="paragraph">
 <p>The zone ID to use. The special string "default" indicates that the default zone should be used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5223">QUARKUS_LOG_CONSOLE_JSON_ZONE_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5223" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1000,9 +989,14 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="paragraph">
 <p>The exception output type to specify.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5224">QUARKUS_LOG_CONSOLE_JSON_EXCEPTION_OUTPUT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5224" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>detailed</code>, <code>formatted</code>, <code>detailed-and-formatted</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>detailed</code>, <code>formatted</code>, <code>detailed-and-formatted</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>detailed</code></p></td>
 </tr>
 <tr>
@@ -1013,7 +1007,10 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="content">
 <div class="paragraph">
 <p>Enable printing of more details in the log.
- Printing the details can be expensive as the values are retrieved from the caller. The details include the source class name, source file name, source method name and source line number.</p>
+Printing the details can be expensive as the values are retrieved from the caller. The details include the source class name, source file name, source method name and source line number.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5225">QUARKUS_LOG_CONSOLE_JSON_PRINT_DETAILS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5225" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1029,6 +1026,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="paragraph">
 <p>Override keys with custom values. Omitting this value indicates that no key overrides will be applied.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5226">QUARKUS_LOG_CONSOLE_JSON_KEY_OVERRIDES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5226" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1042,6 +1042,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="content">
 <div class="paragraph">
 <p>Keys to be excluded from the Json output.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5227">QUARKUS_LOG_CONSOLE_JSON_EXCLUDED_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5227" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1057,6 +1060,9 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="paragraph">
 <p>Additional field value.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5228">QUARKUS_LOG_CONSOLE_JSON_ADDITIONAL_FIELD__FIELD_NAME__VALUE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5228" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1071,9 +1077,211 @@ This means that the format string and the color settings (if any) will be ignore
 <div class="paragraph">
 <p>Additional field type specification. Supported types: string, int, long String is the default if not specified.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5229">QUARKUS_LOG_CONSOLE_JSON_ADDITIONAL_FIELD__FIELD_NAME__TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5229" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>string</code>, <code>int</code>, <code>long</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>string</code>, <code>int</code>, <code>long</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>string</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a id="quarkus-logging-json_quarkus.log.file-json-file-logging"></a><a href="#quarkus-logging-json_quarkus.log.file-json-file-logging">File logging</a></p></th>
+<th class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></th>
+<th class="tableblock halign-left valign-middle"><p class="tableblock">Default</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json">quarkus.log.file.json</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Determine whether to enable the JSON console formatting extension, which disables "normal" console formatting.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5230">QUARKUS_LOG_FILE_JSON</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5230" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.pretty-print"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.pretty-print">quarkus.log.file.json.pretty-print</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Enable "pretty printing" of the JSON record. Note that some JSON parsers will fail to read pretty printed output.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5231">QUARKUS_LOG_FILE_JSON_PRETTY_PRINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5231" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.date-format"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.date-format">quarkus.log.file.json.date-format</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The date format to use. The special string "default" indicates that the default format should be used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5232">QUARKUS_LOG_FILE_JSON_DATE_FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5232" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>default</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.record-delimiter"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.record-delimiter">quarkus.log.file.json.record-delimiter</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The special end-of-record delimiter to be used. By default, newline is used as delimiter.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5233">QUARKUS_LOG_FILE_JSON_RECORD_DELIMITER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5233" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.zone-id"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.zone-id">quarkus.log.file.json.zone-id</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The zone ID to use. The special string "default" indicates that the default zone should be used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5234">QUARKUS_LOG_FILE_JSON_ZONE_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5234" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>default</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.exception-output-type"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.exception-output-type">quarkus.log.file.json.exception-output-type</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The exception output type to specify.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5235">QUARKUS_LOG_FILE_JSON_EXCEPTION_OUTPUT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5235" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>detailed</code>, <code>formatted</code>, <code>detailed-and-formatted</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>detailed</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.print-details"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.print-details">quarkus.log.file.json.print-details</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Enable printing of more details in the log.
+Printing the details can be expensive as the values are retrieved from the caller. The details include the source class name, source file name, source method name and source line number.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5236">QUARKUS_LOG_FILE_JSON_PRINT_DETAILS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5236" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.key-overrides"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.key-overrides">quarkus.log.file.json.key-overrides</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Override keys with custom values. Omitting this value indicates that no key overrides will be applied.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5237">QUARKUS_LOG_FILE_JSON_KEY_OVERRIDES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5237" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.excluded-keys"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.excluded-keys">quarkus.log.file.json.excluded-keys</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Keys to be excluded from the Json output.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5238">QUARKUS_LOG_FILE_JSON_EXCLUDED_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5238" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.additional-field.-field-name-.value"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.additional-field.-field-name-.value">quarkus.log.file.json.additional-field."field-name".value</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Additional field value.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5239">QUARKUS_LOG_FILE_JSON_ADDITIONAL_FIELD__FIELD_NAME__VALUE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5239" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">required <span class="icon"><i class="fa fa-exclamation-circle" title="Configuration property is required"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-logging-json_quarkus.log.file.json.additional-field.-field-name-.type"></a><code><a href="#quarkus-logging-json_quarkus.log.file.json.additional-field.-field-name-.type">quarkus.log.file.json.additional-field."field-name".type</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Additional field type specification. Supported types: string, int, long String is the default if not specified.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5240">QUARKUS_LOG_FILE_JSON_ADDITIONAL_FIELD__FIELD_NAME__TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5240" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>string</code>, <code>int</code>, <code>long</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>string</code></p></td>
 </tr>
 </tbody>
@@ -1123,6 +1331,71 @@ Quarkus comes with three different log handlers: <strong>console</strong>, <stro
 <div class="paragraph">
 <p>For details of its configuration options, see <a href="#quarkus-log-logging-log-config_quarkus.log.console-console-logging">the Console Logging configuration reference</a>.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Logging filters</div>
+<div class="paragraph">
+<p>Log handlers (like the console log handler) can have a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/Filter.html">filter</a> associated with them, whose
+purpose is to determine whether a record should actually be logged or not.</p>
+</div>
+<div class="paragraph">
+<p>These filters are registered by placing the <code>@io.quarkus.logging.LoggingFilter</code> annotation on a (<code>final</code>) class that implements <code>java.util.logging.Filter</code> and setting the <code>name</code> property.</p>
+</div>
+<div class="paragraph">
+<p>Finally, the filter is attached using the <code>filter</code> configuration property of the appropriate handler.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say for example that we wanted to filter out logging records that contained a part of text from the console logs.
+The text itself is part of the application configuration and is not hardcoded.
+We could write a filter like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.logging.LoggingFilter;
+import java.util.logging.Filter;
+import java.util.logging.LogRecord;
+
+@LoggingFilter(name = "my-filter")
+public final class TestFilter implements Filter {
+
+    private final String part;
+
+    public TestFilter(@ConfigProperty(name = "my-filter.part") String part) {
+        this.part = part;
+    }
+
+    @Override
+    public boolean isLoggable(LogRecord record) {
+        return !record.getMessage().contains(part);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and configure it in the usual Quarkus way (for example using <code>application.properties</code>) like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">my-filter.part=TEST</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And we would register this filter to the console handler like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.log.console.filter=my-filter</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="file-log-handler"><a class="anchor" href="#file-log-handler"></a>File log handler</h3>
@@ -1145,6 +1418,21 @@ It is disabled by default.</p>
 </div>
 <div class="paragraph">
 <p>For details of its configuration options, see <a href="#quarkus-log-logging-log-config_quarkus.log.syslog-syslog-logging">the Syslog Logging configuration reference</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Although the root logger&#8217;s handlers are usually configured directly via <code>quarkus.log.console</code>, <code>quarkus.log.file</code> and <code>quarkus.log.syslog</code>, it
+can nonetheless have additional named handlers attached to it using the <code>quarkus.log.handlers</code> property.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1215,6 +1503,16 @@ quarkus.log.handler.file."STRUCTURED_LOGGING_FILE".format=%e%n
 # Configure the category and link the two named handlers to it
 quarkus.log.category."io.quarkus.category".level=INFO
 quarkus.log.category."io.quarkus.category".handlers=STRUCTURED_LOGGING,STRUCTURED_LOGGING_FILE</code></pre>
+</div>
+</div>
+<div id="root-category-named-handlers-example" class="listingblock">
+<div class="title">Named handlers attached to the root logger</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># configure a named file handler that sends the output to 'quarkus.log'
+quarkus.log.handler.file.CONSOLE_MIRROR.enable=true
+quarkus.log.handler.file.CONSOLE_MIRROR.path=quarkus.log
+# attach the handler to the root logger
+quarkus.log.handlers=CONSOLE_MIRROR</code></pre>
 </div>
 </div>
 </div>
@@ -1446,10 +1744,30 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>In addition, it also supports the standard JDK log levels.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5241">QUARKUS_LOG_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5241" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html">Level</a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>INFO</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-log-logging-log-config_quarkus.log.handlers"></a><code><a href="#quarkus-log-logging-log-config_quarkus.log.handlers">quarkus.log.handlers</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The names of additional handlers to link to the root category. These handlers are defined in consoleHandlers, fileHandlers or syslogHandlers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5242">QUARKUS_LOG_HANDLERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5242" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock"><a id="quarkus-log-logging-log-config_quarkus.log.console-console-logging"></a><a href="#quarkus-log-logging-log-config_quarkus.log.console-console-logging">Console logging</a></p></th>
@@ -1465,6 +1783,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>If console logging should be enabled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5243">QUARKUS_LOG_CONSOLE_ENABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5243" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1478,6 +1799,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>If console logging should go to <code>System#err</code> instead of <code>System#out</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5244">QUARKUS_LOG_CONSOLE_STDERR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5244" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1493,6 +1817,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>The log format. Note that this value will be ignored if an extension is present that takes control of console formatting (e.g. an XML or JSON-format extension).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5245">QUARKUS_LOG_CONSOLE_FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5245" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1506,6 +1833,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>The console log level.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5246">QUARKUS_LOG_CONSOLE_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5246" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1521,10 +1851,30 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>Specify how much the colors should be darkened. Note that this value will be ignored if an extension is present that takes control of console formatting (e.g. an XML or JSON-format extension).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5247">QUARKUS_LOG_CONSOLE_DARKEN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5247" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-log-logging-log-config_quarkus.log.console.filter"></a><code><a href="#quarkus-log-logging-log-config_quarkus.log.console.filter">quarkus.log.console.filter</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the filter to link to the console handler.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5248">QUARKUS_LOG_CONSOLE_FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5248" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1534,6 +1884,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to log asynchronously</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5249">QUARKUS_LOG_CONSOLE_ASYNC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5249" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1549,6 +1902,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>The queue length to use before flushing writing</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5250">QUARKUS_LOG_CONSOLE_ASYNC_QUEUE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5250" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1563,9 +1919,14 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>Determine whether to block the publisher (rather than drop the message) when the queue is full</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5251">QUARKUS_LOG_CONSOLE_ASYNC_OVERFLOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5251" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code>, <code>discard</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>block</code>, <code>discard</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code></p></td>
 </tr>
 <tr>
@@ -1582,6 +1943,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>If file logging should be enabled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5252">QUARKUS_LOG_FILE_ENABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5252" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1595,6 +1959,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>The log format</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5253">QUARKUS_LOG_FILE_FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5253" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1610,6 +1977,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>The level of logs to be written into the file.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5254">QUARKUS_LOG_FILE_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5254" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html">Level</a></p></td>
@@ -1624,10 +1994,30 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>The name of the file in which logs will be written.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5255">QUARKUS_LOG_FILE_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5255" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>quarkus.log</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-log-logging-log-config_quarkus.log.file.filter"></a><code><a href="#quarkus-log-logging-log-config_quarkus.log.file.filter">quarkus.log.file.filter</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the filter to link to the file handler.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5256">QUARKUS_LOG_FILE_FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5256" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1637,6 +2027,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to log asynchronously</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5257">QUARKUS_LOG_FILE_ASYNC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5257" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1652,6 +2045,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>The queue length to use before flushing writing</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5258">QUARKUS_LOG_FILE_ASYNC_QUEUE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5258" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1666,9 +2062,14 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>Determine whether to block the publisher (rather than drop the message) when the queue is full</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5259">QUARKUS_LOG_FILE_ASYNC_OVERFLOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5259" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code>, <code>discard</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>block</code>, <code>discard</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code></p></td>
 </tr>
 <tr>
@@ -1679,6 +2080,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>The maximum file size of the log file after which a rotation is executed.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5260">QUARKUS_LOG_FILE_ROTATION_MAX_FILE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5260" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1694,6 +2098,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>The maximum number of backups to keep.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5261">QUARKUS_LOG_FILE_ROTATION_MAX_BACKUP_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5261" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1708,6 +2115,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>File handler rotation file suffix. When used, the file will be rotated based on its suffix. Example fileSuffix: .yyyy-MM-dd</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5262">QUARKUS_LOG_FILE_ROTATION_FILE_SUFFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5262" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1721,7 +2131,10 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to rotate log files on server initialization.
- You need to either set a <code>max-file-size</code> or configure a <code>file-suffix</code> for it to work.</p>
+You need to either set a <code>max-file-size</code> or configure a <code>file-suffix</code> for it to work.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5263">QUARKUS_LOG_FILE_ROTATION_ROTATE_ON_BOOT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5263" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1742,6 +2155,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>If syslog logging should be enabled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5264">QUARKUS_LOG_SYSLOG_ENABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5264" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1755,6 +2171,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>The IP address and port of the syslog server</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5265">QUARKUS_LOG_SYSLOG_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5265" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1770,6 +2189,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>The app name used when formatting the message in RFC5424 format</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5266">QUARKUS_LOG_SYSLOG_APP_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5266" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1783,6 +2205,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>The name of the host the messages are being sent from</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5267">QUARKUS_LOG_SYSLOG_HOSTNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5267" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1798,9 +2223,14 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>Sets the facility used when calculating the priority of the message as defined by RFC-5424 and RFC-3164</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5268">QUARKUS_LOG_SYSLOG_FACILITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5268" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>kernel</code>, <code>user-level</code>, <code>mail-system</code>, <code>system-daemons</code>, <code>security</code>, <code>syslogd</code>, <code>line-printer</code>, <code>network-news</code>, <code>uucp</code>, <code>clock-daemon</code>, <code>security2</code>, <code>ftp-daemon</code>, <code>ntp</code>, <code>log-audit</code>, <code>log-alert</code>, <code>clock-daemon2</code>, <code>local-use-0</code>, <code>local-use-1</code>, <code>local-use-2</code>, <code>local-use-3</code>, <code>local-use-4</code>, <code>local-use-5</code>, <code>local-use-6</code>, <code>local-use-7</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>kernel</code>, <code>user-level</code>, <code>mail-system</code>, <code>system-daemons</code>, <code>security</code>, <code>syslogd</code>, <code>line-printer</code>, <code>network-news</code>, <code>uucp</code>, <code>clock-daemon</code>, <code>security2</code>, <code>ftp-daemon</code>, <code>ntp</code>, <code>log-audit</code>, <code>log-alert</code>, <code>clock-daemon2</code>, <code>local-use-0</code>, <code>local-use-1</code>, <code>local-use-2</code>, <code>local-use-3</code>, <code>local-use-4</code>, <code>local-use-5</code>, <code>local-use-6</code>, <code>local-use-7</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>user-level</code></p></td>
 </tr>
 <tr>
@@ -1812,9 +2242,14 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>Set the <code>SyslogType syslog type</code> this handler should use to format the message sent</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5269">QUARKUS_LOG_SYSLOG_SYSLOG_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5269" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>rfc5424</code>, <code>rfc3164</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>rfc5424</code>, <code>rfc3164</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>rfc5424</code></p></td>
 </tr>
 <tr>
@@ -1826,9 +2261,14 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="paragraph">
 <p>Sets the protocol used to connect to the syslog server</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5270">QUARKUS_LOG_SYSLOG_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5270" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>tcp</code>, <code>udp</code>, <code>ssl-tcp</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>tcp</code>, <code>udp</code>, <code>ssl-tcp</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>tcp</code></p></td>
 </tr>
 <tr>
@@ -1839,6 +2279,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>Set to <code>true</code> if the message being sent should be prefixed with the size of the message</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5271">QUARKUS_LOG_SYSLOG_USE_COUNTING_FRAMING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5271" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1853,6 +2296,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <div class="content">
 <div class="paragraph">
 <p>Set to <code>true</code> if the message should be truncated</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5272">QUARKUS_LOG_SYSLOG_TRUNCATE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5272" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1869,6 +2315,9 @@ This is not needed for libraries that are dependencies of a Quarkus extension as
 <p>Enables or disables blocking when attempting to reconnect a <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#TCP
 TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP SSL TCP</code> protocol</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5273">QUARKUS_LOG_SYSLOG_BLOCK_ON_RECONNECT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5273" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1882,6 +2331,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The log message format</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5274">QUARKUS_LOG_SYSLOG_FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5274" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1897,10 +2349,30 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The log level specifying, which message levels will be logged by syslog logger</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5275">QUARKUS_LOG_SYSLOG_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5275" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html">Level</a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>ALL</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-log-logging-log-config_quarkus.log.syslog.filter"></a><code><a href="#quarkus-log-logging-log-config_quarkus.log.syslog.filter">quarkus.log.syslog.filter</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the filter to link to the file handler.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5276">QUARKUS_LOG_SYSLOG_FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5276" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1910,6 +2382,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to log asynchronously</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5277">QUARKUS_LOG_SYSLOG_ASYNC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5277" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1925,6 +2400,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The queue length to use before flushing writing</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5278">QUARKUS_LOG_SYSLOG_ASYNC_QUEUE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5278" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1939,9 +2417,14 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Determine whether to block the publisher (rather than drop the message) when the queue is full</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5279">QUARKUS_LOG_SYSLOG_ASYNC_OVERFLOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5279" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code>, <code>discard</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>block</code>, <code>discard</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code></p></td>
 </tr>
 <tr>
@@ -1958,6 +2441,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The log level for this category. Note that to get log levels below <code>INFO</code>, the minimum level build time configuration option needs to be adjusted as well.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5280">QUARKUS_LOG_CATEGORY__CATEGORIES__LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5280" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">InheritableLevel</p></td>
@@ -1972,6 +2458,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The names of the handlers to link to this category.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5281">QUARKUS_LOG_CATEGORY__CATEGORIES__HANDLERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5281" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -1984,7 +2473,10 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Specify whether or not this logger should send its output to its parent Logger</p>
+<p>Specify whether this logger should send its output to its parent Logger</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5282">QUARKUS_LOG_CATEGORY__CATEGORIES__USE_PARENT_HANDLERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5282" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2005,6 +2497,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>If console logging should be enabled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5283">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__ENABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5283" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2018,6 +2513,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>If console logging should go to <code>System#err</code> instead of <code>System#out</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5284">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__STDERR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5284" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2033,6 +2531,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The log format. Note that this value will be ignored if an extension is present that takes control of console formatting (e.g. an XML or JSON-format extension).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5285">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5285" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2046,6 +2547,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The console log level.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5286">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5286" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2061,10 +2565,30 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Specify how much the colors should be darkened. Note that this value will be ignored if an extension is present that takes control of console formatting (e.g. an XML or JSON-format extension).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5287">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__DARKEN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5287" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-log-logging-log-config_quarkus.log.handler.console.-console-handlers-.filter"></a><code><a href="#quarkus-log-logging-log-config_quarkus.log.handler.console.-console-handlers-.filter">quarkus.log.handler.console."console-handlers".filter</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the filter to link to the console handler.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5288">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5288" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2074,6 +2598,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to log asynchronously</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5289">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__ASYNC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5289" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2089,6 +2616,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The queue length to use before flushing writing</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5290">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__ASYNC_QUEUE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5290" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2103,9 +2633,14 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Determine whether to block the publisher (rather than drop the message) when the queue is full</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5291">QUARKUS_LOG_HANDLER_CONSOLE__CONSOLE_HANDLERS__ASYNC_OVERFLOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5291" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code>, <code>discard</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>block</code>, <code>discard</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code></p></td>
 </tr>
 <tr>
@@ -2122,6 +2657,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>If file logging should be enabled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5292">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ENABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5292" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2135,6 +2673,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The log format</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5293">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5293" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2150,6 +2691,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The level of logs to be written into the file.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5294">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5294" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html">Level</a></p></td>
@@ -2164,10 +2708,30 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The name of the file in which logs will be written.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5295">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5295" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>quarkus.log</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-log-logging-log-config_quarkus.log.handler.file.-file-handlers-.filter"></a><code><a href="#quarkus-log-logging-log-config_quarkus.log.handler.file.-file-handlers-.filter">quarkus.log.handler.file."file-handlers".filter</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the filter to link to the file handler.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5296">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5296" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2177,6 +2741,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to log asynchronously</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5297">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ASYNC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5297" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2192,6 +2759,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The queue length to use before flushing writing</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5298">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ASYNC_QUEUE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5298" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2206,9 +2776,14 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Determine whether to block the publisher (rather than drop the message) when the queue is full</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5299">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ASYNC_OVERFLOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5299" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code>, <code>discard</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>block</code>, <code>discard</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code></p></td>
 </tr>
 <tr>
@@ -2219,6 +2794,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The maximum file size of the log file after which a rotation is executed.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5300">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ROTATION_MAX_FILE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5300" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2234,6 +2812,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The maximum number of backups to keep.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5301">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ROTATION_MAX_BACKUP_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5301" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2248,6 +2829,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>File handler rotation file suffix. When used, the file will be rotated based on its suffix. Example fileSuffix: .yyyy-MM-dd</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5302">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ROTATION_FILE_SUFFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5302" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2261,7 +2845,10 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to rotate log files on server initialization.
- You need to either set a <code>max-file-size</code> or configure a <code>file-suffix</code> for it to work.</p>
+You need to either set a <code>max-file-size</code> or configure a <code>file-suffix</code> for it to work.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5303">QUARKUS_LOG_HANDLER_FILE__FILE_HANDLERS__ROTATION_ROTATE_ON_BOOT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5303" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2282,6 +2869,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>If syslog logging should be enabled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5304">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__ENABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5304" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2295,6 +2885,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The IP address and port of the syslog server</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5305">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5305" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2310,6 +2903,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The app name used when formatting the message in RFC5424 format</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5306">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__APP_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5306" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2323,6 +2919,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The name of the host the messages are being sent from</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5307">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__HOSTNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5307" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2338,9 +2937,14 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Sets the facility used when calculating the priority of the message as defined by RFC-5424 and RFC-3164</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5308">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__FACILITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5308" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>kernel</code>, <code>user-level</code>, <code>mail-system</code>, <code>system-daemons</code>, <code>security</code>, <code>syslogd</code>, <code>line-printer</code>, <code>network-news</code>, <code>uucp</code>, <code>clock-daemon</code>, <code>security2</code>, <code>ftp-daemon</code>, <code>ntp</code>, <code>log-audit</code>, <code>log-alert</code>, <code>clock-daemon2</code>, <code>local-use-0</code>, <code>local-use-1</code>, <code>local-use-2</code>, <code>local-use-3</code>, <code>local-use-4</code>, <code>local-use-5</code>, <code>local-use-6</code>, <code>local-use-7</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>kernel</code>, <code>user-level</code>, <code>mail-system</code>, <code>system-daemons</code>, <code>security</code>, <code>syslogd</code>, <code>line-printer</code>, <code>network-news</code>, <code>uucp</code>, <code>clock-daemon</code>, <code>security2</code>, <code>ftp-daemon</code>, <code>ntp</code>, <code>log-audit</code>, <code>log-alert</code>, <code>clock-daemon2</code>, <code>local-use-0</code>, <code>local-use-1</code>, <code>local-use-2</code>, <code>local-use-3</code>, <code>local-use-4</code>, <code>local-use-5</code>, <code>local-use-6</code>, <code>local-use-7</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>user-level</code></p></td>
 </tr>
 <tr>
@@ -2352,9 +2956,14 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Set the <code>SyslogType syslog type</code> this handler should use to format the message sent</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5309">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__SYSLOG_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5309" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>rfc5424</code>, <code>rfc3164</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>rfc5424</code>, <code>rfc3164</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>rfc5424</code></p></td>
 </tr>
 <tr>
@@ -2366,9 +2975,14 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Sets the protocol used to connect to the syslog server</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5310">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5310" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>tcp</code>, <code>udp</code>, <code>ssl-tcp</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>tcp</code>, <code>udp</code>, <code>ssl-tcp</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>tcp</code></p></td>
 </tr>
 <tr>
@@ -2379,6 +2993,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>Set to <code>true</code> if the message being sent should be prefixed with the size of the message</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5311">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__USE_COUNTING_FRAMING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5311" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2393,6 +3010,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>Set to <code>true</code> if the message should be truncated</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5312">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__TRUNCATE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5312" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2409,6 +3029,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <p>Enables or disables blocking when attempting to reconnect a <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#TCP
 TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP SSL TCP</code> protocol</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5313">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__BLOCK_ON_RECONNECT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5313" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2422,6 +3045,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The log message format</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5314">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__FORMAT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5314" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2437,10 +3063,30 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The log level specifying, which message levels will be logged by syslog logger</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5315">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5315" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html">Level</a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>ALL</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-log-logging-log-config_quarkus.log.handler.syslog.-syslog-handlers-.filter"></a><code><a href="#quarkus-log-logging-log-config_quarkus.log.handler.syslog.-syslog-handlers-.filter">quarkus.log.handler.syslog."syslog-handlers".filter</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the filter to link to the file handler.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5316">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5316" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2450,6 +3096,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>Indicates whether to log asynchronously</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5317">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__ASYNC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5317" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2465,6 +3114,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The queue length to use before flushing writing</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5318">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__ASYNC_QUEUE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5318" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2479,9 +3131,14 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>Determine whether to block the publisher (rather than drop the message) when the queue is full</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5319">QUARKUS_LOG_HANDLER_SYSLOG__SYSLOG_HANDLERS__ASYNC_OVERFLOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5319" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code>, <code>discard</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>block</code>, <code>discard</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>block</code></p></td>
 </tr>
 <tr>
@@ -2498,6 +3155,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="paragraph">
 <p>The message starts to match</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5320">QUARKUS_LOG_FILTER__FILTERS__IF_STARTS_WITH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5320" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -2511,6 +3171,9 @@ TCP</code> or <code>org.jboss.logmanager.handlers.SyslogHandler.Protocol#SSL_TCP
 <div class="content">
 <div class="paragraph">
 <p>The new log level for the filtered message, defaults to DEBUG</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-5321">QUARKUS_LOG_FILTER__FILTERS__TARGET_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5321" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2543,7 +3206,7 @@ If no suffix is given, assume bytes.</p>
 <a href="#_footnoteref_1">1</a>. Some extensions may define customized default log levels for certain categories, in order to reduce log noise by default.  Setting the log level in configuration will override any extension-defined log levels.
 </div>
 <div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. By default the configured category gets the same handlers attached as the one on the root logger.
+<a href="#_footnoteref_2">2</a>. By default, the configured category gets the same handlers attached as the one on the root logger.
 </div>
 <div class="footnote" id="_footnotedef_3">
 <a href="#_footnoteref_3">3</a>. Format sequences which examine caller information may affect performance
@@ -2569,23 +3232,37 @@ If no suffix is given, assume bytes.</p>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -2594,15 +3271,29 @@ If no suffix is given, assume bytes.</p>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -2611,19 +3302,33 @@ If no suffix is given, assume bytes.</p>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -2632,11 +3337,21 @@ If no suffix is given, assume bytes.</p>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2647,21 +3362,21 @@ If no suffix is given, assume bytes.</p>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

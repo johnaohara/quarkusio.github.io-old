@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Datasources</title>
+  <title>Datasources - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/datasource" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/datasource" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/datasource" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/datasource" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/datasource" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/datasource">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/datasource">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/datasource">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -200,10 +174,8 @@
 </li>
 <li><a href="#datasource-health-check">Datasource Health Check</a></li>
 <li><a href="#datasource-metrics">Datasource Metrics</a></li>
-<li><a href="#narayana-transaction-manager-integration">Narayana Transaction Manager integration</a></li>
-<li><a href="#dev-services-configuration-free-databases">Dev Services (Configuration Free Databases)</a>
+<li><a href="#narayana-transaction-manager-integration">Narayana Transaction Manager integration</a>
 <ul class="sectlevel2">
-<li><a href="#configuring-dev-services">Configuring Dev Services</a></li>
 <li><a href="#named-datasources">Named Datasources</a></li>
 </ul>
 </li>
@@ -229,6 +201,15 @@
 <li><a href="#reactive-microsoft-sql-server-specific-configuration">Reactive Microsoft SQL Server Specific Configuration</a></li>
 <li><a href="#reactive-oracle-specific-configuration">Reactive Oracle Specific Configuration</a></li>
 <li><a href="#reactive-postgresql-specific-configuration">Reactive PostgreSQL Specific Configuration</a></li>
+</ul>
+</li>
+<li><a href="#reactive-url">Reactive Datasource URL Reference</a>
+<ul class="sectlevel2">
+<li><a href="#db2-2">DB2</a></li>
+<li><a href="#microsoft-sql-server-2">Microsoft SQL Server</a></li>
+<li><a href="#mysql-mariadb">MySQL / MariaDB</a></li>
+<li><a href="#oracle-2">Oracle</a></li>
+<li><a href="#postgresql-2">PostgreSQL</a></li>
 </ul>
 </li>
 </ul></div>
@@ -266,7 +247,7 @@ But you might also prefer using a reactive driver to connect to your database in
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Agroal is a modern, light weight connection pool implementation designed for very high performance and scalability,
+<p>Agroal is a modern, lightweight connection pool implementation designed for very high performance and scalability,
 and features first class integration with the other components in Quarkus, such as security, transaction management components, health, and metrics.</p>
 </div>
 </td>
@@ -307,91 +288,15 @@ If you want a better understanding of how all this works, this guide has a lot m
 <h3 id="dev-services"><a class="anchor" href="#dev-services"></a>Zero Config Setup (Dev Services)</h3>
 <div class="paragraph">
 <p>When testing or running in dev mode Quarkus can even provide you with a zero config database out of the box, a feature
-we refer to as Dev Services. Depending on your database type you may need Docker installed in order to use this feature.
-Dev Services is supported for the following databases:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>DB2 (container) (requires license acceptance)</p>
-</li>
-<li>
-<p>Derby (in-process)</p>
-</li>
-<li>
-<p>H2 (in-process)</p>
-</li>
-<li>
-<p>MariaDB (container)</p>
-</li>
-<li>
-<p>Microsoft SQL Server (container) (requires license acceptance)</p>
-</li>
-<li>
-<p>MySQL (container)</p>
-</li>
-<li>
-<p>Oracle Express Edition (container)</p>
-</li>
-<li>
-<p>PostgreSQL (container)</p>
-</li>
-</ul>
+we refer to as Dev Services. Depending on your database type you may need Docker installed in order to use this feature.</p>
 </div>
 <div class="paragraph">
-<p>If you want to use Dev Services then all you need to do is include the relevant extension for the type of database you want (either reactive or
-JDBC, or both), and don&#8217;t configure a database URL, username and password, Quarkus will provide the database and you can just start
-coding without worrying about config.</p>
+<p>If you want to use Dev Services then all you need to do is include the relevant extension for the type of database you want,
+e.g. <code>jdbc-postgresql</code>, <code>reactive-pg-client</code> or both. Don&#8217;t configure a database URL, username and password -
+Quarkus will provide the database and you can just start coding without worrying about config.</p>
 </div>
 <div class="paragraph">
-<p>If you are using a proprietary database such as DB2 or MSSQL you will need to accept the license agreement. To do this
-create a <code>src/main/resources/container-license-acceptance.txt</code> files in your project and add a line with the image
-name and tag of the database. By default Quarkus uses the default image for the current version of Testcontainers, if
-you attempt to start Quarkus the resulting failure will tell you the exact image name in use for you to add to the
-file.</p>
-</div>
-<div class="paragraph">
-<p>An example file is shown below:</p>
-</div>
-<div class="listingblock">
-<div class="title">src/main/resources/container-license-acceptance.txt</div>
-<div class="content">
-<pre>ibmcom/db2:11.5.0.0a
-mcr.microsoft.com/mssql/server:2017-CU12</pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>All services based on containers are run using Testcontainers but Quarkus is not using the Testcontainers JDBC driver.</p>
-</div>
-<div class="paragraph">
-<p>Thus, even though extra JDBC URL properties can be set in your <code>application.properties</code> file,
-specific properties supported by the Testcontainers JDBC driver such as <code>TC_INITSCRIPT</code>, <code>TC_INITFUNCTION</code>, <code>TC_DAEMON</code>, <code>TC_TMPFS</code> are not supported.</p>
-</div>
-<div class="paragraph">
-<p>Quarkus can support specific properties sent to the container itself though and,
-typically, this is the case for <code>TC_MY_CNF</code> which allows to override the MariaDB/MySQL configuration file.</p>
-</div>
-<div class="paragraph">
-<p>Overriding the MariaDB/MySQL configuration would be done as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.datasource.devservices.container-properties.TC_MY_CNF=testcontainers/mysql-conf</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This support is database specific and needs to be implemented in each dev service specifically.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>See <a href="databases-dev-services">Databases Dev Services</a> for more details and optional configurations.</p>
 </div>
 </div>
 <div class="sect2">
@@ -615,6 +520,16 @@ you don&#8217;t need to add the Agroal extension dependency explicitly.</p>
 </ul>
 </div>
 <div class="paragraph">
+<p>Some other JDBC extensions can be found in the Quarkiverse such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SQLite: <a href="https://github.com/quarkiverse/quarkus-jdbc-sqlite">Project homepage</a> - <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-jdbc-sqlite/dev/index.html">Documentation</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>See <a href="#other-databases">Use a database with no built-in extension or with a different driver</a> if you want to use a JDBC driver for another database.</p>
 </div>
 <div class="admonitionblock note">
@@ -626,7 +541,7 @@ you don&#8217;t need to add the Agroal extension dependency explicitly.</p>
 <td class="content">
 <div class="paragraph">
 <p>The H2 and Derby databases can normally be configured to run in "embedded mode";
-the extension does not support compiling the embedded database engine into native executables.</p>
+however the Derby extension does not support compiling the embedded database engine into native executables.</p>
 </div>
 <div class="paragraph">
 <p>Read <a href="#in-memory-databases">Testing with in-memory databases</a> (below) for suggestions regarding integration testing.</p>
@@ -1067,194 +982,12 @@ for this data source, all values will be zero.</p>
 <div class="paragraph">
 <p>You can override this by setting the <code>transactions</code> configuration property - see the <a href="#configuration-reference">Configuration Reference</a> below.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="dev-services-configuration-free-databases"><a class="anchor" href="#dev-services-configuration-free-databases"></a>Dev Services (Configuration Free Databases)</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>As mentioned above Quarkus supports a feature called Dev Services that allows you to create datasources without any config. If
-you have a database extension that supports it and no config is provided, Quarkus will automatically start a database (either
-using Testcontainers, or by starting a Java DB in process), and automatically configure a connection to this database.</p>
-</div>
-<div class="paragraph">
-<p>Production databases need to be configured as normal, so if you want to include a production database config in your
-application.properties and continue to use Dev Services we recommend that you use the <code>%prod.</code> profile to define your
-database settings.</p>
-</div>
-<div class="sect2">
-<h3 id="configuring-dev-services"><a class="anchor" href="#configuring-dev-services"></a>Configuring Dev Services</h3>
-<div class="paragraph">
-<p>Dev Services supports the following config options:</p>
-</div>
-<div class="paragraph configuration-legend">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> Configuration property fixed at build time - All other configuration properties are overridable at runtime</p>
-</div>
-<table class="tableblock frame-all grid-all stretch configuration-reference">
-<colgroup>
-<col style="width: 80%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a id="quarkus-datasource-config-group-dev-services-build-time-config_configuration"></a><a href="#quarkus-datasource-config-group-dev-services-build-time-config_configuration">Configuration property</a></p></th>
-<th class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></th>
-<th class="tableblock halign-left valign-middle"><p class="tableblock">Default</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.enabled"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.enabled">quarkus.datasource.devservices.enabled</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.image-name"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.image-name">quarkus.datasource.devservices.image-name</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>The container image name to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.port"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.port">quarkus.datasource.devservices.port</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.container-properties-container-properties"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.container-properties-container-properties">quarkus.datasource.devservices.container-properties</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>Generic properties that are passed for additional container configuration.
- Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.properties-properties"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.properties-properties">quarkus.datasource.devservices.properties</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>Generic properties that are added to the database connection URL.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.enabled"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.enabled">quarkus.datasource."datasource-name".devservices.enabled</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.image-name"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.image-name">quarkus.datasource."datasource-name".devservices.image-name</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>The container image name to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.container-properties-container-properties"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.container-properties-container-properties">quarkus.datasource."datasource-name".devservices.container-properties</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>Generic properties that are passed for additional container configuration.
- Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.properties-properties"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.properties-properties">quarkus.datasource."datasource-name".devservices.properties</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>Generic properties that are added to the database connection URL.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.port"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.port">quarkus.datasource."datasource-name".devservices.port</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-middle"></td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="sect2">
 <h3 id="named-datasources"><a class="anchor" href="#named-datasources"></a>Named Datasources</h3>
 <div class="paragraph">
 <p>When using Dev Services the default datasource will always be created, but to specify a named datasource you need to have
-at least one build time property so Quarkus knows to create the datasource. In general you will usually either specify
-the <code>db-kind</code> property, or explicitly enable DevDb: <code>quarkus.datasource."name".devservices.enabled=true</code>.</p>
+at least one build time property so Quarkus knows to create the datasource. You will usually either specify
+the <code>db-kind</code> property, or explicitly enable Dev Services: <code>quarkus.datasource."name".devservices.enabled=true</code>.</p>
 </div>
 </div>
 </div>
@@ -1271,8 +1004,12 @@ good reasons to also want the ability to run quick integration tests using the J
 so this is possible as well.</p>
 </div>
 <div class="paragraph">
-<p>It is important to remember that when configuring H2 (or Derby) to use the embedded engine,
+<p>It is important to remember that when configuring Derby to use the embedded engine,
 this will work as usual in JVM mode but such an application will not compile into a native executable, as the Quarkus extensions only cover for making the JDBC client code compatible with the native compilation step: embedding the whole database engine into a native executable is currently not implemented.</p>
+</div>
+<div class="paragraph">
+<p>Compiling H2 into a native-image is now possible (it didn&#8217;t use to be) but this is considered experimental; even if this is technically possible,
+we would still recommend to consider carefully why you would want to embed H2 within your native-image.</p>
 </div>
 <div class="paragraph">
 <p>If you plan to run such integration tests in the JVM exclusively, it will of course work as usual.</p>
@@ -1340,6 +1077,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The kind of database we will connect to (e.g. h2, postgresql&#8230;&#8203;).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3366">QUARKUS_DATASOURCE_DB_KIND</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3366" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1353,6 +1093,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3367">QUARKUS_DATASOURCE_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3367" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1368,6 +1111,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The container image name to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3368">QUARKUS_DATASOURCE_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3368" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1381,11 +1127,82 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3369">QUARKUS_DATASOURCE_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3369" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.devservices.command"></a><code><a href="#quarkus-datasource_quarkus.datasource.devservices.command">quarkus.datasource.devservices.command</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The container start command to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3370">QUARKUS_DATASOURCE_DEVSERVICES_COMMAND</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3370" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.devservices.db-name"></a><code><a href="#quarkus-datasource_quarkus.datasource.devservices.db-name">quarkus.datasource.devservices.db-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the database to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3371">QUARKUS_DATASOURCE_DEVSERVICES_DB_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3371" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.devservices.username"></a><code><a href="#quarkus-datasource_quarkus.datasource.devservices.username">quarkus.datasource.devservices.username</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The username to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3372">QUARKUS_DATASOURCE_DEVSERVICES_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3372" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.devservices.password"></a><code><a href="#quarkus-datasource_quarkus.datasource.devservices.password">quarkus.datasource.devservices.password</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The password to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3373">QUARKUS_DATASOURCE_DEVSERVICES_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3373" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -1396,7 +1213,10 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Whether this particular data source should be excluded from the health check if the general health check for data sources is enabled.
- By default, the health check includes all configured data sources (if it is enabled).</p>
+By default, the health check includes all configured data sources (if it is enabled).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3374">QUARKUS_DATASOURCE_HEALTH_EXCLUDE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3374" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1411,7 +1231,10 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Whether or not an health check is published in case the smallrye-health extension is present.
- This is a global setting and is not specific to a datasource.</p>
+This is a global setting and is not specific to a datasource.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3375">QUARKUS_DATASOURCE_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3375" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1426,8 +1249,11 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Whether or not datasource metrics are published in case a metrics extension is present.
- This is a global setting and is not specific to a datasource.
- NOTE: This is different from the "jdbc.enable-metrics" property that needs to be set on the JDBC datasource level to enable collection of metrics for that datasource.</p>
+This is a global setting and is not specific to a datasource.
+NOTE: This is different from the "jdbc.enable-metrics" property that needs to be set on the JDBC datasource level to enable collection of metrics for that datasource.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3376">QUARKUS_DATASOURCE_METRICS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3376" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1443,6 +1269,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The datasource username</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3377">QUARKUS_DATASOURCE_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3377" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1456,6 +1285,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The datasource password</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3378">QUARKUS_DATASOURCE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3378" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1471,6 +1303,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The credentials provider name</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3379">QUARKUS_DATASOURCE_CREDENTIALS_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3379" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1484,8 +1319,11 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The credentials provider bean name.
- It is the <code>&amp;#64;Named</code> value of the credentials provider bean. It is used to discriminate if multiple CredentialsProvider beans are available.
- For Vault it is: vault-credentials-provider. Not necessary if there is only one credentials provider available.</p>
+It is the <code>&amp;#64;Named</code> value of the credentials provider bean. It is used to discriminate if multiple CredentialsProvider beans are available.
+For Vault it is: vault-credentials-provider. Not necessary if there is only one credentials provider available.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3380">QUARKUS_DATASOURCE_CREDENTIALS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3380" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1500,7 +1338,10 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Generic properties that are passed for additional container configuration.
- Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3381">QUARKUS_DATASOURCE_DEVSERVICES_CONTAINER_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3381" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1515,6 +1356,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Generic properties that are added to the database connection URL.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3382">QUARKUS_DATASOURCE_DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3382" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1535,6 +1379,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The kind of database we will connect to (e.g. h2, postgresql&#8230;&#8203;).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3383">QUARKUS_DATASOURCE__DATASOURCE_NAME__DB_KIND</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3383" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1548,6 +1395,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3384">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3384" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1563,6 +1413,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The container image name to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3385">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3385" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1576,7 +1429,10 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Generic properties that are passed for additional container configuration.
- Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3386">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_CONTAINER_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3386" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1592,6 +1448,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Generic properties that are added to the database connection URL.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3387">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3387" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
@@ -1605,11 +1464,82 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3388">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3388" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.command"></a><code><a href="#quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.command">quarkus.datasource."datasource-name".devservices.command</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The container start command to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3389">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_COMMAND</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3389" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.db-name"></a><code><a href="#quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.db-name">quarkus.datasource."datasource-name".devservices.db-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the database to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3390">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_DB_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3390" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.username"></a><code><a href="#quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.username">quarkus.datasource."datasource-name".devservices.username</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The username to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3391">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3391" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.password"></a><code><a href="#quarkus-datasource_quarkus.datasource.-datasource-name-.devservices.password">quarkus.datasource."datasource-name".devservices.password</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The password to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3392">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3392" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -1620,7 +1550,10 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Whether this particular data source should be excluded from the health check if the general health check for data sources is enabled.
- By default, the health check includes all configured data sources (if it is enabled).</p>
+By default, the health check includes all configured data sources (if it is enabled).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3393">QUARKUS_DATASOURCE__DATASOURCE_NAME__HEALTH_EXCLUDE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3393" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1636,6 +1569,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The datasource username</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3394">QUARKUS_DATASOURCE__DATASOURCE_NAME__USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3394" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1649,6 +1585,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The datasource password</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3395">QUARKUS_DATASOURCE__DATASOURCE_NAME__PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3395" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1664,6 +1603,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The credentials provider name</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3396">QUARKUS_DATASOURCE__DATASOURCE_NAME__CREDENTIALS_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3396" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1677,8 +1619,11 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The credentials provider bean name.
- It is the <code>&amp;#64;Named</code> value of the credentials provider bean. It is used to discriminate if multiple CredentialsProvider beans are available.
- For Vault it is: vault-credentials-provider. Not necessary if there is only one credentials provider available.</p>
+It is the <code>&amp;#64;Named</code> value of the credentials provider bean. It is used to discriminate if multiple CredentialsProvider beans are available.
+For Vault it is: vault-credentials-provider. Not necessary if there is only one credentials provider available.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3397">QUARKUS_DATASOURCE__DATASOURCE_NAME__CREDENTIALS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3397" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1716,6 +1661,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>If we create a JDBC datasource for this datasource.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3398">QUARKUS_DATASOURCE_JDBC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3398" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1730,6 +1678,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The datasource driver class name</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3399">QUARKUS_DATASOURCE_JDBC_DRIVER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3399" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1743,11 +1694,16 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Whether we want to use regular JDBC transactions, XA, or disable all transactional capabilities.
- When enabling XA you will need a driver implementing <code>javax.sql.XADataSource</code>.</p>
+When enabling XA you will need a driver implementing <code>javax.sql.XADataSource</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3400">QUARKUS_DATASOURCE_JDBC_TRANSACTIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3400" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enabled</code>, <code>xa</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>enabled</code>, <code>xa</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enabled</code></p></td>
 </tr>
 <tr>
@@ -1759,10 +1715,30 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Enable datasource metrics collection. If unspecified, collecting metrics will be enabled by default if a metrics extension is active.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3401">QUARKUS_DATASOURCE_JDBC_ENABLE_METRICS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3401" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-agroal_quarkus.datasource.jdbc.tracing"></a><code><a href="#quarkus-agroal_quarkus.datasource.jdbc.tracing">quarkus.datasource.jdbc.tracing</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Enable JDBC tracing. Disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3402">QUARKUS_DATASOURCE_JDBC_TRACING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3402" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1772,6 +1748,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The datasource URL</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3403">QUARKUS_DATASOURCE_JDBC_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3403" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1787,6 +1766,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The initial size of the pool. Usually you will want to set the initial size to match at least the minimal size, but this is not enforced so to allow for architectures which prefer a lazy initialization of the connections on boot, while being able to sustain a minimal pool size after boot.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3404">QUARKUS_DATASOURCE_JDBC_INITIAL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3404" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1800,6 +1782,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The datasource pool minimum size</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3405">QUARKUS_DATASOURCE_JDBC_MIN_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3405" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1815,6 +1800,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The datasource pool maximum size</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3406">QUARKUS_DATASOURCE_JDBC_MAX_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3406" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -1828,12 +1816,15 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The interval at which we validate idle connections in the background.
- Set to <code>0</code> to disable background validation.</p>
+Set to <code>0</code> to disable background validation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3407">QUARKUS_DATASOURCE_JDBC_BACKGROUND_VALIDATION_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3407" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2M</code></p></td>
 </tr>
 <tr>
@@ -1845,10 +1836,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Perform foreground validation on connections that have been idle for longer than the specified interval.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3408">QUARKUS_DATASOURCE_JDBC_FOREGROUND_VALIDATION_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3408" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -1860,10 +1854,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The timeout before cancelling the acquisition of a new connection</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3409">QUARKUS_DATASOURCE_JDBC_ACQUISITION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3409" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>5</code></p></td>
 </tr>
 <tr>
@@ -1875,10 +1872,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The interval at which we check for connection leaks.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3410">QUARKUS_DATASOURCE_JDBC_LEAK_DETECTION_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3410" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -1890,10 +1890,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The interval at which we try to remove idle connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3411">QUARKUS_DATASOURCE_JDBC_IDLE_REMOVAL_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3411" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>5M</code></p></td>
 </tr>
 <tr>
@@ -1905,10 +1908,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The max lifetime of a connection.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3412">QUARKUS_DATASOURCE_JDBC_MAX_LIFETIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3412" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -1920,9 +1926,14 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The transaction isolation level.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3413">QUARKUS_DATASOURCE_JDBC_TRANSACTION_ISOLATION_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3413" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>undefined</code>, <code>none</code>, <code>read-uncommitted</code>, <code>read-committed</code>, <code>repeatable-read</code>, <code>serializable</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>undefined</code>, <code>none</code>, <code>read-uncommitted</code>, <code>read-committed</code>, <code>repeatable-read</code>, <code>serializable</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -1933,6 +1944,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Collect and display extra troubleshooting info on leaked connections.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3414">QUARKUS_DATASOURCE_JDBC_EXTENDED_LEAK_REPORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3414" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1948,6 +1962,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Allows connections to be flushed upon return to the pool. It&#8217;s not enabled by default.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3415">QUARKUS_DATASOURCE_JDBC_FLUSH_ON_CLOSE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3415" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1961,6 +1978,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>When enabled Agroal will be able to produce a warning when a connection is returned to the pool without the application having closed all open statements. This is unrelated with tracking of open connections. Disable for peak performance, but only when there&#8217;s high confidence that no leaks are happening.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3416">QUARKUS_DATASOURCE_JDBC_DETECT_STATEMENT_LEAKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3416" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1976,6 +1996,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Query executed when first using a connection.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3417">QUARKUS_DATASOURCE_JDBC_NEW_CONNECTION_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3417" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1989,6 +2012,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Query executed to validate a connection.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3418">QUARKUS_DATASOURCE_JDBC_VALIDATION_QUERY_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3418" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2004,6 +2030,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Disable pooling to prevent reuse of Connections. Use this with when an external pool manages the life-cycle of Connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3419">QUARKUS_DATASOURCE_JDBC_POOLING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3419" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2018,10 +2047,66 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Require an active transaction when acquiring a connection. Recommended for production. WARNING: Some extensions acquire connections without holding a transaction for things like schema updates and schema validation. Setting this setting to STRICT may lead to failures in those cases.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3420">QUARKUS_DATASOURCE_JDBC_TRANSACTION_REQUIREMENT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3420" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>off</code>, <code>warn</code>, <code>strict</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>off</code>, <code>warn</code>, <code>strict</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-agroal_quarkus.datasource.jdbc.tracing.enabled"></a><code><a href="#quarkus-agroal_quarkus.datasource.jdbc.tracing.enabled">quarkus.datasource.jdbc.tracing.enabled</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Enable JDBC tracing.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3421">QUARKUS_DATASOURCE_JDBC_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3421" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false if quarkus.datasource.jdbc.tracing=false and true if quarkus.datasource.jdbc.tracing=true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-agroal_quarkus.datasource.jdbc.tracing.trace-with-active-span-only"></a><code><a href="#quarkus-agroal_quarkus.datasource.jdbc.tracing.trace-with-active-span-only">quarkus.datasource.jdbc.tracing.trace-with-active-span-only</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Trace calls with active Spans only</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3422">QUARKUS_DATASOURCE_JDBC_TRACING_TRACE_WITH_ACTIVE_SPAN_ONLY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3422" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-agroal_quarkus.datasource.jdbc.tracing.ignore-for-tracing"></a><code><a href="#quarkus-agroal_quarkus.datasource.jdbc.tracing.ignore-for-tracing">quarkus.datasource.jdbc.tracing.ignore-for-tracing</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Ignore specific queries from being traced</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3423">QUARKUS_DATASOURCE_JDBC_TRACING_IGNORE_FOR_TRACING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3423" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Ignore specific queries from being traced, multiple queries can be specified separated by semicolon, double quotes should be escaped with \</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2031,6 +2116,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Other unspecified properties to be passed to the JDBC driver when creating new connections.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3424">QUARKUS_DATASOURCE_JDBC_ADDITIONAL_JDBC_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3424" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2051,6 +2139,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>If we create a JDBC datasource for this datasource.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3425">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3425" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2065,6 +2156,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The datasource driver class name</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3426">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_DRIVER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3426" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2078,11 +2172,16 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Whether we want to use regular JDBC transactions, XA, or disable all transactional capabilities.
- When enabling XA you will need a driver implementing <code>javax.sql.XADataSource</code>.</p>
+When enabling XA you will need a driver implementing <code>javax.sql.XADataSource</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3427">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_TRANSACTIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3427" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enabled</code>, <code>xa</code>, <code>disabled</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>enabled</code>, <code>xa</code>, <code>disabled</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>enabled</code></p></td>
 </tr>
 <tr>
@@ -2094,10 +2193,30 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Enable datasource metrics collection. If unspecified, collecting metrics will be enabled by default if a metrics extension is active.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3428">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_ENABLE_METRICS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3428" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing"></a><code><a href="#quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing">quarkus.datasource."datasource-name".jdbc.tracing</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Enable JDBC tracing. Disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3429">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_TRACING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3429" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2107,6 +2226,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The datasource URL</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3430">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3430" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2122,6 +2244,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The initial size of the pool. Usually you will want to set the initial size to match at least the minimal size, but this is not enforced so to allow for architectures which prefer a lazy initialization of the connections on boot, while being able to sustain a minimal pool size after boot.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3431">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_INITIAL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3431" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2135,6 +2260,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The datasource pool minimum size</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3432">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_MIN_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3432" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2150,6 +2278,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The datasource pool maximum size</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3433">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_MAX_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3433" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2163,12 +2294,15 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>The interval at which we validate idle connections in the background.
- Set to <code>0</code> to disable background validation.</p>
+Set to <code>0</code> to disable background validation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3434">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_BACKGROUND_VALIDATION_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3434" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2M</code></p></td>
 </tr>
 <tr>
@@ -2180,10 +2314,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Perform foreground validation on connections that have been idle for longer than the specified interval.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3435">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_FOREGROUND_VALIDATION_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3435" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -2195,10 +2332,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The timeout before cancelling the acquisition of a new connection</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3436">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_ACQUISITION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3436" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>5</code></p></td>
 </tr>
 <tr>
@@ -2210,10 +2350,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The interval at which we check for connection leaks.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3437">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_LEAK_DETECTION_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3437" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -2225,10 +2368,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The interval at which we try to remove idle connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3438">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_IDLE_REMOVAL_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3438" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>5M</code></p></td>
 </tr>
 <tr>
@@ -2240,10 +2386,13 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The max lifetime of a connection.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3439">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_MAX_LIFETIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3439" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-agroal" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -2255,9 +2404,14 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>The transaction isolation level.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3440">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_TRANSACTION_ISOLATION_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3440" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>undefined</code>, <code>none</code>, <code>read-uncommitted</code>, <code>read-committed</code>, <code>repeatable-read</code>, <code>serializable</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>undefined</code>, <code>none</code>, <code>read-uncommitted</code>, <code>read-committed</code>, <code>repeatable-read</code>, <code>serializable</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -2268,6 +2422,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Collect and display extra troubleshooting info on leaked connections.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3441">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_EXTENDED_LEAK_REPORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3441" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2283,6 +2440,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Allows connections to be flushed upon return to the pool. It&#8217;s not enabled by default.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3442">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_FLUSH_ON_CLOSE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3442" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2296,6 +2456,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>When enabled Agroal will be able to produce a warning when a connection is returned to the pool without the application having closed all open statements. This is unrelated with tracking of open connections. Disable for peak performance, but only when there&#8217;s high confidence that no leaks are happening.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3443">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_DETECT_STATEMENT_LEAKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3443" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2311,6 +2474,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Query executed when first using a connection.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3444">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_NEW_CONNECTION_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3444" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2324,6 +2490,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Query executed to validate a connection.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3445">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_VALIDATION_QUERY_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3445" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2339,6 +2508,9 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Disable pooling to prevent reuse of Connections. Use this with when an external pool manages the life-cycle of Connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3446">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_POOLING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3446" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2353,9 +2525,14 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Require an active transaction when acquiring a connection. Recommended for production. WARNING: Some extensions acquire connections without holding a transaction for things like schema updates and schema validation. Setting this setting to STRICT may lead to failures in those cases.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3447">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_TRANSACTION_REQUIREMENT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3447" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>off</code>, <code>warn</code>, <code>strict</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>off</code>, <code>warn</code>, <code>strict</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -2367,14 +2544,68 @@ quarkus.datasource.jdbc.url=jdbc:h2:mem:test</code></pre>
 <div class="paragraph">
 <p>Other unspecified properties to be passed to the JDBC driver when creating new connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3448">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_ADDITIONAL_JDBC_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3448" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing.enabled"></a><code><a href="#quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing.enabled">quarkus.datasource."datasource-name".jdbc.tracing.enabled</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Enable JDBC tracing.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3449">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3449" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false if quarkus.datasource.jdbc.tracing=false and true if quarkus.datasource.jdbc.tracing=true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing.trace-with-active-span-only"></a><code><a href="#quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing.trace-with-active-span-only">quarkus.datasource."datasource-name".jdbc.tracing.trace-with-active-span-only</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Trace calls with active Spans only</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3450">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_TRACING_TRACE_WITH_ACTIVE_SPAN_ONLY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3450" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing.ignore-for-tracing"></a><code><a href="#quarkus-agroal_quarkus.datasource.-datasource-name-.jdbc.tracing.ignore-for-tracing">quarkus.datasource."datasource-name".jdbc.tracing.ignore-for-tracing</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Ignore specific queries from being traced</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3451">QUARKUS_DATASOURCE__DATASOURCE_NAME__JDBC_TRACING_IGNORE_FOR_TRACING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3451" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Ignore specific queries from being traced, multiple queries can be specified separated by semicolon, double quotes should be escaped with \</code></p></td>
+</tr>
 </tbody>
 </table>
-<div id="duration-note-anchor" class="admonitionblock note">
+<div id="duration-note-anchor-quarkus-agroal" class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
@@ -2611,6 +2842,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>If we create a Reactive datasource for this datasource.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3452">QUARKUS_DATASOURCE_REACTIVE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3452" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2624,6 +2858,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Whether prepared statements should be cached on the client side.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3453">QUARKUS_DATASOURCE_REACTIVE_CACHE_PREPARED_STATEMENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3453" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2639,6 +2876,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The datasource URL.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3454">QUARKUS_DATASOURCE_REACTIVE_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3454" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2653,6 +2893,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The datasource pool maximum size.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3455">QUARKUS_DATASOURCE_REACTIVE_MAX_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3455" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2666,7 +2909,10 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>When a new connection object is created, the pool assigns it an event loop.
- When <code>#event-loop-size</code> is set to a strictly positive value, the pool assigns as many event loops as specified, in a round-robin fashion. By default, the number of event loops configured or calculated by Quarkus is used. If <code>#event-loop-size</code> is set to zero or a negative value, the pool assigns the current event loop to the new connection.</p>
+When <code>#event-loop-size</code> is set to a strictly positive value, the pool assigns as many event loops as specified, in a round-robin fashion. By default, the number of event loops configured or calculated by Quarkus is used. If <code>#event-loop-size</code> is set to zero or a negative value, the pool assigns the current event loop to the new connection.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3456">QUARKUS_DATASOURCE_REACTIVE_EVENT_LOOP_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3456" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2682,6 +2928,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Whether all server certificates should be trusted.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3457">QUARKUS_DATASOURCE_REACTIVE_TRUST_ALL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3457" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2695,6 +2944,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>PEM Trust config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3458">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3458" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2710,6 +2962,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Comma-separated list of the trust certificate files (Pem format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3459">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3459" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -2723,6 +2978,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>JKS config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3460">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3460" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2738,6 +2996,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Path of the key file (JKS format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3461">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3461" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2751,6 +3012,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Password of the key file.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3462">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3462" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2766,6 +3030,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>PFX config is disabled by default.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3463">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3463" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2779,6 +3046,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Path to the key file (PFX format).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3464">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3464" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2794,6 +3064,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Password of the key.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3465">QUARKUS_DATASOURCE_REACTIVE_TRUST_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3465" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2807,6 +3080,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>PEM Key/cert config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3466">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3466" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2822,6 +3098,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Comma-separated list of the path to the key files (Pem format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3467">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_PEM_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3467" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -2835,6 +3114,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Comma-separated list of the path to the certificate files (Pem format).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3468">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3468" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2850,6 +3132,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>JKS config is disabled by default.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3469">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3469" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2863,6 +3148,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Path of the key file (JKS format).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3470">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3470" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2878,6 +3166,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Password of the key file.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3471">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3471" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2891,6 +3182,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>PFX config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3472">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3472" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2906,6 +3200,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Path to the key file (PFX format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3473">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3473" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -2919,6 +3216,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Password of the key.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3474">QUARKUS_DATASOURCE_REACTIVE_KEY_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3474" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2934,6 +3234,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The number of reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3475">QUARKUS_DATASOURCE_REACTIVE_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3475" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2948,10 +3251,13 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The interval between reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3476">QUARKUS_DATASOURCE_REACTIVE_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3476" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-reactive-datasource" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>PT1S</code></p></td>
 </tr>
 <tr>
@@ -2962,6 +3268,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>The hostname verification algorithm to use in case the server&#8217;s identity should be checked. Should be HTTPS, LDAPS or an empty string.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3477">QUARKUS_DATASOURCE_REACTIVE_HOSTNAME_VERIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3477" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2977,10 +3286,13 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The maximum time a connection remains unused in the pool before it is closed.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3478">QUARKUS_DATASOURCE_REACTIVE_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3478" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-reactive-datasource" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>no timeout</code></p></td>
 </tr>
 <tr>
@@ -2991,6 +3303,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Set to true to share the pool among datasources. There can be multiple shared pools distinguished by name, when no specific name is set, the <code>__vertx.DEFAULT</code> name is used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3479">QUARKUS_DATASOURCE_REACTIVE_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3479" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3006,9 +3321,29 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Set the pool name, used when the pool is shared among datasources, otherwise ignored.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3480">QUARKUS_DATASOURCE_REACTIVE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3480" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-reactive-datasource_quarkus.datasource.reactive.additional-properties-additional-properties"></a><code><a href="#quarkus-reactive-datasource_quarkus.datasource.reactive.additional-properties-additional-properties">quarkus.datasource.reactive.additional-properties</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Other unspecified properties to be passed through the Reactive SQL Client directly to the database when new connections are initiated.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3481">QUARKUS_DATASOURCE_REACTIVE_ADDITIONAL_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3481" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -3025,6 +3360,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>If we create a Reactive datasource for this datasource.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3482">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3482" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -3038,6 +3376,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Whether prepared statements should be cached on the client side.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3483">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_CACHE_PREPARED_STATEMENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3483" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3053,6 +3394,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The datasource URL.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3484">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3484" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3067,6 +3411,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The datasource pool maximum size.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3485">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_MAX_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3485" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -3080,7 +3427,10 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>When a new connection object is created, the pool assigns it an event loop.
- When <code>#event-loop-size</code> is set to a strictly positive value, the pool assigns as many event loops as specified, in a round-robin fashion. By default, the number of event loops configured or calculated by Quarkus is used. If <code>#event-loop-size</code> is set to zero or a negative value, the pool assigns the current event loop to the new connection.</p>
+When <code>#event-loop-size</code> is set to a strictly positive value, the pool assigns as many event loops as specified, in a round-robin fashion. By default, the number of event loops configured or calculated by Quarkus is used. If <code>#event-loop-size</code> is set to zero or a negative value, the pool assigns the current event loop to the new connection.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3486">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_EVENT_LOOP_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3486" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3096,6 +3446,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Whether all server certificates should be trusted.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3487">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_ALL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3487" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -3109,6 +3462,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>PEM Trust config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3488">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3488" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3124,6 +3480,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Comma-separated list of the trust certificate files (Pem format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3489">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3489" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -3137,6 +3496,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>JKS config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3490">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3490" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3152,6 +3514,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Path of the key file (JKS format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3491">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3491" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3165,6 +3530,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Password of the key file.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3492">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3492" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3180,6 +3548,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>PFX config is disabled by default.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3493">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3493" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -3193,6 +3564,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Path to the key file (PFX format).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3494">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3494" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3208,6 +3582,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Password of the key.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3495">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_TRUST_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3495" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3221,6 +3598,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>PEM Key/cert config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3496">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3496" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3236,6 +3616,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Comma-separated list of the path to the key files (Pem format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3497">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_PEM_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3497" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -3249,6 +3632,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Comma-separated list of the path to the certificate files (Pem format).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3498">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3498" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3264,6 +3650,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>JKS config is disabled by default.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3499">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3499" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -3277,6 +3666,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Path of the key file (JKS format).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3500">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3500" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3292,6 +3684,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Password of the key file.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3501">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3501" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3305,6 +3700,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>PFX config is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3502">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3502" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3320,6 +3718,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Path to the key file (PFX format).</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3503">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3503" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3333,6 +3734,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Password of the key.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3504">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_KEY_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3504" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3348,6 +3752,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The number of reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3505">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3505" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -3362,10 +3769,13 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The interval between reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3506">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3506" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-reactive-datasource" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>PT1S</code></p></td>
 </tr>
 <tr>
@@ -3376,6 +3786,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>The hostname verification algorithm to use in case the server&#8217;s identity should be checked. Should be HTTPS, LDAPS or an empty string.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3507">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_HOSTNAME_VERIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3507" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3391,10 +3804,13 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The maximum time a connection remains unused in the pool before it is closed.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3508">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3508" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-reactive-datasource" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>no timeout</code></p></td>
 </tr>
 <tr>
@@ -3405,6 +3821,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Set to true to share the pool among datasources. There can be multiple shared pools distinguished by name, when no specific name is set, the <code>__vertx.DEFAULT</code> name is used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3509">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3509" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3420,13 +3839,54 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Set the pool name, used when the pool is shared among datasources, otherwise ignored.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3510">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3510" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-reactive-datasource_quarkus.datasource.-datasource-name-.reactive.additional-properties-additional-properties"></a><code><a href="#quarkus-reactive-datasource_quarkus.datasource.-datasource-name-.reactive.additional-properties-additional-properties">quarkus.datasource."datasource-name".reactive.additional-properties</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Other unspecified properties to be passed through the Reactive SQL Client directly to the database when new connections are initiated.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3511">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_ADDITIONAL_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3511" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
 </tbody>
 </table>
+<div id="duration-note-anchor-quarkus-reactive-datasource" class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">About the Duration format</div>
+<div class="paragraph">
+<p>The format for durations uses the standard <code>java.time.Duration</code> format.
+You can learn more about it in the <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-">Duration#parse() javadoc</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can also provide duration values starting with a number.
+In this case, if the value consists only of a number, the converter treats the value as seconds.
+Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a standard <code>java.time.Duration</code> format.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="reactive-db2-configuration"><a class="anchor" href="#reactive-db2-configuration"></a>Reactive DB2 Configuration</h3>
 <div class="paragraph configuration-legend">
@@ -3453,6 +3913,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Whether SSL/TLS is enabled.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3512">QUARKUS_DATASOURCE_REACTIVE_DB2_SSL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3512" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -3471,6 +3934,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Whether SSL/TLS is enabled.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3513">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_DB2_SSL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3513" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3506,6 +3972,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Charset for connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3514">QUARKUS_DATASOURCE_REACTIVE_MYSQL_CHARSET</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3514" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3520,6 +3989,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Collation for connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3515">QUARKUS_DATASOURCE_REACTIVE_MYSQL_COLLATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3515" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3533,11 +4005,16 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Desired security state of the connection to the server.
- See <a href="https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_ssl-mode">MySQL Reference Manual</a>.</p>
+See <a href="https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_ssl-mode">MySQL Reference Manual</a>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3516">QUARKUS_DATASOURCE_REACTIVE_MYSQL_SSL_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3516" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disabled</code>, <code>preferred</code>, <code>required</code>, <code>verify-ca</code>, <code>verify-identity</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>disabled</code>, <code>preferred</code>, <code>required</code>, <code>verify-ca</code>, <code>verify-identity</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disabled</code></p></td>
 </tr>
 <tr>
@@ -3554,6 +4031,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Charset for connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3517">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_MYSQL_CHARSET</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3517" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3568,6 +4048,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>Collation for connections.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3518">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_MYSQL_COLLATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3518" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -3581,11 +4064,16 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Desired security state of the connection to the server.
- See <a href="https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_ssl-mode">MySQL Reference Manual</a>.</p>
+See <a href="https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_ssl-mode">MySQL Reference Manual</a>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3519">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_MYSQL_SSL_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3519" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disabled</code>, <code>preferred</code>, <code>required</code>, <code>verify-ca</code>, <code>verify-identity</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>disabled</code>, <code>preferred</code>, <code>required</code>, <code>verify-ca</code>, <code>verify-identity</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disabled</code></p></td>
 </tr>
 </tbody>
@@ -3617,6 +4105,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The desired size (in bytes) for TDS packets.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3520">QUARKUS_DATASOURCE_REACTIVE_MSSQL_PACKET_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3520" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -3630,6 +4121,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Whether SSL/TLS is enabled.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3521">QUARKUS_DATASOURCE_REACTIVE_MSSQL_SSL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3521" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3650,6 +4144,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The desired size (in bytes) for TDS packets.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3522">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_MSSQL_PACKET_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3522" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -3663,6 +4160,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>Whether SSL/TLS is enabled.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3523">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_MSSQL_SSL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3523" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -3718,6 +4218,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The maximum number of inflight database commands that can be pipelined.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3524">QUARKUS_DATASOURCE_REACTIVE_POSTGRESQL_PIPELINING_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3524" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -3731,11 +4234,16 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>SSL operating mode of the client.
- See <a href="https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-PROTECTION">Protection Provided in Different Modes</a>.</p>
+See <a href="https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-PROTECTION">Protection Provided in Different Modes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3525">QUARKUS_DATASOURCE_REACTIVE_POSTGRESQL_SSL_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3525" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disable</code>, <code>allow</code>, <code>prefer</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>disable</code>, <code>allow</code>, <code>prefer</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disable</code></p></td>
 </tr>
 <tr>
@@ -3752,6 +4260,9 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="paragraph">
 <p>The maximum number of inflight database commands that can be pipelined.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3526">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_POSTGRESQL_PIPELINING_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3526" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -3765,15 +4276,276 @@ As such, you must specify connection details, or use the defaults.</p>
 <div class="content">
 <div class="paragraph">
 <p>SSL operating mode of the client.
- See <a href="https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-PROTECTION">Protection Provided in Different Modes</a>.</p>
+See <a href="https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-PROTECTION">Protection Provided in Different Modes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-3527">QUARKUS_DATASOURCE__DATASOURCE_NAME__REACTIVE_POSTGRESQL_SSL_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-3527" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disable</code>, <code>allow</code>, <code>prefer</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code></p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><code>disable</code>, <code>allow</code>, <code>prefer</code>, <code>require</code>, <code>verify-ca</code>, <code>verify-full</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>disable</code></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reactive-url"><a class="anchor" href="#reactive-url"></a>Reactive Datasource URL Reference</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="db2-2"><a class="anchor" href="#db2-2"></a>DB2</h3>
+<div class="paragraph">
+<p><code>db2://[user[:[password]]@]host[:port][/database][?&lt;key1&gt;=&lt;value1&gt;[&amp;&lt;key2&gt;=&lt;value2&gt;]]</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>db2://dbuser:secretpassword@database.server.com:50000/mydb</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Currently, the client supports the following parameter keys:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>host</code></p>
+</li>
+<li>
+<p><code>port</code></p>
+</li>
+<li>
+<p><code>user</code></p>
+</li>
+<li>
+<p><code>password</code></p>
+</li>
+<li>
+<p><code>database</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Configuring parameters in connection URL will override the default properties.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="microsoft-sql-server-2"><a class="anchor" href="#microsoft-sql-server-2"></a>Microsoft SQL Server</h3>
+<div class="paragraph">
+<p><code>sqlserver://[user[:[password]]@]host[:port][/database][?&lt;key1&gt;=&lt;value1&gt;[&amp;&lt;key2&gt;=&lt;value2&gt;]]</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>sqlserver://dbuser:secretpassword@database.server.com:1433/mydb</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Currently, the client supports the following parameter keys:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>host</code></p>
+</li>
+<li>
+<p><code>port</code></p>
+</li>
+<li>
+<p><code>user</code></p>
+</li>
+<li>
+<p><code>password</code></p>
+</li>
+<li>
+<p><code>database</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Configuring parameters in connection URL will override the default properties.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mysql-mariadb"><a class="anchor" href="#mysql-mariadb"></a>MySQL / MariaDB</h3>
+<div class="paragraph">
+<p><code>mysql://[user[:[password]]@]host[:port][/database][?&lt;key1&gt;=&lt;value1&gt;[&amp;&lt;key2&gt;=&lt;value2&gt;]]</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>mysql://dbuser:secretpassword@database.server.com:3211/mydb</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Currently, the client supports the following parameter keys (case-insensitive):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>host</code></p>
+</li>
+<li>
+<p><code>port</code></p>
+</li>
+<li>
+<p><code>user</code></p>
+</li>
+<li>
+<p><code>password</code></p>
+</li>
+<li>
+<p><code>schema</code></p>
+</li>
+<li>
+<p><code>socket</code></p>
+</li>
+<li>
+<p><code>useAffectedRows</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Configuring parameters in connection URL will override the default properties.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oracle-2"><a class="anchor" href="#oracle-2"></a>Oracle</h3>
+<div class="sect3">
+<h4 id="ezconnect-format"><a class="anchor" href="#ezconnect-format"></a>EZConnect Format</h4>
+<div class="paragraph">
+<p><code>oracle:thin:@[[protocol:]//]host[:port][/service_name][:server_mode][/instance_name][?connection properties]</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>oracle:thin:@mydbhost1:5521/mydbservice?connect_timeout=10sec</code></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tns-alias-format"><a class="anchor" href="#tns-alias-format"></a>TNS Alias Format</h4>
+<div class="paragraph">
+<p><code>oracle:thin:@&lt;alias_name&gt;[?connection properties]</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>oracle:thin:@prod_db?TNS_ADMIN=/work/tns/</code></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="postgresql-2"><a class="anchor" href="#postgresql-2"></a>PostgreSQL</h3>
+<div class="paragraph">
+<p><code>postgresql://[user[:[password]]@]host[:port][/database][?&lt;key1&gt;=&lt;value1&gt;[&amp;&lt;key2&gt;=&lt;value2&gt;]]</code></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>postgresql://dbuser:secretpassword@database.server.com:5432/mydb</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Currently, the client supports the following parameter keys:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>host</code></p>
+</li>
+<li>
+<p><code>port</code></p>
+</li>
+<li>
+<p><code>user</code></p>
+</li>
+<li>
+<p><code>password</code></p>
+</li>
+<li>
+<p><code>dbname</code></p>
+</li>
+<li>
+<p><code>sslmode</code></p>
+</li>
+<li>
+<p>additional properties, including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application_name</code></p>
+</li>
+<li>
+<p><code>fallback_application_name</code></p>
+</li>
+<li>
+<p><code>search_path</code></p>
+</li>
+<li>
+<p><code>options</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Configuring parameters in connection URL will override the default properties.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -3797,23 +4569,37 @@ As such, you must specify connection details, or use the defaults.</p>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -3822,15 +4608,29 @@ As such, you must specify connection details, or use the defaults.</p>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -3839,19 +4639,33 @@ As such, you must specify connection details, or use the defaults.</p>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -3860,11 +4674,21 @@ As such, you must specify connection details, or use the defaults.</p>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -3875,21 +4699,21 @@ As such, you must specify connection details, or use the defaults.</p>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

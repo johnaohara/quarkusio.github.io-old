@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Building a Native Executable - main</title>
+  <title>Building a Native Executable - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/building-native-image" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/building-native-image" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/building-native-image" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/building-native-image" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/building-native-image" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/building-native-image">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/building-native-image">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/building-native-image">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -302,10 +276,10 @@ and <a href="https://github.com/graalvm/mandrel/releases">Mandrel releases</a>.<
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.1+</p>
+<p>Apache Maven 3.8.6</p>
 </li>
 <li>
-<p>A working container runtime (Docker or Podman)</p>
+<p>A working container runtime (Docker or <a href="podman">Podman</a>)</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -379,7 +353,7 @@ sudo apt-get install build-essential libz-dev zlib1g-dev</code></pre>
 </table>
 </div>
 <div class="paragraph">
-<p>Version 22.0.0 is required. Using the community edition is enough.</p>
+<p>Version 22.3 is required. Using the community edition is enough.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -565,7 +539,7 @@ this allows native image tests to also be run.</p>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -636,7 +610,7 @@ Fully static native executables support is experimental.
 </div>
 <div class="paragraph">
 <p>On Linux it&#8217;s possible to package a native executable that doesn&#8217;t depend on any system shared library.
-There are <a href="https://www.graalvm.org/22.1/reference-manual/native-image/StaticImages/#preparation">some system requirements</a> to be fulfilled and additional build arguments to be used along with the <code>native-image</code> invocation, a minimum is <code>-Dquarkus.native.additional-build-args="--static","--libc=musl"</code>.</p>
+There are <a href="https://www.graalvm.org/22.3/reference-manual/native-image/guides/build-static-executables/#prerequisites-and-preparation">some system requirements</a> to be fulfilled and additional build arguments to be used along with the <code>native-image</code> invocation, a minimum is <code>-Dquarkus.native.additional-build-args="--static","--libc=musl"</code>.</p>
 </div>
 <div class="paragraph">
 <p>Compiling fully static binaries is done by statically linking <a href="https://musl.libc.org/">musl</a> instead of <code>glibc</code> and should not be used in production without rigorous testing.</p>
@@ -728,7 +702,7 @@ such as importing test data into the database.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">quarkus.native.resources.includes=version.txt
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.native.resources.includes=version.txt
 %test.quarkus.native.resources.includes=version.txt,import-dev.sql
 %test.quarkus.hibernate-orm.database.generation=drop-and-create
 %test.quarkus.hibernate-orm.sql-load-script=import-dev.sql</code></pre>
@@ -851,7 +825,7 @@ The easiest way of accomplishing this task is to execute:</p>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative -Dquarkus.native.container-build=true</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative -DskipTests -Dquarkus.native.container-build=true</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -883,7 +857,7 @@ If you want to explicitly select the container runtime, you can do it with:</p>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=docker</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=docker</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -904,7 +878,7 @@ If you want to explicitly select the container runtime, you can do it with:</p>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=podman</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=podman</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -921,7 +895,7 @@ it is recommended you add these to your <code>application.properties</code> in o
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
+<div id="tip-quarkus-native-remote-container-build" class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
@@ -960,19 +934,19 @@ Caused by: java.nio.file.NoSuchFileException: /project/getting-started-1.0.0-SNA
 <div class="listingblock primary asciidoc-tabs-sync-cli">
 <div class="title">CLI</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus build --native -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel:22.0-java11</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus build --native -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel:22.0-java11</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
 <div class="title">Gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel:22.0-java11</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -980,7 +954,7 @@ Caused by: java.nio.file.NoSuchFileException: /project/getting-started-1.0.0-SNA
 It is highly recommended to use the floating tag,
 so that your builder image remains up-to-date and secure.
 If you absolutely must, you may hard-code to a specific tag
-(see <a href="https://quay.io/repository/quarkus/ubi-quarkus-mandrel?tab=tags">here</a> for available tags),
+(see <a href="https://quay.io/repository/quarkus/ubi-quarkus-mandrel-builder-image?tab=tags">here</a> for available tags),
 but be aware that you won&#8217;t get security updates that way and it&#8217;s unsupported.</p>
 </div>
 </td>
@@ -1010,6 +984,27 @@ but be aware that you won&#8217;t get security updates that way and it&#8217;s u
 <li>
 <p><code>quarkus.native.container-build=true</code> allows for creating a Linux executable without GraalVM being installed (and is only necessary if you don&#8217;t have GraalVM installed locally or your local operating system is not Linux)</p>
 </li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you&#8217;re running a remote Docker daemon, you need to replace <code>quarkus.native.container-build=true</code> with <code>quarkus.native.remote-container-build=true</code>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#tip-quarkus-native-remote-container-build">Creating a Linux executable without GraalVM installed</a> for more details.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>quarkus.container-image.build=true</code> instructs Quarkus to create a container-image using the final application artifact (which is the native executable in this case)</p>
 </li>
@@ -1040,7 +1035,7 @@ The project generation has provided a <code>Dockerfile.native-micro</code> in th
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">FROM quay.io/quarkus/quarkus-micro-image:1.0
+<pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">FROM quay.io/quarkus/quarkus-micro-image:2.0
 WORKDIR /work/
 COPY target/*-runner /work/application
 RUN chmod 775 /work
@@ -1108,7 +1103,7 @@ This base image has been tailored to work perfectly in containers.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">FROM registry.access.redhat.com/ubi8/ubi-minimal:8.5
+<pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">FROM registry.access.redhat.com/ubi8/ubi-minimal:8.6
 WORKDIR /work/
 COPY target/*-runner /work/application
 RUN chmod 775 /work
@@ -1150,7 +1145,7 @@ That approach is possible with a multi-stage Docker build:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">## Stage 1 : build with maven builder image with native capabilities
-FROM quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11 AS build
+FROM quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17 AS build
 COPY --chown=quarkus:quarkus mvnw /code/mvnw
 COPY --chown=quarkus:quarkus .mvn /code/.mvn
 COPY --chown=quarkus:quarkus pom.xml /code/
@@ -1161,7 +1156,7 @@ COPY src /code/src
 RUN ./mvnw package -Pnative
 
 ## Stage 2 : create the docker final image
-FROM quay.io/quarkus/quarkus-micro-image:1.0
+FROM quay.io/quarkus/quarkus-micro-image:2.0
 WORKDIR /work/
 COPY --from=build /code/target/*-runner /work/application
 
@@ -1201,7 +1196,7 @@ To provision the Maven Wrapper in your project, use: <code>mvn -N org.apache.mav
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">## Stage 1 : build with maven builder image with native capabilities
-FROM quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11 AS build
+FROM quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17 AS build
 USER root
 RUN microdnf install findutils
 COPY --chown=quarkus:quarkus gradlew /code/gradlew
@@ -1215,7 +1210,7 @@ COPY src /code/src
 RUN ./gradlew build -Dquarkus.package.type=native
 
 ## Stage 2 : create the docker final image
-FROM quay.io/quarkus/quarkus-micro-image:1.0
+FROM quay.io/quarkus/quarkus-micro-image:2.0
 WORKDIR /work/
 COPY --from=build /code/build/*-runner /work/application
 RUN chmod 775 /work
@@ -1277,8 +1272,23 @@ CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-To use Mandrel instead of GraalVM CE, update the <code>FROM</code> clause to: <code>FROM quay.io/quarkus/ubi-quarkus-mandrel:$TAG AS build</code>.
-<code>$TAG</code> can be found on the <a href="https://quay.io/repository/quarkus/ubi-quarkus-mandrel?tab=tags">Quarkus Mandrel Images Tags page</a>.
+<div class="paragraph">
+<p>To use Mandrel instead of GraalVM CE, update the <code>FROM</code> clause to: <code>FROM quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17 AS build</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Starting with 22.3, Mandrel does not provide a <code>-java11</code> variant anymore. Use the <code>-java17</code> image instead.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -1308,7 +1318,7 @@ You only need to copy your application, and you are done:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">FROM quay.io/quarkus/quarkus-distroless-image:1.0
+<pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">FROM quay.io/quarkus/quarkus-distroless-image:2.0
 COPY target/*-runner /application
 
 EXPOSE 8080
@@ -1318,7 +1328,7 @@ CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Quarkus provides the <code>quay.io/quarkus/quarkus-distroless-image:1.0</code> image.
+<p>Quarkus provides the <code>quay.io/quarkus/quarkus-distroless-image:2.0</code> image.
 It contains the required packages to run a native executable and is only <strong>9Mb</strong>.
 Just add your application on top of this image, and you will get a tiny container image.</p>
 </div>
@@ -1349,7 +1359,7 @@ Scratch image support is experimental.
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-dockerfile hljs" data-lang="dockerfile">## Stage 1 : build with maven builder image with native capabilities
-FROM quay.io/quarkus/ubi-quarkus-native-image:22.0-java11 AS build
+FROM quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17 AS build
 USER root
 RUN microdnf install make gcc
 COPY --chown=quarkus:quarkus mvnw /code/mvnw
@@ -1442,7 +1452,7 @@ docker run \
   --v $(pwd):/work <i class="conum" data-value="1"></i><b>(1)</b>
   -w /work <i class="conum" data-value="2"></i><b>(2)</b>
   --entrypoint bin/sh \
-  quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11 \ <i class="conum" data-value="3"></i><b>(3)</b>
+  quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17 \ <i class="conum" data-value="3"></i><b>(3)</b>
   -c "native-image $(cat native-image.args) -J-Xmx4g" <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
@@ -1458,7 +1468,7 @@ docker run \
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Use the <code>quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11</code> docker image introduced in <a href="#multistage-docker">Using a multi-stage Docker build</a> to build the native image.</td>
+<td>Use the <code>quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:22.3-java17</code> docker image introduced in <a href="#multistage-docker">Using a multi-stage Docker build</a> to build the native image.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -1641,6 +1651,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>Comma-separated, additional arguments to pass to the build process. If an argument includes the <code>,</code> symbol, it needs to be escaped, e.g. <code>\\,</code></p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16322">QUARKUS_NATIVE_ADDITIONAL_BUILD_ARGS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16322" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -1654,6 +1667,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>If the HTTP url handler should be enabled, allowing you to do URL.openConnection() for HTTP URLs</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16323">QUARKUS_NATIVE_ENABLE_HTTP_URL_HANDLER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16323" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1669,24 +1685,13 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If the HTTPS url handler should be enabled, allowing you to do URL.openConnection() for HTTPS URLs</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16324">QUARKUS_NATIVE_ENABLE_HTTPS_URL_HANDLER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16324" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-native-pkg-native-config_quarkus.native.inline-before-analysis"></a><code><a href="#quarkus-native-pkg-native-config_quarkus.native.inline-before-analysis">quarkus.native.inline-before-analysis</a></code></p>
-</div>
-<div class="openblock description">
-<div class="content">
-<div class="paragraph">
-<p>If <code>-H:&#43;InlineBeforeAnalysis</code> flag will be added to the native-image run</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1696,6 +1701,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>The default value for java.awt.headless JVM option. Switching this option affects linking of awt libraries.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16325">QUARKUS_NATIVE_HEADLESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16325" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1709,7 +1717,10 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Defines the file encoding as in -Dfile.encoding=&#8230;&#8203; Native image runtime uses the host&#8217;s (i.e. build time) value of file.encoding system property. We intentionally default this to UTF-8 to avoid platform specific defaults to be picked up which can then result in inconsistent behavior in the generated native executable.</p>
+<p>Defines the file encoding as in <code>-Dfile.encoding=&#8230;&#8203;</code>. Native image runtime uses the host&#8217;s (i.e. build time) value of <code>file.encoding</code> system property. We intentionally default this to UTF-8 to avoid platform specific defaults to be picked up which can then result in inconsistent behavior in the generated native executable.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16326">QUARKUS_NATIVE_FILE_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16326" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1725,6 +1736,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If all character sets should be added to the native image. This increases image size</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16327">QUARKUS_NATIVE_ADD_ALL_CHARSETS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16327" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1738,6 +1752,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>The location of the Graal distribution</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16328">QUARKUS_NATIVE_GRAALVM_HOME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16328" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1753,6 +1770,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>The location of the JDK</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16329">QUARKUS_NATIVE_JAVA_HOME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16329" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a></p></td>
@@ -1766,6 +1786,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>The maximum Java heap to be used during the native image generation</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16330">QUARKUS_NATIVE_NATIVE_IMAGE_XMX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16330" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1781,6 +1804,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If the native image build should wait for a debugger to be attached before running. This is an advanced option and is generally only intended for those familiar with GraalVM internals</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16331">QUARKUS_NATIVE_DEBUG_BUILD_PROCESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16331" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1794,6 +1820,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>If the debug port should be published when building with docker and debug-build-process is true</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16332">QUARKUS_NATIVE_PUBLISH_DEBUG_BUILD_PROCESS_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16332" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1809,6 +1838,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If isolates should be enabled</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16333">QUARKUS_NATIVE_ENABLE_ISOLATES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16333" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1822,6 +1854,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>If a JVM based 'fallback image' should be created if native image fails. This is not recommended, as this is functionally the same as just running the application in a JVM</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16334">QUARKUS_NATIVE_ENABLE_FALLBACK_IMAGES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16334" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1837,6 +1872,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If all META-INF/services entries should be automatically registered</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16335">QUARKUS_NATIVE_AUTO_SERVICE_LOADER_REGISTRATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16335" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1850,6 +1888,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>If the bytecode of all proxies should be dumped for inspection</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16336">QUARKUS_NATIVE_DUMP_PROXIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16336" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1865,6 +1906,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If this build should be done using a container runtime. Unless container-runtime is also set, docker will be used by default. If docker is not available or is an alias to podman, podman will be used instead as the default.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16337">QUARKUS_NATIVE_CONTAINER_BUILD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16337" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1879,6 +1923,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If this build is done using a remote docker daemon.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16338">QUARKUS_NATIVE_REMOTE_CONTAINER_BUILD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16338" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1891,7 +1938,10 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The docker image to use to do the image build. It can be one of <code>graalvm</code>, <code>mandrel</code>, or the full image path, e.g. <code>quay.io/quarkus/ubi-quarkus-mandrel:21.3-java17</code>.</p>
+<p>The docker image to use to do the image build. It can be one of <code>graalvm</code>, <code>mandrel</code>, or the full image path, e.g. <code>quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16339">QUARKUS_NATIVE_BUILDER_IMAGE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16339" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1906,6 +1956,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>The container runtime (e.g. docker) that is used to do an image based build. If this is set then a container build is always done.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16340">QUARKUS_NATIVE_CONTAINER_RUNTIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16340" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1923,6 +1976,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>Options to pass to the container runtime</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16341">QUARKUS_NATIVE_CONTAINER_RUNTIME_OPTIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16341" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
@@ -1936,6 +1992,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>If the resulting image should allow VM introspection</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16342">QUARKUS_NATIVE_ENABLE_VM_INSPECTION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16342" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1951,6 +2010,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If full stack traces are enabled in the resulting image</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16343">QUARKUS_NATIVE_FULL_STACK_TRACES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16343" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1964,6 +2026,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>If the reports on call paths and included packages/classes/methods should be generated</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16344">QUARKUS_NATIVE_ENABLE_REPORTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16344" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1979,6 +2044,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If exceptions should be reported with a full stack trace</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16345">QUARKUS_NATIVE_REPORT_EXCEPTION_STACK_TRACES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16345" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1992,6 +2060,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>If errors should be reported at runtime. This is a more relaxed setting, however it is not recommended as it means your application may fail at runtime if an unsupported feature is used by accident.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16346">QUARKUS_NATIVE_REPORT_ERRORS_AT_RUNTIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16346" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2007,6 +2078,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>Don&#8217;t build a native image if it already exists. This is useful if you have already built an image and you want to use Quarkus to deploy it somewhere. Note that this is not able to detect if the existing image is outdated, if you have modified source or config and want a new image you must not use this flag.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16347">QUARKUS_NATIVE_REUSE_EXISTING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16347" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2020,15 +2094,18 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>A comma separated list of globs to match resource paths that should be added to the native image.
- Use slash (<code>/</code>) as a path separator on all platforms. Globs must not start with slash.
- By default, no resources are included.
- Example: Given that you have <code>src/main/resources/ignored.png</code> and <code>src/main/resources/foo/selected.png</code> in your source tree and one of your dependency JARs contains <code>bar/some.txt</code> file, with the following configuration quarkus.native.resources.includes = foo/**,bar/**/*.txt  the files <code>src/main/resources/foo/selected.png</code> and <code>bar/some.txt</code> will be included in the native image, while <code>src/main/resources/ignored.png</code> will not be included.
- Supported glob features   Feature Description   <code>*</code> Matches a (possibly empty) sequence of characters that does not contain slash (<code>/</code>)   <code>**</code> Matches a (possibly empty) sequence of characters that may contain slash (<code>/</code>)   <code>?</code> Matches one character, but not slash   <code>[abc]</code> Matches one character given in the bracket, but not slash   <code>[a-z]</code> Matches one character from the range given in the bracket, but not slash   <code>[!abc]</code> Matches one character not named in the bracket; does not match slash   <code>[a-z]</code> Matches one character outside the range given in the bracket; does not match slash   <code>{one,two,three}</code> Matches any of the alternating tokens separated by comma; the tokens may contain wildcards, nested alternations and ranges   <code>\</code> The escape character
- Note that there are three levels of escaping when passing this option via <code>application.properties</code>:
+Use slash (<code>/</code>) as a path separator on all platforms. Globs must not start with slash.
+By default, no resources are included.
+Example: Given that you have <code>src/main/resources/ignored.png</code> and <code>src/main/resources/foo/selected.png</code> in your source tree and one of your dependency JARs contains <code>bar/some.txt</code> file, with the following configuration quarkus.native.resources.includes = foo/**,bar/**/*.txt  the files <code>src/main/resources/foo/selected.png</code> and <code>bar/some.txt</code> will be included in the native image, while <code>src/main/resources/ignored.png</code> will not be included.
+Supported glob features   Feature Description   <code>*</code> Matches a (possibly empty) sequence of characters that does not contain slash (<code>/</code>)   <code>**</code> Matches a (possibly empty) sequence of characters that may contain slash (<code>/</code>)   <code>?</code> Matches one character, but not slash   <code>[abc]</code> Matches one character given in the bracket, but not slash   <code>[a-z]</code> Matches one character from the range given in the bracket, but not slash   <code>[!abc]</code> Matches one character not named in the bracket; does not match slash   <code>[a-z]</code> Matches one character outside the range given in the bracket; does not match slash   <code>{one,two,three}</code> Matches any of the alternating tokens separated by comma; the tokens may contain wildcards, nested alternations and ranges   <code>\</code> The escape character
+Note that there are three levels of escaping when passing this option via <code>application.properties</code>:
  . <code>application.properties</code> parser
  - MicroProfile Config list converter that splits the comma separated list
  - Glob parser  All three levels use backslash (<code>\</code>) as the escaping character. So you need to use an appropriate number of backslashes depending on which level you want to escape.
- Note that Quarkus extensions typically include the resources they require by themselves. This option is useful in situations when the built-in functionality is not sufficient.</p>
+Note that Quarkus extensions typically include the resources they require by themselves. This option is useful in situations when the built-in functionality is not sufficient.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16348">QUARKUS_NATIVE_RESOURCES_INCLUDES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16348" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2043,10 +2120,13 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>A comma separated list of globs to match resource paths that should <strong>not</strong> be added to the native image.
- Use slash (<code>/</code>) as a path separator on all platforms. Globs must not start with slash.
- Please refer to <code>includes</code> for details about the glob syntax.
- By default, no resources are excluded.
- Example: Given that you have <code>src/main/resources/red.png</code> and <code>src/main/resources/foo/green.png</code> in your source tree and one of your dependency JARs contains <code>bar/blue.png</code> file, with the following configuration quarkus.native.resources.includes = **/*.png quarkus.native.resources.excludes = foo/**,**/green.png  the resource <code>red.png</code> will be available in the native image while the resources <code>foo/green.png</code> and <code>bar/blue.png</code> will not be available in the native image.</p>
+Use slash (<code>/</code>) as a path separator on all platforms. Globs must not start with slash.
+Please refer to <code>includes</code> for details about the glob syntax.
+By default, no resources are excluded.
+Example: Given that you have <code>src/main/resources/red.png</code> and <code>src/main/resources/foo/green.png</code> in your source tree and one of your dependency JARs contains <code>bar/blue.png</code> file, with the following configuration quarkus.native.resources.includes = **/*.png quarkus.native.resources.excludes = foo/**,**/green.png  the resource <code>red.png</code> will be available in the native image while the resources <code>foo/green.png</code> and <code>bar/blue.png</code> will not be available in the native image.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16349">QUARKUS_NATIVE_RESOURCES_EXCLUDES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16349" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2062,6 +2142,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>If debug is enabled and debug symbols are generated. The symbols will be generated in a separate .debug file.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16350">QUARKUS_NATIVE_DEBUG_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16350" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -2075,6 +2158,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>Generate the report files for GraalVM Dashboard.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16351">QUARKUS_NATIVE_ENABLE_DASHBOARD_DUMP</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16351" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2090,6 +2176,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="paragraph">
 <p>The compression level in [1, 10]. 10 means <strong>best</strong> Higher compression level requires more time to compress the executable.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16352">QUARKUS_NATIVE_COMPRESSION_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16352" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -2103,6 +2192,9 @@ These are provided in <code>application.properties</code> the same as any other 
 <div class="content">
 <div class="paragraph">
 <p>Allows passing extra arguments to the UPX command line (like --brute). The arguments are comma-separated. The exhaustive list of parameters can be found in <a href="https://github.com/upx/upx/blob/devel/doc/upx.pod">https://github.com/upx/upx/blob/devel/doc/upx.pod</a>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16353">QUARKUS_NATIVE_COMPRESSION_ADDITIONAL_ARGS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16353" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2146,23 +2238,37 @@ However, there is much more.</p>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -2171,15 +2277,29 @@ However, there is much more.</p>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -2188,19 +2308,33 @@ However, there is much more.</p>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -2209,11 +2343,21 @@ However, there is much more.</p>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2224,21 +2368,21 @@ However, there is much more.</p>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

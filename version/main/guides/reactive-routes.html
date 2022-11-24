@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Using Reactive Routes - main</title>
+  <title>Using Reactive Routes - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/reactive-routes" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/reactive-routes" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/reactive-routes" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/reactive-routes" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/reactive-routes" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/reactive-routes">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/reactive-routes">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/reactive-routes">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -258,10 +232,28 @@ Note that because of this, a reactive route must be non-blocking or explicitly d
 <div class="sectionbody">
 <div class="paragraph">
 <p>The first way to use reactive routes is to use the <code>@Route</code> annotation.
-To have access to this annotation, you need to add the <code>quarkus-reactive-routes</code> extension:</p>
+To have access to this annotation, you need to add the <code>quarkus-reactive-routes</code> extension by running this command:</p>
+</div>
+<div class="listingblock primary asciidoc-tabs-sync-cli">
+<div class="title">CLI</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus extension add 'quarkus-reactive-routes'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary asciidoc-tabs-sync-maven">
+<div class="title">Maven</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions='quarkus-reactive-routes'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary asciidoc-tabs-sync-gradle">
+<div class="title">Gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions='quarkus-reactive-routes'</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>In your build file, add:</p>
+<p>This will add the following to your build file:</p>
 </div>
 <div class="listingblock primary asciidoc-tabs-target-sync-cli asciidoc-tabs-target-sync-maven">
 <div class="title">pom.xml</div>
@@ -307,8 +299,13 @@ public class MyDeclarativeRoutes {
     }
 
     @Route(path = "/greetings", methods = Route.HttpMethod.GET)
-    void greetings(RoutingExchange ex) { <i class="conum" data-value="5"></i><b>(5)</b>
-        ex.ok("hello " + ex.getParam("name").orElse("world"));
+    void greetingsQueryParam(RoutingExchange ex) { <i class="conum" data-value="5"></i><b>(5)</b>
+        ex.ok("hello " + ex.getParam("name").orElse("world")); <i class="conum" data-value="6"></i><b>(6)</b>
+    }
+
+    @Route(path = "/greetings/:name", methods = Route.HttpMethod.GET) <i class="conum" data-value="7"></i><b>(7)</b>
+    void greetingsPathParam(@Param String name, RoutingExchange ex) {
+        ex.ok("hello " + name);
     }
 }</code></pre>
 </div>
@@ -335,6 +332,14 @@ public class MyDeclarativeRoutes {
 <td><i class="conum" data-value="5"></i><b>5</b></td>
 <td><code>RoutingExchange</code> is a convenient wrapper of <code>RoutingContext</code> which provides some useful methods.</td>
 </tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>The <code>RoutingExchange</code> is used to retrieve the request query parameter <code>name</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>The path defines a parameter <code>name</code> which can be injected inside the method parameters using the annotation <code>@Param</code>.</td>
+</tr>
 </table>
 </div>
 <div class="paragraph">
@@ -352,7 +357,7 @@ public class MyDeclarativeRoutes {
 <p>The <code>regex</code> - for routing with regular expressions, see <a href="https://vertx.io/docs/vertx-web/java/#_routing_with_regular_expressions">for more details</a></p>
 </li>
 <li>
-<p>The <code>methods</code> - the HTTP verb triggering the route such as <code>GET</code>, <code>POST</code>&#8230;&#8203;</p>
+<p>The <code>methods</code> - the HTTP verbs triggering the route such as <code>GET</code>, <code>POST</code>&#8230;&#8203;</p>
 </li>
 <li>
 <p>The <code>type</code> - it can be <em>normal</em> (non-blocking), <em>blocking</em> (method dispatched on a worker thread), or <em>failure</em> to indicate that this route is called on failures</p>
@@ -424,7 +429,7 @@ public void route(RoutingContext rc) {
 </table>
 </div>
 <div class="paragraph">
-<p>If no content-type header is set then we will try to use the most acceptable content type as defined by <code>io.vertx.ext.web.RoutingContext.getAcceptableContentType()</code>.</p>
+<p>If no content-type header is set, then we will try to use the most acceptable content type by matching the accept header with the value of the <code>Route</code> produces attribute as defined by <code>io.vertx.ext.web.RoutingContext.getAcceptableContentType()</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -438,7 +443,7 @@ String person() {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>If the <code>accept</code> header matches <code>text/html</code> we set the content type automatically.</td>
+<td>If the <code>accept</code> header matches <code>text/html</code>, we set the content type automatically to <code>text/html</code>.</td>
 </tr>
 </table>
 </div>
@@ -451,12 +456,12 @@ In the following example, both route matches <code>/accounts/me</code>:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/accounts/:id", methods = HttpMethod.GET)
-void getAccount(RoutingContext ctx) {
+void getAccount(RoutingContext rc) {
   ...
 }
 
 @Route(path = "/accounts/me", methods = HttpMethod.GET)
-void getCurrentUserAccount(RoutingContext ctx) {
+void getCurrentUserAccount(RoutingContext rc) {
   ...
 }</code></pre>
 </div>
@@ -468,12 +473,12 @@ To avoid the conflict, use the <code>order</code> attribute:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/accounts/:id", methods = HttpMethod.GET, order = 2)
-void getAccount(RoutingContext ctx) {
+void getAccount(RoutingContext rc) {
   ...
 }
 
 @Route(path = "/accounts/me", methods = HttpMethod.GET, order = 1)
-void getCurrentUserAccount(RoutingContext ctx) {
+void getCurrentUserAccount(RoutingContext rc) {
   ...
 }</code></pre>
 </div>
@@ -562,7 +567,7 @@ Some methods of <code>RoutingExchange</code> do it for you, others not and you m
 </ul>
 </div>
 <div class="paragraph">
-<p>Furthermore, it is possible to inject the <code>HttpServerRequest</code> parameters into a method parameter annotated with <code>@io.quarkus.vertx.web.Param</code>:</p>
+<p>Furthermore, it is possible to inject the <code>HttpServerRequest</code> parameters into method parameters annotated with <code>@io.quarkus.vertx.web.Param</code> using the following types:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -600,7 +605,7 @@ String hello(@Param Optional&lt;String&gt; name) {
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>HttpServerRequest</code> headers can be injected into a method parameter annotated with <code>@io.quarkus.vertx.web.Header</code>:</p>
+<p>The <code>HttpServerRequest</code> headers can be injected into method parameters annotated with <code>@io.quarkus.vertx.web.Header</code> using the following types:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -638,7 +643,7 @@ String helloFromHeader(@Header("My-Header") String header) {
 </div>
 </div>
 <div class="paragraph">
-<p>The request body can be injected into a method parameter annotated with <code>@io.quarkus.vertx.web.Body</code>.</p>
+<p>The request body can be injected into a method parameter annotated with <code>@io.quarkus.vertx.web.Body</code> using the following types:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -705,12 +710,12 @@ void unsupported(UnsupportedOperationException e, HttpServerResponse response) {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/hello")
-Uni&lt;String&gt; hello(RoutingContext context) {
+Uni&lt;String&gt; hello() {
     return Uni.createFrom().item("Hello world!");
 }
 
 @Route(path = "/person")
-Uni&lt;Person&gt; getPerson(RoutingContext context) {
+Uni&lt;Person&gt; getPerson() {
     return Uni.createFrom().item(() -&gt; new Person("neo", 12345));
 }</code></pre>
 </div>
@@ -721,7 +726,7 @@ Uni&lt;Person&gt; getPerson(RoutingContext context) {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/mail")
-Uni&lt;Void&gt; sendEmail(RoutingContext context) {
+Uni&lt;Void&gt; sendEmail() {
     return mailer.send(...);
 }</code></pre>
 </div>
@@ -732,13 +737,13 @@ Uni&lt;Void&gt; sendEmail(RoutingContext context) {
 <div class="ulist">
 <ul>
 <li>
-<p>a string - written into the HTTP response directly</p>
+<p>A string - written into the HTTP response directly.</p>
 </li>
 <li>
-<p>a buffer - written into the HTTP response directly</p>
+<p>A <code>io.vertx.core.buffer.Buffer</code> - written into the HTTP response directly.</p>
 </li>
 <li>
-<p>an object - written into the HTTP response after having been encoded into JSON.
+<p>An object - written into the HTTP response after having been encoded into JSON.
 The <code>content-type</code> header is set to <code>application/json</code> if not already set.</p>
 </li>
 </ul>
@@ -758,7 +763,7 @@ The <code>content-type</code> header is set to <code>application/json</code> if 
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/hello")
-String helloSync(RoutingContext context) {
+String helloSync() {
     return "Hello world";
 }</code></pre>
 </div>
@@ -773,13 +778,13 @@ Otherwise, set the <code>type</code> attribute of the <code>@Route</code> annota
 <div class="ulist">
 <ul>
 <li>
-<p>a string - written into the HTTP response directly</p>
+<p>A string - written into the HTTP response directly.</p>
 </li>
 <li>
-<p>a buffer - written into the HTTP response directly</p>
+<p>A <code>io.vertx.core.buffer.Buffer</code> - written into the HTTP response directly.</p>
 </li>
 <li>
-<p>an object - written into the HTTP response after having been encoded into JSON.
+<p>An object - written into the HTTP response after having been encoded into JSON.
 The <code>content-type</code> header is set to <code>application/json</code> if not already set.</p>
 </li>
 </ul>
@@ -795,7 +800,7 @@ The response <code>Transfer-Encoding</code> header is set to <code>chunked</code
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/hello")
-Multi&lt;String&gt; hellos(RoutingContext context) {
+Multi&lt;String&gt; hellos() {
     return Multi.createFrom().items("hello", "world", "!");  <i class="conum" data-value="1"></i><b>(1)</b>
 }</code></pre>
 </div>
@@ -814,20 +819,20 @@ Multi&lt;String&gt; hellos(RoutingContext context) {
 <div class="ulist">
 <ul>
 <li>
-<p>a <code>Multi&lt;String&gt;</code> - the items are written one by one (one per <em>chunk</em>) in the response.</p>
+<p>A <code>Multi&lt;String&gt;</code> - the items are written one by one (one per <em>chunk</em>) in the response.</p>
 </li>
 <li>
-<p>a <code>Multi&lt;Buffer&gt;</code> - the buffers are written one by one (one per <em>chunk</em>) without any processing.</p>
+<p>A <code>Multi&lt;Buffer&gt;</code> - the buffers are written one by one (one per <em>chunk</em>) without any processing.</p>
 </li>
 <li>
-<p>a <code>Multi&lt;Object&gt;</code> - the items are encoded to JSON written one by one in the response.</p>
+<p>A <code>Multi&lt;Object&gt;</code> - the items are encoded to JSON written one by one in the response.</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/people")
-Multi&lt;Person&gt; people(RoutingContext context) {
+Multi&lt;Person&gt; people() {
     return Multi.createFrom().items(
             new Person("superman", 1),
             new Person("batman", 2),
@@ -856,7 +861,7 @@ To do that set the <code>produces</code> attribute to <code>"application/json"</
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/people", produces = ReactiveRoutes.APPLICATION_JSON)
-Multi&lt;Person&gt; people(RoutingContext context) {
+Multi&lt;Person&gt; people() {
     return Multi.createFrom().items(
             new Person("superman", 1),
             new Person("batman", 2),
@@ -921,7 +926,7 @@ To enable this feature, set the <code>produces</code> attribute to <code>"text/e
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/people", produces = ReactiveRoutes.EVENT_STREAM)
-Multi&lt;Person&gt; people(RoutingContext context) {
+Multi&lt;Person&gt; people() {
     return Multi.createFrom().items(
             new Person("superman", 1),
             new Person("batman", 2),
@@ -1032,7 +1037,7 @@ To enable this feature, set the <code>produces</code> attribute of the <code>@Ro
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/people", produces = ReactiveRoutes.ND_JSON)
-Multi&lt;Person&gt; people(RoutingContext context) {
+Multi&lt;Person&gt; people() {
     return ReactiveRoutes.asJsonStream(Multi.createFrom().items(
             new Person("superman", 1),
             new Person("batman", 2),
@@ -1065,12 +1070,12 @@ Note that <code>"application/x-ndjson"</code> must be the first value in the arr
 </table>
 </div>
 <div class="paragraph">
-<p>You can also provide strings instead of Objects, in that case the strings will be wrapped in quotes to become valid JSON values:</p>
+<p>You can also provide strings instead of objects, in that case the strings will be wrapped in quotes to become valid JSON values:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Route(path = "/people", produces = ReactiveRoutes.ND_JSON)
-Multi&lt;Person&gt; people(RoutingContext context) {
+Multi&lt;Person&gt; people() {
     return ReactiveRoutes.asJsonStream(Multi.createFrom().items(
             "superman",
             "batman",
@@ -1305,13 +1310,13 @@ If the client does not support HTTP compression then the response body is not co
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions="quarkus-smallrye-openapi"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions='quarkus-smallrye-openapi'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
 <div class="title">Gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions="quarkus-smallrye-openapi"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions='quarkus-smallrye-openapi'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1379,7 +1384,7 @@ paths:
 <h3 id="adding-microprofile-openapi-annotations"><a class="anchor" href="#adding-microprofile-openapi-annotations"></a>Adding MicroProfile OpenAPI Annotations</h3>
 <div class="paragraph">
 <p>You can use <a href="https://github.com/eclipse/microprofile-open-api">MicroProfile OpenAPI</a> to better document your schema,
-example, adding header info, or specifying the return type on <code>void</code> methods might be useful :</p>
+for instance, adding header info, or specifying the return type on <code>void</code> methods might be useful:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1430,7 +1435,7 @@ public class MyDeclarativeRoutes {
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Defining the response</td>
+<td>Defining the response.</td>
 </tr>
 </table>
 </div>
@@ -1526,23 +1531,37 @@ It also describes the structure of the Quarkus HTTP layer and how to write filte
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1551,15 +1570,29 @@ It also describes the structure of the Quarkus HTTP layer and how to write filte
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1568,19 +1601,33 @@ It also describes the structure of the Quarkus HTTP layer and how to write filte
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1589,11 +1636,21 @@ It also describes the structure of the Quarkus HTTP layer and how to write filte
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1604,21 +1661,21 @@ It also describes the structure of the Quarkus HTTP layer and how to write filte
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

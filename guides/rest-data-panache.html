@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Generating JAX-RS resources with Panache</title>
+  <title>Generating JAX-RS resources with Panache - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/rest-data-panache" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/rest-data-panache" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/rest-data-panache" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/rest-data-panache" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/rest-data-panache" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/rest-data-panache">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/rest-data-panache">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/rest-data-panache">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -199,6 +173,7 @@
 <li><a href="#available-options">Available options</a></li>
 </ul>
 </li>
+<li><a href="#securing-endpoints">Securing endpoints</a></li>
 <li><a href="#query-parameters">Query parameters</a></li>
 <li><a href="#response-body-examples">Response body examples</a>
 <ul class="sectlevel2">
@@ -217,28 +192,6 @@ To streamline this task, REST Data with Panache extension can generate the basic
 <div class="paragraph">
 <p>While this extension is still experimental and provides a limited feature set, we hope to get an early feedback for it.
 Currently, this extension supports Hibernate ORM and MongoDB with Panache and can generate CRUD resources that work with <code>application/json</code> and <code>application/hal+json</code> content.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This technology is considered experimental.</p>
-</div>
-<div class="paragraph">
-<p>In <em>experimental</em> mode, early feedback is requested to mature the idea.
-There is no guarantee of stability nor long term presence in the platform until the solution matures.
-Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-dev">mailing list</a> or as issues in our <a href="https://github.com/quarkusio/quarkus/issues">GitHub issue tracker</a>.</p>
-</div>
-<div class="paragraph">
-<p>For a full list of possible statuses, check our <a href="https://quarkus.io/faq/#extension-status">FAQ entry</a>.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -386,14 +339,10 @@ implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
         &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
         &lt;artifactId&gt;quarkus-reactive-pg-client&lt;/artifactId&gt;
     &lt;/dependency&gt;
-   &lt;!-- Use these if you are using RESTEasy Reactive Jackson --&gt;
+   &lt;!-- Use this if you are using RESTEasy Reactive Jackson for serialization --&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
         &lt;artifactId&gt;quarkus-resteasy-reactive-jackson&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
-        &lt;artifactId&gt;quarkus-resteasy-reactive-links&lt;/artifactId&gt;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;</code></pre>
 </div>
@@ -436,25 +385,17 @@ implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
     &lt;artifactId&gt;quarkus-mongodb-rest-data-panache&lt;/artifactId&gt;
 &lt;/dependency&gt;
 
-&lt;!-- Use these if you are using RESTEasy Reactive --&gt;
+&lt;!-- Use this if you are using RESTEasy Reactive --&gt;
 &lt;dependency&gt;
     &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
     &lt;artifactId&gt;quarkus-resteasy-reactive-jackson&lt;/artifactId&gt;
 &lt;/dependency&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
-    &lt;artifactId&gt;quarkus-resteasy-reactive-links&lt;/artifactId&gt;
-&lt;/dependency&gt;
 
-&lt;!-- Use these if you are going to use RESTEasy Classic --&gt;
+&lt;!-- Use this if you are going to use RESTEasy Classic --&gt;
 &lt;!--
 &lt;dependency&gt;
     &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
     &lt;artifactId&gt;quarkus-resteasy-jackson&lt;/artifactId&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
-    &lt;artifactId&gt;resteasy-links&lt;/artifactId&gt;
 &lt;/dependency&gt;
 --&gt;</code></pre>
 </div>
@@ -464,13 +405,11 @@ implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("io.quarkus:quarkus-mongodb-rest-data-panache")
 
-// Use these if you are using RESTEasy Reactive
+// Use this if you are using RESTEasy Reactive
 implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
-implementation("io.quarkus:quarkus-resteasy-reactive-links")
 
-// Use these if you are going to use RESTEasy Classic
-// implementation("io.quarkus:quarkus-resteasy-jackson")
-// implementation("io.quarkus:resteasy-links")</code></pre>
+// Use this if you are going to use RESTEasy Classic
+// implementation("io.quarkus:quarkus-resteasy-jackson")</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -580,6 +519,12 @@ The implemented class then will be used by a generated JAX-RS resource, which wi
         // ... build a response with page links and return a 200 response with a list
     }
 
+    @GET
+    @Path("/count")
+    public long count() {
+        return resource.count();
+    }
+
     @Transactional
     @POST
     @Consumes("application/json")
@@ -650,6 +595,9 @@ public interface PeopleResource extends PanacheEntityResource&lt;Person, Long&gt
 <p><code>path</code> - resource base path. Default path is a hyphenated lowercase resource name without a suffix of <code>resource</code> or <code>controller</code>.</p>
 </li>
 <li>
+<p><code>rolesAllowed</code> - List of the security roles permitted to access the resources. It needs a Quarkus security extension to be present, otherwise it will be ignored. Default is empty.</p>
+</li>
+<li>
 <p><code>paged</code> - whether collection responses should be paged or not.
 First, last, previous and next page URIs are included in the response headers if they exist.
 Request page index and size are taken from the <code>page</code> and <code>size</code> query parameters that default to <code>0</code> and <code>20</code> respectively.
@@ -675,8 +623,35 @@ Default is <code>false</code>.</p>
 <li>
 <p><code>path</code> - operation path (this is appended to the resource base path). Default is an empty string.</p>
 </li>
+<li>
+<p><code>rolesAllowed</code> - List of the security roles permitted to access this operation. It needs a Quarkus security extension to be present, otherwise it will be ignored. Default is empty.</p>
+</li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="securing-endpoints"><a class="anchor" href="#securing-endpoints"></a>Securing endpoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>REST Data with Panache will use the Security annotations within the package <code>javax.annotation.security</code> that are defined on your resource interfaces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.annotation.security.DenyAll;
+import javax.annotation.security.RolesAllowed;
+
+@DenyAll
+@ResourceProperties
+public interface PeopleResource extends PanacheEntityResource&lt;Person, Long&gt; {
+    @RolesAllowed("superuser")
+    boolean delete(Long id);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Additionally, if you are only interested in specifying the roles that are allowed to use the resources, the <code>@ResourceProperties</code> and <code>@MethodProperties</code> annotations have the field <code>rolesAllowed</code> to list the security roles permitted to access the resource or operation.</p>
 </div>
 </div>
 </div>
@@ -891,23 +866,37 @@ Here are a couple of examples of how a response body would look like for the <co
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -916,15 +905,29 @@ Here are a couple of examples of how a response body would look like for the <co
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -933,19 +936,33 @@ Here are a couple of examples of how a response body would look like for the <co
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -954,11 +971,21 @@ Here are a couple of examples of how a response body would look like for the <co
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -969,21 +996,21 @@ Here are a couple of examples of how a response body would look like for the <co
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Using Kotlin</title>
+  <title>Using Kotlin - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/kotlin" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/kotlin" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/kotlin" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/kotlin" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/kotlin" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/kotlin">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/kotlin">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/kotlin">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -184,8 +158,13 @@
 <li><a href="#update-code">Update code</a></li>
 </ul>
 </li>
+<li><a href="#kotlin-version">Kotlin version</a></li>
 <li><a href="#important-maven-configuration-points">Important Maven configuration points</a></li>
-<li><a href="#important-gradle-configuration-points">Important Gradle configuration points</a></li>
+<li><a href="#important-gradle-configuration-points">Important Gradle configuration points</a>
+<ul class="sectlevel2">
+<li><a href="#overriding-the-quarkus-bom-kotlin-version-gradle">Overriding the Quarkus BOM Kotlin version (Gradle)</a></li>
+</ul>
+</li>
 <li><a href="#live-reload">Live reload</a>
 <ul class="sectlevel2">
 <li><a href="#configuring-live-reload-compiler">Configuring live reload compiler</a></li>
@@ -211,28 +190,6 @@
 <div class="paragraph">
 <p>Quarkus provides first class support for using Kotlin as will be explained in this guide.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This technology is considered preview.</p>
-</div>
-<div class="paragraph">
-<p>In <em>preview</em>, backward compatibility and presence in the ecosystem is not guaranteed.
-Specific improvements might require changing configuration or APIs, and plans to become <em>stable</em> are under way.
-Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-dev">mailing list</a> or as issues in our <a href="https://github.com/quarkusio/quarkus/issues">GitHub issue tracker</a>.</p>
-</div>
-<div class="paragraph">
-<p>For a full list of possible statuses, check our <a href="https://quarkus.io/faq/#extension-status">FAQ entry</a>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -253,7 +210,7 @@ Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-de
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.1+</p>
+<p>Apache Maven 3.8.6</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -262,21 +219,6 @@ Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-de
 <p>Optionally Mandrel or GraalVM installed and <a href="building-native-image#configuring-graalvm">configured appropriately</a> if you want to build a native executable (or Docker if you use a native container build)</p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If building with Mandrel, make sure to use version Mandrel 22.1 or above, for example <code>ubi-quarkus-mandrel:22.1-java17</code>.
-With older versions, you might encounter errors when trying to deserialize JSON documents that have null or missing fields, similar to the errors mentioned in the <a href="#kotlin-jackson">Kotlin and Jackson</a> section.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>NB: For Gradle project setup please see below, and for further reference consult the guide in the <a href="gradle-tooling">Gradle setup page</a>.</p>
@@ -295,7 +237,7 @@ With older versions, you might encounter errors when trying to deserialize JSON 
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus create app org.acme:rest-kotlin-quickstart \
-    --extension=kotlin,resteasy-reactive-jackson
+    --extension='kotlin,resteasy-reactive-jackson'
 cd rest-kotlin-quickstart</code></pre>
 </div>
 </div>
@@ -312,10 +254,10 @@ cd rest-kotlin-quickstart</code></pre>
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.9.2.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.14.1.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=rest-kotlin-quickstart \
-    -Dextensions="kotlin,resteasy-reactive-jackson"
+    -Dextensions='kotlin,resteasy-reactive-jackson'
 cd rest-kotlin-quickstart</code></pre>
 </div>
 </div>
@@ -326,13 +268,14 @@ cd rest-kotlin-quickstart</code></pre>
 </div>
 <div class="paragraph">
 <p>When adding <code>kotlin</code> to the extensions list, the Maven plugin will generate a project that is properly
-configured to work with Kotlin. Furthermore  the <code>org.acme.ReactiveGreetingResource</code> class is implemented as Kotlin source code (as is the case with the generated tests).
+configured to work with Kotlin. Furthermore, the <code>org.acme.ReactiveGreetingResource</code> class is implemented as Kotlin source code (as is the case with the generated tests).
 The addition of <code>resteasy-reactive-jackson</code> in the extension list results in importing the RESTEasy Reactive and Jackson extensions.</p>
 </div>
 <div class="paragraph">
-<p><code>ReactiveGreetingResource.kt</code> looks like this:</p>
+<p><code>ReactiveGreetingResource</code> looks like this:</p>
 </div>
 <div class="listingblock">
+<div class="title">ReactiveGreetingResource.kt</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package org.acme
 
@@ -353,9 +296,10 @@ class ReactiveGreetingResource {
 <div class="sect2">
 <h3 id="update-code"><a class="anchor" href="#update-code"></a>Update code</h3>
 <div class="paragraph">
-<p>In order to show a more practical example of Kotlin usage we will add a simple <a href="https://kotlinlang.org/docs/reference/data-classes.html">data class</a> called <code>Greeting.kt</code> like so:</p>
+<p>In order to show a more practical example of Kotlin usage we will add a simple <a href="https://kotlinlang.org/docs/reference/data-classes.html">data class</a> called <code>Greeting</code> like so:</p>
 </div>
 <div class="listingblock">
+<div class="title">Greeting.kt</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package org.acme.rest
 
@@ -363,7 +307,7 @@ data class Greeting(val message: String = "")</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We also update the <code>ReactiveGreetingResource.kt</code> like so:</p>
+<p>We also update the <code>ReactiveGreetingResource</code> class like so:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -383,7 +327,7 @@ class GreetingResource {
 <p>With these changes in place the <code>/hello</code> endpoint will reply with a JSON object instead of a simple String.</p>
 </div>
 <div class="paragraph">
-<p>To make the test pass, we also need to update <code>ReactiveGreetingResourceTest.kt</code> like so:</p>
+<p>To make the test pass, we also need to update <code>ReactiveGreetingResourceTest</code> like so:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -404,6 +348,29 @@ class ReactiveGreetingResourceTest {
 }</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kotlin-version"><a class="anchor" href="#kotlin-version"></a>Kotlin version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Quarkus Kotlin extension already declares a dependency on some base Kotlin libraries like <code>kotlin-stdlib-jdk8</code> and <code>kotlin-reflect</code>. The Kotlin version of these dependencies is declared in the Quarkus BOM and is currently at 1.7.21. It is therefore recommended to use the same Kotlin version for other Kotlin libraries. When adding a dependency to another base Kotlin library (e.g. <code>kotlin-test-junit5</code>) you don&#8217;t need to specify the version, since the Quarkus BOM includes the <a href="https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-bom">Kotlin BOM</a>.</p>
+</div>
+<div class="paragraph">
+<p>This being said, you still need to specify the version of the Kotlin compiler to use. Again, it is recommended to use the same version which Quarkus uses for the Kotlin libraries.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Using a different Kotlin version in a Quarkus application is typically not recommended. But in order to do so, you must import the Kotlin BOM <strong>before</strong> the Quarkus BOM.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -430,6 +397,7 @@ class ReactiveGreetingResourceTest {
 </ul>
 </div>
 <div class="listingblock">
+<div class="title">pom.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;plugin&gt;
     &lt;artifactId&gt;kotlin-maven-plugin&lt;/artifactId&gt;
@@ -451,7 +419,7 @@ class ReactiveGreetingResourceTest {
     &lt;/executions&gt;
     &lt;configuration&gt;
         &lt;compilerPlugins&gt;
-            &lt;plugin&gt;all-open&lt;/plugin&gt;
+            &lt;plugin&gt;all-open&lt;/plugin&gt; <i class="conum" data-value="1"></i><b>(1)</b>
         &lt;/compilerPlugins&gt;
 
         &lt;pluginOptions&gt;
@@ -470,6 +438,14 @@ class ReactiveGreetingResourceTest {
 &lt;/plugin&gt;</code></pre>
 </div>
 </div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Enables the <code>all-open</code> annotation plugin (see discussion below)</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The important thing to note is the use of the <a href="https://kotlinlang.org/docs/reference/compiler-plugins.html#all-open-compiler-plugin">all-open</a> Kotlin compiler plugin.
 In order to understand why this plugin is needed, first we need to note that by default all the classes generated from the Kotlin compiler are marked as <code>final</code>.</p>
@@ -482,7 +458,7 @@ In order to understand why this plugin is needed, first we need to note that by 
 we have specified that classes annotated with <code>javax.ws.rs.Path</code> should not be <code>final</code>.</p>
 </div>
 <div class="paragraph">
-<p>If your application contains classes annotated with <code>javax.enterprise.context.ApplicationScoped</code>
+<p>If your application contains Kotlin classes annotated with <code>javax.enterprise.context.ApplicationScoped</code>
 for example, then <code>&lt;option&gt;all-open:annotation=javax.enterprise.context.ApplicationScoped&lt;/option&gt;</code> needs to be added as well. Same goes for any class that needs to have a dynamic proxy created at runtime.</p>
 </div>
 <div class="paragraph">
@@ -524,8 +500,8 @@ for example, then <code>&lt;option&gt;all-open:annotation=javax.enterprise.conte
     id 'java'
     id 'io.quarkus'
 
-    id "org.jetbrains.kotlin.jvm" version "{kotlin-version}" <i class="conum" data-value="1"></i><b>(1)</b>
-    id "org.jetbrains.kotlin.plugin.allopen" version "{kotlin-version}" <i class="conum" data-value="1"></i><b>(1)</b>
+    id "org.jetbrains.kotlin.jvm" version "1.7.21" <i class="conum" data-value="1"></i><b>(1)</b>
+    id "org.jetbrains.kotlin.plugin.allopen" version "1.7.21" <i class="conum" data-value="1"></i><b>(1)</b>
 }
 
 repositories {
@@ -534,7 +510,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:{kotlin-version}'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.21'
 
    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
 
@@ -588,8 +564,8 @@ compileTestKotlin {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">plugins {
-    kotlin("jvm") version "{kotlin-version}" <i class="conum" data-value="1"></i><b>(1)</b>
-    kotlin("plugin.allopen") version "{kotlin-version}"
+    kotlin("jvm") version "1.7.21" <i class="conum" data-value="1"></i><b>(1)</b>
+    kotlin("plugin.allopen") version "1.7.21"
     id("io.quarkus")
 }
 
@@ -655,6 +631,28 @@ tasks.withType&lt;org.jetbrains.kotlin.gradle.tasks.KotlinCompile&gt; {
 <td>The all-open configuration required, as per Maven guide above</td>
 </tr>
 </table>
+</div>
+<div class="sect2">
+<h3 id="overriding-the-quarkus-bom-kotlin-version-gradle"><a class="anchor" href="#overriding-the-quarkus-bom-kotlin-version-gradle"></a>Overriding the Quarkus BOM Kotlin version (Gradle)</h3>
+<div class="paragraph">
+<p>If you want to use a different version than the one specified by Quarkus' BOM in your application (for example, to try pre-release features or for compatibility reasons), you can do so by using the <code>strictly {}</code> version modifier in your Gradle dependencies. For instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">plugins {
+    id("io.quarkus")
+    kotlin("jvm") version "1.7.0-Beta"
+    kotlin("plugin.allopen") version "1.7.0-Beta"
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0-Beta"
+        force "org.jetbrains.kotlin:kotlin-reflect:1.7.0-Beta"
+    }
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -771,7 +769,7 @@ code and immediately see their changes reflected.</p>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean package</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -795,7 +793,7 @@ code and immediately see their changes reflected.</p>
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -Dnative</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw install -Dnative</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
@@ -822,7 +820,7 @@ then Quarkus automatically registers the <code>KotlinModule</code> to the <code>
 </div>
 </div>
 <div class="paragraph">
-<p>To ensure full-compability with <code>native-image</code>, it is recommended to apply the Jackson <code>@field:JsonProperty("fieldName")</code> annotation, and set a nullable default, as illustrated below. You can automate the generation of Kotlin data classes for your sample JSON using Intellij plugins (such as JSON to Kotlin Class), and easily enable the Jackson annotation and select nullable parameters as part of the auto-code generation.</p>
+<p>To ensure full-compatibility with <code>native-image</code>, it is recommended to apply the Jackson <code>@field:JsonProperty("fieldName")</code> annotation, and set a nullable default, as illustrated below. You can automate the generation of Kotlin data classes for your sample JSON using IntelliJ IDEA plugins (such as JSON to Kotlin Class), and easily enable the Jackson annotation and select nullable parameters as part of the auto-code generation.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -926,7 +924,7 @@ Serialization.yamlMapper().registerModule(KotlinModule())</code></pre>
 <h3 id="kotlin-coroutines-and-mutiny"><a class="anchor" href="#kotlin-coroutines-and-mutiny"></a>Kotlin coroutines and Mutiny</h3>
 <div class="paragraph">
 <p>Kotlin coroutines provide an imperative programming model that actually gets executed in an asynchronous, reactive manner.
-To simplify the interoperability between Mutiny and Kotlin there is the module <code>io.smallrye.reactive:mutiny-kotlin</code>, described <a href="https://smallrye.io/smallrye-mutiny/guides/kotlin">here</a>.</p>
+To simplify the interoperability between Mutiny and Kotlin there is the module <code>io.smallrye.reactive:mutiny-kotlin</code>, described <a href="https://smallrye.io/smallrye-mutiny/latest/guides/kotlin/">here</a>.</p>
 </div>
 </div>
 </div>
@@ -1044,23 +1042,37 @@ class ReactiveGreetingResource(
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1069,15 +1081,29 @@ class ReactiveGreetingResource(
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1086,19 +1112,33 @@ class ReactiveGreetingResource(
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1107,11 +1147,21 @@ class ReactiveGreetingResource(
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1122,21 +1172,21 @@ class ReactiveGreetingResource(
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

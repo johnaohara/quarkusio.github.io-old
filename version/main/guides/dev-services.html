@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Dev Services Overview - main</title>
+  <title>Dev Services Overview - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/dev-services" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/dev-services" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/dev-services" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/dev-services" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/dev-services" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/dev-services">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/dev-services">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/dev-services">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,60 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -180,6 +158,7 @@
 <li><a href="#kafka">Kafka</a></li>
 <li><a href="#keycloak">Keycloak</a></li>
 <li><a href="#kogito">Kogito</a></li>
+<li><a href="#kubernetes">Kubernetes</a></li>
 <li><a href="#mongodb">MongoDB</a></li>
 <li><a href="#rabbitmq">RabbitMQ</a></li>
 <li><a href="#redis">Redis</a></li>
@@ -228,7 +207,7 @@ If you don&#8217;t have Docker installed you will need to configure your service
 <div class="sectionbody">
 <div class="paragraph">
 <p>The AMQP Dev Service will be enabled when the <code>quarkus-smallrye-reactive-messaging-amqp</code> extension is present in your application, and
-the broker address has not been explicitly configured. More information can be found at the
+the broker address has not been explicitly configured. More information can be found in the
 <a href="amqp-dev-services">AMQP Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -255,6 +234,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>If Dev Services for AMQP has been explicitly enabled or disabled. Dev Services are generally enabled by default, unless there is an existing configuration present. For AMQP, Dev Services starts a broker unless <code>amqp-host</code> or <code>amqp-port</code> are set or if all the Reactive Messaging AMQP channel are configured with <code>host</code> or <code>port</code>.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17605">QUARKUS_AMQP_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17605" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -268,7 +250,10 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17606">QUARKUS_AMQP_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17606" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -282,7 +267,10 @@ the broker address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The image to use. Note that only <code>quay.io/artemiscloud/activemq-artemis-broker</code> images are supported. Check <a href="https://quay.io/repository/artemiscloud/activemq-artemis-broker" class="bare">https://quay.io/repository/artemiscloud/activemq-artemis-broker</a> to find the available versions.</p>
+<p>The image to use. Note that only ActiveMQ Artemis images are supported. Specifically, the image repository must end with <code>artemiscloud/activemq-artemis-broker</code>. Check <a href="https://quay.io/repository/artemiscloud/activemq-artemis-broker" class="bare">https://quay.io/repository/artemiscloud/activemq-artemis-broker</a> to find the available versions.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17607">QUARKUS_AMQP_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17607" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -298,6 +286,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>The value of the <code>AMQ_EXTRA_ARGS</code> environment variable to pass to the container.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17608">QUARKUS_AMQP_DEVSERVICES_EXTRA_ARGS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17608" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -311,8 +302,11 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the AMQP broker managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for AMQP starts a new container.
- The discovery uses the <code>quarkus-dev-service-amqp</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-amqp</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17609">QUARKUS_AMQP_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17609" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -326,8 +320,11 @@ the broker address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value of the <code>quarkus-dev-service-aqmp</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for AMQP looks for a container with the <code>quarkus-dev-service-amqp</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-amqp</code> label set to the specified value.
- This property is used when you need multiple shared AMQP brokers.</p>
+<p>The value of the <code>quarkus-dev-service-aqmp</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for AMQP looks for a container with the <code>quarkus-dev-service-amqp</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-amqp</code> label set to the specified value.
+This property is used when you need multiple shared AMQP brokers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17610">QUARKUS_AMQP_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17610" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -343,7 +340,7 @@ the broker address has not been explicitly configured. More information can be f
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Apicurio Dev Service will be enabled when the <code>quarkus-apicurio-registry-avro</code> extension is present in your application, and it&#8217;s
-address has not been explicitly configured. More information can be found at the
+address has not been explicitly configured. More information can be found in the
 <a href="apicurio-registry-dev-services">Apicurio Registry Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -370,6 +367,9 @@ address has not been explicitly configured. More information can be found at the
 <div class="paragraph">
 <p>If Dev Services for Apicurio Registry has been explicitly enabled or disabled. Dev Services are generally enabled by default, unless there is an existing configuration present. For Apicurio Registry, Dev Services starts a registry unless <code>mp.messaging.connector.smallrye-kafka.apicurio.registry.url</code> or <code>mp.messaging.connector.smallrye-kafka.schema.registry.url</code> is set.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17611">QUARKUS_APICURIO_REGISTRY_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17611" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -383,7 +383,10 @@ address has not been explicitly configured. More information can be found at the
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17612">QUARKUS_APICURIO_REGISTRY_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17612" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -397,7 +400,10 @@ address has not been explicitly configured. More information can be found at the
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The Apicurio Registry image to use. Note that only Apicurio Registry 2.x images are supported.</p>
+<p>The Apicurio Registry image to use. Note that only Apicurio Registry 2.x images are supported. Specifically, the image repository must end with <code>apicurio/apicurio-registry-mem</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17613">QUARKUS_APICURIO_REGISTRY_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17613" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -412,8 +418,11 @@ address has not been explicitly configured. More information can be found at the
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the Apicurio Registry instance managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Apicurio Registry starts a new container.
- The discovery uses the <code>quarkus-dev-service-apicurio-registry</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-apicurio-registry</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17614">QUARKUS_APICURIO_REGISTRY_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17614" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -427,8 +436,11 @@ address has not been explicitly configured. More information can be found at the
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value of the <code>quarkus-dev-service-apicurio-registry</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Apicurio Registry looks for a container with the <code>quarkus-dev-service-apicurio-registry</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-apicurio-registry</code> label set to the specified value.
- This property is used when you need multiple shared Apicurio Registry instances.</p>
+<p>The value of the <code>quarkus-dev-service-apicurio-registry</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Apicurio Registry looks for a container with the <code>quarkus-dev-service-apicurio-registry</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-apicurio-registry</code> label set to the specified value.
+This property is used when you need multiple shared Apicurio Registry instances.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17615">QUARKUS_APICURIO_REGISTRY_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17615" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -444,7 +456,7 @@ address has not been explicitly configured. More information can be found at the
 <div class="sectionbody">
 <div class="paragraph">
 <p>The database Dev Services will be enabled when a reactive or JDBC datasource extension is present in the application,
-and the database URL has not been configured. More information can be found at the
+and the database URL has not been configured. More information can be found in the
 <a href="databases-dev-services">Databases Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph">
@@ -484,6 +496,9 @@ after each run, and can be reused.</p>
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17616">QUARKUS_DATASOURCE_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17616" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -498,6 +513,9 @@ after each run, and can be reused.</p>
 <div class="paragraph">
 <p>The container image name to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17617">QUARKUS_DATASOURCE_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17617" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -511,7 +529,10 @@ after each run, and can be reused.</p>
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17618">QUARKUS_DATASOURCE_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17618" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -527,6 +548,60 @@ after each run, and can be reused.</p>
 <div class="paragraph">
 <p>The container start command to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17619">QUARKUS_DATASOURCE_DEVSERVICES_COMMAND</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17619" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.db-name"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.db-name">quarkus.datasource.devservices.db-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the database to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17620">QUARKUS_DATASOURCE_DEVSERVICES_DB_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17620" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.username"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.username">quarkus.datasource.devservices.username</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The username to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17621">QUARKUS_DATASOURCE_DEVSERVICES_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17621" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.password"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.devservices.password">quarkus.datasource.devservices.password</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The password to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17622">QUARKUS_DATASOURCE_DEVSERVICES_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17622" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -540,7 +615,10 @@ after each run, and can be reused.</p>
 <div class="content">
 <div class="paragraph">
 <p>Generic properties that are passed for additional container configuration.
- Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17623">QUARKUS_DATASOURCE_DEVSERVICES_CONTAINER_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17623" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -556,6 +634,9 @@ after each run, and can be reused.</p>
 <div class="paragraph">
 <p>Generic properties that are added to the database connection URL.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17624">QUARKUS_DATASOURCE_DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17624" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
@@ -569,6 +650,9 @@ after each run, and can be reused.</p>
 <div class="content">
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17625">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17625" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -584,6 +668,9 @@ after each run, and can be reused.</p>
 <div class="paragraph">
 <p>The container image name to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17626">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17626" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -597,7 +684,10 @@ after each run, and can be reused.</p>
 <div class="content">
 <div class="paragraph">
 <p>Generic properties that are passed for additional container configuration.
- Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+Properties defined here are database specific and are interpreted specifically in each database dev service implementation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17627">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_CONTAINER_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17627" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -613,6 +703,9 @@ after each run, and can be reused.</p>
 <div class="paragraph">
 <p>Generic properties that are added to the database connection URL.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17628">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17628" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
@@ -626,7 +719,10 @@ after each run, and can be reused.</p>
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17629">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17629" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -642,6 +738,60 @@ after each run, and can be reused.</p>
 <div class="paragraph">
 <p>The container start command to use, for container based DevServices providers. If the provider is not container based (e.g. a H2 Database) then this has no effect.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17630">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_COMMAND</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17630" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.db-name"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.db-name">quarkus.datasource."datasource-name".devservices.db-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The name of the database to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17631">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_DB_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17631" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.username"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.username">quarkus.datasource."datasource-name".devservices.username</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The username to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17632">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17632" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.password"></a><code><a href="#quarkus-datasource-config-group-dev-services-build-time-config_quarkus.datasource.-datasource-name-.devservices.password">quarkus.datasource."datasource-name".devservices.password</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The password to use if this Dev Service supports overriding it.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17633">QUARKUS_DATASOURCE__DATASOURCE_NAME__DEVSERVICES_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17633" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -656,7 +806,7 @@ after each run, and can be reused.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Kafka Dev Service will be enabled when the <code>quarkus-kafka-client</code> extension is present in your application, and
-the broker address has not been explicitly configured. More information can be found at the
+the broker address has not been explicitly configured. More information can be found in the
 <a href="kafka-dev-services">Kafka Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -683,6 +833,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>If Dev Services for Kafka has been explicitly enabled or disabled. Dev Services are generally enabled by default, unless there is an existing configuration present. For Kafka, Dev Services starts a broker unless <code>kafka.bootstrap.servers</code> is set or if all the Reactive Messaging Kafka channel are configured with a <code>bootstrap.servers</code>.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17634">QUARKUS_KAFKA_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17634" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -696,7 +849,10 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17635">QUARKUS_KAFKA_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17635" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -711,15 +867,18 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>The Kafka container image to use.
- Only Redpanda and Strimzi images are supported. Default image is Redpanda.
- Note that Strimzi images are launched in Kraft mode. In order to use a Strimzi image you need to set a compatible image name such as <code>quay.io/strimzi-test-container/test-container:0.100.0-kafka-3.1.0</code> or <code>quay.io/strimzi/kafka:0.27.1-kafka-3.0.0</code>
- For Redpanda: See <a href="https://vectorized.io/docs/quick-start-docker/" class="bare">https://vectorized.io/docs/quick-start-docker/</a> and <a href="https://hub.docker.com/r/vectorized/redpanda" class="bare">https://hub.docker.com/r/vectorized/redpanda</a>
- For Strimzi: See <a href="https://github.com/strimzi/test-container" class="bare">https://github.com/strimzi/test-container</a> and <a href="https://quay.io/repository/strimzi-test-container/test-container" class="bare">https://quay.io/repository/strimzi-test-container/test-container</a></p>
+Only Redpanda and Strimzi images are supported. Default image is Redpanda.
+Note that Strimzi images are launched in Kraft mode. In order to use a Strimzi image you need to set a compatible image name such as <code>quay.io/strimzi-test-container/test-container:0.100.0-kafka-3.1.0</code> or <code>quay.io/strimzi/kafka:0.27.1-kafka-3.0.0</code>
+For Redpanda: See <a href="https://vectorized.io/docs/quick-start-docker/" class="bare">https://vectorized.io/docs/quick-start-docker/</a> and <a href="https://hub.docker.com/r/vectorized/redpanda" class="bare">https://hub.docker.com/r/vectorized/redpanda</a>
+For Strimzi: See <a href="https://github.com/strimzi/test-container" class="bare">https://github.com/strimzi/test-container</a> and <a href="https://quay.io/repository/strimzi-test-container/test-container" class="bare">https://quay.io/repository/strimzi-test-container/test-container</a></p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17636">QUARKUS_KAFKA_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17636" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>docker.io/vectorized/redpanda:v21.11.3</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>docker.io/vectorized/redpanda:v22.1.7</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -729,8 +888,11 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the Kafka broker managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Kafka starts a new container.
- The discovery uses the <code>quarkus-dev-service-kafka</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-kafka</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17637">QUARKUS_KAFKA_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17637" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -744,8 +906,11 @@ the broker address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value of the <code>quarkus-dev-service-kafka</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Kafka looks for a container with the <code>quarkus-dev-service-kafka</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-kafka</code> label set to the specified value.
- This property is used when you need multiple shared Kafka brokers.</p>
+<p>The value of the <code>quarkus-dev-service-kafka</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Kafka looks for a container with the <code>quarkus-dev-service-kafka</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-kafka</code> label set to the specified value.
+This property is used when you need multiple shared Kafka brokers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17638">QUARKUS_KAFKA_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17638" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -760,12 +925,15 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Timeout for admin client calls used in topic creation.
- Defaults to 2 seconds.</p>
+Defaults to 2 seconds.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17639">QUARKUS_KAFKA_DEVSERVICES_TOPIC_PARTITIONS_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17639" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
-  <a href="#duration-note-anchor" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+  <a href="#duration-note-anchor-quarkus-kafka-client-config-group-kafka-dev-services-build-time-config" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2S</code></p></td>
 </tr>
 <tr>
@@ -777,10 +945,13 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Enables transaction support. Also enables the producer idempotence. Find more info about Red Panda transaction support on <a href="https://vectorized.io/blog/fast-transactions/">https://vectorized.io/blog/fast-transactions/</a>. Notice that <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-447%3A+Producer+scalability+for+exactly+once+semantics">KIP-447 (producer scalability for exactly once semantic)</a> and <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=89068820">KIP-360 (Improve reliability of idempotent/transactional producer)</a> are <strong>not</strong> supported.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17640">QUARKUS_KAFKA_DEVSERVICES_REDPANDA_TRANSACTION_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17640" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -790,7 +961,10 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>The topic-partition pairs to create in the Dev Services Kafka broker. After the broker is started, given topics with partitions are created, skipping already existing topics. For example, <code>quarkus.kafka.devservices.topic-partitions.test=2</code> will create a topic named <code>test</code> with 2 partitions.
- The topic creation will not try to re-partition existing topics with different number of partitions.</p>
+The topic creation will not try to re-partition existing topics with different number of partitions.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17641">QUARKUS_KAFKA_DEVSERVICES_TOPIC_PARTITIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17641" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -799,7 +973,7 @@ the broker address has not been explicitly configured. More information can be f
 </tr>
 </tbody>
 </table>
-<div id="duration-note-anchor" class="admonitionblock note">
+<div id="duration-note-anchor-quarkus-kafka-client-config-group-kafka-dev-services-build-time-config" class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
@@ -827,7 +1001,7 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Keycloak Dev Service will be enabled when the <code>quarkus-oidc</code> extension is present in your application, and
-the server address has not been explicitly configured. More information can be found at the
+the server address has not been explicitly configured. More information can be found in the
 <a href="security-openid-connect-dev-services">OIDC Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -853,7 +1027,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled.
- When DevServices is enabled Quarkus will attempt to automatically configure and start Keycloak when running in Dev or Test mode and when Docker is running.</p>
+When DevServices is enabled Quarkus will attempt to automatically configure and start Keycloak when running in Dev or Test mode and when Docker is running.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17642">QUARKUS_KEYCLOAK_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17642" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -867,13 +1044,16 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The container image name to use, for container based DevServices providers. Image with a Quarkus based distribution is used by default. Image with a WildFly based distribution can be selected instead, for example: 'quay.io/keycloak/keycloak:18.0.0-legacy'.
- Note Keycloak Quarkus and Keycloak WildFly images are initialized differently. By default, Dev Services for Keycloak will assume it is a Keycloak Quarkus image if the image version does not end with a '-legacy' string. Set 'quarkus.keycloak.devservices.keycloak-x-image' to override this check.</p>
+<p>The container image name to use, for container based DevServices providers. Image with a Quarkus based distribution is used by default. Image with a WildFly based distribution can be selected instead, for example: 'quay.io/keycloak/keycloak:19.0.3-legacy'.
+Note Keycloak Quarkus and Keycloak WildFly images are initialized differently. By default, Dev Services for Keycloak will assume it is a Keycloak Quarkus image if the image version does not end with a '-legacy' string. Set 'quarkus.keycloak.devservices.keycloak-x-image' to override this check.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17643">QUARKUS_KEYCLOAK_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17643" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>quay.io/keycloak/keycloak:18.0.0</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>quay.io/keycloak/keycloak:19.0.3</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -883,6 +1063,9 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>If Keycloak-X image is used. By default, Dev Services for Keycloak will assume a Keycloak-X image is used if the image name contains a 'keycloak-x' string. Set 'quarkus.keycloak.devservices.keycloak-x-image' to override this check which may be necessary if you build custom Keycloak-X or Keycloak images. You do not need to set this property if the default check works.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17644">QUARKUS_KEYCLOAK_DEVSERVICES_KEYCLOAK_X_IMAGE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17644" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -897,8 +1080,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the Keycloak container managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Keycloak starts a new container.
- The discovery uses the <code>quarkus-dev-service-label</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-label</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17645">QUARKUS_KEYCLOAK_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17645" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -912,8 +1098,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value of the <code>quarkus-dev-service-keycloak</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Keycloak looks for a container with the <code>quarkus-dev-service-keycloak</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-keycloak</code> label set to the specified value.
- Container sharing is only used in dev mode.</p>
+<p>The value of the <code>quarkus-dev-service-keycloak</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Keycloak looks for a container with the <code>quarkus-dev-service-keycloak</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-keycloak</code> label set to the specified value.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17646">QUARKUS_KEYCLOAK_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17646" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -927,11 +1116,14 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The class or file system path to a Keycloak realm file which will be used to initialize Keycloak.</p>
+<p>The comma-separated list of class or file system paths to Keycloak realm files which will be used to initialize Keycloak. The first value in this list will be used to initialize default tenant connection properties.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17647">QUARKUS_KEYCLOAK_DEVSERVICES_REALM_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17647" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
@@ -942,6 +1134,43 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>The JAVA_OPTS passed to the keycloak JVM</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17648">QUARKUS_KEYCLOAK_DEVSERVICES_JAVA_OPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17648" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-keycloak-devservices-keycloak-keycloak-build-time-config_quarkus.keycloak.devservices.show-logs"></a><code><a href="#quarkus-keycloak-devservices-keycloak-keycloak-build-time-config_quarkus.keycloak.devservices.show-logs">quarkus.keycloak.devservices.show-logs</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Show Keycloak log messages with a "Keycloak:" prefix.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17649">QUARKUS_KEYCLOAK_DEVSERVICES_SHOW_LOGS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17649" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-keycloak-devservices-keycloak-keycloak-build-time-config_quarkus.keycloak.devservices.start-command"></a><code><a href="#quarkus-keycloak-devservices-keycloak-keycloak-build-time-config_quarkus.keycloak.devservices.start-command">quarkus.keycloak.devservices.start-command</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Keycloak start command. Use this property to experiment with Keycloak start options, see <code><a href="https://www.keycloak.org/server/all-config" class="bare">https://www.keycloak.org/server/all-config</a></code>. Note it will be ignored when loading legacy Keycloak WildFly images.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17650">QUARKUS_KEYCLOAK_DEVSERVICES_START_COMMAND</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17650" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -957,6 +1186,9 @@ the server address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>The Keycloak realm name. This property will be used to create the realm if the realm file pointed to by the 'realm-path' property does not exist, default value is 'quarkus' in this case. If the realm file pointed to by the 'realm-path' property exists then it is still recommended to set this property for Dev Services for Keycloak to avoid parsing the realm file in order to determine the realm name.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17651">QUARKUS_KEYCLOAK_DEVSERVICES_REALM_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17651" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -971,6 +1203,9 @@ the server address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Indicates if the Keycloak realm has to be created when the realm file pointed to by the 'realm-path' property does not exist. Disable it if you&#8217;d like to create a realm using Keycloak Administration Console or Keycloak Admin API from <code>io.quarkus.test.common.QuarkusTestResourceLifecycleManager</code>.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17652">QUARKUS_KEYCLOAK_DEVSERVICES_CREATE_REALM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17652" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -984,7 +1219,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17653">QUARKUS_KEYCLOAK_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17653" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -998,7 +1236,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The Keycloak users map containing the user name and password pairs. If this map is empty then two users, 'alice' and 'bob' with the passwords matching their names will be created. This property will be used to create the Keycloak users if the realm file pointed to by the 'realm-path' property does not exist.</p>
+<p>The Keycloak users map containing the username and password pairs. If this map is empty then two users, 'alice' and 'bob' with the passwords matching their names will be created. This property will be used to create the Keycloak users if the realm file pointed to by the 'realm-path' property does not exist.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17654">QUARKUS_KEYCLOAK_DEVSERVICES_USERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17654" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1014,6 +1255,9 @@ the server address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>The Keycloak user roles. If this map is empty then a user named 'alice' will get 'admin' and 'user' roles and all other users will get a 'user' role. This property will be used to create the Keycloak roles if the realm file pointed to by the 'realm-path' property does not exist.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17655">QUARKUS_KEYCLOAK_DEVSERVICES_ROLES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17655" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,List&lt;String&gt;&gt;</code></p></td>
@@ -1027,7 +1271,7 @@ the server address has not been explicitly configured. More information can be f
 <h2 id="kogito"><a class="anchor" href="#kogito"></a>Kogito</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Kogito Dev Service will be enabled when either <code>kogito-quarkus</code> or <code>kogito-quarkus-processes</code> extension is present in your application. More information can be found at the <a href="kogito-dev-services">Kogito Dev Services Guide</a>.</p>
+<p>The Kogito Dev Service will be enabled when either <code>kogito-quarkus</code> or <code>kogito-quarkus-processes</code> extension is present in your application. More information can be found in the <a href="kogito-dev-services">Kogito Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
 <p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> Configuration property fixed at build time - All other configuration properties are overridable at runtime</p>
@@ -1120,11 +1364,145 @@ If not defined, the port will be chosen randomly.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="kubernetes"><a class="anchor" href="#kubernetes"></a>Kubernetes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Kubernetes Dev Service will be enabled when <code>kubernetes-client</code> extension is present in your application, and
+the API server address has not been explicitly configured. More information can be found in the
+<a href="kubernetes-dev-services">Kubernetes Dev Services Guide</a>.</p>
+</div>
+<div class="paragraph configuration-legend">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> Configuration property fixed at build time - All other configuration properties are overridable at runtime</p>
+</div>
+<table class="tableblock frame-all grid-all stretch configuration-reference">
+<colgroup>
+<col style="width: 80%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a id="quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices-dev-services"></a><a href="#quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices-dev-services">Dev Services</a></p></th>
+<th class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></th>
+<th class="tableblock halign-left valign-middle"><p class="tableblock">Default</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.enabled"></a><code><a href="#quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.enabled">quarkus.kubernetes-client.devservices.enabled</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>If Dev Services for Kubernetes should be used. (default to true) If this is true and kubernetes client is not configured then a kubernetes cluster will be started and will be used.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17656">QUARKUS_KUBERNETES_CLIENT_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17656" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.api-version"></a><code><a href="#quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.api-version">quarkus.kubernetes-client.devservices.api-version</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The kubernetes api server version to use. If not set, Dev Services for Kubernetes will use the latest supported version of the given flavor. see <a href="https://github.com/dajudge/kindcontainer/blob/master/k8s-versions.json" class="bare">https://github.com/dajudge/kindcontainer/blob/master/k8s-versions.json</a></p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17657">QUARKUS_KUBERNETES_CLIENT_DEVSERVICES_API_VERSION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17657" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.flavor"></a><code><a href="#quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.flavor">quarkus.kubernetes-client.devservices.flavor</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The flavor to use (kind, k3s or api-only). Default to api-only.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17658">QUARKUS_KUBERNETES_CLIENT_DEVSERVICES_FLAVOR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17658" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><span class="asciidoc-tooltip-wrapper"><code>kind</code><span class="asciidoc-tooltip">kind (needs priviledge docker)</span></span>, <span class="asciidoc-tooltip-wrapper"><code>k3-s</code><span class="asciidoc-tooltip">k3s (needs priviledge docker)</span></span>, <span class="asciidoc-tooltip-wrapper"><code>api-only</code><span class="asciidoc-tooltip">api only</span></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>api-only</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.override-kubeconfig"></a><code><a href="#quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.override-kubeconfig">quarkus.kubernetes-client.devservices.override-kubeconfig</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>By default, if a kubeconfig is found, Dev Services for Kubernetes will not start. Set this to true to override the kubeconfig config.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17659">QUARKUS_KUBERNETES_CLIENT_DEVSERVICES_OVERRIDE_KUBECONFIG</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17659" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.shared"></a><code><a href="#quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.shared">quarkus.kubernetes-client.devservices.shared</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Indicates if the Kubernetes cluster managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Kubernetes starts a new container.
+The discovery uses the <code>quarkus-dev-service-kubernetes</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17660">QUARKUS_KUBERNETES_CLIENT_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17660" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.service-name"></a><code><a href="#quarkus-kubernetes-client-config-group-kubernetes-dev-services-build-time-config_quarkus.kubernetes-client.devservices.service-name">quarkus.kubernetes-client.devservices.service-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The value of the <code>quarkus-dev-service-kubernetes</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Kubernetes looks for a container with the <code>quarkus-dev-service-kubernetes</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-kubernetes</code> label set to the specified value.
+This property is used when you need multiple shared Kubernetes clusters.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17661">QUARKUS_KUBERNETES_CLIENT_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17661" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>kubernetes</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="mongodb"><a class="anchor" href="#mongodb"></a>MongoDB</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The MongoDB Dev Service will be enabled when the <code>quarkus-mongodb-client</code> extension is present in your application, and
-the server address has not been explicitly configured. More information can be found at the
+the server address has not been explicitly configured. More information can be found in the
 <a href="mongodb#dev-services">MongoDB Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -1151,6 +1529,9 @@ the server address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17662">QUARKUS_MONGODB_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17662" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1165,6 +1546,9 @@ the server address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>The container image name to use, for container based DevServices providers.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17663">QUARKUS_MONGODB_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17663" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1178,7 +1562,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17664">QUARKUS_MONGODB_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17664" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1194,6 +1581,9 @@ the server address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Generic properties that are added to the connection URL.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17665">QUARKUS_MONGODB_DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17665" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
@@ -1208,7 +1598,7 @@ the server address has not been explicitly configured. More information can be f
 <div class="sectionbody">
 <div class="paragraph">
 <p>The RabbitMQ Dev Service will be enabled when the <code>quarkus-smallrye-reactive-messaging-rabbitmq</code> extension is present in your application, and
-the broker address has not been explicitly configured. More information can be found at the
+the broker address has not been explicitly configured. More information can be found in the
 <a href="rabbitmq-dev-services">RabbitMQ Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -1235,6 +1625,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>If Dev Services for RabbitMQ has been explicitly enabled or disabled. Dev Services are generally enabled by default, unless there is an existing configuration present. For RabbitMQ, Dev Services starts a broker unless <code>rabbitmq-host</code> or <code>rabbitmq-port</code> are set or if all the Reactive Messaging RabbitMQ channel are configured with <code>host</code> or <code>port</code>.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17666">QUARKUS_RABBITMQ_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17666" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1248,7 +1641,10 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17667">QUARKUS_RABBITMQ_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17667" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1263,7 +1659,10 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port for the RabbitMQ management plugin.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17668">QUARKUS_RABBITMQ_DEVSERVICES_HTTP_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17668" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1277,7 +1676,10 @@ the broker address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The image to use.</p>
+<p>The image to use. Note that only official RabbitMQ images are supported. Specifically, the image repository must end with <code>rabbitmq</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17669">QUARKUS_RABBITMQ_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17669" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1292,8 +1694,11 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the RabbitMQ broker managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for RabbitMQ starts a new container.
- The discovery uses the <code>quarkus-dev-service-rabbitmq</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-rabbitmq</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17670">QUARKUS_RABBITMQ_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17670" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1307,8 +1712,11 @@ the broker address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value of the <code>quarkus-dev-service-rabbitmq</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for RabbitMQ looks for a container with the <code>quarkus-dev-service-rabbitmq</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-rabbitmq</code> label set to the specified value.
- This property is used when you need multiple shared RabbitMQ brokers.</p>
+<p>The value of the <code>quarkus-dev-service-rabbitmq</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for RabbitMQ looks for a container with the <code>quarkus-dev-service-rabbitmq</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-rabbitmq</code> label set to the specified value.
+This property is used when you need multiple shared RabbitMQ brokers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17671">QUARKUS_RABBITMQ_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17671" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1324,6 +1732,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Type of exchange: direct, topic, headers, fanout, etc.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17672">QUARKUS_RABBITMQ_DEVSERVICES_EXCHANGES__EXCHANGES__TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17672" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1337,6 +1748,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Should the exchange be deleted when all queues are finished using it?</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17673">QUARKUS_RABBITMQ_DEVSERVICES_EXCHANGES__EXCHANGES__AUTO_DELETE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17673" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1352,6 +1766,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Should the exchange remain after restarts?</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17674">QUARKUS_RABBITMQ_DEVSERVICES_EXCHANGES__EXCHANGES__DURABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17674" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1365,6 +1782,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Extra arguments for the exchange definition.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17675">QUARKUS_RABBITMQ_DEVSERVICES_EXCHANGES__EXCHANGES__ARGUMENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17675" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1380,6 +1800,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Should the queue be deleted when all consumers are finished using it?</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17676">QUARKUS_RABBITMQ_DEVSERVICES_QUEUES__QUEUES__AUTO_DELETE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17676" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1393,6 +1816,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Should the queue remain after restarts?</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17677">QUARKUS_RABBITMQ_DEVSERVICES_QUEUES__QUEUES__DURABLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17677" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1408,6 +1834,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Extra arguments for the queue definition.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17678">QUARKUS_RABBITMQ_DEVSERVICES_QUEUES__QUEUES__ARGUMENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17678" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
@@ -1421,6 +1850,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Source exchange to bind to. Defaults to name of binding instance.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17679">QUARKUS_RABBITMQ_DEVSERVICES_BINDINGS__BINDINGS__SOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17679" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1436,6 +1868,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Routing key specification for the source exchange.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17680">QUARKUS_RABBITMQ_DEVSERVICES_BINDINGS__BINDINGS__ROUTING_KEY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17680" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1449,6 +1884,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Destination exchange or queue to bind to. Defaults to name of binding instance.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17681">QUARKUS_RABBITMQ_DEVSERVICES_BINDINGS__BINDINGS__DESTINATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17681" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1464,6 +1902,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>Destination type for binding: queue, exchange, etc.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17682">QUARKUS_RABBITMQ_DEVSERVICES_BINDINGS__BINDINGS__DESTINATION_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17682" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1477,6 +1918,9 @@ the broker address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Extra arguments for the binding definition.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17683">QUARKUS_RABBITMQ_DEVSERVICES_BINDINGS__BINDINGS__ARGUMENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17683" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1492,7 +1936,7 @@ the broker address has not been explicitly configured. More information can be f
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Redis Dev Service will be enabled when the <code>quarkus-redis-client</code> extension is present in your application, and
-the server address has not been explicitly configured. More information can be found at the
+the server address has not been explicitly configured. More information can be found in the
 <a href="redis-dev-services">Redis Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -1518,7 +1962,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present.
- When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
+When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17684">QUARKUS_REDIS_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17684" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1532,7 +1979,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The container image name to use, for container based DevServices providers.</p>
+<p>The container image name to use, for container based DevServices providers. If you want to use Redis Stack modules (bloom, graph, search&#8230;&#8203;), use: <code>redis/redis-stack-server:latest</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17685">QUARKUS_REDIS_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17685" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1547,7 +1997,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17686">QUARKUS_REDIS_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17686" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1562,8 +2015,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the Redis server managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Redis starts a new container.
- The discovery uses the <code>quarkus-dev-service-redis</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-redis</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17687">QUARKUS_REDIS_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17687" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1577,8 +2033,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value of the <code>quarkus-dev-service-redis</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Redis looks for a container with the <code>quarkus-dev-service-redis</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-redis</code> label set to the specified value.
- This property is used when you need multiple shared Redis servers.</p>
+<p>The value of the <code>quarkus-dev-service-redis</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Redis looks for a container with the <code>quarkus-dev-service-redis</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-redis</code> label set to the specified value.
+This property is used when you need multiple shared Redis servers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17688">QUARKUS_REDIS_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17688" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1593,7 +2052,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present.
- When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
+When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17689">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17689" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1607,7 +2069,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The container image name to use, for container based DevServices providers.</p>
+<p>The container image name to use, for container based DevServices providers. If you want to use Redis Stack modules (bloom, graph, search&#8230;&#8203;), use: <code>redis/redis-stack-server:latest</code>.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17690">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17690" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1622,7 +2087,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17691">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17691" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1637,8 +2105,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the Redis server managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Redis starts a new container.
- The discovery uses the <code>quarkus-dev-service-redis</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-redis</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17692">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17692" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1652,8 +2123,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value of the <code>quarkus-dev-service-redis</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Redis looks for a container with the <code>quarkus-dev-service-redis</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-redis</code> label set to the specified value.
- This property is used when you need multiple shared Redis servers.</p>
+<p>The value of the <code>quarkus-dev-service-redis</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Redis looks for a container with the <code>quarkus-dev-service-redis</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-redis</code> label set to the specified value.
+This property is used when you need multiple shared Redis servers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17693">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17693" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1669,7 +2143,7 @@ the server address has not been explicitly configured. More information can be f
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Vault Dev Service will be enabled when the <code>quarkus-vault</code> extension is present in your application, and
-the server address has not been explicitly configured. More information can be found at the
+the server address has not been explicitly configured. More information can be found in the
 <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-vault/dev/index.html#dev-services">Vault Guide</a>.</p>
 </div>
 </div>
@@ -1679,7 +2153,7 @@ the server address has not been explicitly configured. More information can be f
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Neo4j Dev Service will be enabled when the <code>quarkus-neo4j</code> extension is present in your application, and
-the server address has not been explicitly configured. More information can be found at the
+the server address has not been explicitly configured. More information can be found in the
 <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-neo4j/dev/index.html#dev-services">Neo4j Guide</a>.</p>
 </div>
 </div>
@@ -1689,7 +2163,7 @@ the server address has not been explicitly configured. More information can be f
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Infinispan Dev Service will be enabled when the <code>quarkus-infinispan-client</code> extension is present in your application, and
-the server address has not been explicitly configured. More information can be found at the
+the server address has not been explicitly configured. More information can be found in the
 <a href="infinispan-client#dev-services">Infinispan Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
@@ -1715,7 +2189,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present.
- When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
+When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17694">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17694" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1730,7 +2207,10 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17695">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17695" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1745,8 +2225,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the Infinispan server managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Infinispan starts a new container.
- The discovery uses the <code>quarkus-dev-service-infinispan</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-infinispan</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17696">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17696" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1761,12 +2244,32 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>The value of the <code>quarkus-dev-service-infinispan</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Infinispan looks for a container with the <code>quarkus-dev-service-infinispan</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise, it starts a new container with the <code>quarkus-dev-service-infinispan</code> label set to the specified value.
- This property is used when you need multiple shared Infinispan servers.</p>
+This property is used when you need multiple shared Infinispan servers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17697">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17697" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>infinispan</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-infinispan-client-infinispan-client-dev-service-build-time-config_quarkus.infinispan-client.devservices.image-name"></a><code><a href="#quarkus-infinispan-client-infinispan-client-dev-service-build-time-config_quarkus.infinispan-client.devservices.image-name">quarkus.infinispan-client.devservices.image-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The image to use. Note that only official Infinispan images are supported.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17698">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17698" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1776,8 +2279,11 @@ the server address has not been explicitly configured. More information can be f
 <div class="content">
 <div class="paragraph">
 <p>List of the artifacts to automatically download and add to the Infinispan server libraries.
- For example a Maven coordinate (org.postgresql:postgresql:42.3.1) or a dependency location url.
- If an invalid value is passed, the Infinispan server will throw an error when trying to start.</p>
+For example a Maven coordinate (org.postgresql:postgresql:42.3.1) or a dependency location url.
+If an invalid value is passed, the Infinispan server will throw an error when trying to start.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17699">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_ARTIFACTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17699" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1794,7 +2300,7 @@ the server address has not been explicitly configured. More information can be f
 <div class="paragraph">
 <p>The Elasticsearch Dev Service will be enabled when one of the Elasticsearch based extensions (Elasticsearch client or Hibernate Search ORM Elasticsearch)
 is present in your application, and the server address has not been explicitly configured.
-More information can be found at the <a href="elasticsearch-dev-services">Elasticsearch Dev Services Guide</a>.</p>
+More information can be found in the <a href="elasticsearch-dev-services">Elasticsearch Dev Services Guide</a>.</p>
 </div>
 <div class="paragraph configuration-legend">
 <p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> Configuration property fixed at build time - All other configuration properties are overridable at runtime</p>
@@ -1820,6 +2326,9 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
 <div class="paragraph">
 <p>If Dev Services for Elasticsearch has been explicitly enabled or disabled. Dev Services are generally enabled by default, unless there is an existing configuration present. For Elasticsearch, Dev Services starts a server unless <code>quarkus.elasticsearch.hosts</code> is set.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17700">QUARKUS_ELASTICSEARCH_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17700" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -1833,7 +2342,10 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
 <div class="content">
 <div class="paragraph">
 <p>Optional fixed port the dev service will listen to.
- If not defined, the port will be chosen randomly.</p>
+If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17701">QUARKUS_ELASTICSEARCH_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17701" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1849,6 +2361,9 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
 <div class="paragraph">
 <p>The Elasticsearch container image to use. Defaults to the elasticsearch image provided by Elastic.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17702">QUARKUS_ELASTICSEARCH_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17702" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1861,12 +2376,15 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The value for the ES_JAVA_OPTS env variable. Defaults to setting the heap to 1GB.</p>
+<p>The value for the ES_JAVA_OPTS env variable. Defaults to setting the heap to 512MB min - 1GB max.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17703">QUARKUS_ELASTICSEARCH_DEVSERVICES_JAVA_OPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17703" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>-Xmx1g</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>-Xms512m -Xmx1g</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1876,8 +2394,11 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
 <div class="content">
 <div class="paragraph">
 <p>Indicates if the Elasticsearch server managed by Quarkus Dev Services is shared. When shared, Quarkus looks for running containers using label-based service discovery. If a matching container is found, it is used, and so a second one is not started. Otherwise, Dev Services for Elasticsearch starts a new container.
- The discovery uses the <code>quarkus-dev-service-elasticsearch</code> label. The value is configured using the <code>service-name</code> property.
- Container sharing is only used in dev mode.</p>
+The discovery uses the <code>quarkus-dev-service-elasticsearch</code> label. The value is configured using the <code>service-name</code> property.
+Container sharing is only used in dev mode.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17704">QUARKUS_ELASTICSEARCH_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17704" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1892,7 +2413,10 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
 <div class="content">
 <div class="paragraph">
 <p>The value of the <code>quarkus-dev-service-elasticsearch</code> label attached to the started container. This property is used when <code>shared</code> is set to <code>true</code>. In this case, before starting a container, Dev Services for Elasticsearch looks for a container with the <code>quarkus-dev-service-elasticsearch</code> label set to the configured value. If found, it will use this container instead of starting a new one. Otherwise it starts a new container with the <code>quarkus-dev-service-elasticsearch</code> label set to the specified value.
- This property is used when you need multiple shared Elasticsearch servers.</p>
+This property is used when you need multiple shared Elasticsearch servers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-17705">QUARKUS_ELASTICSEARCH_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-17705" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1923,23 +2447,37 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1948,15 +2486,29 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1965,19 +2517,33 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1986,11 +2552,21 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2001,21 +2577,21 @@ More information can be found at the <a href="elasticsearch-dev-services">Elasti
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Centralized log management (Graylog, Logstash, Fluentd) - main</title>
+  <title>Centralized log management (Graylog, Logstash, Fluentd) - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/centralized-log-management" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/centralized-log-management" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/centralized-log-management" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/centralized-log-management" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/version/main/guides/centralized-log-management" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/centralized-log-management">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/centralized-log-management">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/centralized-log-management">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/version/main/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" >2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -222,7 +196,7 @@ By default, it is disabled, if you enable it but still use another handler (by d
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.1+</p>
+<p>Apache Maven 3.8.6</p>
 </li>
 <li>
 <p>Docker and Docker Compose or <a href="podman">Podman</a>, and Docker Compose</p>
@@ -252,7 +226,7 @@ By default, it is disabled, if you enable it but still use another handler (by d
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus create app org.acme:gelf-logging \
-    --extension=resteasy-reactive,logging-gelf \
+    --extension='resteasy-reactive,logging-gelf' \
     --no-code
 cd gelf-logging</code></pre>
 </div>
@@ -273,7 +247,7 @@ cd gelf-logging</code></pre>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:999-SNAPSHOT:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=gelf-logging \
-    -Dextensions="resteasy-reactive,logging-gelf" \
+    -Dextensions='resteasy-reactive,logging-gelf' \
     -DnoCode
 cd gelf-logging</code></pre>
 </div>
@@ -296,13 +270,13 @@ to your project by running the following command in your project base directory:
 <div class="listingblock secondary asciidoc-tabs-sync-maven">
 <div class="title">Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions="logging-gelf"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:add-extension -Dextensions='logging-gelf'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary asciidoc-tabs-sync-gradle">
 <div class="title">Gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions="logging-gelf"</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew addExtension --extensions='logging-gelf'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -387,7 +361,7 @@ quarkus.log.handler.gelf.port=12201</code></pre>
 
 services:
   elasticsearch:
-    image: {elasticsearch-image}
+    image: docker.io/elastic/elasticsearch:7.16.3
     ports:
       - "9200:9200"
     environment:
@@ -493,7 +467,7 @@ version: '3.2'
 
 services:
   elasticsearch:
-    image: {elasticsearch-image}
+    image: docker.io/elastic/elasticsearch:7.16.3
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -504,7 +478,7 @@ services:
       - elk
 
   logstash:
-    image: {logstash-image}
+    image: docker.io/elastic/logstash:7.16.3
     volumes:
       - source: $HOME/pipelines
         target: /usr/share/logstash/pipeline
@@ -519,7 +493,7 @@ services:
       - elasticsearch
 
   kibana:
-    image: {kibana-image}
+    image: docker.io/elastic/kibana:7.16.3
     ports:
       - "5601:5601"
     networks:
@@ -599,7 +573,7 @@ RUN ["gem", "install", "fluent-plugin-input-gelf", "--version", "0.3.1"]</code><
 
 services:
   elasticsearch:
-    image: {elasticsearch-image}
+    image: docker.io/elastic/elasticsearch:7.16.3
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -623,7 +597,7 @@ services:
       - elasticsearch
 
   kibana:
-    image: {kibana-image}
+    image: docker.io/elastic/kibana:7.16.3
     ports:
       - "5601:5601"
     networks:
@@ -704,7 +678,7 @@ RUN ["gem", "install", "fluent-plugin-elasticsearch", "--version", "3.7.0"]</cod
 
 services:
   elasticsearch:
-    image: {elasticsearch-image}
+    image: docker.io/elastic/elasticsearch:7.16.3
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -727,7 +701,7 @@ services:
       - elasticsearch
 
   kibana:
-    image: {kibana-image}
+    image: docker.io/elastic/kibana:7.16.3
     ports:
       - "5601:5601"
     networks:
@@ -818,6 +792,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>Determine whether to enable the GELF logging handler</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16376">QUARKUS_LOG_HANDLER_GELF_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16376" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -831,6 +808,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Hostname/IP-Address of the Logstash/Graylog Host By default it uses UDP, prepend tcp: to the hostname to switch to TCP, example: "tcp:localhost"</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16377">QUARKUS_LOG_HANDLER_GELF_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16377" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -846,6 +826,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>The port</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16378">QUARKUS_LOG_HANDLER_GELF_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16378" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
@@ -859,6 +842,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>GELF version: 1.0 or 1.1</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16379">QUARKUS_LOG_HANDLER_GELF_VERSION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16379" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -874,6 +860,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>Whether to post Stack-Trace to StackTrace field.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16380">QUARKUS_LOG_HANDLER_GELF_EXTRACT_STACK_TRACE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16380" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -887,6 +876,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Only used when <code>extractStackTrace</code> is <code>true</code>. A value of 0 will extract the whole stack trace. Any positive value will walk the cause chain: 1 corresponds with exception.getCause(), 2 with exception.getCause().getCause(), &#8230;&#8203; Negative throwable reference walk the exception chain from the root cause side: -1 will extract the root cause, -2 the exception wrapping the root cause, &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16381">QUARKUS_LOG_HANDLER_GELF_STACK_TRACE_THROWABLE_REFERENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16381" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -902,6 +894,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>Whether to perform Stack-Trace filtering</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16382">QUARKUS_LOG_HANDLER_GELF_FILTER_STACK_TRACE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16382" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -915,6 +910,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Java date pattern, see <code>java.text.SimpleDateFormat</code></p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16383">QUARKUS_LOG_HANDLER_GELF_TIMESTAMP_PATTERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16383" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -930,6 +928,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>The logging-gelf log level.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16384">QUARKUS_LOG_HANDLER_GELF_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16384" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html">Level</a></p></td>
@@ -943,6 +944,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Name of the facility.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16385">QUARKUS_LOG_HANDLER_GELF_FACILITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16385" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -958,6 +962,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>Whether to include all fields from the MDC.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16386">QUARKUS_LOG_HANDLER_GELF_INCLUDE_FULL_MDC</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16386" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -971,6 +978,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Maximum message size (in bytes). If the message size is exceeded, the appender will submit the message in multiple chunks.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16387">QUARKUS_LOG_HANDLER_GELF_MAXIMUM_MESSAGE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16387" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -986,6 +996,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>Include message parameters from the log event</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16388">QUARKUS_LOG_HANDLER_GELF_INCLUDE_LOG_MESSAGE_PARAMETERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16388" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
@@ -999,6 +1012,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Include source code location</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16389">QUARKUS_LOG_HANDLER_GELF_INCLUDE_LOCATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16389" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1014,6 +1030,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>Origin hostname</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16390">QUARKUS_LOG_HANDLER_GELF_ORIGIN_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16390" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1027,6 +1046,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Bypass hostname resolution. If you didn&#8217;t set the <code>originHost</code> property, and resolution is disabled, the value “unknown” will be used as hostname</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16391">QUARKUS_LOG_HANDLER_GELF_SKIP_HOSTNAME_RESOLUTION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16391" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1047,6 +1069,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="paragraph">
 <p>Additional field value.</p>
 </div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16392">QUARKUS_LOG_HANDLER_GELF_ADDITIONAL_FIELD__FIELD_NAME__VALUE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16392" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -1060,6 +1085,9 @@ or you can configure your Elasticsearch index to store those fields as text or k
 <div class="content">
 <div class="paragraph">
 <p>Additional field type specification. Supported types: String, long, Long, double, Double and discover. Discover is the default if not specified, it discovers field type based on parseability.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-16393">QUARKUS_LOG_HANDLER_GELF_ADDITIONAL_FIELD__FIELD_NAME__TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-16393" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1094,23 +1122,37 @@ you can access its documentation here: <a href="https://logging.paluch.biz/" cla
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -1119,15 +1161,29 @@ you can access its documentation here: <a href="https://logging.paluch.biz/" cla
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1136,19 +1192,33 @@ you can access its documentation here: <a href="https://logging.paluch.biz/" cla
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1157,11 +1227,21 @@ you can access its documentation here: <a href="https://logging.paluch.biz/" cla
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1172,21 +1252,21 @@ you can access its documentation here: <a href="https://logging.paluch.biz/" cla
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

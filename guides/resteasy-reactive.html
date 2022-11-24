@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Quarkus - Writing REST Services with RESTEasy Reactive</title>
+  <title>Writing REST Services with RESTEasy Reactive - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
@@ -33,6 +33,19 @@
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/resteasy-reactive" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/resteasy-reactive" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/resteasy-reactive" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/resteasy-reactive" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -70,7 +83,7 @@
         <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
@@ -84,19 +97,19 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
       </li>
       <li class="dropdown">
         <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="https://quarkus.io/" >OFFICIAL (ENGLISH)</a></li>
-          <li><a href="https://ja.quarkus.io/">日本語 - JAPANESE</a></li>
-          <li><a href="https://cn.quarkus.io/">简体中文 - CHINESE</a></li>
+          <li><a href="https://quarkus.io/guides/resteasy-reactive" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/resteasy-reactive">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/resteasy-reactive">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/resteasy-reactive">日本語</a></li>
           </ul>
       </li>
     </ul>
@@ -111,64 +124,25 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
-    </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+<div class="full-width-version-bg guidebar align-self">
+  
+  <a class="guidebarcol returnlink" href="/guides/"> Back to Guides</a>
+  <div class="guidebarcol version">
+    <label id="guide-version-label" class="guide-dropdown-label">Select Guide Version</label>
+    <select id="guide-version-dropdown" class="guide-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>2.14 - Latest</option>
         
         
+        <option value="2.13" >2.13</option>
         
         
-          
-        <option value="latest" selected>2.9 - Latest</option>
-        
-        
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
-    </div>
+        </select>
   </div>
 </div>
 
@@ -199,6 +173,7 @@
 <li><a href="#accessing-context-objects">Accessing context objects</a></li>
 <li><a href="#json-serialisation">JSON serialisation</a></li>
 <li><a href="#xml-serialisation">XML serialisation</a></li>
+<li><a href="#web-links-support">Web Links support</a></li>
 </ul>
 </li>
 <li><a href="#cors-filter">CORS filter</a></li>
@@ -397,7 +372,7 @@ public static class MyApplication extends Application {
 </div>
 <div class="paragraph">
 <p>This will cause all rest endpoints to be resolve relative to <code>/api</code>, so the endpoint above with <code>@Path("rest")</code> would
-be accessible at <code>/api/rest/. You can also set the `quarkus.rest.path</code> build time property to set the root path if you
+be accessible at <code>/api/rest/</code>. You can also set the <code>quarkus.resteasy-reactive.path</code> build time property to set the root path if you
 don&#8217;t want to use an annotation.</p>
 </div>
 </div>
@@ -560,33 +535,33 @@ or <code>&lt;parameters&gt;</code> or <code>&lt;maven.compiler.parameters&gt;</c
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="path-parameter"></a>Path parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestPath.html"><code>@RestPath</code></a> (or nothing)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestPath.html"><code>@RestPath</code></a> (or nothing)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URI template parameter (simplified version of the <a href="https://tools.ietf.org/html/rfc6570">URI Template specification</a>),
 see <a href="#uri-parameters">URI parameters</a> for more information.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Query parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestQuery.html"><code>@RestQuery</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The value of an <a href="https://tools.ietf.org/html/rfc3986#section-3.4">URI query parameter</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestQuery.html"><code>@RestQuery</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The value of a <a href="https://tools.ietf.org/html/rfc3986#section-3.4">URI query parameter</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestHeader.html"><code>@RestHeader</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestHeader.html"><code>@RestHeader</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The value of an <a href="https://tools.ietf.org/html/rfc7230#section-3.2">HTTP header</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cookie</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestCookie.html"><code>@RestCookie</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestCookie.html"><code>@RestCookie</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The value of an <a href="https://tools.ietf.org/html/rfc6265#section-4.2">HTTP cookie</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Form parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestForm.html"><code>@RestForm</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestForm.html"><code>@RestForm</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The value of an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST">HTTP URL-encoded FORM</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Matrix parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestMatrix.html"><code>@RestMatrix</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestMatrix.html"><code>@RestMatrix</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The value of an <a href="https://tools.ietf.org/html/rfc3986#section-3.3">URI path segment parameter</a></p></td>
 </tr>
 </tbody>
@@ -636,7 +611,8 @@ public class Endpoint {
                             @RestHeader("X-Cheese-Secret-Handshake")
                             String secretHandshake,
                             @RestForm String smell) {
-        return type + "/" + variant + "/" + age + "/" + level + "/" + secretHandshake + "/" + smell;
+        return type + "/" + variant + "/" + age + "/" + level + "/"
+            + secretHandshake + "/" + smell;
     }
 }</code></pre>
 </div>
@@ -648,9 +624,9 @@ public class Endpoint {
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-the <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestPath.html"><code>@RestPath</code></a>
+The <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestPath.html"><code>@RestPath</code></a>
 annotation is optional: any parameter whose name matches an existing URI
-template variable will be automatically assumed to have <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestPath.html"><code>@RestPath</code></a>.
+template variable will be automatically assumed to have <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestPath.html"><code>@RestPath</code></a>.
 </td>
 </tr>
 </table>
@@ -666,6 +642,80 @@ but they require you to specify the parameter name.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="#parameter-mapping">Parameter mapping</a> for more advanced use-cases.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When an exception occurs in RESTEasy Reactive request parameter handling code, the exception is not printed by default to the log (for security reasons).
+This can sometimes make it hard to understand why certain HTTP status codes are returned (as the JAX-RS mandates the use of non-intuitive error codes in various cases).
+In such cases, users are encouraged to set the logging level for the <code>org.jboss.resteasy.reactive.server.handlers.ParameterHandler</code> category to <code>DEBUG</code> like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.log.category."org.jboss.resteasy.reactive.server.handlers.ParameterHandler".level=DEBUG</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="grouping-parameters-in-a-custom-class"><a class="anchor" href="#grouping-parameters-in-a-custom-class"></a>Grouping parameters in a custom class</h4>
+<div id="parameter-grouping" class="paragraph">
+<p>You can group your request parameters in a container class instead of declaring them as method parameters to you endpoint,
+so we can rewrite the previous example like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.rest;
+
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+
+import org.jboss.resteasy.reactive.RestCookie;
+import org.jboss.resteasy.reactive.RestForm;
+import org.jboss.resteasy.reactive.RestHeader;
+import org.jboss.resteasy.reactive.RestMatrix;
+import org.jboss.resteasy.reactive.RestPath;
+import org.jboss.resteasy.reactive.RestQuery;
+
+@Path("/cheeses/{type}")
+public class Endpoint {
+
+    public static class Parameters {
+        @RestPath
+        String type;
+
+        @RestMatrix
+        String variant;
+
+        @RestQuery
+        String age;
+
+        @RestCookie
+        String level;
+
+        @RestHeader("X-Cheese-Secret-Handshake")
+        String secretHandshake;
+
+        @RestForm
+        String smell;
+    }
+
+    @POST
+    public String allParams(Parameters parameters) {
+        return parameters.type + "/" + parameters.variant + "/" + parameters.age
+            + "/" + parameters.level + "/" + parameters.secretHandshake
+            + "/" + parameters.smell;
+    }
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -754,8 +804,8 @@ its HTTP representation to the Java type of the parameter.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Large integers and decimals.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonArray.html"><code>JsonArray</code></a>, <a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonArray.html"><code>JsonObject</code></a>,
-<a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonArray.html"><code>JsonStructure</code></a>, <a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonArray.html"><code>JsonValue</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonArray.html"><code>JsonArray</code></a>, <a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonObject.html"><code>JsonObject</code></a>,
+<a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonStructure.html"><code>JsonStructure</code></a>, <a href="https://javadoc.io/doc/javax.json/javax.json-api/1.1.4/javax/json/JsonValue.html"><code>JsonValue</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON value types</p></td>
 </tr>
 <tr>
@@ -784,115 +834,89 @@ You can add support for more <a href="#readers-writers">body parameter types</a>
 <div class="sect2">
 <h3 id="multipart"><a class="anchor" href="#multipart"></a>Handling Multipart Form data</h3>
 <div class="paragraph">
-<p>To handle HTTP requests that have <code>multipart/form-data</code> as their content type, RESTEasy Reactive introduces the
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/MultipartForm.html"><code>@MultipartForm</code></a> annotation.
+<p>To handle HTTP requests that have <code>multipart/form-data</code> as their content type, you can use the regular
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestForm.html"><code>@RestForm</code></a> annotation, but we have special types
+that allow you to access the parts as files or as entities.
 Let us look at an example of its use.</p>
 </div>
 <div class="paragraph">
-<p>Assuming an HTTP request containing a file upload and a form value containing a string description need to be handled, we could write a POJO
-that will hold this information like so:</p>
+<p>Assuming an HTTP request containing a file upload, a JSON entity and a form value containing a string description, we could write
+the following endpoint:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.ws.rs.core.MediaType;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.MediaType;
 
 import org.jboss.resteasy.reactive.PartType;
 import org.jboss.resteasy.reactive.RestForm;
 import org.jboss.resteasy.reactive.multipart.FileUpload;
 
-public class FormData {
-
-    @RestForm
-    @PartType(MediaType.TEXT_PLAIN)
-    public String description;
-
-    @RestForm("image")
-    public FileUpload file;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>name</code> field will contain the data contained in the part of HTTP request called <code>description</code> (because
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestForm.html"><code>@RestForm</code></a> does not define a value, the field name is used),
-while the <code>file</code> field will contain data about the uploaded file in the <code>image</code> part of HTTP request.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/multipart/FileUpload.html"><code>FileUpload</code></a>
-provides access to various metadata of the uploaded file. If however all you need is a handle to the uploaded file, <code>java.nio.file.Path</code> or <code>java.io.File</code> could be used.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-When access to all uploaded files without specifying the form names is needed, RESTEasy Reactive allows the use of <code>@RestForm List&lt;FileUpload&gt;</code>, where it is important to <strong>not</strong> set a name for the <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestForm.html"><code>@RestForm</code></a> annotation.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/PartType.html"><code>@PartType</code></a> is used to aid
-in deserialization of the corresponding part of the request into the desired Java type. It is very useful when
-for example the corresponding body part is JSON and needs to be converted to a POJO.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>This POJO could be used in a Resource method like so:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-
-import org.jboss.resteasy.reactive.MultipartForm;
-
 @Path("multipart")
-public class Endpoint {
+public class MultipartResource {
+    public static class Person {
+        public String firstName;
+        public String lastName;
+    }
 
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Path("form")
-    public String form(@MultipartForm FormData formData) {
-        // return something
+    public void multipart(@RestForm String description,
+            @RestForm("image") FileUpload file,
+            @RestForm @PartType(MediaType.APPLICATION_JSON) Person person) {
+        // do something
     }
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The use of <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/MultipartForm.html"><code>@MultipartForm</code></a> as
-method parameter makes RESTEasy Reactive handle the request as a multipart form request.</p>
+<p>The <code>description</code> parameter will contain the data contained in the part of HTTP request called <code>description</code> (because
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestForm.html"><code>@RestForm</code></a> does not define a value, the field name is used),
+while the <code>file</code> parameter will contain data about the uploaded file in the <code>image</code> part of HTTP request, and
+the <code>person</code> parameter will read the <code>Person</code> entity using the <code>JSON</code> <a href="#json">body reader</a>.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="paragraph">
+<p>The size of every part in a multipart request must conform to the value of <code>quarkus.http.limits.max-form-attribute-size</code>, for which the default is 2048 bytes.
+Any request with a part size exceeding this configuration will result in HTTP status code 413.</p>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The use of <code>@MultipartForm</code> is actually unnecessary as RESTEasy Reactive can infer this information from the use of <code>@Consumes(MediaType.MULTIPART_FORM_DATA)</code>
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/multipart/FileUpload.html"><code>FileUpload</code></a>
+provides access to various metadata of the uploaded file. If however all you need is a handle to the uploaded file, <code>java.nio.file.Path</code> or <code>java.io.File</code> could be used.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you need access to all uploaded files for all parts regardless of their names, you can do it with <code>@RestForm(FileUpload.ALL) List&lt;FileUpload&gt;</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/PartType.html"><code>@PartType</code></a> is used to aid
+in deserialization of the corresponding part of the request into the desired Java type. It is only required if
+you need to use <a href="#readers-writers">a special body parameter type</a> for that particular parameter.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Just like for any other request parameter type, you can also group them into a <a href="#parameter-grouping">container class</a>.
 </td>
 </tr>
 </table>
@@ -906,7 +930,7 @@ The use of <code>@MultipartForm</code> is actually unnecessary as RESTEasy React
 <td class="content">
 When handling file uploads, it is very important to move the file to permanent storage (like a database, a dedicated file system or a cloud storage) in your code that handles the POJO.
 Otherwise, the file will no longer be accessible when the request terminates.
-Moreoever if <code>quarkus.http.body.delete-uploaded-files-on-end</code> is set to true, Quarkus will delete the uploaded file when the HTTP response is sent. If the setting is disabled,
+Moreover, if <code>quarkus.http.body.delete-uploaded-files-on-end</code> is set to true, Quarkus will delete the uploaded file when the HTTP response is sent. If the setting is disabled,
 the file will reside on the file system of the server (in the directory defined by the <code>quarkus.http.body.uploads-directory</code> configuration option), but as the uploaded files are saved
 with a UUID file name and no additional metadata is saved, these files are essentially a random dump of files.
 </td>
@@ -957,6 +981,37 @@ public class Endpoint {
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Additionally, you can also manually append the parts of the form using the class <code>MultipartFormDataOutput</code> as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.jboss.resteasy.reactive.server.core.multipart.MultipartFormDataOutput;
+
+@Path("multipart")
+public class Endpoint {
+
+    @GET
+    @Produces(MediaType.MULTIPART_FORM_DATA)
+    @Path("file")
+    public MultipartFormDataOutput getFile() {
+        MultipartFormDataOutput form = new MultipartFormDataOutput();
+        form.addFormData("person", new Person("John"), MediaType.APPLICATION_JSON_TYPE);
+        form.addFormData("status", "a status", MediaType.TEXT_PLAIN_TYPE)
+                .getHeaders().putSingle("extra-header", "extra-value");
+        return form;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This last approach allows you adding extra headers to the output part.</p>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -968,6 +1023,14 @@ For the time being, returning Multipart data is limited to be blocking endpoints
 </td>
 </tr>
 </table>
+</div>
+<div class="sect3">
+<h4 id="handling-malformed-input"><a class="anchor" href="#handling-malformed-input"></a>Handling malformed input</h4>
+<div class="paragraph">
+<p>As part of reading the multipart body, RESTEasy Reactive invokes the proper MessageBodyReader<a href="https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.1.1/javax/ws/rs/ext/MessageBodyReader.html"><code>MessageBodyReader</code></a> for each part of the request.
+If an <code>IOException</code> occurs for one of these parts (for example if Jackson was unable to deserialize a JSON part), then a <code>org.jboss.resteasy.reactive.server.multipart.MultipartPartReadingException</code> is thrown.
+If this exception is not handled by the application as mentioned in <a href="#exception-mapping">Exception mapping</a>, an HTTP 400 response is returned by default.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1002,11 +1065,11 @@ and any other type will be mapped <a href="#json">from that type to JSON</a>.</p
 <td class="tableblock halign-left valign-top"><p class="tableblock">The contents of the file specified by the given path</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/PathPart.html"><code>PathPart</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/PathPart.html"><code>PathPart</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The partial contents of the file specified by the given path</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/FilePart.html"><code>FilePart</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/FilePart.html"><code>FilePart</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The partial contents of a file</p></td>
 </tr>
 <tr>
@@ -1016,8 +1079,8 @@ and any other type will be mapped <a href="#json">from that type to JSON</a>.</p
 </tbody>
 </table>
 <div class="paragraph">
-<p>Alternately, you can also return a <a href="#reactive">reactive type</a> such as <a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni</code></a>,
-<a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Multi.html"><code>Multi</code></a> or
+<p>Alternately, you can also return a <a href="#reactive">reactive type</a> such as <a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni</code></a>,
+<a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Multi.html"><code>Multi</code></a> or
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletionStage.html"><code>CompletionStage</code></a>
 that resolve to one of the mentioned return types.</p>
 </div>
@@ -1116,9 +1179,9 @@ public class Endpoint {
 <div id="reactive" class="paragraph">
 <p>If your endpoint method needs to accomplish an asynchronous or reactive task before
 being able to answer, you can declare your method to return the
-<a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni</code></a> type (from <a href="https://smallrye.io/smallrye-mutiny/">Mutiny</a>), in which
+<a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni</code></a> type (from <a href="https://smallrye.io/smallrye-mutiny/">Mutiny</a>), in which
 case the current HTTP request will be automatically suspended after your method, until
-the returned <a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni</code></a> instance resolves to a value,
+the returned <a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni</code></a> instance resolves to a value,
 which will be mapped to a response exactly according to the previously described rules:</p>
 </div>
 <div class="listingblock">
@@ -1155,7 +1218,7 @@ type is also supported.</p>
 <h3 id="streaming-support"><a class="anchor" href="#streaming-support"></a>Streaming support</h3>
 <div class="paragraph">
 <p>If you want to stream your response element by element, you can make your endpoint method return a
-<a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Multi.html"><code>Multi</code></a> type (from <a href="https://smallrye.io/smallrye-mutiny/">Mutiny</a>).
+<a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Multi.html"><code>Multi</code></a> type (from <a href="https://smallrye.io/smallrye-mutiny/">Mutiny</a>).
 This is especially useful for streaming text or binary data.</p>
 </div>
 <div class="paragraph">
@@ -1239,10 +1302,9 @@ public class Endpoint {
     Multi&lt;Book&gt; books;
 
     @GET
-    // Send the stream over SSE
-    @Produces(MediaType.SERVER_SENT_EVENTS)
     // Each element will be sent as JSON
     @RestStreamElementType(MediaType.APPLICATION_JSON)
+    // by using @RestStreamElementType, we don't need to add @Produces(MediaType.SERVER_SENT_EVENTS)
     public Multi&lt;Book&gt; stream() {
         return books;
     }
@@ -1253,8 +1315,8 @@ public class Endpoint {
 <div class="sect2">
 <h3 id="controlling-http-caching-features"><a class="anchor" href="#controlling-http-caching-features"></a>Controlling HTTP Caching features</h3>
 <div class="paragraph">
-<p>RESTEasy Reactive provides the <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/Cache.html"><code>@Cache</code></a>
-and <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/NoCache.html"><code>@NoCache</code></a> annotations to facilitate
+<p>RESTEasy Reactive provides the <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/Cache.html"><code>@Cache</code></a>
+and <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/NoCache.html"><code>@NoCache</code></a> annotations to facilitate
 handling HTTP caching semantics, i.e. setting the 'Cache-Control' HTTP header.</p>
 </div>
 <div class="paragraph">
@@ -1262,8 +1324,8 @@ handling HTTP caching semantics, i.e. setting the 'Cache-Control' HTTP header.</
 to return domain objects and not have to deal with building up the <code>Cache-Control</code> HTTP header explicitly.</p>
 </div>
 <div class="paragraph">
-<p>While <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/Cache.html"><code>@Cache</code></a>
-builds a complex <code>Cache-Control</code> header, <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/NoCache.html"><code>@NoCache</code></a>
+<p>While <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/Cache.html"><code>@Cache</code></a>
+builds a complex <code>Cache-Control</code> header, <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/NoCache.html"><code>@NoCache</code></a>
 is a simplified notation to say that you don&#8217;t want anything cached; i.e. <code>Cache-Control: nocache</code>.</p>
 </div>
 <div class="admonitionblock note">
@@ -1311,7 +1373,7 @@ method takes parameters of the following type:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Access to the current user and roles</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.9.2.Final/org/jboss/resteasy/reactive/server/SimpleResourceInfo.html"><code>SimpleResourceInfo</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.14.1.Final/org/jboss/resteasy/reactive/server/SimpleResourceInfo.html"><code>SimpleResourceInfo</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Information about the current endpoint method and class (no reflection required)</p></td>
 </tr>
 <tr>
@@ -1339,7 +1401,7 @@ method takes parameters of the following type:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Advanced: access to instances of endpoints</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.9.2.Final/org/jboss/resteasy/reactive/server/spi/ServerRequestContext.html"><code>ServerRequestContext</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.14.1.Final/org/jboss/resteasy/reactive/server/spi/ServerRequestContext.html"><code>ServerRequestContext</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Advanced: RESTEasy Reactive access to the current request/response</p></td>
 </tr>
 <tr>
@@ -1581,7 +1643,7 @@ performs an HTTP GET on <code>/person/1</code> they will receive:</p>
 </td>
 <td class="content">
 No additional configuration needs to be applied for this secure serialization to take place. However, users can use the <code>@io.quarkus.resteasy.reactive.jackson.EnableSecureSerialization</code> and <code>@io.quarkus.resteasy.reactive.jackson.DisableSecureSerialization</code>
-annotation to opt-in or out for specific JAX-RS Resource classes or methods.
+annotation to opt in or out for specific JAX-RS Resource classes or methods.
 </td>
 </tr>
 </table>
@@ -1720,6 +1782,397 @@ public User invalidUseOfCustomSerializer() {
 and serialised to XML, for <a href="#resource-types">all the types not already registered with a more specific
 serialisation</a>.</p>
 </div>
+<div class="sect3">
+<h4 id="advanced-jaxb-specific-features"><a class="anchor" href="#advanced-jaxb-specific-features"></a>Advanced JAXB-specific features</h4>
+<div class="paragraph">
+<p>When using the <code>quarkus-resteasy-reactive-jaxb</code> extension there are some advanced features that RESTEasy Reactive supports.</p>
+</div>
+<div class="sect4">
+<h5 id="inject-jaxb-components"><a class="anchor" href="#inject-jaxb-components"></a>Inject JAXB components</h5>
+<div class="paragraph">
+<p>The JAXB resteasy reactive extension will serialize and unserialize requests and responses transparently for users. However, if you need finer grain control over JAXB components, you can inject either the JAXBContext, Marshaller, or Unmarshaller components into your beans:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@ApplicationScoped
+public class MyService {
+
+    @Inject
+    JAXBContext jaxbContext;
+
+    @Inject
+    Marshaller marshaller;
+
+    @Inject
+    Unmarshaller unmarshaller;
+
+    // ...
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Quarkus will automatically find all the classes annotated with <code>@XmlRootElement</code> and then bound them to the JAXB context.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="customize-the-jaxb-configuration"><a class="anchor" href="#customize-the-jaxb-configuration"></a>Customize the JAXB configuration</h5>
+<div class="paragraph">
+<p>To customize the JAXB configuration for either the JAXB context, and/or the Marshaller/Unmarshaller components, the suggested approach is to define a CDI bean of type <code>io.quarkus.jaxb.runtime.JaxbContextCustomizer</code>.</p>
+</div>
+<div class="paragraph">
+<p>An example where a custom module needs to be registered would look like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Singleton
+public class RegisterCustomModuleCustomizer implements JaxbContextCustomizer {
+
+    // For JAXB context configuration
+    @Override
+    public void customizeContextProperties(Map&lt;String, Object&gt; properties) {
+
+    }
+
+    // For Marshaller configuration
+    @Override
+    public void customizeMarshaller(Marshaller marshaller) throws PropertyException {
+        marshaller.setProperty("jaxb.formatted.output", Boolean.TRUE);
+    }
+
+    // For Unmarshaller configuration
+    @Override
+    public void customizeUnmarshaller(Unmarshaller unmarshaller) throws PropertyException {
+        // ...
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It&#8217;s not necessary to implement all three methods, but only the want you need.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can provide your own <code>JAXBContext</code> bean by doing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class CustomJaxbContext {
+
+    // Replaces the CDI producer for JAXBContext built into Quarkus
+    @Singleton
+    @Produces
+    JAXBContext jaxbContext() {
+        // ...
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Note that if you provide your custom JAXB context instance, you will need to register the classes you want to use for the XML serialization. This means that Quarkus will not update your custom JAXB context instance with the auto-discovered classes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-links-support"><a class="anchor" href="#web-links-support"></a>Web Links support</h3>
+<div id="links" class="paragraph">
+<p>To enable Web Links support, add the <code>quarkus-resteasy-reactive-links</code> extension to your project.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Table Context object</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">GAV</th>
+<th class="tableblock halign-left valign-top">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.quarkus:quarkus-resteasy-reactive-links</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/wiki/LinkHeader">Web Links support</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Importing this module will allow injecting web links into the response HTTP headers by just annotating your endpoint resources with the <code>@InjectRestLinks</code> annotation. To declare the web links that will be returned, you need to use the <code>@RestLink</code> annotation in the linked methods. An example of this could look like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Path("/records")
+public class RecordsResource {
+
+    @GET
+    @RestLink(rel = "list")
+    @InjectRestLinks
+    public List&lt;Record&gt; getAll() {
+        // ...
+    }
+
+    @GET
+    @Path("/{id}")
+    @RestLink(rel = "self")
+    @InjectRestLinks(RestLinkType.INSTANCE)
+    public TestRecord get(@PathParam("id") int id) {
+        // ...
+    }
+
+    @PUT
+    @Path("/{id}")
+    @RestLink
+    @InjectRestLinks(RestLinkType.INSTANCE)
+    public TestRecord update(@PathParam("id") int id) {
+        // ...
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @RestLink
+    public TestRecord delete(@PathParam("id") int id) {
+        // ...
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When calling the endpoint <code>/records</code> which is defined by the method <code>getAll</code> within the above resource using curl, you would get the web links header:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&amp; curl -i localhost:8080/records
+Link: &lt;http://localhost:8080/records&gt;; rel="list"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As this resource does not return a single instance of type <code>Record</code>, the links for the methods <code>get</code>, <code>update</code>, and <code>delete</code> are not injected. Now, when calling the endpoint <code>/records/1</code>, you would get the following web links:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&amp; curl -i localhost:8080/records/1
+Link: &lt;http://localhost:8080/records&gt;; rel="list"
+Link: &lt;http://localhost:8080/records/1&gt;; rel="self"
+Link: &lt;http://localhost:8080/records/1&gt;; rel="update"
+Link: &lt;http://localhost:8080/records/1&gt;; rel="delete"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, when calling the delete resource, you should not see any web links as the method <code>delete</code> is not annotated with the <code>@InjectRestLinks</code> annotation.</p>
+</div>
+<div class="sect3">
+<h4 id="programmatically-access-to-the-web-links-registry"><a class="anchor" href="#programmatically-access-to-the-web-links-registry"></a>Programmatically access to the web links registry</h4>
+<div class="paragraph">
+<p>You can programmatically have access to the web links registry just by injecting the <code>RestLinksProvider</code> bean:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Path("/records")
+public class RecordsResource {
+
+    @Inject
+    RestLinksProvider linksProvider;
+
+    // ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using this injected bean of type <code>RestLinksProvider</code>, you can get the links by type using the method <code>RestLinksProvider.getTypeLinks</code> or get the links by a concrete instance using the method <code>RestLinksProvider.getInstanceLinks</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="json-hypertext-application-language-hal-support"><a class="anchor" href="#json-hypertext-application-language-hal-support"></a>JSON Hypertext Application Language (HAL) support</h4>
+<div class="paragraph">
+<p>The <a href="https://tools.ietf.org/id/draft-kelly-json-hal-01.html">HAL</a> standard is a simple format to represent web links.</p>
+</div>
+<div class="paragraph">
+<p>To enable the HAL support, add the <code>quarkus-hal</code> extension to your project. Also, as HAL needs JSON support, you need to add either the <code>quarkus-resteasy-reactive-jsonb</code> or the <code>quarkus-resteasy-reactive-jackson</code> extension.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Table Context object</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">GAV</th>
+<th class="tableblock halign-left valign-top">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.quarkus:quarkus-hal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://tools.ietf.org/id/draft-kelly-json-hal-01.html">HAL</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>After adding the extensions, we can now annotate the REST resources to produce the media type <code>application/hal+json</code> (or use RestMediaType.APPLICATION_HAL_JSON). For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Path("/records")
+public class RecordsResource {
+
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, RestMediaType.APPLICATION_HAL_JSON })
+    @RestLink(rel = "list")
+    @InjectRestLinks
+    public List&lt;Record&gt; getAll() {
+        // ...
+    }
+
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, RestMediaType.APPLICATION_HAL_JSON })
+    @Path("/{id}")
+    @RestLink(rel = "self")
+    @InjectRestLinks(RestLinkType.INSTANCE)
+    public TestRecord get(@PathParam("id") int id) {
+        // ...
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, the endpoints <code>/records</code> and <code>/records/{id}</code> will accept the media type both <code>json</code> and <code>hal+json</code> to print the records in Hal format.</p>
+</div>
+<div class="paragraph">
+<p>For example, if we invoke the <code>/records</code> endpoint using curl to return a list of records, the HAL format will look like as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&amp; curl -H "Accept:application/hal+json" -i localhost:8080/records
+{
+    "_embedded": {
+        "items": [
+            {
+                "id": 1,
+                "slug": "first",
+                "value": "First value",
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8081/records/1"
+                    },
+                    "list": {
+                        "href": "http://localhost:8081/records"
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "slug": "second",
+                "value": "Second value",
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8081/records/2"
+                    },
+                    "list": {
+                        "href": "http://localhost:8081/records"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "list": {
+            "href": "http://localhost:8081/records"
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When we call a resource <code>/records/1</code> that returns only one instance, then the output is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&amp; curl -H "Accept:application/hal+json" -i localhost:8080/records/1
+{
+    "id": 1,
+    "slug": "first",
+    "value": "First value",
+    "_links": {
+        "self": {
+            "href": "http://localhost:8081/records/1"
+        },
+        "list": {
+            "href": "http://localhost:8081/records"
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, you can also provide additional HAL links programmatically in your resource just by returning either <code>HalCollectionWrapper</code> (to return a list of entities) or <code>HalEntityWrapper</code> (to return a single object) as described in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Path("/records")
+public class RecordsResource {
+
+    @Inject
+    RestLinksProvider linksProvider;
+
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, RestMediaType.APPLICATION_HAL_JSON })
+    @RestLink(rel = "list")
+    public HalCollectionWrapper getAll() {
+        List&lt;Record&gt; list = // ...
+        HalCollectionWrapper halCollection = new HalCollectionWrapper(list, "collectionName", linksProvider.getTypeLinks(Record.class));
+        halCollection.addLinks(Link.fromPath("/records/1").rel("first-record").build());
+        return halCollection;
+    }
+
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, RestMediaType.APPLICATION_HAL_JSON })
+    @Path("/{id}")
+    @RestLink(rel = "self")
+    @InjectRestLinks(RestLinkType.INSTANCE)
+    public HalEntityWrapper get(@PathParam("id") int id) {
+        Record entity = // ...
+        HalEntityWrapper halEntity = new HalEntityWrapper(entity, linksProvider.getInstanceLinks(entity));
+        halEntity.addLinks(Link.fromPath("/records/1/parent").rel("parent-record").build());
+        return halEntity;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1793,7 +2246,7 @@ by default:</p>
 <div class="paragraph">
 <p>This 'best guess' approach means that the majority of operations will run on the correct thread by default. If you are
 writing reactive code then your method will generally return one of these types, and will be executed on the IO thread.
-If you are writing blocking code your methods will generally return the result directly, and these will be run on a worker
+If you are writing blocking code your methods will usually return the result directly, and these will be run on a worker
 thread.</p>
 </div>
 <div class="paragraph">
@@ -1830,7 +2283,7 @@ public class Endpoint {
 </div>
 <div class="paragraph">
 <p>Most of the time, there are ways to achieve the same blocking operations in an asynchronous/reactive
-way, using <a href="https://smallrye.io/smallrye-mutiny/">Mutiny</a>, <a href="http://hibernate.org/reactive/">Hibernate Reactive</a>
+way, using <a href="https://smallrye.io/smallrye-mutiny/">Mutiny</a>, <a href="https://hibernate.org/reactive/">Hibernate Reactive</a>
 or any of the <a href="quarkus-reactive-architecture#quarkus-extensions-enabling-reactive">Quarkus Reactive extensions</a> for example:</p>
 </div>
 <div class="listingblock">
@@ -1909,10 +2362,10 @@ public class Endpoint {
 <p>If your endpoint method is delegating calls to another service layer which
 does not know of JAX-RS, you need a way to turn service exceptions to an
 HTTP response, and you can do that using the
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.9.2.Final/org/jboss/resteasy/reactive/server/ServerExceptionMapper.html"><code>@ServerExceptionMapper</code></a>
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.14.1.Final/org/jboss/resteasy/reactive/server/ServerExceptionMapper.html"><code>@ServerExceptionMapper</code></a>
 annotation on a method, with one parameter of the exception type you want to handle, and turning
-that exception into a <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse</code></a> (or a
-<a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni&lt;RestResponse&lt;?&gt;&gt;</code></a>):</p>
+that exception into a <a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse</code></a> (or a
+<a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni&lt;RestResponse&lt;?&gt;&gt;</code></a>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2009,7 +2462,7 @@ class ExceptionMappers {
 <p>Your exception mapper may declare any of the following parameter types:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Table Exception mapper parameters</caption>
+<caption class="title">Table 10. Table Exception mapper parameters</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2039,7 +2492,7 @@ class ExceptionMappers {
 <p>It may declare any of the following return types:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Table Exception mapper return types</caption>
+<caption class="title">Table 11. Table Exception mapper return types</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2052,15 +2505,36 @@ class ExceptionMappers {
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse</code></a> or <a href="https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.1.1/javax/ws/rs/core/Response.html"><code>Response</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse</code></a> or <a href="https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.1.1/javax/ws/rs/core/Response.html"><code>Response</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The response to send to the client when the exception occurs</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni&lt;RestResponse&gt;</code></a> or <a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni&lt;Response&gt;</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni&lt;RestResponse&gt;</code></a> or <a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni&lt;Response&gt;</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An asynchronous response to send to the client when the exception occurs</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When an exception occurs, RESTEasy Reactive does not log it by default (for security reasons).
+This can sometimes make it hard to understand why certain exception handling code was invoked (or not invoked).
+To make RESTEasy Reactive log the actual exception before an exception mapping code is run the <code>org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext</code> log category can be set to <code>DEBUG</code> like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.log.category."org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext".level=DEBUG</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="request-or-response-filters"><a class="anchor" href="#request-or-response-filters"></a>Request or response filters</h3>
@@ -2089,7 +2563,7 @@ or modify the response.</p>
 </div>
 <div class="paragraph">
 <p>Request filters can be declared with the
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.9.2.Final/org/jboss/resteasy/reactive/server/ServerRequestFilter.html"><code>@ServerRequestFilter</code></a>
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.14.1.Final/org/jboss/resteasy/reactive/server/ServerRequestFilter.html"><code>@ServerRequestFilter</code></a>
 annotation:</p>
 </div>
 <div class="listingblock">
@@ -2142,7 +2616,7 @@ Note however, that these filters need to be run before <strong>any</strong> filt
 </div>
 <div class="paragraph">
 <p>Similarly, response filters can be declared with the
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.9.2.Final/org/jboss/resteasy/reactive/server/ServerResponseFilter.html"><code>@ServerResponseFilter</code></a>
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.14.1.Final/org/jboss/resteasy/reactive/server/ServerResponseFilter.html"><code>@ServerResponseFilter</code></a>
 annotation:</p>
 </div>
 <div class="listingblock">
@@ -2163,7 +2637,7 @@ annotation:</p>
 <p>Your filters may declare any of the following parameter types:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Table Filter parameters</caption>
+<caption class="title">Table 12. Table Filter parameters</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2197,7 +2671,7 @@ annotation:</p>
 <p>It may declare any of the following return types:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. Table Filter return types</caption>
+<caption class="title">Table 13. Table Filter return types</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2210,7 +2684,7 @@ annotation:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse&lt;?&gt;</code></a> or <a href="https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.1.1/javax/ws/rs/core/Response.html"><code>Response</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse&lt;?&gt;</code></a> or <a href="https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.1.1/javax/ws/rs/core/Response.html"><code>Response</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The response to send to the client instead of continuing the filter chain, or <code>null</code> if the filter chain should proceed</p></td>
 </tr>
 <tr>
@@ -2218,7 +2692,7 @@ annotation:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An optional response to send to the client instead of continuing the filter chain, or an empty value if the filter chain should proceed</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni&lt;RestResponse&lt;?&gt;&gt;</code></a> or <a href="https://smallrye.io/smallrye-mutiny/apidocs/io/smallrye/mutiny/Uni.html"><code>Uni&lt;Response&gt;</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni&lt;RestResponse&lt;?&gt;&gt;</code></a> or <a href="https://javadoc.io/doc/io.smallrye.reactive/mutiny/1.6.0/io/smallrye/mutiny/Uni.html"><code>Uni&lt;Response&gt;</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An asynchronous response to send to the client instead of continuing the filter chain, or <code>null</code> if the filter chain should proceed</p></td>
 </tr>
 </tbody>
@@ -2303,8 +2777,8 @@ public class LoggingFilter implements ContainerRequestFilter {
 <div class="sect2">
 <h3 id="readers-and-writers-mapping-entities-and-http-bodies"><a class="anchor" href="#readers-and-writers-mapping-entities-and-http-bodies"></a>Readers and Writers: mapping entities and HTTP bodies</h3>
 <div id="readers-writers" class="paragraph">
-<p>Whenever your endpoint methods return a object (of when they return a
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.9.2.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse&lt;?&gt;</code></a>
+<p>Whenever your endpoint methods return an object (of when they return a
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive-common/2.14.1.Final/org/jboss/resteasy/reactive/RestResponse.html"><code>RestResponse&lt;?&gt;</code></a>
 or <a href="https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.1.1/javax/ws/rs/core/Response.html"><code>Response</code></a> with
 an entity), RESTEasy Reactive will look for a way to map that into an HTTP response body.</p>
 </div>
@@ -2417,7 +2891,7 @@ public class CheeseBodyHandler implements MessageBodyReader&lt;Cheese&gt;,
 </div>
 <div class="paragraph">
 <p>If you want to get the most performance our of your writer, you can extend the
-<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.9.2.Final/org/jboss/resteasy/reactive/server/spi/ServerMessageBodyWriter.html"><code>ServerMessageBodyWriter</code></a>
+<a href="https://javadoc.io/doc/io.quarkus.resteasy.reactive/resteasy-reactive/2.14.1.Final/org/jboss/resteasy/reactive/server/spi/ServerMessageBodyWriter.html"><code>ServerMessageBodyWriter</code></a>
 instead of <a href="https://javadoc.io/doc/javax.ws.rs/javax.ws.rs-api/2.1.1/javax/ws/rs/ext/MessageBodyWriter.html"><code>MessageBodyWriter</code></a>
 where you will be able to use less reflection and bypass the blocking IO layer:</p>
 </div>
@@ -2684,7 +3158,7 @@ public class Endpoint {
 
     @Path("{converter}/{constructor}/{primitive}/{valueOf}")
     @GET
-    public String convertions(Converter converter, Constructor constructor,
+    public String conversions(Converter converter, Constructor constructor,
                               int primitive, ValueOf valueOf,
                               @RestQuery List&lt;Constructor&gt; list) {
         return converter + "/" + constructor + "/" + primitive
@@ -2696,7 +3170,7 @@ public class Endpoint {
 <div class="sect3">
 <h4 id="handling-dates"><a class="anchor" href="#handling-dates"></a>Handling dates</h4>
 <div class="paragraph">
-<p>RESTEasy Reactive supports the use of the implementations of <code>java.time.Temporal</code> (like <code>java.time.LocalDateTime</code>) as query, path or form params. Furthermore it provides the <code>@org.jboss.resteasy.reactive.DateFormat</code> annotation which can be used to
+<p>RESTEasy Reactive supports the use of the implementations of <code>java.time.Temporal</code> (like <code>java.time.LocalDateTime</code>) as query, path or form params. Furthermore, it provides the <code>@org.jboss.resteasy.reactive.DateFormat</code> annotation which can be used to
 set a custom expected pattern (otherwise the JDK&#8217;s default format for each type is used implicitly).</p>
 </div>
 </div>
@@ -2846,7 +3320,7 @@ Content-Length: 0</code></pre>
 <h3 id="negotiation"><a class="anchor" href="#negotiation"></a>Negotiation</h3>
 <div class="paragraph">
 <p>One of the main ideas of REST (<a href="https://tools.ietf.org/html/rfc7231#section-3.4">and HTTP</a>) is that
-your resource is independent from its representation, and
+your resource is independent of its representation, and
 that both the client and server are free to represent their resources in as many media types as
 they want. This allows the server to declare support for multiple representations and let the
 client declare which ones it supports and get served something appropriate.</p>
@@ -3101,23 +3575,37 @@ public class ResourceForApp1Only {
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
           
         </ul>
       </div>
@@ -3126,15 +3614,29 @@ public class ResourceForApp1Only {
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -3143,19 +3645,33 @@ public class ResourceForApp1Only {
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -3164,11 +3680,21 @@ public class ResourceForApp1Only {
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -3179,21 +3705,21 @@ public class ResourceForApp1Only {
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>
